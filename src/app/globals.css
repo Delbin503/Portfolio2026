@@ -1,26 +1,69 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Fonts (bound to next/font CSS variables in layout.tsx) */
+  --font-display: var(--font-familjen);
+  --font-sans: var(--font-hanken);
+  --font-mono: var(--font-jetbrains);
+
+  /* Surface palette — matches Portfolio Dark.dc.html */
+  --color-ink: #08080a;
+  --color-panel: #0c0c10;
+  --color-panel-2: #0e0e12;
+  --color-elev: #16161c;
+  --color-line: #1b1b22;
+  --color-line-soft: #16161c;
+  --color-hairline: #1a1a20;
+
+  --color-text: #e9e9ee;
+  --color-text-strong: #f4f4f6;
+  --color-muted: #9a9aa3;
+  --color-muted-2: #8a8a93;
+  --color-dim: #6a6a73;
+  --color-faint: #56565f;
+
+  /* Accent is runtime-themeable; bound to --accent below */
+  --color-accent: var(--accent);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  /* Configurable design tokens (defaults from the source's data-props) */
+  --accent: #a78bfa;
+  --rcard: 22px;
+  --rmock: 13px;
+  --sat: 1;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-ink);
+  color: var(--color-text);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #3a2f5c;
+  color: #fff;
+}
+
+/* Keycap chip used across the nav and command palette */
+@layer components {
+  .kbd {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 5px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.12);
+    font-family: var(--font-mono), monospace;
+    font-size: 11px;
+    color: #e9e9ee;
+  }
 }

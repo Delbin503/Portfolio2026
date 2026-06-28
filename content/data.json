@@ -1,0 +1,1510 @@
+{
+  "profile": {
+    "name": "Delbin",
+    "role": "Product Designer",
+    "tagline": "AI Design & Enterprise solutions",
+    "location": "Bangkok, Thailand",
+    "email": "delbintoehtet@gmail.com",
+    "availability": "Open to work — full-time, part-time, contract (3–6 months) & freelance",
+    "bio": "I'm Delbin (Toe Htet Arkar), a Product Designer with 4 years of experience turning complex product ideas into intuitive user interfaces. I specialize in AI design and enterprise solutions, and I've worked across synthetic data & computer vision, defense training systems, healthcare, and edtech — usually owning the work from first research through final UI. Bilingual (EN / MM), based in Bangkok with remote experience across Singapore, Indonesia, California, and Myanmar."
+  },
+  "heroStats": [
+    {
+      "value": "12",
+      "plus": false,
+      "label": "years, design + build"
+    },
+    {
+      "value": "40",
+      "plus": true,
+      "label": "surfaces shipped"
+    },
+    {
+      "value": "9",
+      "plus": false,
+      "label": "design systems"
+    }
+  ],
+  "caseStudies": [
+    {
+      "slug": "jar-aye",
+      "cmdKey": "⌘1",
+      "code": "JA",
+      "category": "EDTECH",
+      "kicker": "→ Edtech · 2024",
+      "paletteLabel": "The math wasn't the problem.",
+      "title": "The math wasn't the problem.",
+      "metrics": "EdTech · Myanmar · Aug 2023 – Jan 2024",
+      "blurb": "Grade 4 students kept stalling on Olympiad questions they could actually solve. Unscripted observation found three blockers — language, attention, navigation. None were math.",
+      "mockLabel": "[ Jar Aye — student app ]",
+      "accent": "#7fd8a8",
+      "buttonBg": "#4a7d61",
+      "cardGradient": "linear-gradient(180deg,#192520,#101715)",
+      "cardBorder": "#20322a",
+      "badgeBg": "#1b2923",
+      "mockStripe": "repeating-linear-gradient(135deg,#141d1a,#141d1a 11px,#1b2923 11px,#1b2923 22px)",
+      "detail": {
+        "subtitle": "Everything around it was.",
+        "summary": "Grade 4 students kept stalling on Olympiad questions they could actually solve. We ran unscripted observations on a live competitor platform and found three blockers — language, attention, and navigation. None of them were about math. That finding reshaped every design decision that followed — including killing a visual theme the client already loved.",
+        "sections": [
+          {
+            "type": "metaRow",
+            "items": [
+              {
+                "label": "Role",
+                "value": "Product Designer — Student App"
+              },
+              {
+                "label": "Team",
+                "value": "Split team — I owned the student experience"
+              },
+              {
+                "label": "Client",
+                "value": "EdTech client · Myanmar"
+              },
+              {
+                "label": "Timeline",
+                "value": "Aug 2023 – Jan 2024"
+              }
+            ]
+          },
+          {
+            "type": "stats",
+            "items": [
+              {
+                "value": "5+3",
+                "label": "Users observed",
+                "sub": "5 Grade 4 students and 3 guardians, on a live competitor platform",
+                "tone": "pink"
+              },
+              {
+                "value": "3",
+                "label": "Modules tested",
+                "sub": "Challenge, Training, Class — same problems in all three",
+                "tone": "amber"
+              },
+              {
+                "value": "2 → 1",
+                "label": "Visual directions",
+                "sub": "Built two full themes. Killed the one the client liked.",
+                "tone": "green"
+              }
+            ]
+          },
+          {
+            "type": "prose",
+            "eyebrow": "At a glance · 60 seconds",
+            "title": "Kids weren't failing the math. They were failing the interface.",
+            "paragraphs": [
+              "We watched five students use a competitor platform. Every module told the same story: language got in the way, long videos lost them, and navigation was built for adults. When we translated the questions, they performed well. The barrier was the wrapper, not the work."
+            ]
+          },
+          {
+            "type": "tags",
+            "items": [
+              "Research",
+              "Define",
+              "IA",
+              "Design",
+              "The Pivot",
+              "Reflection"
+            ]
+          },
+          {
+            "type": "microCards",
+            "items": [
+              {
+                "label": "Problem",
+                "text": "Kids 6–13 were disengaging from Olympiad math. Nobody could say why with evidence."
+              },
+              {
+                "label": "Method",
+                "text": "Remote unscripted observation of 5 students + 3 guardians on KooBits. Scored on behaviour, time, and confidence."
+              },
+              {
+                "label": "Decision",
+                "text": "Design for behaviour, not age. Strip language friction, shorten everything, separate learning from play."
+              },
+              {
+                "label": "Surfaces",
+                "text": "Three modules rebuilt around familiar metaphors: a staircase, a book, a noticeboard."
+              },
+              {
+                "label": "Outcome",
+                "text": "A calmer, clearer student app — and a theme pivot that saved the product from its own polish."
+              },
+              {
+                "label": "Lesson",
+                "text": "A design that wins the room can still lose the child. Test the theme, not just the flow."
+              }
+            ]
+          },
+          {
+            "type": "prose",
+            "num": "01",
+            "eyebrow": "The problem",
+            "title": "Smart kids, stuck.",
+            "subtitle": "The brief was simple. The kids weren't.",
+            "paragraphs": [
+              "An EdTech client wanted to bring Olympiad-level math to Myanmar's 6-to-13s — a local KooBits, but playful and built for children who'd never used an interface like it. The hard part was never the curriculum. It was that nobody could explain, with evidence, why children stalled. Was it the math? The reading? The screen itself?"
+            ]
+          },
+          {
+            "type": "quote",
+            "text": "I didn't want to design for a six-year-old in theory. I wanted to watch one actually get stuck."
+          },
+          {
+            "type": "prose",
+            "num": "02",
+            "eyebrow": "Research",
+            "title": "Five students. Three modules. One method.",
+            "subtitle": "Before drawing a single screen, we watched real kids fail in real time.",
+            "paragraphs": [
+              "We ran remote, unscripted observations with five Grade 4 students and three guardians, using KooBits as a live stand-in. Unscripted on purpose — the moment you give a child a script, you stop seeing how they actually behave. We tested three modules: Challenge, Training, and Class, scoring every session through three lenses."
+            ],
+            "notes": [
+              {
+                "title": "Usage behaviour",
+                "text": "Could they use the interface without help? How much cognitive load did it cost?"
+              },
+              {
+                "title": "Time taken",
+                "text": "Challenge 1:27 · Training 1:46 · Class 0:40"
+              },
+              {
+                "title": "Confidence",
+                "text": "Rated \"Not Much\" across all three modules."
+              }
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Child testing the competitor platform ]"
+          },
+          {
+            "type": "quote",
+            "text": "Every module told the same story in a different accent."
+          },
+          {
+            "type": "findings",
+            "title": "Three blockers. None of them were math.",
+            "subhead": "The same problems showed up in Challenge, Training, and Class.",
+            "items": [
+              {
+                "title": "Language barrier",
+                "text": "Students struggled to translate questions. But when we translated for them, they performed well. The math wasn't hard — the English was.",
+                "tone": "pink"
+              },
+              {
+                "title": "Attention",
+                "text": "Long tutorial videos lost them every time. Most never watched the solution explanations. If it wasn't short, it didn't exist.",
+                "tone": "amber"
+              },
+              {
+                "title": "Navigation + dependence",
+                "text": "Students needed guardian help for basic tasks. Navigation was built for adults — kids couldn't find their way through alone.",
+                "tone": "blue"
+              }
+            ]
+          },
+          {
+            "type": "prose",
+            "title": "Teachers hit the same walls.",
+            "paragraphs": [
+              "We also got teacher feedback on the existing platform: onboarding screens weren't clear, reports were confusing, and one teacher couldn't find the quiz after finishing a tutorial."
+            ]
+          },
+          {
+            "type": "quote",
+            "text": "When the questions were translated, they could do the math. The interface was the barrier, not the content."
+          },
+          {
+            "type": "prose",
+            "num": "03",
+            "eyebrow": "Define",
+            "title": "Two apps. I owned one.",
+            "subtitle": "With the problem defined, the team split.",
+            "paragraphs": [
+              "A parallel group took the parent app — progress tracking, subscriptions, oversight. I took the student experience. I mapped how a child actually moves through the platform — log in, pick a class, watch a short video, take a quiz — and built a user flow and information architecture simple enough for a six-year-old to hold in their head.",
+              "The research gave us clear rules: strip language friction, keep everything short, and separate learning content from gamified content so neither dilutes the other."
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: User flow ]"
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Information architecture ]"
+          },
+          {
+            "type": "prose",
+            "num": "04",
+            "eyebrow": "Design",
+            "title": "Three modules, three metaphors.",
+            "subtitle": "Low-fi first — because the cheapest place to be wrong is a wireframe.",
+            "paragraphs": [
+              "Wireframes came before anything polished. They surfaced three rules fast: navigation needed large, tappable targets; learning and play had to be visibly separated; and mobile was its own design problem — not a shrunk desktop.",
+              "Each module then borrowed a metaphor kids already understood."
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Low-fi wireframes — desktop ]"
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Low-fi wireframes — mobile ]"
+          },
+          {
+            "type": "modules",
+            "items": [
+              {
+                "title": "Challenge — a staircase.",
+                "text": "Progress you can see. Completed steps, locked steps, and retries laid out as a climb. Practice feels like going up, not in circles.",
+                "videoUrl": "https://vimeo.com/1098943006",
+                "tone": "green"
+              },
+              {
+                "title": "Class — a book.",
+                "text": "Linear and calm. Short video, then a quiz, then the next. Content broken into pieces small enough to survive a short attention span.",
+                "videoUrl": "https://vimeo.com/1098943821",
+                "tone": "blue"
+              },
+              {
+                "title": "Training — a noticeboard.",
+                "text": "HOTS and Singapore Math, organised by proficiency and high scores. Chalkboard styling that feels warm, not clinical.",
+                "videoUrl": "https://vimeo.com/1098944101",
+                "tone": "amber"
+              }
+            ]
+          },
+          {
+            "type": "prose",
+            "num": "05",
+            "eyebrow": "The pivot",
+            "title": "The theme everyone loved was the wrong one.",
+            "subtitle": "We built a beautiful direction, then killed it.",
+            "paragraphs": [
+              "The first visual concept was a space-exploration theme — cosmic visuals, glowing gradients, futuristic UI. The client liked it immediately. Then we built it out, and the truth surfaced: too complex, and it pulled against the core promise of a calm, pressure-free place to learn.",
+              "So we pivoted to a second direction — cleaner, brighter, friendlier. Less spectacle, more clarity. It was the harder call because the first version was likeable. But \"likeable in a review\" and \"right for the user\" aren't the same thing."
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Space theme — initial version ]"
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Final version ]"
+          },
+          {
+            "type": "quote",
+            "text": "The space theme won the room. It would have lost the child."
+          },
+          {
+            "type": "lessons",
+            "title": "What this project taught me.",
+            "items": [
+              {
+                "title": "Design for behaviour, not age.",
+                "text": "\"Six-to-thirteen\" isn't a spec. Short attention, limited reading, and a need for visual clarity are the real constraints — and they only surface when you watch real children."
+              },
+              {
+                "title": "The barrier is usually the wrapper.",
+                "text": "The kids could do the math. Language, video length, and navigation were doing the failing. Fixing the frame beat simplifying the content."
+              },
+              {
+                "title": "Align stakeholders before high-fi.",
+                "text": "Sharing research, flows, and wireframes before polished screens meant the theme pivot was a course-correction, not a crisis."
+              },
+              {
+                "title": "A loved design can still be wrong.",
+                "text": "The space theme proved client enthusiasm is a signal, not a verdict. The user is the verdict."
+              }
+            ]
+          },
+          {
+            "type": "prose",
+            "eyebrow": "Time machine",
+            "title": "If I could go back.",
+            "paragraphs": [
+              "I'd test the visual theme the same way we tested the flow — cheaply, with real kids, before building it out fully. We caught the navigation issues through observation but let the space theme run all the way to a finished design before discovering it didn't fit. A rough themed prototype in front of five children would have caught that in an afternoon, not a sprint."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "slug": "accel",
+      "cmdKey": "⌘2",
+      "code": "AC",
+      "category": "SECURITY OPS",
+      "kicker": "→ Security Ops · 2026",
+      "paletteLabel": "The cameras were watching. Nobody was.",
+      "title": "The cameras were watching.",
+      "metrics": "Security Ops · Blue Silo · 2025–2026",
+      "blurb": "Dozens of CCTV feeds, a handful of operators. Accel TRMS puts AI on the feeds, flags what matters, and gives operators a structured way to act — before something goes wrong.",
+      "mockLabel": "[ Accel TRMS — operations dashboard ]",
+      "accent": "#8ec5ff",
+      "buttonBg": "#527294",
+      "cardGradient": "linear-gradient(180deg,#1b222c,#11151b)",
+      "cardBorder": "#232e3b",
+      "badgeBg": "#1d2631",
+      "mockStripe": "repeating-linear-gradient(135deg,#151b23,#151b23 11px,#1d2631 11px,#1d2631 22px)",
+      "detail": {
+        "subtitle": "Nobody was.",
+        "summary": "High-risk sites run dozens of CCTV feeds around the clock, and operators can't watch them all. Incidents slip through and footage only gets reviewed after something has gone wrong. Accel TRMS flips that — AI watches the feeds, flags what matters, and gives operators a structured way to act.",
+        "sections": [
+          {
+            "type": "metaRow",
+            "items": [
+              {
+                "label": "Role",
+                "value": "Product Designer — Full product"
+              },
+              {
+                "label": "Team",
+                "value": "Solo designer, cross-functional with CV & backend"
+              },
+              {
+                "label": "Client",
+                "value": "Blue Silo Studio · Internal product"
+              },
+              {
+                "label": "Timeline",
+                "value": "2025 – 2026"
+              }
+            ]
+          },
+          {
+            "type": "stats",
+            "items": [
+              {
+                "value": "3",
+                "label": "Sites in production",
+                "sub": "Sembawang Naval, FedEx Changi, Astra HQ Jakarta",
+                "tone": "blue"
+              },
+              {
+                "value": "5+",
+                "label": "Detection models",
+                "sub": "Asset movement, SOP compliance, loitering, restricted zone, unattended object",
+                "tone": "amber"
+              },
+              {
+                "value": "6",
+                "label": "Triage actions",
+                "sub": "Escalate, link, dismiss — with six false-positive reasons feeding retraining",
+                "tone": "green"
+              }
+            ]
+          },
+          {
+            "type": "prose",
+            "eyebrow": "At a glance · 60 seconds",
+            "title": "Security teams aren't failing to respond. They're failing to see.",
+            "paragraphs": [
+              "The footage exists. The events are recorded. But with 40+ cameras per site and a small ops team, no human can maintain meaningful awareness across every feed. By the time an incident is caught on tape, the window to act has closed. Accel shifts the model: AI reviews footage in real time, flags violations with plain-language reasoning, and puts triage decisions in front of the right operator — before the moment passes."
+            ]
+          },
+          {
+            "type": "tags",
+            "items": [
+              "Problem",
+              "Detection Feed",
+              "Event Drawer",
+              "Triage Workflow",
+              "Incident Cases",
+              "Model Feedback",
+              "Reflection"
+            ]
+          },
+          {
+            "type": "microCards",
+            "items": [
+              {
+                "label": "Problem",
+                "text": "Operators monitored feeds reactively — reviewing footage after incidents, not preventing them. Volume made proactive monitoring impossible."
+              },
+              {
+                "label": "Method",
+                "text": "Mapped the full operator workflow from detection to resolution. Designed around the triage decision, not the camera feed."
+              },
+              {
+                "label": "Decision",
+                "text": "Surface AI reasoning in plain language. Give operators structured actions, not just notifications. Make every dismissal teach the model."
+              },
+              {
+                "label": "Surfaces",
+                "text": "Detection Feed, Event Drawer with VLM reasoning, Escalate modal, Incident Cases, Dismissed Events, Model Management."
+              },
+              {
+                "label": "Outcome",
+                "text": "A full security operations platform — live detection to case investigation to model improvement — as one coherent workflow."
+              },
+              {
+                "label": "Lesson",
+                "text": "The hardest problem wasn't the alerts. It was building trust in AI for operators burned by false positives before."
+              }
+            ]
+          },
+          {
+            "type": "prose",
+            "num": "01",
+            "eyebrow": "The problem",
+            "title": "Too many cameras. Too few eyes.",
+            "subtitle": "The brief was clear. The scale wasn't.",
+            "paragraphs": [
+              "A modern secured site — a naval base, a logistics terminal, an HQ — runs 20 to 60 CCTV cameras simultaneously. The team watching them is rarely more than a handful of people. The math doesn't work, so operators watch selectively, spot-check, and respond after the fact.",
+              "The consequences are predictable. An asset moves without a sign-out log. A badge gets used in a restricted zone. A guard skips two steps of the pat-down SOP. The footage is there. No one was watching when it happened.",
+              "The real gap wasn't detection — the cameras already captured the right footage. The gap was between footage and action. Between \"something happened\" and \"here's what to do about it.\""
+            ]
+          },
+          {
+            "type": "quote",
+            "text": "Existing VMS tools record everything. They flag almost nothing. And when they do, there's no structure for what happens next."
+          },
+          {
+            "type": "prose",
+            "num": "02",
+            "eyebrow": "The user",
+            "title": "One operator. Forty cameras. Eight hours.",
+            "subtitle": "Designing for a person who cannot afford to be wrong.",
+            "paragraphs": [
+              "The primary user is a security operator — experienced, methodical, under pressure. Not unfamiliar with technology, but deeply skeptical of any system that cries wolf. Every false positive costs time and erodes trust. They need to triage quickly, act with confidence, and keep a record of every decision."
+            ],
+            "notes": [
+              {
+                "title": "They'll ignore a real one",
+                "text": "They will dismiss a correct alert if they've seen too many wrong ones."
+              },
+              {
+                "title": "They must justify it",
+                "text": "\"The AI said so\" is not enough for a supervisor."
+              },
+              {
+                "title": "They juggle many",
+                "text": "Often managing multiple events at once — cognitive load is a real constraint."
+              }
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Detection Feed — full page view ]"
+          },
+          {
+            "type": "quote",
+            "text": "The operator's core need isn't more information. It's faster, clearer decisions — with evidence they can stand behind."
+          },
+          {
+            "type": "prose",
+            "num": "03",
+            "eyebrow": "The detection feed",
+            "title": "Every flag. One place. In order.",
+            "subtitle": "The feed is where triage begins.",
+            "paragraphs": [
+              "The Detection Feed is the daily working surface. Every AI-flagged event lands here — sorted by time, grouped by day, coloured by severity. A left-border stripe gives each card an immediate priority signal without reading a label. Status — pending, escalated, dismissed — is visible at a glance.",
+              "Each card shows exactly what's needed to start a decision: what happened, where, which camera, which model flagged it, and a one-line summary. Nothing more until they choose to go deeper."
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Detection Feed — event cards with severity borders ]"
+          },
+          {
+            "type": "findings",
+            "title": "Three decisions behind the feed.",
+            "items": [
+              {
+                "title": "Severity is a rule decision, not a score",
+                "text": "Critical/Medium/Low is set when the operator configures the rule, not from AI confidence. A 94% loitering detection can be Low; a 71% weapons movement is Critical. Domain knowledge sets the stakes.",
+                "tone": "blue"
+              },
+              {
+                "title": "Confidence is shown separately",
+                "text": "Entity-level scores (Person 0.92, Asset 0.96) live in the drawer, not as a headline on the card — so operators don't dismiss low-score events that are actually real.",
+                "tone": "amber"
+              },
+              {
+                "title": "Bulk triage is first-class",
+                "text": "Selecting events unlocks a batch bar — Escalate, Link, Dismiss — with a same-site constraint so unrelated incidents can't be merged.",
+                "tone": "green"
+              }
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Selection bar — bulk action state ]"
+          },
+          {
+            "type": "prose",
+            "num": "04",
+            "eyebrow": "The event drawer",
+            "title": "Not just a flag. An explanation.",
+            "subtitle": "The AI shows its work.",
+            "paragraphs": [
+              "When an operator opens an event they get the full reasoning — what the model saw, what it found unusual, which entities were involved, and why it was confident enough to flag it. This is the most important design decision in the product."
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Event Drawer — open state with VLM reasoning ]"
+          },
+          {
+            "type": "cards",
+            "title": "The drawer has a deliberate hierarchy.",
+            "items": [
+              {
+                "eyebrow": "1 · What happened",
+                "title": "A plain-language summary",
+                "text": "Not \"Person detected in restricted zone.\" Instead: \"PER-U-7790 entered Server-Room-3 at 11:47 — no clearance on file. Dwell: 4m 12s.\""
+              },
+              {
+                "eyebrow": "2 · Why the AI thinks so",
+                "title": "VLM reasoning, not a score",
+                "text": "A scene-level narrative from an 8-second clip — actual reasoning about the badge swipe, the failed credential lookup, the dwell time."
+              },
+              {
+                "eyebrow": "3 · Who was involved",
+                "title": "Entity cards from CV",
+                "text": "Person re-ID, asset tracking, vehicle data. If the system has seen this person or asset before, that history surfaces here."
+              },
+              {
+                "eyebrow": "4 · Model performance",
+                "title": "Metrics, on demand",
+                "text": "Precision, recall, F1, mAP@0.5, data split — collapsed by default, available for operators who want to calibrate trust."
+              }
+            ]
+          },
+          {
+            "type": "quote",
+            "text": "An operator who understands why the AI flagged an event can make a better decision — and defend it. An operator staring at a number cannot."
+          },
+          {
+            "type": "prose",
+            "num": "05",
+            "eyebrow": "Triage decisions",
+            "title": "Three buttons. One outcome each.",
+            "subtitle": "No ambiguity about what each action means.",
+            "paragraphs": [
+              "Every event resolves one of three ways, and the design makes all three equally easy — because a wrong choice made because it was faster is worse than a slow right one."
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Escalate modal — form state ]"
+          },
+          {
+            "type": "findings",
+            "items": [
+              {
+                "title": "Escalate",
+                "text": "Creates a new incident case — title, severity, assignee, and the SLA clock starts. The event moves from feed to case; the case becomes the investigation record.",
+                "tone": "blue"
+              },
+              {
+                "title": "Link case",
+                "text": "Connects the event to an existing open case from the same site. The case list auto-filters to the event's site.",
+                "tone": "violet"
+              },
+              {
+                "title": "Dismiss",
+                "text": "Marks a false positive — but requires a reason (wrong class, wrong person, known exemption, staged event, threshold, other). These aren't audit records. They're training signals.",
+                "tone": "pink"
+              }
+            ]
+          },
+          {
+            "type": "quote",
+            "text": "A dismissed event with a reason is a feedback loop. A dismissed event without one is just noise."
+          },
+          {
+            "type": "prose",
+            "num": "06",
+            "eyebrow": "Incident cases",
+            "title": "The event is a flag. The case is the investigation.",
+            "subtitle": "Two separate concerns. Two separate surfaces.",
+            "paragraphs": [
+              "Events are signals; cases are the structured record of what happened after. The Incident Cases module holds everything from the moment an operator escalates — assignee, linked events, status, the full activity timeline.",
+              "Cases flow Open → In Review → Resolved → Closed, each transition explicit and logged. The SLA clock runs from escalation against acknowledge, initial-action, and resolution targets. Escalated events are badged in the feed and link straight to their case — nothing falls through the gap."
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Incident Cases — case list and case drawer ]"
+          },
+          {
+            "type": "prose",
+            "num": "07",
+            "eyebrow": "Dismissed events",
+            "title": "False positives aren't failures. They're feedback.",
+            "subtitle": "The most underdesigned surface in most security products.",
+            "paragraphs": [
+              "Most platforms treat dismissed events as a dead end. Accel treats them as one of the most valuable inputs in the system. The Dismissed Events page is a reviewable record for operators — searchable, filterable by site, area, model, reason — and a structured signal for the model team."
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Dismissed Events — page with FP reason chips ]"
+          },
+          {
+            "type": "cards",
+            "title": "Every reason points somewhere.",
+            "items": [
+              {
+                "eyebrow": "Wrong class",
+                "title": "Retraining signal",
+                "text": "Model confused object types — e.g. medical equipment read as weapons class."
+              },
+              {
+                "eyebrow": "Known exemption",
+                "title": "Suppression candidate",
+                "text": "Authorized activity the system didn't know about — an approved researcher, a scheduled drill."
+              },
+              {
+                "eyebrow": "Threshold",
+                "title": "Rule reconfiguration",
+                "text": "Detection zone is too sensitive for normal activity in certain periods."
+              },
+              {
+                "eyebrow": "Staged event",
+                "title": "Exclude drill windows",
+                "text": "A planned drill triggered the model; rules should exclude known drill times."
+              }
+            ]
+          },
+          {
+            "type": "prose",
+            "num": "08",
+            "eyebrow": "Model management",
+            "title": "The operator configures what the AI looks for.",
+            "subtitle": "The detection rules are not black boxes.",
+            "paragraphs": [
+              "Behind every event is a rule: what to detect, in which zone, during which hours, above which threshold — and what severity to assign. Operators configure these; the AI executes them. Operators who know they set the rules are more likely to trust the flags those rules produce.",
+              "Model Management sits alongside the Rules Library — which models are deployed where, their metrics, training history, status. When a detection is unclear, an operator can trace it: which rule fired, which model ran it, when it was last evaluated."
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Rules Library — rule card with conditions ]"
+          },
+          {
+            "type": "quote",
+            "text": "The AI is a tool. The operator is the authority. The design should always make that relationship clear."
+          },
+          {
+            "type": "lessons",
+            "title": "What this product taught me.",
+            "items": [
+              {
+                "title": "Trust is the real design problem",
+                "text": "Operators distrust AI because they've been burned by bad alerts. VLM reasoning, eval metrics, and FP reason categories all exist to build warranted trust, not blind trust."
+              },
+              {
+                "title": "Actions need visible consequences",
+                "text": "Escalate creates a case, Dismiss feeds training, Link connects threads. Operators who can see what their actions produce are more deliberate."
+              },
+              {
+                "title": "Separate detection from response",
+                "text": "The Feed and Cases are two surfaces for two jobs. Mixing them creates overhead for operators managing both at once."
+              },
+              {
+                "title": "False positives are product data",
+                "text": "Most products treat them as failures to hide. Accel treats them as structured feedback — the model loop is a feature, not a background concern."
+              }
+            ]
+          },
+          {
+            "type": "prose",
+            "eyebrow": "Time machine",
+            "title": "If I could go back.",
+            "paragraphs": [
+              "I'd design the severity system with operator input earlier. Setting severity at the rule level — not deriving it from confidence — was the right call, but it came late. Early prototypes calculated severity from confidence thresholds, and operators immediately said the wrong thing: \"So if I trust the AI more, everything becomes Critical?\" That feedback reshaped the model; it should have shaped the earliest sketches."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "slug": "terra",
+      "cmdKey": "⌘3",
+      "code": "TR",
+      "category": "AI PLATFORM",
+      "kicker": "→ Ai Platform · 2024",
+      "paletteLabel": "Two components. One designer.",
+      "title": "Two components. One designer.",
+      "metrics": "Synthetic Data · Sigmawave AI · 2024–Present",
+      "blurb": "Terra lets AI teams build 3D scenes and generate photorealistic, labeled datasets. I designed both halves — Platform and Builder — from zero, then fixed a layout problem I'd built into v1.",
+      "mockLabel": "[ Terra Builder — 3D editor ]",
+      "accent": "#a78bfa",
+      "buttonBg": "#615191",
+      "cardGradient": "linear-gradient(180deg,#1e1a2c,#13111b)",
+      "cardBorder": "#28223a",
+      "badgeBg": "#211d30",
+      "mockStripe": "repeating-linear-gradient(135deg,#181522,#181522 11px,#211d30 11px,#211d30 22px)",
+      "detail": {
+        "subtitle": "Building a synthetic data platform from zero — then fixing how it felt.",
+        "summary": "Terra lets AI teams build 3D scenes and generate photorealistic, labeled datasets for machine learning. I designed both halves — the Platform (projects, billing, org management) and the Builder (3D editor, asset library, timeline, generation) — from scratch. Then Phase 2 exposed a layout problem I'd built into the first version.",
+        "sections": [
+          {
+            "type": "metaRow",
+            "items": [
+              {
+                "label": "Role",
+                "value": "Product Owner (Platform) + UI/UX Designer"
+              },
+              {
+                "label": "Team",
+                "value": "Engineering, Unreal Artists, PM"
+              },
+              {
+                "label": "Company",
+                "value": "Sigmawave AI"
+              },
+              {
+                "label": "Timeline",
+                "value": "Feb 2024 – Present"
+              }
+            ]
+          },
+          {
+            "type": "stats",
+            "items": [
+              {
+                "value": "2",
+                "label": "Products in one",
+                "sub": "Terra Platform (dashboard + admin) and Terra Builder (3D editor + generation)",
+                "tone": "violet"
+              },
+              {
+                "value": "35+",
+                "label": "Feature modules",
+                "sub": "Onboarding, subscriptions, org management, asset library, scene editor, timeline, generation",
+                "tone": "blue"
+              },
+              {
+                "value": "1",
+                "label": "Designer",
+                "sub": "I owned the design end-to-end across both components",
+                "tone": "green"
+              }
+            ]
+          },
+          {
+            "type": "prose",
+            "eyebrow": "At a glance · 60 seconds",
+            "title": "Built it from zero. Then found what was wrong with it.",
+            "paragraphs": [
+              "Terra didn't exist before this project. Phase 1 shipped a working platform and 3D builder — onboarding, subscriptions, org management, the full editor, asset library, timeline, generation. Phase 2 exposed the layout problem: the Builder's panels were always visible, the viewport was cramped, and it didn't feel like the modern editing tools our users knew. The fix wasn't starting over — it was knowing which part to change and which to leave."
+            ]
+          },
+          {
+            "type": "tags",
+            "items": [
+              "Platform",
+              "Builder",
+              "Layout Redesign",
+              "AI Features",
+              "Credit Economy",
+              "Design System"
+            ]
+          },
+          {
+            "type": "microCards",
+            "items": [
+              {
+                "label": "Problem",
+                "text": "Terra didn't exist. The company needed a full synthetic data platform — dashboard and 3D editor — designed and shipped from scratch."
+              },
+              {
+                "label": "Method",
+                "text": "Designed both components end-to-end: user flows, wireframes, high-fi, prototypes, design system, and PRD."
+              },
+              {
+                "label": "Decision",
+                "text": "In Phase 2 the client wanted to revamp everything. After discussion, we changed only the Builder layout — the dashboard didn't need it."
+              },
+              {
+                "label": "Surfaces",
+                "text": "Platform: onboarding, projects, billing, org admin. Builder: asset library, scene editor, properties, timeline, generation."
+              },
+              {
+                "label": "Outcome",
+                "text": "A shipped platform with a working credit economy, plus a Builder redesign that gave users the full viewport back."
+              },
+              {
+                "label": "Lesson",
+                "text": "Knowing what not to redesign is as important as knowing what to fix."
+              }
+            ]
+          },
+          {
+            "type": "prose",
+            "num": "01",
+            "eyebrow": "The problem",
+            "title": "Nothing existed yet.",
+            "subtitle": "No screens, no flows, no design system. Just a vision and a PRD to write.",
+            "paragraphs": [
+              "Sigmawave needed a platform for AI engineers, CV researchers, and simulation designers to build 3D scenes and generate labeled synthetic datasets — images and video, auto-annotated in COCO, YOLO, or Pascal VOC. It had two halves: a Platform (manage projects, teams, billing, quotas) and a Builder (the 3D workspace). Both designed from zero. I was the only designer."
+            ]
+          },
+          {
+            "type": "quote",
+            "text": "Two products. Thirty-five feature modules. One designer. The scope was the first problem to solve."
+          },
+          {
+            "type": "prose",
+            "num": "02",
+            "eyebrow": "Terra Platform",
+            "title": "The control hub.",
+            "subtitle": "Projects, teams, subscriptions, credits — everything outside the 3D editor.",
+            "paragraphs": [
+              "The Platform is where users land after logging in. I designed the full onboarding — registration, org creation, a short use-case questionnaire, then plan selection (Free, Starter, Pro). Free users go straight to the dashboard; paid users get guided through inviting members, assigning seats, and checkout.",
+              "Inside: an All Projects page organised by folders with FSD/HSD tabs, Shared Projects for cross-org work, Trash with 30-day restore, and Settings for profile, org management, and billing.",
+              "The credit economy was its own design problem — two balance types (subscription quota that resets, and purchased top-up credits). Making users understand what they had, what they'd spend, and what happens when they run out took more iteration than most screens."
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: All Projects screen ]"
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Subscription modal — Free / Starter / Pro ]"
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Terra Balance — subscription + credits ]"
+          },
+          {
+            "type": "quote",
+            "text": "The credit economy was harder to design than the 3D editor. Two balance types, three tiers, and a user who just wants to know: can I generate or not?"
+          },
+          {
+            "type": "prose",
+            "num": "03",
+            "eyebrow": "Terra Builder (Phase 1)",
+            "title": "The 3D workspace.",
+            "subtitle": "Where users actually build scenes and generate datasets.",
+            "paragraphs": [
+              "The Builder is a full 3D editor. I designed every panel: the Main Toolbar (asset library, transform tools), the Scene Collection Panel (hierarchy of everything placed), the Properties Panel (context-sensitive object, environment, lighting, camera, spawner, material settings), and the Timeline (events, keyframes, animation).",
+              "The generation flow ties it together: build a scene, hit Generate, pick image or video, choose subscription balance or credits, and the system processes in the background. A Work Orders panel tracks every job. I also designed the four-tier role system (Owner, Admin, Full Seat, Viewer) and cross-org project sharing."
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Phase 1 Builder — full layout with panels visible ]"
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Properties Panel — range of settings ]"
+          },
+          {
+            "type": "prose",
+            "num": "04",
+            "eyebrow": "The layout problem",
+            "title": "Phase 1 worked. It just didn't breathe.",
+            "subtitle": "The viewport was squeezed between panels that were always on.",
+            "paragraphs": [
+              "Phase 1 shipped and functioned, but using it felt cramped. The Scene Collection and Properties panels were pinned to the right permanently. The icon-only left sidebar gave no labels — you had to memorise each icon. The 3D viewport, where users spend most of their time, was the leftover space after everything else took its share.",
+              "The client wanted to revamp everything — dashboard and builder — to match modern editing tools. After discussion, the verdict was: only the Builder layout needed to change. The dashboard worked fine; redesigning it would cost time without solving a real problem."
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Phase 1 Builder — panels always visible, viewport squeezed ]"
+          },
+          {
+            "type": "quote",
+            "text": "The client wanted to change everything. The right call was changing only the part that was broken."
+          },
+          {
+            "type": "prose",
+            "num": "05",
+            "eyebrow": "The redesign (Phase 2)",
+            "title": "Full viewport. Panels on demand.",
+            "subtitle": "Same product, new frame.",
+            "paragraphs": [
+              "The Phase 2 Builder gives the scene the entire screen by default. The left sidebar now has labeled icons — Assets, Edit, Chatbot, Restyle, Animate, Generate — so nothing needs memorising. The right-side panels appear when you need them and hide when you don't. The functionality stayed the same underneath; what changed is how users access it."
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Phase 2 Builder — clean viewport, labeled sidebar ]"
+          },
+          {
+            "type": "findings",
+            "title": "Three new AI features, designed end-to-end.",
+            "items": [
+              {
+                "title": "Material Appearance Transfer (MAT)",
+                "text": "Upload a real-world reference image; Terra extracts lighting, colour grading, noise and lens artifacts and applies them to synthetic output. Users control strength and preview before export.",
+                "tone": "violet"
+              },
+              {
+                "title": "Auto Segment Anything (ASA)",
+                "text": "Automatically segments any uploaded image, generates object masks, and lets them interact with 3D assets for proper occlusion — no manual setup.",
+                "tone": "blue"
+              },
+              {
+                "title": "Sigma Agentic Builder (SAB)",
+                "text": "AI-assisted scene building — describe what you want instead of placing every object. Design groundwork laid; still in development.",
+                "tone": "green"
+              }
+            ]
+          },
+          {
+            "type": "lessons",
+            "title": "What this project taught me.",
+            "items": [
+              {
+                "title": "Know what not to redesign",
+                "text": "The client wanted to change everything. The dashboard didn't need it; the Builder did. Saying \"this part is fine\" protected a working product from churn."
+              },
+              {
+                "title": "The viewport is the product",
+                "text": "In a 3D editor the scene view is 90% of attention. Everything else serves it. Giving it the full screen by default was the biggest single improvement."
+              },
+              {
+                "title": "Credit systems are UX problems",
+                "text": "Two balance types, three tiers, rollover, top-ups. The logic was simple; making it feel simple to \"can I generate right now?\" was the real challenge."
+              },
+              {
+                "title": "Scope is the first thing to design",
+                "text": "35 modules, one designer. Without a clear structure early — what's Platform, what's Builder, what the PRD covers — it would have collapsed under its size."
+              }
+            ]
+          },
+          {
+            "type": "prose",
+            "eyebrow": "Time machine",
+            "title": "If I could go back.",
+            "paragraphs": [
+              "I'd challenge the Phase 1 layout earlier. The fixed-panel approach felt safe, but the cramped viewport was visible from the start through the lens of modern editing tools. And I'd test the Builder with real users before shipping Phase 1 — one session watching an engineer navigate a complex scene would have surfaced the viewport problem before it hardened into a layout we had to redo."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "slug": "kanote",
+      "cmdKey": "⌘4",
+      "code": "KN",
+      "category": "ARTTECH",
+      "kicker": "→ Arttech · 2024",
+      "paletteLabel": "Selling the art was never the hard part.",
+      "title": "Selling the art was never the hard part.",
+      "metrics": "ArtTech Marketplace · 2023–2024",
+      "blurb": "Myanmar had artists with nowhere to sell and buyers with no reason to feel safe. 50+ interviews reframed the brief: Kanote wasn't an art shop — it was the first trust layer for a market that never had one.",
+      "mockLabel": "[ Kanote — art marketplace ]",
+      "accent": "#f4a6b8",
+      "buttonBg": "#8e606b",
+      "cardGradient": "linear-gradient(180deg,#291e22,#191316)",
+      "cardBorder": "#37282d",
+      "badgeBg": "#2e2126",
+      "mockStripe": "repeating-linear-gradient(135deg,#20181b,#20181b 11px,#2e2126 11px,#2e2126 22px)",
+      "detail": {
+        "subtitle": "Earning the trust was.",
+        "summary": "Myanmar had artists with nowhere to sell and buyers with no reason to feel safe. Fifty-plus interviews and gallery visits reframed the brief: Kanote wasn't an art shop — it was the first trust layer for a market that had never had one.",
+        "sections": [
+          {
+            "type": "metaRow",
+            "items": [
+              {
+                "label": "Role",
+                "value": "Product Designer"
+              },
+              {
+                "label": "Team",
+                "value": "Multidisciplinary product team"
+              },
+              {
+                "label": "Industry",
+                "value": "ArtTech & Creative Marketplace"
+              },
+              {
+                "label": "Timeline",
+                "value": "Jan 2023 – Feb 2024"
+              }
+            ]
+          },
+          {
+            "type": "stats",
+            "items": [
+              {
+                "value": "50+",
+                "label": "Voices in research",
+                "sub": "Artists and art lovers interviewed 1:1, plus gallery owners and curators",
+                "tone": "pink"
+              },
+              {
+                "value": "15+",
+                "label": "Usability testers",
+                "sub": "Whose feedback forced us to cut features, not add them",
+                "tone": "amber"
+              },
+              {
+                "value": "3",
+                "label": "Core solutions",
+                "sub": "Protected payments, a community feed, and a story behind every piece",
+                "tone": "green"
+              }
+            ]
+          },
+          {
+            "type": "prose",
+            "eyebrow": "At a glance · 60 seconds",
+            "title": "We set out to build a store. The research said build trust.",
+            "paragraphs": [
+              "In a market unfamiliar with digital art platforms, the blocker was never listing artwork — it was confidence. Artists feared being unseen and underpaid; buyers feared paying for something they couldn't hold. Every core decision became an answer to one question: why should I trust this?"
+            ]
+          },
+          {
+            "type": "tags",
+            "items": [
+              "Research",
+              "Personas",
+              "User Flows",
+              "Design",
+              "Prioritisation",
+              "Reflection"
+            ]
+          },
+          {
+            "type": "microCards",
+            "items": [
+              {
+                "label": "Problem",
+                "text": "Myanmar artists had talent but no trusted platform; buyers had no safe, transparent way to purchase."
+              },
+              {
+                "label": "Method",
+                "text": "50+ one-on-one interviews, gallery visits with owners and curators, then a survey to verify the patterns at scale."
+              },
+              {
+                "label": "Decision",
+                "text": "Design for trust and visibility first. Commerce follows confidence, not the other way around."
+              },
+              {
+                "label": "Surfaces",
+                "text": "Protected payment paths, a community feed for discovery, and an artist-story panel on every artwork."
+              },
+              {
+                "label": "Outcome",
+                "text": "A simpler, calmer platform — after usability testing made us cut the features we were proudest of."
+              },
+              {
+                "label": "Lesson",
+                "text": "When users ask for more, the right answer is often less. Prioritisation is design."
+              }
+            ]
+          },
+          {
+            "type": "prose",
+            "num": "01",
+            "eyebrow": "The problem",
+            "title": "A market with no front door.",
+            "subtitle": "Plenty of art. Plenty of buyers. No trusted place for them to meet.",
+            "paragraphs": [
+              "Myanmar's emerging artists had work to sell and no real platform for it — and buyers had no transparent, safe way to pay for something they couldn't physically inspect. The market had barely encountered a digital art platform, so we couldn't lean on habits that didn't exist. Building a storefront would have been easy. Building one people trusted enough to use was the real problem."
+            ]
+          },
+          {
+            "type": "quote",
+            "text": "The hard part wasn't listing artwork. It was giving two strangers a reason to believe the transaction."
+          },
+          {
+            "type": "prose",
+            "num": "02",
+            "eyebrow": "Research",
+            "title": "Fifty conversations and a gallery tour.",
+            "subtitle": "We went to where the art already lived — online and off.",
+            "paragraphs": [
+              "We spoke with more than fifty artists and art lovers one-on-one, through social media, community networks, and in-person meetups. Then we left the screen — the team visited local galleries and sat with owners and curators who showed us how emerging artists really navigate the scene. Interviews gave depth; a structured survey across Myanmar verified the patterns at scale."
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Research team visiting galleries & exhibitions ]"
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Survey responses ]"
+          },
+          {
+            "type": "quote",
+            "text": "Qualitative depth first, then quantitative proof. We refused to design on a vivid anecdote."
+          },
+          {
+            "type": "prose",
+            "num": "03",
+            "eyebrow": "Define",
+            "title": "Two users. One shared need.",
+            "subtitle": "Different goals, same blocker — trust.",
+            "paragraphs": [
+              "The research resolved into two personas. The emerging artist needed visibility and fair, protected opportunities to sell. The passionate art lover needed a safe, transparent way to buy. Their goals diverged, but both pointed at the same missing ingredient: trust. From there we wrote sharp problem statements and translated them into user flows for browsing, uploading, buying on installments, and community."
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: User personas ]"
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: User flow — browse, upload, purchase, community ]"
+          },
+          {
+            "type": "prose",
+            "num": "04",
+            "eyebrow": "Design",
+            "title": "Three answers to one question.",
+            "subtitle": "Every core feature was a reason to trust the platform.",
+            "paragraphs": [
+              "We wireframed the four jobs that mattered — browse, buy, upload, connect — and iterated fast, killing anything unclear before it hardened. Then the visual language: bright and inviting, clean layouts, large touch targets, vibrant accents matching the creativity of the people using it. Three solutions did the heavy lifting, each answering the same question — why should I trust this?"
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Low-fidelity wireframes ]"
+          },
+          {
+            "type": "modules",
+            "items": [
+              {
+                "title": "Two ways to pay — both protected.",
+                "text": "Buyers choose Pay in Full or an installment plan, each governed by terms that protect artist and buyer alike. Flexibility for buyers; security for the artists selling.",
+                "videoUrl": "https://vimeo.com/1100799020",
+                "tone": "green"
+              },
+              {
+                "title": "A community, not a catalogue.",
+                "text": "A feed where artists post work, share updates, and talk directly with collectors — turning a marketplace into a place where rising talent actually gets discovered.",
+                "videoUrl": "https://vimeo.com/1100803834",
+                "tone": "blue"
+              },
+              {
+                "title": "Every artwork tells its story.",
+                "text": "An About panel on each piece pairs the artist's story — background, inspiration, process — with hard specs like medium, materials, dimensions, and edition. Context plus facts, so buyers connect and commit.",
+                "tone": "pink"
+              }
+            ]
+          },
+          {
+            "type": "prose",
+            "num": "05",
+            "eyebrow": "The cut",
+            "title": "We built too much. Then we cut it.",
+            "subtitle": "Our proudest version was also our most overwhelming.",
+            "paragraphs": [
+              "The first full build answered every request — too many features, too many paths, navigation that made first-time users freeze. We put the prototype in front of 15+ participants and watched the overwhelm in real time. Artists loved that Kanote handled delivery; buyers wanted clearer order tracking and richer profiles. So we did the harder thing than adding — we subtracted. Prioritisation simplified the layout, refined onboarding, and stripped friction from the core flows. The finished screens are calmer, and that calm is the result."
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Usability testing — 15+ participants ]"
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Before / after — the simplified version ]"
+          },
+          {
+            "type": "quote",
+            "text": "The first build answered every request. That was exactly what was wrong with it."
+          },
+          {
+            "type": "lessons",
+            "title": "What this project taught me.",
+            "items": [
+              {
+                "title": "Commerce plus community is the product",
+                "text": "Myanmar's artists didn't need a shop. They needed somewhere to be seen, heard, and supported — and the community turned out to be as load-bearing as the checkout."
+              },
+              {
+                "title": "Design for the local context",
+                "text": "A market new to digital art needed trust, simplicity, and cultural fluency built in. Patterns borrowed wholesale from mature markets would have quietly missed."
+              },
+              {
+                "title": "Reading qualitative data is a skill",
+                "text": "Fifty interviews are noise until you structure them. Affinity mapping turned scattered feedback into the empathy that drove the design."
+              },
+              {
+                "title": "Prioritisation is design",
+                "text": "The strongest version of Kanote came from what we removed, not what we added. When everyone wants more, choosing less is the job."
+              }
+            ]
+          },
+          {
+            "type": "prose",
+            "eyebrow": "Time machine",
+            "title": "If I could go back.",
+            "paragraphs": [
+              "I'd test for overwhelm earlier. We caught the feature bloat in usability testing — the right place, but late. A stricter prioritisation pass before the first full build would have spared a version we had to dismantle. And I'd close the loop with numbers: task success on the simplified flows, drop-off before and after the onboarding refinement, and completed purchases by payment type."
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "moreProjects": [
+    {
+      "num": "07",
+      "category": "Internal tools",
+      "categoryColor": "#7fd8a8",
+      "title": "The ops table that runs itself",
+      "blurb": "A spreadsheet-grade table for non-technical teams — sorting, bulk edits, and audit trails baked in."
+    },
+    {
+      "num": "08",
+      "category": "Design systems",
+      "categoryColor": "#b79be8",
+      "title": "Unified design tokens",
+      "blurb": "One token pipeline feeding Figma, web, and native — themes flip without a single hand-edit."
+    }
+  ],
+  "writing": [
+    {
+      "slug": "trust-in-autonomous-interfaces",
+      "date": "May 2026",
+      "title": "Designing trust into autonomous interfaces",
+      "excerpt": "When software acts on its own, the UI's job is to make the seams legible."
+    },
+    {
+      "slug": "the-design-system-is-the-product",
+      "date": "Mar 2026",
+      "title": "The design system is the product",
+      "excerpt": "Why tokens, not screens, are the real deliverable."
+    },
+    {
+      "slug": "shipping-is-a-design-decision",
+      "date": "Jan 2026",
+      "title": "Shipping is a design decision",
+      "excerpt": "A case for designers who hold the keyboard, not just the canvas."
+    }
+  ],
+  "experience": [
+    {
+      "period": "2024.02 — Now",
+      "company": "SIgmawave AI",
+      "location": "Singapore · Remote (Full-Time)",
+      "role": "Product Owner/Designer",
+      "tags": [
+        "Agent platform",
+        "Design system"
+      ],
+      "bullets": [
+        "Spent 1.5 year designing the end-to-end flow of IMT TRMS, a training resource management system for MINDEF Singapore",
+        "Shipped across defence, education, computer vision tooling, and physical security — four domains in one company",
+        "Promoted to Product Owner/Designer — redesigned both Terra (World Builder) and Accel (Model Validator) from scratch",
+        "Built and delivered the design system used across all products",
+        "Picked up computer vision along the way and started contributing to CV-related tasks across products"
+      ]
+    },
+    {
+      "period": "2024.01 — 2026.01",
+      "company": "Singtechnologies",
+      "location": "Singapore · Remote (Contract)",
+      "role": "Product Designer",
+      "tags": [
+        "Commerce",
+        "Migration"
+      ],
+      "bullets": [
+        "Designed the entire Pistil healthcare platform — user, admin, and doctor dashboards plus the mobile app",
+        "Started every feature in Low-Fi wireframes before touching Hi-Fi",
+        "Let prototypes do the talking in dev handoffs — less confusion, fewer surprises"
+      ]
+    },
+    {
+      "period": "2023.03 — 2025.04",
+      "company": "404 Collective Agency",
+      "location": "Bangkok · Remote (Part-Time)",
+      "role": "Product Designer",
+      "tags": [
+        "Internal tools",
+        "0→1"
+      ],
+      "bullets": [
+        "Designed two products from the ground up — Global Caring, a nursing platform, and Sofinise, a crypto payment gateway",
+        "Worked directly with developers and stakeholders on both projects"
+      ]
+    },
+    {
+      "period": "2023.09 — 2024.03",
+      "company": "Redes Design Agency",
+      "location": "Bangkok · Remote (Part-Time)",
+      "role": "Product Designer",
+      "tags": [
+        "Internal tools",
+        "0→1"
+      ],
+      "bullets": [
+        "Worked alongside senior UX designers from Myanmar on client projects",
+        "Main project was Jar Aye, an Olympiad math platform for young learners",
+        "Followed the full design workflow — research, wireframes, prototyping, testing, and handoff"
+      ]
+    },
+    {
+      "period": "2023.07 — 2023.12",
+      "company": "Lastoenjoy",
+      "location": "Myanmar · Remote (Full-Time)",
+      "role": "UI/UX Designer(Mid)",
+      "tags": [
+        "Observability",
+        "Data viz"
+      ],
+      "bullets": [
+        "First full-time design role. Mostly consumer products — blogging apps, ride-hailing, and other mini-apps",
+        "Tried to ship a product every month, which meant learning to move fast without cutting corners"
+      ]
+    }
+  ],
+  "volunteering": [
+    {
+      "period": "2025.12 — Now",
+      "company": "UXMM",
+      "location": "Myanmar . Remote",
+      "role": "Multimedia Specialist",
+      "tags": [
+        "Mentorship",
+        "Portfolio reviews"
+      ],
+      "bullets": [
+        "Edit and publish video and podcast content for UXMM events across YouTube and Instagram",
+        "Manage the org's media library"
+      ]
+    },
+    {
+      "period": "2022.22 — 2024.03",
+      "company": "Tee Htwin",
+      "location": "California . Remote",
+      "role": "UX Designer",
+      "tags": [
+        "Mentorship",
+        "Portfolio reviews"
+      ],
+      "bullets": [
+        "Interviewed 50+ artists from local Myanmar art communities to understand their needs and pain points",
+        "Ran user research and built wireframes with a cross-functional team",
+        "Designed Kanote, a digital art marketplace for Myanmar artists"
+      ]
+    },
+    {
+      "period": "2023.01 — 2023.12",
+      "company": "The Forward Society",
+      "location": "Myanmar . Remote",
+      "role": "UI/UX Designer",
+      "tags": [
+        "Nonprofit",
+        "Pro bono"
+      ],
+      "bullets": [
+        "Built a blog website for the organisation from scratch",
+        "Learned layout fundamentals and design tooling from a senior web design instructor"
+      ]
+    },
+    {
+      "period": "2023.02 — 2023.05",
+      "company": "Pathway Plus",
+      "location": "Myanmar . Remote",
+      "role": "UI/UX Designer",
+      "tags": [
+        "Mentorship",
+        "Portfolio reviews"
+      ],
+      "bullets": [
+        "Worked with other UI designers on interface designs",
+        "Got to see how different designers approach the same problem — picked up habits I still use"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Digital Innovation Technology (DIT)",
+      "school": "Rangsit International College",
+      "period": "2026.01 — Now"
+    },
+    {
+      "degree": "Civil Engineering",
+      "school": "Sagaing Technological University",
+      "period": "2018.12 — 2020.04"
+    }
+  ],
+  "contributions": [
+    {
+      "title": "RIC Applied AI Innovation Challenge (AIIC 2026)",
+      "org": "Rangsit International College",
+      "date": "March 2026",
+      "tone": "green",
+      "description": "AI hackathon at Rangsit University. Built a working prototype in a team of four, pitched it live to judges. Won Second Runner-Up.",
+      "certificateUrl": "#",
+      "image": "/contributions/ric-applied-ai-innovation-challenge-aiic-2026.png"
+    },
+    {
+      "title": "Falling Walls Lab 2023",
+      "org": "Falling Walls Lab",
+      "date": "August 2023",
+      "tone": "pink",
+      "description": "3-day programme on pitching research-backed ideas. My topic was Breaking the Wall of Art Community Barriers — an early version of what later became Kanote. Didn't make the finals, but it was where I first had to frame a design idea as a business case.",
+      "certificateUrl": "#",
+      "image": "/contributions/falling-walls-lab-2023.png"
+    },
+    {
+      "title": "Techstars Startup Weekend Yangon 2023",
+      "org": "Techstars",
+      "date": "March 2023",
+      "tone": "amber",
+      "description": "3-day startup challenge. Built the pitch deck for Kanote Art Platform and presented it to judges and investors.",
+      "certificateUrl": "#",
+      "image": "/contributions/techstars-startup-weekend-yangon-2023.png"
+    },
+    {
+      "title": "Iterate UX Research Challenge",
+      "org": "Iterate UX",
+      "date": "December 2022",
+      "tone": "blue",
+      "description": "6-week UXR project for CookieYes, a cookie consent platform. Ran the full research cycle and presented findings to a judging panel.",
+      "certificateUrl": "#",
+      "image": "/contributions/iterate-ux-research-challenge.png"
+    },
+    {
+      "title": "Iterate UX Design Challenge",
+      "org": "Iterate UX",
+      "date": "September 2022",
+      "tone": "violet",
+      "description": "6-week UX design competition. Ideated, prototyped, and tested a solution as a team, then pitched it to judges.",
+      "certificateUrl": "#",
+      "image": "/contributions/iterate-ux-design-challenge.png"
+    }
+  ],
+  "praise": []
+}

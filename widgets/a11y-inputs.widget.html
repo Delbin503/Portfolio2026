@@ -1,0 +1,104 @@
+<!--
+  a11y-inputs.widget.html — v5.9, accessibility-auditor INPUT elicitation
+  Pre-run form that collects the audit config, then submits it via sendPrompt().
+  NOT a decisionData shape — an elicitation widget shown BEFORE the run
+  (see orchestrator.md § Elicitation Widgets). The a11y RESULT renders via the
+  existing `table` widget (accessibility-auditor's decisionData shape).
+
+  ORCHESTRATOR / AGENT USE:
+    Read this file → replace ONLY the `<script id="a11y-inputs-data">` island with
+    prefill values (base_url + routes from the prototype handoff) → pass the whole
+    string as show_widget's widget_code. On submit, sendPrompt()s a single
+    structured line the accessibility-auditor parses. Text fallback when no
+    inline-widget tool is available: ask for the same fields in chat.
+-->
+<div style="padding: 1rem 0; max-width: 560px;">
+<h2 class="sr-only">Set up a WCAG accessibility audit: target, states to cover, and conformance level.</h2>
+
+<style>
+  .ai-field { margin-bottom: 14px; }
+  .ai-label { display:block; font-size:13px; font-weight:500; margin-bottom:5px; }
+  .ai-hint { font-size:12px; color:var(--color-text-secondary); margin:3px 0 0; }
+  .ai-req { color:var(--color-text-danger); }
+  .ai-in, .ai-sel {
+    width:100%; box-sizing:border-box; font:inherit; font-size:13px;
+    padding:8px 10px; border:0.5px solid var(--color-border-secondary);
+    border-radius:var(--border-radius-md); background:var(--color-background-secondary);
+    color:var(--color-text-primary);
+  }
+  .ai-checks { display:flex; flex-wrap:wrap; gap:10px 16px; }
+  .ai-check { display:flex; align-items:center; gap:6px; font-size:13px; }
+</style>
+
+<div style="display:flex; align-items:center; gap:10px; margin-bottom:16px;">
+  <div style="width:32px; height:32px; border-radius:50%; background:var(--color-background-info); display:flex; align-items:center; justify-content:center; color:var(--color-text-info);"><i class="ti ti-accessible" style="font-size:18px;" aria-hidden="true"></i></div>
+  <div>
+    <p style="margin:0; font-size:15px; font-weight:500;" id="ai-agent">accessibility-auditor</p>
+    <p style="margin:0; font-size:13px; color:var(--color-text-secondary);">set up the WCAG audit</p>
+  </div>
+</div>
+
+<div class="ai-field">
+  <label class="ai-label" for="ai-target">Target URL <span class="ai-req">*</span></label>
+  <input class="ai-in" id="ai-target" type="text" placeholder="http://localhost:3000/...">
+  <p class="ai-hint">Prefilled from the design-engineer prototype handoff when available.</p>
+</div>
+
+<div class="ai-field">
+  <label class="ai-label">States / routes to cover</label>
+  <div class="ai-checks" id="ai-routes">
+    <label class="ai-check"><input type="checkbox" value="empty" checked> empty</label>
+    <label class="ai-check"><input type="checkbox" value="loading" checked> loading</label>
+    <label class="ai-check"><input type="checkbox" value="populated" checked> populated</label>
+    <label class="ai-check"><input type="checkbox" value="error" checked> error</label>
+    <label class="ai-check"><input type="checkbox" value="edge" checked> edge</label>
+  </div>
+  <p class="ai-hint">Default = all reachable states. Error &amp; empty states hide the most contrast/label failures.</p>
+</div>
+
+<div class="ai-field">
+  <label class="ai-label" for="ai-wcag">WCAG target</label>
+  <select class="ai-sel" id="ai-wcag" style="max-width:260px;">
+    <option value="2.2-AA">WCAG 2.2 AA (default)</option>
+    <option value="2.1-AA">WCAG 2.1 AA</option>
+    <option value="2.2-AA+AAA">2.2 AA + flag AAA wins (bonus)</option>
+  </select>
+  <p class="ai-hint">AA is the contractual baseline. AAA is reported as a bonus only, never used to fail a build.</p>
+</div>
+
+<div style="margin-top:18px; padding-top:14px; border-top:0.5px solid var(--color-border-tertiary); display:flex; gap:8px; flex-wrap:wrap; align-items:center;">
+  <button id="ai-run">Run audit ↗</button>
+  <button id="ai-cancel">Cancel</button>
+  <span id="ai-warn" style="font-size:12px; color:var(--color-text-danger); display:none;">Target URL is required.</span>
+</div>
+</div>
+
+<script id="a11y-inputs-data" type="application/json">
+{
+  "agent": "accessibility-auditor",
+  "target_url": "",
+  "wcag_default": "2.2-AA"
+}
+</script>
+<script>
+(function () {
+  var data = JSON.parse(document.getElementById('a11y-inputs-data').textContent);
+
+  if (data.target_url) document.getElementById('ai-target').value = data.target_url;
+  if (data.wcag_default) document.getElementById('ai-wcag').value = data.wcag_default;
+
+  document.getElementById('ai-run').onclick = function () {
+    var target = document.getElementById('ai-target').value.trim() || data.target_url;
+    if (!target) { document.getElementById('ai-warn').style.display = 'inline'; return; }
+
+    var routes = [].slice.call(document.querySelectorAll('#ai-routes input:checked')).map(function (c) { return c.value; });
+    var wcag = document.getElementById('ai-wcag').value;
+
+    var line = 'Run accessibility-auditor — target: ' + target
+      + '; states: ' + (routes.length ? routes.join(', ') : 'all reachable')
+      + '; wcag: ' + wcag;
+    sendPrompt(line);
+  };
+  document.getElementById('ai-cancel').onclick = function () { sendPrompt('cancel'); };
+})();
+</script>

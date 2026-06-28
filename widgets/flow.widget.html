@@ -1,0 +1,199 @@
+<!--
+  flow.widget.html — v5.6, supplemental widget for lo-fi-designer
+  Renders the lo-fi FLOW(s) as native vertical-spine diagrams in chat — the
+  visual companion to the Journey Map + Userflow that otherwise live as Mermaid
+  / ASCII / a Figjam link in the handoff .md.
+
+  TWO flows, one widget (the agent emits whichever it has):
+    • JOURNEY MAP (type: "journey") — persona-shaped, high level: persona + intent
+      caption + the spine entry → primary flow → success/failure exits, with
+      nested-journey and failure branches. Always rendered expanded.
+    • USERFLOW (type: "userflow") — the detailed step-by-step flow. Rendered as a
+      CLICK-TO-EXPAND section (collapsed by default, ia-tree idiom) so two spines
+      don't flood the gate.
+
+  Native + themeable like ia-tree / wireframe: hand-rolled HTML/JS + CSS vars, no
+  diagram library. Grayscale dominant; semantic color ONLY on exits/nested
+  (success = green, failure = amber/warning, nested = info) because those encode
+  meaning. This is NOT a Mermaid render — it's the same node model the agent's
+  Journey Map already describes, laid out as a spine.
+
+  NOT a decisionData shape — agent-specific supplemental widget at the lo-fi
+  LAYOUT-CHOICE gate (the flow is the context the layouts serve; it renders
+  before the wireframe widget). Markdown/Mermaid/Figjam in the .md is the
+  no-widget fallback.
+
+  ORCHESTRATOR USE (see orchestrator.md § Decision Data Rendering → Widget render →
+  "Supplemental: lo-fi flow"): read this file → replace ONLY the
+  `<script id="flow-data">` island from the lo-fi handoff's `flow` block → pass
+  the whole string as show_widget's widget_code.
+
+  Node shape:   { "kind": "entry"|"action"|"screen"|"decision"|"process"|"success"|"fail"|"nested",
+                  "label": str, "note"?: str, "branches"?: [ branch ] }
+  Branch shape: { "kind": (same set), "label": str, "note"?: str, "steps"?: [ { "label": str } ] }
+  Flow shape:   { "type": "journey"|"userflow", "persona"?: str, "intent"?: str,
+                  "title"?: str, "stats"?: [str], "nodes": [ node ] }
+-->
+<div style="padding:1rem 0;">
+<h2 class="sr-only" id="fl-summary">Low-fi designer Stop Gate: the journey map and detailed userflow rendered as vertical spines — entry, steps, decision and nested-journey branches, failure exits, and the success exit.</h2>
+
+<div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+  <div style="width:32px; height:32px; border-radius:50%; background:var(--color-background-secondary); display:flex; align-items:center; justify-content:center; color:var(--color-text-secondary);"><i class="ti ti-route" style="font-size:18px;" aria-hidden="true"></i></div>
+  <div>
+    <p style="margin:0; font-size:15px; font-weight:500;" id="fl-agent">lo-fi-designer · Stop Gate</p>
+    <p style="margin:0; font-size:13px; color:var(--color-text-secondary);" id="fl-phase">the flow before the layouts</p>
+  </div>
+</div>
+
+<div id="fl-flows"></div>
+</div>
+
+<script id="flow-data" type="application/json">
+{
+  "agent": "lo-fi-designer",
+  "phaseLabel": "the flow before the layouts",
+  "flows": [
+    {
+      "type": "journey",
+      "persona": "receptionist — front-desk clinic staff",
+      "intent": "As a receptionist, I want to register a patient quickly, so the doctor sees them prepared.",
+      "stats": ["6 steps", "1 nested", "1 failure exit"],
+      "nodes": [
+        { "kind": "entry", "label": "Patient list", "note": "entry point" },
+        { "kind": "action", "label": "Tap “Register”", "note": "trigger affordance" },
+        { "kind": "screen", "label": "Patient info form", "note": "name · DOB · contact",
+          "branches": [ { "kind": "fail", "label": "Validation error", "note": "inline recovery — fix & resubmit" } ] },
+        { "kind": "decision", "label": "Existing patient?", "note": "branch point",
+          "branches": [ { "kind": "nested", "label": "Duplicate resolution", "note": "nested journey", "steps": [ { "label": "Match candidates" }, { "label": "Merge or keep separate" } ] } ] },
+        { "kind": "screen", "label": "Review & confirm", "note": "summary of entered info" },
+        { "kind": "success", "label": "Patient registered", "note": "→ back to list, flagged ready" }
+      ]
+    },
+    {
+      "type": "userflow",
+      "title": "Detailed userflow",
+      "stats": ["9 steps"],
+      "nodes": [
+        { "kind": "entry", "label": "Patient list screen" },
+        { "kind": "action", "label": "Tap Register button" },
+        { "kind": "screen", "label": "Empty patient form" },
+        { "kind": "process", "label": "Type name + DOB" },
+        { "kind": "decision", "label": "Required fields valid?",
+          "branches": [ { "kind": "fail", "label": "Show field errors", "note": "stay on form" } ] },
+        { "kind": "process", "label": "Submit form" },
+        { "kind": "decision", "label": "Duplicate found?",
+          "branches": [ { "kind": "nested", "label": "Open duplicate-resolution sheet" } ] },
+        { "kind": "screen", "label": "Confirmation screen" },
+        { "kind": "success", "label": "Return to list (toast: registered)" }
+      ]
+    }
+  ]
+}
+</script>
+<script>
+(function () {
+  var data = JSON.parse(document.getElementById('flow-data').textContent);
+  var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;' }[c]; }); };
+
+  document.getElementById('fl-agent').textContent = (data.agent || 'lo-fi-designer') + ' · Stop Gate';
+  document.getElementById('fl-phase').textContent = data.phaseLabel || 'the flow before the layouts';
+
+  var meta = {
+    entry:    { icon: 'ti-login-2',        accent: 'var(--color-border-primary)',   chip: 'entry' },
+    action:   { icon: 'ti-hand-finger',    accent: 'var(--color-border-secondary)', chip: 'action' },
+    screen:   { icon: 'ti-app-window',     accent: 'var(--color-border-secondary)', chip: 'screen' },
+    decision: { icon: 'ti-git-branch',     accent: 'var(--color-border-secondary)', chip: 'decision' },
+    process:  { icon: 'ti-arrow-right',    accent: 'var(--color-border-secondary)', chip: 'step' },
+    success:  { icon: 'ti-circle-check',   accent: 'var(--color-border-success)',   chip: 'success', bg: 'var(--color-background-success)', fg: 'var(--color-text-success)' },
+    fail:     { icon: 'ti-alert-triangle', accent: 'var(--color-border-warning)',   chip: 'failure', bg: 'var(--color-background-warning)', fg: 'var(--color-text-warning)' },
+    nested:   { icon: 'ti-arrow-guide',    accent: 'var(--color-border-info)',      chip: 'nested journey', bg: 'var(--color-background-info)', fg: 'var(--color-text-info)' }
+  };
+
+  var connector = function () {
+    return '<div style="display:flex; justify-content:center; margin:2px 0;"><i class="ti ti-chevron-down" style="font-size:15px; color:var(--color-text-tertiary);" aria-hidden="true"></i></div>';
+  };
+
+  var nodeBox = function (n, opts) {
+    var m = meta[n.kind] || meta.screen;
+    opts = opts || {};
+    var pad = opts.small ? '7px 10px' : '10px 12px';
+    var fs = opts.small ? '12px' : '13px';
+    var icoColor = m.fg || 'var(--color-text-secondary)';
+    var chip = '<span style="font-size:10px; padding:1px 8px; border-radius:var(--border-radius-md); background:' + (m.bg || 'var(--color-background-secondary)') + '; color:' + (m.fg || 'var(--color-text-secondary)') + '; white-space:nowrap;">' + m.chip + '</span>';
+    var note = n.note ? '<span style="font-size:11px; color:var(--color-text-tertiary); display:block; margin-top:3px; line-height:1.4;">' + esc(n.note) + '</span>' : '';
+    return '<div style="border:1px solid var(--color-border-tertiary); border-left:3px solid ' + m.accent + '; border-radius:var(--border-radius-md); background:var(--color-background-primary); padding:' + pad + ';">'
+      + '<div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">'
+      + '<i class="ti ' + m.icon + '" style="font-size:16px; color:' + icoColor + ';" aria-hidden="true"></i>'
+      + '<span style="font-size:' + fs + '; font-weight:500; color:var(--color-text-primary);">' + esc(n.label) + '</span>'
+      + '<span style="margin-left:auto;">' + chip + '</span>'
+      + '</div>' + note + '</div>';
+  };
+
+  var branchBlock = function (b) {
+    var m = meta[b.kind] || meta.nested;
+    var inner = nodeBox(b, { small: true });
+    var steps = '';
+    if (b.steps && b.steps.length) {
+      steps = '<div style="margin-top:6px; display:flex; flex-direction:column; gap:5px;">'
+        + b.steps.map(function (s) { return '<div style="font-size:11px; color:var(--color-text-secondary); display:flex; align-items:center; gap:6px;"><i class="ti ti-point" style="font-size:12px; color:var(--color-text-tertiary);" aria-hidden="true"></i>' + esc(s.label) + '</div>'; }).join('')
+        + '</div>';
+    }
+    return '<div style="margin:6px 0 6px 26px; padding-left:12px; border-left:2px dashed ' + m.accent + ';">'
+      + '<div style="display:flex; align-items:center; gap:6px; margin-bottom:5px;"><i class="ti ti-corner-down-right" style="font-size:14px; color:var(--color-text-tertiary);" aria-hidden="true"></i><span style="font-size:11px; color:var(--color-text-tertiary);">branch</span></div>'
+      + inner + steps + '</div>';
+  };
+
+  var spine = function (nodes) {
+    var html = '';
+    (nodes || []).forEach(function (n, i) {
+      if (i > 0) html += connector();
+      html += nodeBox(n);
+      (n.branches || []).forEach(function (b) { html += branchBlock(b); });
+    });
+    return html;
+  };
+
+  var statChips = function (stats) {
+    return (stats || []).map(function (s) {
+      return '<span style="font-size:12px; padding:3px 12px; border-radius:var(--border-radius-md); background:var(--color-background-secondary); color:var(--color-text-secondary);">' + esc(s) + '</span>';
+    }).join('');
+  };
+
+  var fid = 0;
+  var journeyBlock = function (f) {
+    var persona = f.persona ? '<span style="font-size:12px; padding:3px 12px; border-radius:var(--border-radius-md); background:var(--color-background-info); color:var(--color-text-info);">Persona: ' + esc(f.persona) + '</span>' : '';
+    var head = '<div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-bottom:4px;">' + persona + statChips(f.stats) + '</div>';
+    var intent = f.intent ? '<p style="margin:0 0 14px; font-size:12px; color:var(--color-text-tertiary); font-style:italic;">"' + esc(f.intent) + '"</p>' : '<div style="height:8px;"></div>';
+    return '<div style="margin-bottom:18px;">' + head + intent + spine(f.nodes) + '</div>';
+  };
+
+  var collapsibleBlock = function (f) {
+    var id = 'fl-uf-' + (fid++);
+    var title = esc(f.title || 'Detailed userflow');
+    var statsTxt = (f.stats && f.stats.length) ? ' · ' + esc(f.stats.join(' · ')) : '';
+    var head = '<div class="fl-toggle" data-target="' + id + '" style="cursor:pointer; display:flex; align-items:center; gap:8px; padding:9px 0; border-top:0.5px solid var(--color-border-tertiary);">'
+      + '<i class="ti ti-chevron-right fl-chev" style="font-size:14px; color:var(--color-text-tertiary); transition:transform .12s;" aria-hidden="true"></i>'
+      + '<span style="font-size:13px; font-weight:500; color:var(--color-text-secondary);">' + title + '</span>'
+      + '<span style="font-size:11px; color:var(--color-text-tertiary);">' + statsTxt + '</span>'
+      + '<span style="margin-left:auto; font-size:11px; color:var(--color-text-tertiary);">tap to expand</span>'
+      + '</div>';
+    return head + '<div id="' + id + '" style="display:none; padding-top:8px;">' + spine(f.nodes) + '</div>';
+  };
+
+  var host = document.getElementById('fl-flows');
+  host.innerHTML = (data.flows || []).map(function (f) {
+    return (f.type === 'userflow') ? collapsibleBlock(f) : journeyBlock(f);
+  }).join('');
+
+  host.addEventListener('click', function (e) {
+    var head = e.target.closest ? e.target.closest('.fl-toggle') : null;
+    if (!head) return;
+    var panel = document.getElementById(head.getAttribute('data-target'));
+    if (!panel) return;
+    var open = panel.style.display === 'none';
+    panel.style.display = open ? 'block' : 'none';
+    var chev = head.querySelector('.fl-chev');
+    if (chev) chev.style.transform = open ? 'rotate(90deg)' : 'rotate(0deg)';
+  });
+})();
+</script>

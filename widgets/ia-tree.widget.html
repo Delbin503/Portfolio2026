@@ -1,0 +1,233 @@
+<!--
+  ia-tree.widget.html — v5.3, supplemental widget for information-architect
+  Three IA-owned things in one card:
+    1. Sitemap tree — navigation hierarchy drilled down to individual SCREENS.
+       Click any screen to expand its per-screen CONTRACT (the row lo-fi reads).
+    2. Per-screen contract — nav location + primary object + feature + resolved
+       action hierarchy (screen's own primary; object's secondary/tertiary).
+    3. Action priority — global invariants + per-object primary/secondary/tertiary.
+       IA's element-GOVERNING layer (which action wins), distinct from
+       lo-fi-designer's element-PLACING layer (where the button sits).
+
+  NOT a decisionData shape — agent-specific supplemental widget at the IA Stop Gate
+  alongside its `insights` decisionData, because structure + a cross-screen action
+  system are exactly what markdown renders poorly.
+
+  ORCHESTRATOR USE (see orchestrator.md § Decision Data Rendering → Widget render →
+  "Supplemental: IA sitemap tree"):
+    Read this file → replace ONLY the `<script id="ia-tree-data">` island:
+      • tree            ← navigation_structure.hierarchy + every screen_inventory row
+                          placed as a SCREEN LEAF at its nav_location (never a count).
+                          Each leaf: label, primaryAction (screen's primary_action),
+                          object (primary_object), feature (feature_slug).
+      • globalInvariants ← action_priority_map.global_invariants
+      • actionPriority  ← action_priority_map.per_object (object/primary/secondary/tertiary)
+    The per-screen contract resolves secondary/tertiary by looking up the screen's
+    object in actionPriority — no per-screen secondary/tertiary needed in the data.
+    Pass the whole string as show_widget's widget_code. Markdown is the fallback.
+
+  Node shape: { "label": str, "children": [..] }                                  → section / area (folder)
+              { "label": str, "primaryAction": str?, "object": str?, "feature": str?, "note": str? } → SCREEN (leaf)
+-->
+<div style="padding: 1rem 0;">
+<h2 class="sr-only" id="iat-summary">Information architect Stop Gate: navigation tree drilled to screens with click-to-expand contracts, plus the per-object action-priority map.</h2>
+
+<div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+  <div style="width:32px; height:32px; border-radius:50%; background:var(--color-background-info); display:flex; align-items:center; justify-content:center; color:var(--color-text-info);"><i class="ti ti-sitemap" style="font-size:18px;" aria-hidden="true"></i></div>
+  <div>
+    <p style="margin:0; font-size:15px; font-weight:500;" id="iat-agent">information-architect · Stop Gate</p>
+    <p style="margin:0; font-size:13px; color:var(--color-text-secondary);" id="iat-phase">ready for your call</p>
+  </div>
+</div>
+
+<div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-bottom:6px;">
+  <span id="iat-chosen" style="font-size:12px; padding:3px 12px; border-radius:var(--border-radius-md); background:var(--color-background-info); color:var(--color-text-info);"></span>
+  <span id="iat-depth" style="font-size:12px; padding:3px 12px; border-radius:var(--border-radius-md); background:var(--color-background-secondary); color:var(--color-text-secondary);"></span>
+  <span id="iat-count" style="font-size:12px; padding:3px 12px; border-radius:var(--border-radius-md); background:var(--color-background-secondary); color:var(--color-text-secondary);"></span>
+</div>
+<p style="margin:0 0 10px; font-size:12px; color:var(--color-text-tertiary);">Tip: click any screen to see the contract lo-fi inherits.</p>
+
+<div id="iat-tree" style="font-size:14px;"></div>
+
+<p id="iat-alt" style="margin:12px 0 0; font-size:12px; color:var(--color-text-secondary);"></p>
+
+<div style="margin-top:18px; padding-top:14px; border-top:0.5px solid var(--color-border-tertiary);">
+  <p style="margin:0 0 8px; font-size:14px; font-weight:500; display:flex; align-items:center; gap:6px;"><i class="ti ti-adjustments" style="font-size:16px; color:var(--color-text-secondary);" aria-hidden="true"></i>Action priority</p>
+  <p style="margin:0 0 8px; font-size:12px; color:var(--color-text-secondary);">Which action wins, product-wide — IA governs this; lo-fi places it on the screen.</p>
+  <ul id="iat-invariants" style="margin:0 0 12px; padding:0; list-style:none; display:flex; flex-direction:column; gap:6px;"></ul>
+  <div style="overflow-x:auto;">
+    <table id="iat-actions" style="width:100%; border-collapse:collapse; font-size:13px; table-layout:fixed;"></table>
+  </div>
+</div>
+
+<div style="margin-top:16px; padding-top:14px; border-top:0.5px solid var(--color-border-tertiary); display:flex; gap:8px; flex-wrap:wrap;">
+  <button onclick="sendPrompt('y')">Approve this structure ↗</button>
+  <button id="iat-revise">Revise ↗</button>
+  <button id="iat-third">Try a third structure ↗</button>
+</div>
+</div>
+
+<script id="ia-tree-data" type="application/json">
+{
+  "agent": "information-architect",
+  "phaseLabel": "Phase 6 of 15 · pick the structure lo-fi inherits",
+  "chosen": "object-centric",
+  "alternative": "Task-centric — split the same objects across workflows; lost because it doubled clicks for the daily 'check a schedule' job.",
+  "maxDepth": 2,
+  "revisePrompt": "revise the navigation structure",
+  "pivotPrompt": "propose a third navigation structure",
+  "tree": [
+    { "label": "Operations", "children": [
+      { "label": "Schedules", "children": [
+        { "label": "Schedule list", "primaryAction": "Filter schedules", "object": "Schedule", "feature": "scheduling" },
+        { "label": "Schedule detail", "primaryAction": "Edit schedule", "object": "Schedule", "feature": "scheduling" },
+        { "label": "Create schedule", "primaryAction": "Save schedule", "object": "Schedule", "feature": "scheduling" },
+        { "label": "Edit schedule", "primaryAction": "Save changes", "object": "Schedule", "feature": "scheduling" }
+      ]},
+      { "label": "Branches", "children": [
+        { "label": "Branch list", "primaryAction": "Add branch", "object": "Branch", "feature": "branches" },
+        { "label": "Branch detail", "primaryAction": "Edit branch", "object": "Branch", "feature": "branches" }
+      ]}
+    ]},
+    { "label": "Orders", "children": [
+      { "label": "Cart", "primaryAction": "Go to checkout", "object": "Cart", "feature": "checkout" },
+      { "label": "Checkout", "primaryAction": "Place order", "object": "Order", "feature": "checkout" },
+      { "label": "Order confirmation", "primaryAction": "View order", "object": "Order", "feature": "checkout" }
+    ]},
+    { "label": "Account", "children": [
+      { "label": "Profile", "primaryAction": "Save changes", "object": "User", "feature": "account" },
+      { "label": "Saved carts", "primaryAction": "Resume cart", "object": "Cart", "feature": "account" }
+    ]}
+  ],
+  "globalInvariants": [
+    "One — and only one — primary action per screen",
+    "Every destructive action is a ghost button, never filled",
+    "Create/Add lives top-right; back/cancel lives top-left"
+  ],
+  "actionPriority": [
+    { "object": "Schedule", "primary": "Edit schedule", "secondary": ["Duplicate", "Export"], "tertiary": ["Delete"] },
+    { "object": "Branch", "primary": "Edit branch", "secondary": ["Add staff"], "tertiary": ["Archive"] },
+    { "object": "Order", "primary": "Place order", "secondary": ["Save for later", "Apply promo"], "tertiary": ["Cancel order"] },
+    { "object": "Cart", "primary": "Checkout", "secondary": ["Update quantity"], "tertiary": ["Clear cart"] },
+    { "object": "User", "primary": "Save changes", "secondary": ["Change photo"], "tertiary": ["Delete account"] }
+  ]
+}
+</script>
+<script>
+(function () {
+  var data = JSON.parse(document.getElementById('ia-tree-data').textContent);
+  var esc = function (s) {
+    return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  };
+
+  document.getElementById('iat-agent').textContent = data.agent + ' · Stop Gate';
+  document.getElementById('iat-phase').textContent = data.phaseLabel || 'ready for your call';
+  document.getElementById('iat-chosen').textContent = 'Recommended: ' + (data.chosen || 'structure');
+  document.getElementById('iat-revise').onclick = function () { sendPrompt(data.revisePrompt || 'revise'); };
+  document.getElementById('iat-third').onclick = function () { sendPrompt(data.pivotPrompt || 'propose a third structure'); };
+
+  var depthEl = document.getElementById('iat-depth');
+  var over = data.maxDepth && data.maxDepth > 3;
+  depthEl.textContent = 'Nav depth ' + (data.maxDepth || '?') + (over ? ' · structural smell' : '');
+  if (over) { depthEl.style.background = 'var(--color-background-warning)'; depthEl.style.color = 'var(--color-text-warning)'; }
+
+  document.getElementById('iat-alt').textContent = data.alternative ? ('Alternative considered — ' + data.alternative) : '';
+
+  var apByObject = {};
+  (data.actionPriority || []).forEach(function (a) { apByObject[a.object] = a; });
+
+  var screenCount = 0;
+  var countScreens = function (nodes) {
+    (nodes || []).forEach(function (n) { (n.children && n.children.length) ? countScreens(n.children) : screenCount++; });
+  };
+  countScreens(data.tree);
+  document.getElementById('iat-count').textContent = screenCount + (screenCount === 1 ? ' screen' : ' screens') + ' total';
+
+  var tag = function (txt, kind) {
+    var bg = 'var(--color-background-secondary)', fg = 'var(--color-text-secondary)', extra = '';
+    if (kind === 'warn') { bg = 'var(--color-background-warning)'; fg = 'var(--color-text-warning)'; }
+    if (kind === 'muted') { bg = 'transparent'; fg = 'var(--color-text-tertiary)'; }
+    if (kind === 'primary') { bg = 'var(--color-background-info)'; fg = 'var(--color-text-info)'; }
+    if (kind === 'ghost') { bg = 'transparent'; fg = 'var(--color-text-tertiary)'; extra = 'border:0.5px solid var(--color-border-tertiary);'; }
+    return '<span style="font-size:11px; padding:1px 8px; border-radius:var(--border-radius-md); background:' + bg + '; color:' + fg + '; white-space:nowrap;' + extra + '">' + esc(txt) + '</span>';
+  };
+
+  var contractCard = function (n, path) {
+    var ap = apByObject[n.object] || {};
+    var sec = (ap.secondary || []).map(function (s) { return tag(s, 'secondary'); }).join('') || tag('—', 'muted');
+    var ter = (ap.tertiary || []).map(function (t) { return tag(t, 'ghost'); }).join('') || tag('—', 'muted');
+    var meta = path.join(' › ') + (n.object ? (' · object: ' + esc(n.object)) : '') + (n.feature ? (' · feature: ' + esc(n.feature)) : '');
+    return '<div style="background:var(--color-background-secondary); border-radius:var(--border-radius-md); padding:10px 12px;">'
+      + '<p style="margin:0 0 10px; font-size:12px; color:var(--color-text-secondary);">' + meta + '</p>'
+      + '<div style="display:grid; grid-template-columns:80px 1fr; gap:7px 12px; align-items:center;">'
+      + '<span style="font-size:12px; color:var(--color-text-secondary);">Primary</span><span>' + (n.primaryAction ? tag(n.primaryAction, 'primary') : tag('—', 'muted')) + '</span>'
+      + '<span style="font-size:12px; color:var(--color-text-secondary);">Secondary</span><span style="display:flex; gap:6px; flex-wrap:wrap;">' + sec + '</span>'
+      + '<span style="font-size:12px; color:var(--color-text-secondary);">Tertiary</span><span style="display:flex; gap:6px; flex-wrap:wrap;">' + ter + '</span>'
+      + '</div>'
+      + '<p style="margin:10px 0 0; font-size:11px; color:var(--color-text-tertiary);">IA contract — lo-fi places these on the canvas.</p>'
+      + '</div>';
+  };
+
+  var scid = 0;
+  var renderNodes = function (nodes, path) {
+    return (nodes || []).map(function (n) {
+      var isGroup = n.children && n.children.length;
+      if (isGroup) {
+        var row = '<div style="display:flex; align-items:center; gap:8px; padding:5px 0;">'
+          + '<i class="ti ti-folder" style="font-size:16px; color:var(--color-text-secondary);" aria-hidden="true"></i>'
+          + '<span style="font-weight:500;">' + esc(n.label) + '</span></div>';
+        return row + '<div style="margin-left:8px; padding-left:14px; border-left:0.5px solid var(--color-border-tertiary);">' + renderNodes(n.children, path.concat(n.label)) + '</div>';
+      }
+      var id = 'iat-sc-' + (scid++);
+      var tags = '';
+      if (n.primaryAction) tags += tag('primary: ' + n.primaryAction);
+      if (n.object) tags += tag(n.object, 'muted');
+      if (n.note) tags += tag(n.note, 'warn');
+      var row = '<div class="iat-screen" data-target="' + id + '" style="cursor:pointer; display:flex; align-items:center; gap:8px; padding:5px 0;">'
+        + '<i class="ti ti-chevron-right iat-chev" style="font-size:14px; color:var(--color-text-tertiary); transition:transform .12s;" aria-hidden="true"></i>'
+        + '<i class="ti ti-app-window" style="font-size:16px; color:var(--color-text-secondary);" aria-hidden="true"></i>'
+        + '<span>' + esc(n.label) + '</span>'
+        + (tags ? '<span style="display:flex; gap:6px; flex-wrap:wrap;">' + tags + '</span>' : '')
+        + '</div>';
+      var card = '<div id="' + id + '" style="display:none; margin:2px 0 8px 36px;">' + contractCard(n, path) + '</div>';
+      return row + card;
+    }).join('');
+  };
+  document.getElementById('iat-tree').innerHTML = renderNodes(data.tree, []);
+
+  document.getElementById('iat-tree').addEventListener('click', function (e) {
+    var row = e.target.closest ? e.target.closest('.iat-screen') : null;
+    if (!row) return;
+    var card = document.getElementById(row.getAttribute('data-target'));
+    if (!card) return;
+    var open = card.style.display === 'none';
+    card.style.display = open ? 'block' : 'none';
+    var chev = row.querySelector('.iat-chev');
+    if (chev) chev.style.transform = open ? 'rotate(90deg)' : 'rotate(0deg)';
+  });
+
+  document.getElementById('iat-invariants').innerHTML = (data.globalInvariants || []).map(function (r) {
+    return '<li style="display:flex; align-items:start; gap:8px; font-size:13px; color:var(--color-text-secondary);">'
+      + '<i class="ti ti-shield-check" style="font-size:15px; color:var(--color-text-info); flex-shrink:0; margin-top:2px;" aria-hidden="true"></i>'
+      + '<span>' + esc(r) + '</span></li>';
+  }).join('');
+
+  var cell = function (pills) { return '<td style="padding:8px 10px; border-bottom:0.5px solid var(--color-border-tertiary); vertical-align:top;"><span style="display:flex; gap:6px; flex-wrap:wrap;">' + pills + '</span></td>'; };
+  var head = '<thead><tr>'
+    + ['Object', 'Primary', 'Secondary', 'Tertiary'].map(function (h, i) {
+        return '<th style="text-align:left; padding:8px 10px; border-bottom:0.5px solid var(--color-border-secondary); color:var(--color-text-secondary); font-weight:500; width:' + (i === 0 ? '20%' : '26.6%') + ';">' + h + '</th>';
+      }).join('')
+    + '</tr></thead>';
+  var body = '<tbody>' + (data.actionPriority || []).map(function (a) {
+    var sec = (a.secondary || []).map(function (s) { return tag(s, 'secondary'); }).join('') || tag('—', 'muted');
+    var ter = (a.tertiary || []).map(function (t) { return tag(t, 'ghost'); }).join('') || tag('—', 'muted');
+    return '<tr>'
+      + '<td style="padding:8px 10px; border-bottom:0.5px solid var(--color-border-tertiary); font-weight:500; vertical-align:top;">' + esc(a.object) + '</td>'
+      + cell(a.primary ? tag(a.primary, 'primary') : tag('—', 'muted')) + cell(sec) + cell(ter)
+      + '</tr>';
+  }).join('') + '</tbody>';
+  document.getElementById('iat-actions').innerHTML = head + body;
+})();
+</script>

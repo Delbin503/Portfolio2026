@@ -6,9 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "notion:bootstrap": "node --env-file=.env.local scripts/notion-bootstrap.mjs",
+    "notion:sync": "node --env-file=.env.local scripts/notion-sync.mjs"
   },
   "dependencies": {
+    "@notionhq/client": "^2.2.15",
     "next": "16.2.9",
     "react": "19.2.4",
     "react-dom": "19.2.4"

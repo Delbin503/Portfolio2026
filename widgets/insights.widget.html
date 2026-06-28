@@ -1,0 +1,119 @@
+<!--
+  insights.widget.html — PROTOTYPE (v5.3, insights shape only)
+
+  Pre-built widget template for the `insights` decisionData shape
+  (discovery-researcher, ideation-facilitator, critique-partner).
+
+  HOW THE ORCHESTRATOR USES THIS (see orchestrator.md § Decision Data Rendering → Widget render):
+    1. Read this file once at the Stop Gate.
+    2. Replace the single `<script id="insights-data">…</script>` island with the
+       agent's decisionData, mapped to the JSON schema documented inside that island.
+    3. Pass the WHOLE resulting string as `show_widget`'s `widget_code` argument.
+
+  Everything OUTSIDE the JSON island is constant across every render — the UI is
+  designed here, not re-invented per Stop Gate. The orchestrator only ever emits
+  the data. If `show_widget` (or an equivalent inline-widget tool) is NOT available
+  in the session, the orchestrator falls back to the markdown render — this file is
+  never read in that case.
+
+  TOKEN NOTE (honest): an inline widget costs MORE output tokens than the markdown
+  block, because the constant shell is re-emitted each render (tool-call output is
+  not prompt-cached). Pre-generation saves DESIGN tokens (the UI is authored once),
+  not RENDER tokens. Use the widget when the surface supports it AND the richer card
+  is worth the extra ~400–700 output tokens; otherwise markdown stays the default.
+-->
+<div style="padding: 1rem 0;">
+<h2 class="sr-only" id="iw-summary">Stop Gate insights with evidence and confidence, plus approve, revise, and pivot actions.</h2>
+
+<div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+  <div style="width:32px; height:32px; border-radius:50%; background:var(--color-background-info); display:flex; align-items:center; justify-content:center; color:var(--color-text-info);"><i class="ti ti-search" style="font-size:18px;" aria-hidden="true"></i></div>
+  <div>
+    <p style="margin:0; font-size:15px; font-weight:500;" id="iw-agent">agent · Stop Gate</p>
+    <p style="margin:0; font-size:13px; color:var(--color-text-secondary);" id="iw-phase">ready for your call</p>
+  </div>
+</div>
+
+<div id="iw-stats" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(140px,1fr)); gap:12px; margin-bottom:16px;"></div>
+<div id="iw-cards" style="display:flex; flex-direction:column; gap:10px;"></div>
+
+<div style="margin-top:16px; padding-top:14px; border-top:0.5px solid var(--color-border-tertiary); display:flex; gap:8px; flex-wrap:wrap;">
+  <button onclick="sendPrompt('y')">Approve &amp; continue ↗</button>
+  <button id="iw-revise">Revise ↗</button>
+  <button id="iw-pivot">Pivot ↗</button>
+</div>
+</div>
+
+<script id="insights-data" type="application/json">
+{
+  "agent": "discovery-researcher",
+  "phaseLabel": "Phase 2 of 15 · ready for your call",
+  "revisePrompt": "revise the discovery insights",
+  "pivotPrompt": "pivot the discovery direction",
+  "stats": [
+    { "label": "Interviews", "value": "12" },
+    { "label": "Top insights", "value": "3" },
+    { "label": "Funnel drop", "value": "41%", "tone": "danger" }
+  ],
+  "insights": [
+    {
+      "text": "Cart abandonment peaks at the verify-phone step",
+      "evidence": "\"I gave up because the SMS never came\" — 6/12 interviews · GA4 funnel drop 41%",
+      "conf": "high"
+    },
+    {
+      "text": "Users don't trust the price until checkout",
+      "evidence": "\"I keep a calculator open\" — 4/12 interviews · hidden shipping cited 7×",
+      "conf": "medium"
+    },
+    {
+      "text": "Returning users want saved carts, not accounts",
+      "evidence": "\"Just let me come back to it\" — 3/12 interviews",
+      "conf": "low"
+    }
+  ]
+}
+</script>
+<script>
+(function () {
+  var data = JSON.parse(document.getElementById('insights-data').textContent);
+  var esc = function (s) {
+    return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  };
+
+  document.getElementById('iw-agent').textContent = data.agent + ' · Stop Gate';
+  document.getElementById('iw-phase').textContent = data.phaseLabel || 'ready for your call';
+
+  document.getElementById('iw-revise').onclick = function () { sendPrompt(data.revisePrompt || 'revise'); };
+  document.getElementById('iw-pivot').onclick = function () { sendPrompt(data.pivotPrompt || 'pivot'); };
+
+  var toneColor = function (tone) {
+    if (tone === 'danger') return 'var(--color-text-danger)';
+    if (tone === 'success') return 'var(--color-text-success)';
+    return 'var(--color-text-primary)';
+  };
+  document.getElementById('iw-stats').innerHTML = (data.stats || []).map(function (s) {
+    return '<div style="background:var(--color-background-secondary); border-radius:var(--border-radius-md); padding:1rem;">'
+      + '<p style="margin:0 0 4px; font-size:13px; color:var(--color-text-secondary);">' + esc(s.label) + '</p>'
+      + '<p style="margin:0; font-size:24px; font-weight:500; color:' + toneColor(s.tone) + ';">' + esc(s.value) + '</p>'
+      + '</div>';
+  }).join('');
+
+  var confStyle = {
+    high:   { bg: 'var(--color-background-success)', fg: 'var(--color-text-success)' },
+    medium: { bg: 'var(--color-background-warning)', fg: 'var(--color-text-warning)' },
+    low:    { bg: 'var(--color-background-secondary)', fg: 'var(--color-text-secondary)' }
+  };
+  document.getElementById('iw-cards').innerHTML = (data.insights || []).map(function (it, i) {
+    var c = confStyle[it.conf] || confStyle.low;
+    return '<div style="background:var(--color-background-primary); border:0.5px solid var(--color-border-tertiary); border-radius:var(--border-radius-lg); padding:0.85rem 1rem;">'
+      + '<div style="display:flex; justify-content:space-between; align-items:start; gap:10px;">'
+      + '<p style="margin:0; font-size:14px; font-weight:500;">' + (i + 1) + ' · ' + esc(it.text) + '</p>'
+      + '<span style="flex-shrink:0; font-size:12px; padding:2px 10px; border-radius:var(--border-radius-md); background:' + c.bg + '; color:' + c.fg + ';">' + esc(it.conf) + '</span>'
+      + '</div>'
+      + '<p style="margin:6px 0 0; font-size:13px; color:var(--color-text-secondary);"><i class="ti ti-quote" style="font-size:14px; vertical-align:-2px;" aria-hidden="true"></i> ' + esc(it.evidence) + '</p>'
+      + '</div>';
+  }).join('');
+})();
+</script>

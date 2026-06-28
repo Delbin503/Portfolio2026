@@ -1,0 +1,169 @@
+<!--
+  ut-result.widget.html — v5.9, usability-tester Mode C RESULT scoreboard
+  Supplemental Stop-Gate widget for a Mode C run (additional to the agent's
+  `insights` decisionData, which carries the findings). Shows the observed
+  behavioral metrics, per-persona cohort + A/B variant breakdown, and the
+  top findings. Modes A/B do not use this widget.
+
+  ORCHESTRATOR USE (see orchestrator.md § Decision Data Rendering → supplemental):
+    Read this file → replace ONLY the `<script id="ut-result-data">` island with
+    the run results from the usability-tester handoff frontmatter → pass the whole
+    string as show_widget's widget_code. Still print the Executive Summary
+    stat-card + 3-bullet TL;DR as text. Markdown fallback when no widget tool.
+
+  Honesty: metrics are observed behavior of an LLM probe, not a human — render the
+  caption verbatim. pathEfficiency is null when no golden path was supplied (the
+  tile then reads "n/a — no golden path"). Never show a satisfaction/SUS/CSAT tile.
+-->
+<div style="padding: 1rem 0;">
+<h2 class="sr-only">Mode C automated usability results: success, steps, errors, rage clicks, lostness, path efficiency, plus findings and any A/B winner.</h2>
+
+<style>
+  .utr-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(120px, 1fr)); gap:10px; }
+  .utr-tile { border:0.5px solid var(--color-border-tertiary); border-radius:var(--border-radius-md); padding:10px 12px; }
+  .utr-val { font-size:20px; font-weight:600; margin:0; }
+  .utr-cap { font-size:12px; color:var(--color-text-secondary); margin:2px 0 0; }
+  .utr-sub { font-size:11px; color:var(--color-text-tertiary); margin:1px 0 0; }
+</style>
+
+<div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
+  <div style="width:32px; height:32px; border-radius:50%; background:var(--color-background-info); display:flex; align-items:center; justify-content:center; color:var(--color-text-info);"><i class="ti ti-robot" style="font-size:18px;" aria-hidden="true"></i></div>
+  <div>
+    <p style="margin:0; font-size:15px; font-weight:500;" id="utr-agent">usability-tester · Mode C · Stop Gate</p>
+    <p style="margin:0; font-size:13px; color:var(--color-text-secondary);" id="utr-goal">goal</p>
+  </div>
+</div>
+<p style="margin:8px 0 12px; font-size:11px; color:var(--color-text-tertiary); font-style:italic;">Observed behavior of an automated probe — directional, not how a human felt. No satisfaction scores.</p>
+
+<div class="utr-grid" id="utr-metrics"></div>
+
+<div id="utr-variants" style="margin-top:16px;"></div>
+<div id="utr-cohorts" style="margin-top:16px;"></div>
+
+<div id="utr-findings" style="margin-top:16px;"></div>
+
+<div style="margin-top:16px; padding-top:14px; border-top:0.5px solid var(--color-border-tertiary); display:flex; gap:8px; flex-wrap:wrap;">
+  <button onclick="sendPrompt('y')">Approve &amp; continue ↗</button>
+  <button id="utr-revise">Revise ↗</button>
+  <button id="utr-pivot">Pivot ↗</button>
+</div>
+</div>
+
+<script id="ut-result-data" type="application/json">
+{
+  "agent": "usability-tester",
+  "goal": "Sign up for a free trial",
+  "phaseLabel": "Mode C · Stop Gate",
+  "revisePrompt": "revise the Mode C run",
+  "pivotPrompt": "pivot — different goal or target",
+  "metrics": {
+    "successRate": 67,
+    "avgSteps": 11.3,
+    "errorRate": 1.7,
+    "rageClicks": 0.7,
+    "lostness": 0.42,
+    "pathEfficiency": 0.55
+  },
+  "variants": [
+    { "label": "A — current", "successRate": 67, "avgSteps": 11.3, "winner": false },
+    { "label": "B — redesign", "successRate": 100, "avgSteps": 6.0, "winner": true }
+  ],
+  "cohorts": [
+    { "persona": "Neutral user", "successRate": 100, "avgSteps": 7 },
+    { "persona": "First-time, low-tech", "successRate": 33, "avgSteps": 18 }
+  ],
+  "findings": [
+    { "title": "Got stuck on the empty state for 6 steps before finding the CTA", "severity": "High", "evidence": "steps 3–8, neutral-user run" },
+    { "title": "Rage-clicked a non-interactive card header", "severity": "Medium", "evidence": "step 5, low-tech persona" }
+  ]
+}
+</script>
+<script>
+(function () {
+  var data = JSON.parse(document.getElementById('ut-result-data').textContent);
+  var esc = function (s) {
+    return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  };
+
+  document.getElementById('utr-agent').textContent = (data.agent || 'usability-tester') + ' · ' + (data.phaseLabel || 'Mode C · Stop Gate');
+  document.getElementById('utr-goal').textContent = 'Goal: ' + esc(data.goal || '');
+  document.getElementById('utr-revise').onclick = function () { sendPrompt(data.revisePrompt || 'revise'); };
+  document.getElementById('utr-pivot').onclick = function () { sendPrompt(data.pivotPrompt || 'pivot'); };
+
+  var m = data.metrics || {};
+  var pct = function (v) { return (v == null ? '—' : v + '%'); };
+  var num = function (v) { return (v == null ? '—' : v); };
+  var pe = (m.pathEfficiency == null)
+    ? { v: 'n/a', sub: 'no golden path' }
+    : { v: Math.round(m.pathEfficiency * 100) + '%', sub: 'steps vs optimal' };
+
+  var tiles = [
+    { val: pct(m.successRate), cap: 'Success rate', sub: 'reached the goal' },
+    { val: num(m.avgSteps), cap: 'Avg steps', sub: 'to terminal state' },
+    { val: num(m.errorRate), cap: 'Errors / run', sub: 'misclicks + no-effect' },
+    { val: num(m.rageClicks), cap: 'Rage clicks / run', sub: 'repeat, no effect' },
+    { val: num(m.lostness), cap: 'Lostness', sub: 'unique-state wandering' },
+    { val: pe.v, cap: 'Path efficiency', sub: pe.sub }
+  ];
+  document.getElementById('utr-metrics').innerHTML = tiles.map(function (t) {
+    return '<div class="utr-tile"><p class="utr-val">' + esc(t.val) + '</p>'
+      + '<p class="utr-cap">' + esc(t.cap) + '</p>'
+      + '<p class="utr-sub">' + esc(t.sub) + '</p></div>';
+  }).join('');
+
+  // A/B variant scoreboard
+  var vWrap = document.getElementById('utr-variants');
+  if (data.variants && data.variants.length > 1) {
+    var rows = data.variants.map(function (v) {
+      var mark = v.winner ? '<span style="color:var(--color-text-success); font-weight:600;">▲ winner</span>' : '';
+      return '<tr><td style="padding:6px 10px; border-bottom:0.5px solid var(--color-border-tertiary);">' + esc(v.label) + ' ' + mark + '</td>'
+        + '<td style="padding:6px 10px; text-align:right; border-bottom:0.5px solid var(--color-border-tertiary);">' + pct(v.successRate) + '</td>'
+        + '<td style="padding:6px 10px; text-align:right; border-bottom:0.5px solid var(--color-border-tertiary);">' + num(v.avgSteps) + '</td></tr>';
+    }).join('');
+    vWrap.innerHTML = '<p style="margin:0 0 6px; font-size:13px; font-weight:500;">A/B scoreboard</p>'
+      + '<table style="width:100%; border-collapse:collapse; font-size:13px;"><thead><tr>'
+      + '<th style="text-align:left; padding:6px 10px; color:var(--color-text-secondary); font-weight:500;">Variant</th>'
+      + '<th style="text-align:right; padding:6px 10px; color:var(--color-text-secondary); font-weight:500;">Success</th>'
+      + '<th style="text-align:right; padding:6px 10px; color:var(--color-text-secondary); font-weight:500;">Avg steps</th>'
+      + '</tr></thead><tbody>' + rows + '</tbody></table>';
+  }
+
+  // Per-persona cohort breakdown
+  var cWrap = document.getElementById('utr-cohorts');
+  if (data.cohorts && data.cohorts.length > 1) {
+    var crows = data.cohorts.map(function (c) {
+      return '<tr><td style="padding:6px 10px; border-bottom:0.5px solid var(--color-border-tertiary);">' + esc(c.persona) + '</td>'
+        + '<td style="padding:6px 10px; text-align:right; border-bottom:0.5px solid var(--color-border-tertiary);">' + pct(c.successRate) + '</td>'
+        + '<td style="padding:6px 10px; text-align:right; border-bottom:0.5px solid var(--color-border-tertiary);">' + num(c.avgSteps) + '</td></tr>';
+    }).join('');
+    cWrap.innerHTML = '<p style="margin:0 0 6px; font-size:13px; font-weight:500;">Per-persona</p>'
+      + '<table style="width:100%; border-collapse:collapse; font-size:13px;"><thead><tr>'
+      + '<th style="text-align:left; padding:6px 10px; color:var(--color-text-secondary); font-weight:500;">Persona</th>'
+      + '<th style="text-align:right; padding:6px 10px; color:var(--color-text-secondary); font-weight:500;">Success</th>'
+      + '<th style="text-align:right; padding:6px 10px; color:var(--color-text-secondary); font-weight:500;">Avg steps</th>'
+      + '</tr></thead><tbody>' + crows + '</tbody></table>';
+  }
+
+  // Findings
+  var sevColor = function (s) {
+    var k = String(s || '').toLowerCase();
+    if (k === 'critical') return 'var(--color-text-danger)';
+    if (k === 'high') return 'var(--color-text-danger)';
+    if (k === 'medium') return 'var(--color-text-warning)';
+    return 'var(--color-text-secondary)';
+  };
+  var fWrap = document.getElementById('utr-findings');
+  if (data.findings && data.findings.length) {
+    fWrap.innerHTML = '<p style="margin:0 0 8px; font-size:13px; font-weight:500;">Top findings</p>'
+      + data.findings.map(function (f) {
+        return '<div style="margin-bottom:10px;">'
+          + '<span style="font-size:12px; font-weight:600; color:' + sevColor(f.severity) + ';">' + esc(f.severity) + '</span> '
+          + '<span style="font-size:13px;">' + esc(f.title) + '</span>'
+          + (f.evidence ? '<p style="margin:2px 0 0; font-size:12px; color:var(--color-text-secondary);"><em>' + esc(f.evidence) + '</em></p>' : '')
+          + '</div>';
+      }).join('');
+  }
+})();
+</script>

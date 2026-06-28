@@ -1,0 +1,268 @@
+<!--
+  wireframe.widget.html — v5.5, supplemental widget for lo-fi-designer
+  Renders lo-fi layouts as GRAYSCALE wireframes, in TWO modes:
+
+  1. LAYOUT MODE (no `detailLoop` in the data) — the v5.4 behavior. Renders the
+     3 layout alternatives (primary / alternative / risky) at REGION + LABEL
+     fidelity: each region is a dashed box with a label, an optional content
+     hint, and an optional behavior note. This is the first lo-fi Stop Gate,
+     where the user picks the layout to build.
+
+  2. DETAIL-LOOP MODE (`detailLoop` present) — the v5.5 section detail loop.
+     Once the user has picked a layout, the orchestrator loops over its sections
+     one at a time. In this mode the widget renders ONLY the chosen layout, and
+     each region carries:
+       • detailStatus: "detailed" | "pending"  — loop progress per section
+       • focus: true                            — the section THIS gate is about
+                                                   (auto-expanded + highlighted)
+       • components[]                           — the lo-fi component composition
+     A region with components is click-to-expand (like ia-tree). Components are
+     LABELED BOXES only — { name, type, role, repeat? } — never styled skeletons.
+     name = the component, type = its kind (input/button/table/card/tabs/list/
+     chip/nav/state/…), role = a one-line purpose. That keeps it lo-fi: it answers
+     "WHICH components fill this section and roughly in what order", not "what do
+     they look like" (hi-fi = figma-designer / design-engineer) and not their
+     props/states (handoff-engineer). Action buttons must respect the IA
+     action-priority map (primary/secondary/tertiary) — lo-fi places, IA governs.
+
+  NOT a decisionData shape — agent-specific supplemental widget at the lo-fi
+  Stop Gate, alongside lo-fi's `insights` decisionData. ASCII (in the handoff
+  .md body) is the markdown fallback when no widget tool is available.
+
+  ORCHESTRATOR USE (see orchestrator.md § Decision Data Rendering → Widget render →
+  "Supplemental: lo-fi wireframe"): read this file → replace ONLY the
+  `<script id="wireframe-data">` island from the lo-fi handoff's `wireframe`
+  block → pass the whole string as show_widget's widget_code.
+
+  Region shape: { "label": str, "hint"?: str, "note"?: str, "w"?: num,
+                  "detailStatus"?: "detailed"|"pending", "focus"?: bool,
+                  "components"?: [ { "name": str, "type": str, "role"?: str, "repeat"?: bool } ] }
+-->
+<div style="padding: 1rem 0;">
+<h2 class="sr-only" id="wf-summary">Low-fi designer Stop Gate: grayscale wireframes — either three layout alternatives at region level, or one chosen layout being detailed section by section down to its lo-fi component composition.</h2>
+
+<div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+  <div style="width:32px; height:32px; border-radius:50%; background:var(--color-background-secondary); display:flex; align-items:center; justify-content:center; color:var(--color-text-secondary);"><i class="ti ti-layout-2" style="font-size:18px;" aria-hidden="true"></i></div>
+  <div>
+    <p style="margin:0; font-size:15px; font-weight:500;" id="wf-agent">lo-fi-designer · Stop Gate</p>
+    <p style="margin:0; font-size:13px; color:var(--color-text-secondary);" id="wf-phase">ready for your call</p>
+  </div>
+</div>
+
+<div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-bottom:6px;">
+  <span id="wf-form" style="font-size:12px; padding:3px 12px; border-radius:var(--border-radius-md); background:var(--color-background-secondary); color:var(--color-text-secondary);"></span>
+  <span id="wf-count" style="font-size:12px; padding:3px 12px; border-radius:var(--border-radius-md); background:var(--color-background-secondary); color:var(--color-text-secondary);"></span>
+  <span id="wf-fidelity" style="font-size:12px; padding:3px 12px; border-radius:var(--border-radius-md); background:transparent; color:var(--color-text-tertiary);">lo-fi · region + label · grayscale</span>
+</div>
+<p id="wf-caption" style="margin:0 0 14px; font-size:12px; color:var(--color-text-tertiary);">Structure only — no color, no type. The question is whether the screen architecture makes sense.</p>
+
+<div id="wf-layouts"></div>
+
+<div style="margin-top:16px; padding-top:14px; border-top:0.5px solid var(--color-border-tertiary); display:flex; gap:8px; flex-wrap:wrap;">
+  <button id="wf-btn-approve">Approve ↗</button>
+  <button id="wf-btn-revise">Revise ↗</button>
+  <button id="wf-btn-third">More ↗</button>
+</div>
+</div>
+
+<script id="wireframe-data" type="application/json">
+{
+  "agent": "lo-fi-designer",
+  "phaseLabel": "Phase 8 of 15 · detailing the chosen layout, section by section",
+  "formFactor": "web",
+  "revisePrompt": "revise the layout",
+  "pivotPrompt": "propose a 4th layout variation",
+  "detailLoop": {
+    "status": "in_progress",
+    "chosenLayout": "Primary",
+    "sectionsTotal": 4,
+    "sectionsDetailed": 3,
+    "currentSection": "MainContent",
+    "approvePrompt": "y",
+    "reviseSectionPrompt": "revise the MainContent section",
+    "donePrompt": "done detailing sections"
+  },
+  "layouts": [
+    {
+      "name": "Primary",
+      "tone": "primary",
+      "rationale": "Detailing the chosen layout — section 3 of 4. Approve MainContent to move to CommandBar.",
+      "bands": [
+        { "regions": [
+          { "label": "TopBar", "hint": "project name · cost · settings", "note": "persistent · sticky", "detailStatus": "detailed", "components": [
+            { "name": "ProjectSwitcher", "type": "select", "role": "switch active project" },
+            { "name": "CostMeter", "type": "stat", "role": "running token cost" },
+            { "name": "SettingsButton", "type": "button", "role": "tertiary — opens settings" }
+          ] }
+        ] },
+        { "regions": [
+          { "label": "Sidebar", "hint": "History · Active · Archived", "w": 0.3, "detailStatus": "detailed", "components": [
+            { "name": "NavList", "type": "list", "role": "History / Active / Archived", "repeat": true },
+            { "name": "NewSessionButton", "type": "button", "role": "primary — start a session" }
+          ] },
+          { "label": "MainContent", "hint": "tabbed: Insights · cards", "w": 0.7, "detailStatus": "detailed", "focus": true, "components": [
+            { "name": "Tabs", "type": "tabs", "role": "Insights / Activity switch" },
+            { "name": "InsightCard", "type": "card", "role": "one per insight", "repeat": true },
+            { "name": "EmptyState", "type": "state", "role": "shown when no insights yet" },
+            { "name": "LoadMoreButton", "type": "button", "role": "secondary — paginate" }
+          ] }
+        ] },
+        { "regions": [
+          { "label": "CommandBar", "hint": "5 chips · keyboard-driven", "note": "always visible", "detailStatus": "pending" }
+        ] }
+      ]
+    }
+  ]
+}
+</script>
+<script>
+(function () {
+  var data = JSON.parse(document.getElementById('wireframe-data').textContent);
+  var esc = function (s) {
+    return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  };
+
+  var loop = data.detailLoop || null;
+  var isMobile = (data.formFactor || 'web') === 'mobile';
+
+  var layouts = data.layouts || [];
+  if (loop && loop.chosenLayout) {
+    layouts = layouts.filter(function (l) { return l.name === loop.chosenLayout; });
+    if (!layouts.length) layouts = (data.layouts || []).slice(0, 1);
+  }
+
+  document.getElementById('wf-agent').textContent = (data.agent || 'lo-fi-designer') + ' · Stop Gate';
+  document.getElementById('wf-phase').textContent = data.phaseLabel || 'ready for your call';
+  document.getElementById('wf-form').textContent = isMobile ? 'Mobile · single column' : 'Web · responsive';
+
+  if (loop) {
+    var done = (loop.status === 'complete');
+    document.getElementById('wf-count').textContent = 'Detailing ' + esc(loop.chosenLayout || 'layout') + ' · ' + (loop.sectionsDetailed || 0) + '/' + (loop.sectionsTotal || '?') + ' sections';
+    document.getElementById('wf-fidelity').textContent = 'lo-fi · component composition';
+    document.getElementById('wf-caption').textContent = done
+      ? 'All sections detailed — components are labeled boxes (name · type · role), not styled UI. Ready for Deliver.'
+      : 'Detailing section by section. Components are labeled boxes (name · type · role) — what fills the section, not how it looks.';
+  } else {
+    document.getElementById('wf-count').textContent = layouts.length + (layouts.length === 1 ? ' layout' : ' layouts');
+  }
+
+  var btnApprove = document.getElementById('wf-btn-approve');
+  var btnRevise = document.getElementById('wf-btn-revise');
+  var btnThird = document.getElementById('wf-btn-third');
+  if (loop) {
+    var doneLoop = (loop.status === 'complete');
+    btnApprove.textContent = (doneLoop ? 'Proceed to Deliver' : 'Approve this section') + ' ↗';
+    btnApprove.onclick = function () { sendPrompt(loop.approvePrompt || 'y'); };
+    btnRevise.textContent = 'Revise this section ↗';
+    btnRevise.onclick = function () { sendPrompt(loop.reviseSectionPrompt || data.revisePrompt || 'revise this section'); };
+    btnThird.textContent = 'Done detailing ↗';
+    btnThird.onclick = function () { sendPrompt(loop.donePrompt || 'done detailing sections'); };
+    if (doneLoop) btnThird.style.display = 'none';
+  } else {
+    btnApprove.textContent = 'Build this layout ↗';
+    btnApprove.onclick = function () { sendPrompt('y'); };
+    btnRevise.textContent = 'Revise a layout ↗';
+    btnRevise.onclick = function () { sendPrompt(data.revisePrompt || 'revise a layout'); };
+    btnThird.textContent = 'Try a 4th variation ↗';
+    btnThird.onclick = function () { sendPrompt(data.pivotPrompt || 'propose a 4th layout variation'); };
+  }
+
+  var toneAccent = function (tone) {
+    if (tone === 'risky') return { border: 'var(--color-border-warning)', chipBg: 'var(--color-background-warning)', chipFg: 'var(--color-text-warning)', label: 'risky' };
+    if (tone === 'alternative') return { border: 'var(--color-border-secondary)', chipBg: 'var(--color-background-secondary)', chipFg: 'var(--color-text-secondary)', label: 'alternative' };
+    return { border: 'var(--color-border-primary)', chipBg: 'var(--color-background-secondary)', chipFg: 'var(--color-text-secondary)', label: 'primary' };
+  };
+
+  var statusChip = function (st) {
+    if (st === 'detailed') return '<span style="font-size:10px; padding:1px 8px; border-radius:var(--border-radius-md); background:var(--color-background-success); color:var(--color-text-success); white-space:nowrap;"><i class="ti ti-check" style="font-size:11px; vertical-align:-1px;" aria-hidden="true"></i> detailed</span>';
+    if (st === 'pending') return '<span style="font-size:10px; padding:1px 8px; border-radius:var(--border-radius-md); background:transparent; color:var(--color-text-tertiary); border:0.5px solid var(--color-border-tertiary); white-space:nowrap;">pending</span>';
+    return '';
+  };
+
+  var componentBox = function (c) {
+    var repeat = c.repeat ? '<span style="font-size:10px; color:var(--color-text-tertiary); margin-left:6px;"><i class="ti ti-stack-2" style="font-size:11px; vertical-align:-1px;" aria-hidden="true"></i> repeats</span>' : '';
+    var typeChip = c.type ? '<span style="font-size:10px; padding:1px 7px; border-radius:var(--border-radius-md); background:var(--color-background-secondary); color:var(--color-text-secondary); font-family:var(--font-mono); white-space:nowrap;">' + esc(c.type) + '</span>' : '';
+    var role = c.role ? '<span style="font-size:11px; color:var(--color-text-tertiary); display:block; margin-top:3px; line-height:1.4;">' + esc(c.role) + '</span>' : '';
+    return '<div style="border:1px dashed var(--color-border-tertiary); border-radius:5px; background:var(--color-background-secondary); padding:7px 10px;">'
+      + '<div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">'
+      + '<span style="font-size:12px; font-weight:500; color:var(--color-text-secondary);">' + esc(c.name) + '</span>' + typeChip + repeat
+      + '</div>' + role + '</div>';
+  };
+
+  var rid = 0;
+  var region = function (r) {
+    var w = (typeof r.w === 'number' && r.w > 0) ? r.w : 1;
+    var hint = r.hint ? '<span style="font-size:11px; color:var(--color-text-tertiary); display:block; margin-top:4px; line-height:1.4;">' + esc(r.hint) + '</span>' : '';
+    var note = r.note ? '<span style="font-size:10px; font-style:italic; color:var(--color-text-tertiary); display:block; margin-top:5px;">&larr; ' + esc(r.note) + '</span>' : '';
+    var hasComp = r.components && r.components.length;
+    var st = statusChip(r.detailStatus);
+    var focus = !!r.focus;
+    var border = focus ? 'var(--color-border-primary)' : 'var(--color-border-secondary)';
+    var bg = focus ? 'var(--color-background-secondary)' : 'var(--color-background-primary)';
+
+    var inner;
+    if (hasComp) {
+      var id = 'wf-rc-' + (rid++);
+      var comps = '<div style="display:flex; flex-direction:column; gap:6px;">' + r.components.map(componentBox).join('') + '</div>';
+      var open = focus;
+      var caret = open ? 'transform:rotate(90deg);' : '';
+      inner = '<div class="wf-region-head" data-target="' + id + '" style="cursor:pointer;">'
+        + '<div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">'
+        + '<i class="ti ti-chevron-right wf-chev" style="font-size:13px; color:var(--color-text-tertiary); transition:transform .12s; ' + caret + '" aria-hidden="true"></i>'
+        + '<span style="font-size:12px; font-weight:500; color:var(--color-text-secondary);">' + esc(r.label) + '</span>'
+        + (st ? '<span style="margin-left:auto;">' + st + '</span>' : '')
+        + '</div>' + hint + note + '</div>'
+        + '<div id="' + id + '" style="display:' + (open ? 'block' : 'none') + '; margin-top:8px;">' + comps + '</div>';
+    } else {
+      inner = '<div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">'
+        + '<span style="font-size:12px; font-weight:500; color:var(--color-text-secondary);">' + esc(r.label) + '</span>'
+        + (st ? '<span style="margin-left:auto;">' + st + '</span>' : '')
+        + '</div>' + hint + note;
+    }
+
+    return '<div style="flex:' + w + '; min-width:0; border:1px dashed ' + border + '; border-radius:6px; background:' + bg + '; padding:10px 12px; min-height:46px;">' + inner + '</div>';
+  };
+
+  var band = function (b) {
+    var regions = (b.regions || []).map(region).join('');
+    return '<div style="display:flex; gap:8px; margin-bottom:8px;">' + regions + '</div>';
+  };
+
+  var card = function (l, idx) {
+    var a = toneAccent(l.tone);
+    var frameMax = isMobile ? 'max-width:300px;' : '';
+    var bands = (l.bands || []).map(band).join('');
+    var breaks = l.breaks
+      ? '<div style="margin-top:10px; padding:8px 12px; border-radius:var(--border-radius-md); background:var(--color-background-warning); color:var(--color-text-warning); font-size:12px; display:flex; align-items:start; gap:8px;">'
+          + '<i class="ti ti-alert-triangle" style="font-size:15px; flex-shrink:0; margin-top:1px;" aria-hidden="true"></i><span>' + esc(l.breaks) + '</span></div>'
+      : '';
+    var rationale = l.rationale
+      ? '<p style="margin:10px 0 0; font-size:12px; color:var(--color-text-secondary); line-height:1.5;">' + esc(l.rationale) + '</p>'
+      : '';
+    var chip = loop ? '' : '<span style="font-size:11px; padding:2px 10px; border-radius:var(--border-radius-md); background:' + a.chipBg + '; color:' + a.chipFg + ';">' + a.label + '</span>';
+    return '<div style="margin-bottom:20px;">'
+      + '<div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">'
+        + '<span style="font-size:14px; font-weight:500;">' + esc(l.name || ('Layout ' + (idx + 1))) + '</span>' + chip
+      + '</div>'
+      + '<div style="border:1px solid ' + a.border + '; border-radius:var(--border-radius-lg); background:var(--color-background-tertiary); padding:10px; ' + frameMax + '">' + bands + '</div>'
+      + breaks + rationale
+      + '</div>';
+  };
+
+  var host = document.getElementById('wf-layouts');
+  host.innerHTML = layouts.map(card).join('');
+
+  host.addEventListener('click', function (e) {
+    var head = e.target.closest ? e.target.closest('.wf-region-head') : null;
+    if (!head) return;
+    var panel = document.getElementById(head.getAttribute('data-target'));
+    if (!panel) return;
+    var open = panel.style.display === 'none';
+    panel.style.display = open ? 'block' : 'none';
+    var chev = head.querySelector('.wf-chev');
+    if (chev) chev.style.transform = open ? 'rotate(90deg)' : 'rotate(0deg)';
+  });
+})();
+</script>

@@ -1,0 +1,73 @@
+<!--
+  metrics.widget.html — v5.3, `metrics` shape
+  Pre-built widget for the `metrics` decisionData shape
+  (pm-metrics-architect, lo-fi-designer measurement-layer mapping).
+
+  ORCHESTRATOR USE (see orchestrator.md § Decision Data Rendering → Widget render):
+    Read this file → replace ONLY the `<script id="metrics-data">` island with the
+    agent's decisionData → pass the whole string as show_widget's widget_code.
+    Constant shell otherwise. Markdown is the fallback when no widget tool exists.
+
+  Each layer is one row: a label on the left and its metrics as chips on the right.
+-->
+<div style="padding: 1rem 0;">
+<h2 class="sr-only" id="mw-summary">Stop Gate measurement plan grouped by layer, plus approve, revise, and pivot actions.</h2>
+
+<div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+  <div style="width:32px; height:32px; border-radius:50%; background:var(--color-background-info); display:flex; align-items:center; justify-content:center; color:var(--color-text-info);"><i class="ti ti-chart-bar" style="font-size:18px;" aria-hidden="true"></i></div>
+  <div>
+    <p style="margin:0; font-size:15px; font-weight:500;" id="mw-agent">agent · Stop Gate</p>
+    <p style="margin:0; font-size:13px; color:var(--color-text-secondary);" id="mw-phase">ready for your call</p>
+  </div>
+</div>
+
+<p style="margin:0 0 8px; font-size:13px; color:var(--color-text-secondary);" id="mw-label"></p>
+<div id="mw-layers" style="display:flex; flex-direction:column; gap:10px;"></div>
+
+<div style="margin-top:16px; padding-top:14px; border-top:0.5px solid var(--color-border-tertiary); display:flex; gap:8px; flex-wrap:wrap;">
+  <button onclick="sendPrompt('y')">Approve &amp; continue ↗</button>
+  <button id="mw-revise">Revise ↗</button>
+  <button id="mw-pivot">Pivot ↗</button>
+</div>
+</div>
+
+<script id="metrics-data" type="application/json">
+{
+  "agent": "pm-metrics-architect",
+  "phaseLabel": "Phase 9 of 15 · ready for your call",
+  "label": "Success metrics · North Star + inputs + guardrails",
+  "revisePrompt": "revise the measurement plan",
+  "pivotPrompt": "pivot the success metrics",
+  "layers": [
+    { "label": "North Star", "metrics": ["Completed checkouts / week"] },
+    { "label": "Inputs", "metrics": ["Verify-phone pass rate", "Guest-checkout adoption", "Time to first purchase"] },
+    { "label": "Guardrails", "metrics": ["Fraud chargeback rate", "Support tickets / 1k orders"] }
+  ]
+}
+</script>
+<script>
+(function () {
+  var data = JSON.parse(document.getElementById('metrics-data').textContent);
+  var esc = function (s) {
+    return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  };
+
+  document.getElementById('mw-agent').textContent = data.agent + ' · Stop Gate';
+  document.getElementById('mw-phase').textContent = data.phaseLabel || 'ready for your call';
+  document.getElementById('mw-label').textContent = data.label || '';
+  document.getElementById('mw-revise').onclick = function () { sendPrompt(data.revisePrompt || 'revise'); };
+  document.getElementById('mw-pivot').onclick = function () { sendPrompt(data.pivotPrompt || 'pivot'); };
+
+  document.getElementById('mw-layers').innerHTML = (data.layers || []).map(function (l) {
+    var chips = (l.metrics || []).map(function (m) {
+      return '<span style="font-size:13px; padding:4px 12px; border-radius:var(--border-radius-md); background:var(--color-background-secondary); color:var(--color-text-primary);">' + esc(m) + '</span>';
+    }).join('');
+    return '<div style="background:var(--color-background-primary); border:0.5px solid var(--color-border-tertiary); border-radius:var(--border-radius-lg); padding:0.75rem 1rem; display:flex; gap:12px; align-items:start; flex-wrap:wrap;">'
+      + '<span style="font-size:13px; font-weight:500; min-width:88px; padding-top:5px;">' + esc(l.label) + '</span>'
+      + '<div style="display:flex; gap:8px; flex-wrap:wrap; flex:1;">' + chips + '</div>'
+      + '</div>';
+  }).join('');
+})();
+</script>

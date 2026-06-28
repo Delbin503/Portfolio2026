@@ -1,0 +1,64 @@
+<!--
+  callout.widget.html — v5.3, `callout` shape
+  Pre-built widget for the `callout` decisionData shape
+  (product-positioner, pm-strategist, pm-launch-architect — the strategic bet).
+
+  ORCHESTRATOR USE (see orchestrator.md § Decision Data Rendering → Widget render):
+    Read this file → replace ONLY the `<script id="callout-data">` island with the
+    agent's decisionData → pass the whole string as show_widget's widget_code.
+    Constant shell otherwise. Markdown is the fallback when no widget tool exists.
+
+  flavor: "launch" swaps the icon to a target and tags the card "The beachhead bet";
+  any other value renders the neutral "The bet" framing.
+-->
+<div style="padding: 1rem 0;">
+<h2 class="sr-only" id="cw-summary">Stop Gate strategic bet with headline and rationale, plus approve, revise, and pivot actions.</h2>
+
+<div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+  <div style="width:32px; height:32px; border-radius:50%; background:var(--color-background-info); display:flex; align-items:center; justify-content:center; color:var(--color-text-info);"><i id="cw-icon" class="ti ti-bulb" style="font-size:18px;" aria-hidden="true"></i></div>
+  <div>
+    <p style="margin:0; font-size:15px; font-weight:500;" id="cw-agent">agent · Stop Gate</p>
+    <p style="margin:0; font-size:13px; color:var(--color-text-secondary);" id="cw-phase">ready for your call</p>
+  </div>
+</div>
+
+<div style="background:var(--color-background-primary); border:2px solid var(--color-border-info); border-radius:var(--border-radius-lg); padding:1rem 1.25rem;">
+  <span id="cw-tag" style="display:inline-block; font-size:12px; padding:3px 12px; border-radius:var(--border-radius-md); background:var(--color-background-info); color:var(--color-text-info); margin-bottom:10px;">The bet</span>
+  <p id="cw-headline" style="margin:0 0 6px; font-size:16px; font-weight:500;"></p>
+  <p id="cw-body" style="margin:0; font-size:14px; color:var(--color-text-secondary); line-height:1.6;"></p>
+</div>
+
+<div style="margin-top:16px; padding-top:14px; border-top:0.5px solid var(--color-border-tertiary); display:flex; gap:8px; flex-wrap:wrap;">
+  <button onclick="sendPrompt('y')">Approve &amp; continue ↗</button>
+  <button id="cw-revise">Revise ↗</button>
+  <button id="cw-pivot">Pivot ↗</button>
+</div>
+</div>
+
+<script id="callout-data" type="application/json">
+{
+  "agent": "pm-launch-architect",
+  "phaseLabel": "Phase 12 of 15 · ready for your call",
+  "flavor": "launch",
+  "headline": "Win Shopify mid-market stores selling DTC apparel first",
+  "body": "They feel the verify-phone drop-off most (highest cart values, repeat buyers) and already cluster in 3 Slack communities we can reach without paid spend. Land 20 named accounts before widening to general retail.",
+  "revisePrompt": "revise the beachhead bet",
+  "pivotPrompt": "pivot the launch strategy"
+}
+</script>
+<script>
+(function () {
+  var data = JSON.parse(document.getElementById('callout-data').textContent);
+  document.getElementById('cw-agent').textContent = data.agent + ' · Stop Gate';
+  document.getElementById('cw-phase').textContent = data.phaseLabel || 'ready for your call';
+  document.getElementById('cw-headline').textContent = data.headline || '';
+  document.getElementById('cw-body').textContent = data.body || '';
+  document.getElementById('cw-revise').onclick = function () { sendPrompt(data.revisePrompt || 'revise'); };
+  document.getElementById('cw-pivot').onclick = function () { sendPrompt(data.pivotPrompt || 'pivot'); };
+
+  if (data.flavor === 'launch') {
+    document.getElementById('cw-icon').className = 'ti ti-target';
+    document.getElementById('cw-tag').textContent = 'The beachhead bet';
+  }
+})();
+</script>

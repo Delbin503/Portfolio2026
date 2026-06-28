@@ -1,0 +1,171 @@
+<!--
+  ut-inputs.widget.html — v5.9, usability-tester Mode C INPUT elicitation
+  Pre-run form that collects the Mode C run config from the user, then submits it
+  via sendPrompt(). NOT a decisionData shape — this is an elicitation widget shown
+  BEFORE the run (see orchestrator.md § Elicitation Widgets).
+
+  ORCHESTRATOR / AGENT USE:
+    Read this file → replace ONLY the `<script id="ut-inputs-data">` island with
+    prefill values (base_url + persona defaults from the prototype handoff /
+    fingerprint, and prd_journey_available) → pass the whole string as
+    show_widget's widget_code. On submit, the widget sendPrompt()s a single
+    structured line the usability-tester parses to run Mode C. Text fallback when
+    no inline-widget tool is available: ask for the same fields in chat.
+-->
+<div style="padding: 1rem 0; max-width: 560px;">
+<h2 class="sr-only">Set up a Mode C automated usability run: goal, golden path, personas, variant, and max steps.</h2>
+
+<style>
+  .uti-field { margin-bottom: 14px; }
+  .uti-label { display:block; font-size:13px; font-weight:500; margin-bottom:5px; }
+  .uti-hint { font-size:12px; color:var(--color-text-secondary); margin:3px 0 0; }
+  .uti-req { color:var(--color-text-danger); }
+  .uti-in, .uti-sel, .uti-area {
+    width:100%; box-sizing:border-box; font:inherit; font-size:13px;
+    padding:8px 10px; border:0.5px solid var(--color-border-secondary);
+    border-radius:var(--border-radius-md); background:var(--color-background-secondary);
+    color:var(--color-text-primary);
+  }
+  .uti-area { resize:vertical; min-height:40px; }
+  .uti-cond { display:none; margin-top:8px; }
+</style>
+
+<div style="display:flex; align-items:center; gap:10px; margin-bottom:16px;">
+  <div style="width:32px; height:32px; border-radius:50%; background:var(--color-background-info); display:flex; align-items:center; justify-content:center; color:var(--color-text-info);"><i class="ti ti-clipboard-list" style="font-size:18px;" aria-hidden="true"></i></div>
+  <div>
+    <p style="margin:0; font-size:15px; font-weight:500;" id="uti-agent">usability-tester · Mode C</p>
+    <p style="margin:0; font-size:13px; color:var(--color-text-secondary);">set up the automated run</p>
+  </div>
+</div>
+
+<div class="uti-field">
+  <label class="uti-label" for="uti-goal">Goal <span class="uti-req">*</span></label>
+  <input class="uti-in" id="uti-goal" type="text" placeholder="e.g. sign up for a free trial">
+  <p class="uti-hint">One plain-English outcome. One goal per run.</p>
+</div>
+
+<div class="uti-field">
+  <label class="uti-label" for="uti-target">Target URL</label>
+  <input class="uti-in" id="uti-target" type="text" placeholder="http://localhost:3000/...">
+  <p class="uti-hint">Prefilled from the design-engineer prototype handoff when available.</p>
+</div>
+
+<div class="uti-field">
+  <label class="uti-label" for="uti-golden">Golden path <span style="color:var(--color-text-secondary); font-weight:400;">(optional — enables path-efficiency)</span></label>
+  <select class="uti-sel" id="uti-golden">
+    <option value="none">None — skip path-efficiency</option>
+    <option value="record">Record it — I'll drive a real browser (Playwright codegen)</option>
+    <option value="target-image">Target example image — I'll attach the success screenshot</option>
+    <option value="reference">Reference pass — I'll list the ideal steps</option>
+    <option value="end-state">End-state only — a success URL/route</option>
+    <option value="prd">Derive from the PRD primary_journey</option>
+  </select>
+  <div class="uti-cond" id="uti-golden-record">
+    <p style="margin:0; font-size:12px; color:var(--color-text-secondary);">I'll open a real browser with <code>playwright codegen</code> on the target. <strong>You</strong> click through to the ideal success screen, then close it — I record your exact path (steps + end state) as the golden baseline. This is the user-driven recorder, same idea as the source tool. (Needs a local/headed display.)</p>
+  </div>
+  <div class="uti-cond" id="uti-golden-image">
+    <p style="margin:0 0 6px; font-size:12px; color:var(--color-text-secondary);">Attach the success-state screenshot to your <strong>next chat message</strong> — I'll compare each step against it with vision (this is the source tool's target-success-image, Claude-native). Optionally paste an image URL instead:</p>
+    <input class="uti-in" id="uti-image" type="text" placeholder="(optional) image URL of the success state">
+  </div>
+  <div class="uti-cond" id="uti-golden-steps">
+    <textarea class="uti-area" id="uti-steps" placeholder="List the ideal happy-path steps, one per line — I'll run them once as the baseline."></textarea>
+  </div>
+  <div class="uti-cond" id="uti-golden-end">
+    <input class="uti-in" id="uti-end" type="text" placeholder="success URL or route, e.g. /confirmation">
+  </div>
+  <p class="uti-hint" id="uti-golden-hint">Your example is authoritative — I won't invent a golden path when you give one. Drive the path yourself (record), attach the success screenshot, or list the steps; the automated run is what's agent-driven, not your golden-path setup.</p>
+</div>
+
+<div class="uti-field">
+  <label class="uti-label" for="uti-personas">Persona(s)</label>
+  <input class="uti-in" id="uti-personas" type="text" placeholder="neutral user">
+  <p class="uti-hint">Comma-separated. Default = one neutral representative user. Runs the goal once per persona.</p>
+</div>
+
+<div class="uti-field">
+  <label class="uti-label" for="uti-variant">Variant B URL <span style="color:var(--color-text-secondary); font-weight:400;">(optional — A/B)</span></label>
+  <input class="uti-in" id="uti-variant" type="text" placeholder="leave blank for a single-target run">
+  <p class="uti-hint">Provide a second URL to A/B; you'll get a per-metric winner scoreboard.</p>
+</div>
+
+<div class="uti-field">
+  <label class="uti-label" for="uti-maxsteps">Max steps</label>
+  <input class="uti-in" id="uti-maxsteps" type="number" min="1" max="200" value="30" style="width:120px;">
+  <p class="uti-hint">Per-run step cap. The loop also ends early on success or when genuinely stuck.</p>
+</div>
+
+<div style="margin-top:18px; padding-top:14px; border-top:0.5px solid var(--color-border-tertiary); display:flex; gap:8px; flex-wrap:wrap; align-items:center;">
+  <button id="uti-run">Run Mode C ↗</button>
+  <button id="uti-cancel">Cancel</button>
+  <span id="uti-warn" style="font-size:12px; color:var(--color-text-danger); display:none;">Goal is required.</span>
+</div>
+</div>
+
+<script id="ut-inputs-data" type="application/json">
+{
+  "agent": "usability-tester",
+  "target_url": "",
+  "personas_default": "neutral user",
+  "max_steps_default": 30,
+  "prd_journey_available": false
+}
+</script>
+<script>
+(function () {
+  var data = JSON.parse(document.getElementById('ut-inputs-data').textContent);
+
+  document.getElementById('uti-agent').textContent = (data.agent || 'usability-tester') + ' · Mode C';
+  if (data.target_url) document.getElementById('uti-target').value = data.target_url;
+  if (data.personas_default) document.getElementById('uti-personas').placeholder = data.personas_default;
+  if (data.max_steps_default) document.getElementById('uti-maxsteps').value = data.max_steps_default;
+
+  var goldenSel = document.getElementById('uti-golden');
+  // If the PRD journey isn't available, disable that option so the user knows.
+  if (!data.prd_journey_available) {
+    var prdOpt = goldenSel.querySelector('option[value="prd"]');
+    prdOpt.textContent = 'Derive from the PRD primary_journey (none found)';
+    prdOpt.disabled = true;
+  }
+
+  var recordBox = document.getElementById('uti-golden-record');
+  var imageBox = document.getElementById('uti-golden-image');
+  var stepsBox = document.getElementById('uti-golden-steps');
+  var endBox = document.getElementById('uti-golden-end');
+  goldenSel.onchange = function () {
+    recordBox.style.display = goldenSel.value === 'record' ? 'block' : 'none';
+    imageBox.style.display = goldenSel.value === 'target-image' ? 'block' : 'none';
+    stepsBox.style.display = goldenSel.value === 'reference' ? 'block' : 'none';
+    endBox.style.display = goldenSel.value === 'end-state' ? 'block' : 'none';
+  };
+
+  function q(s) { return JSON.stringify(s); }
+
+  document.getElementById('uti-run').onclick = function () {
+    var goal = document.getElementById('uti-goal').value.trim();
+    if (!goal) { document.getElementById('uti-warn').style.display = 'inline'; return; }
+
+    var target = document.getElementById('uti-target').value.trim() || data.target_url || '(from prototype handoff)';
+    var golden = goldenSel.value;
+    var goldenDetail = '';
+    if (golden === 'record') goldenDetail = ' [recorded-walkthrough: launch playwright codegen, user drives]';
+    if (golden === 'target-image') {
+      var imgUrl = document.getElementById('uti-image').value.trim();
+      goldenDetail = imgUrl ? ' [target-image url: ' + imgUrl + ']' : ' [target-image: attached in chat]';
+    }
+    if (golden === 'reference') goldenDetail = ' [steps: ' + document.getElementById('uti-steps').value.trim().replace(/\n/g, ' | ') + ']';
+    if (golden === 'end-state') goldenDetail = ' [end-state: ' + document.getElementById('uti-end').value.trim() + ']';
+    var personas = document.getElementById('uti-personas').value.trim() || (data.personas_default || 'neutral user');
+    var variant = document.getElementById('uti-variant').value.trim();
+    var maxSteps = document.getElementById('uti-maxsteps').value || 30;
+
+    var line = 'Run usability-tester Mode C — goal: ' + q(goal)
+      + '; target: ' + target
+      + '; golden_path: ' + golden + goldenDetail
+      + '; personas: ' + personas
+      + '; variant_b: ' + (variant || 'none')
+      + '; max_steps: ' + maxSteps;
+    sendPrompt(line);
+  };
+  document.getElementById('uti-cancel').onclick = function () { sendPrompt('cancel'); };
+})();
+</script>
