@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "notion:bootstrap": "node --env-file=.env.local scripts/notion-bootstrap.mjs",
+    "notion:bootstrap-media": "node --env-file=.env.local scripts/notion-bootstrap-media.mjs",
     "notion:sync": "node --env-file=.env.local scripts/notion-sync.mjs"
   },
   "dependencies": {

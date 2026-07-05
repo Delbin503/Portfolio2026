@@ -61,6 +61,96 @@ async function localizeImages(items, subdir) {
   }
 }
 
+/** Download one Notion-hosted image into /public/casestudies, return its path. */
+async function downloadCaseImage(url, slug, order) {
+  const dir = path.join(ROOT, "public", "casestudies");
+  fs.mkdirSync(dir, { recursive: true });
+  try {
+    const res = await fetch(url);
+    if (!res.ok) return undefined;
+    const ext = (
+      new URL(url).pathname.match(/\.(png|jpe?g|webp|gif|avif|svg)$/i)?.[1] ??
+      (res.headers.get("content-type")?.split("/")[1] || "png")
+    )
+      .toLowerCase()
+      .replace("jpeg", "jpg");
+    const file = `${slug}-${order}.${ext}`;
+    fs.writeFileSync(path.join(dir, file), Buffer.from(await res.arrayBuffer()));
+    return `/casestudies/${file}`;
+  } catch {
+    return undefined;
+  }
+}
+
+/**
+ * Fill each project's `media` detail slots (in order) from the Project Media
+ * database — download uploaded images, set video URLs + captions. Slots with
+ * no uploaded asset revert to their placeholder. Re-derived every sync.
+ */
+async function applyProjectMedia(notion, data) {
+  const projRows = await queryAll(notion, process.env.NOTION_DB_PROJECTS);
+  const slugByPage = new Map();
+  for (const r of projRows) {
+    const slug = read.text(r.properties.Slug);
+    if (slug) slugByPage.set(r.id, slug);
+  }
+
+  const rows = await queryAll(notion, process.env.NOTION_DB_PROJECT_MEDIA);
+  const bySlug = new Map();
+  for (const r of rows) {
+    const slug = slugByPage.get(read.relation(r.properties.Project)[0]);
+    if (!slug) continue;
+    if (!bySlug.has(slug)) bySlug.set(slug, []);
+    bySlug.get(slug).push(r);
+  }
+
+  let filled = 0;
+  for (const cs of data.caseStudies) {
+    const media = (cs.detail?.sections ?? []).filter((s) => s.type === "media");
+    if (!media.length) continue;
+    const list = (bySlug.get(cs.slug) ?? []).sort(
+      (a, b) =>
+        (read.number(a.properties.Order) ?? 1e9) -
+        (read.number(b.properties.Order) ?? 1e9)
+    );
+    for (let i = 0; i < media.length; i++) {
+      const slot = media[i];
+      const row = list[i];
+      if (!row) {
+        delete slot.src;
+        continue;
+      }
+      const p = row.properties;
+      const kind = read.select(p.Kind) || slot.kind || "image";
+      const caption = read.text(p.Caption);
+      if (kind === "video") {
+        const url = read.url(p["Video URL"]);
+        slot.kind = "video";
+        if (url) {
+          slot.src = url;
+          filled += 1;
+        } else delete slot.src;
+      } else {
+        slot.kind = "image";
+        const fileUrl = read.files(p.Image)[0];
+        if (fileUrl) {
+          const local = await downloadCaseImage(
+            fileUrl,
+            cs.slug,
+            read.number(p.Order) ?? i + 1
+          );
+          if (local) {
+            slot.src = local;
+            filled += 1;
+          } else delete slot.src;
+        } else delete slot.src;
+      }
+      if (caption) slot.caption = caption;
+    }
+  }
+  return filled;
+}
+
 const byOrder = (a, b) => (a._order ?? 1e9) - (b._order ?? 1e9);
 const titleCase = (s) =>
   s
@@ -185,6 +275,12 @@ async function main() {
   if (testimonials) {
     data.praise = mapTestimonials(testimonials);
     summary.push(`testimonials: ${data.praise.length}`);
+  }
+
+  // Project media (case-study image/video slots) — filled from Notion uploads.
+  if (projects && process.env.NOTION_DB_PROJECT_MEDIA) {
+    const filled = await applyProjectMedia(notion, data);
+    summary.push(`media: ${filled}`);
   }
 
   if (!summary.length) {

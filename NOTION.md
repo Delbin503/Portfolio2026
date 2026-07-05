@@ -10,6 +10,7 @@ databases back the site:
 | **Volunteering** | Section 05 → *Volunteering* tab | experience |
 | **Contributions** | Section 06 → *Beyond the day job* | contributions |
 | **Testimonials** | Section 07 → *What collaborators say* | praise |
+| **Project Media** | Image/video slots on each `/work/[slug]` page | media |
 
 Content lives in `content/data.json`; the sync script rewrites it from Notion.
 The site reads that JSON at build time, so it stays fully static and fast.
@@ -87,6 +88,20 @@ photo + title + date, and reveals `Description` on hover.
 Notion — they live in `content/data.json` under each project's `detail` and are
 preserved across syncs. Notion's Projects DB controls the card summary (title,
 category, blurb, metrics, accent); the deep page content is authored in code.
+
+**Project Media** — this is how you add photos/videos to a case study without
+touching code. It has one row per image/video slot on a project's page:
+- Each row is linked to a project (`Project` relation) and ordered by `Order`
+  (row 1 fills the first slot on the page, row 2 the second, and so on).
+- For an image slot: drag a file into the **`Image`** column. For a video slot:
+  paste a Vimeo/YouTube link into **`Video URL`** (and set `Kind` = video).
+- `Caption` (optional) shows under the media.
+- Run `npm run notion:sync` — uploaded images are downloaded into
+  `public/casestudies/` and wired into the page; empty rows stay as the grey
+  placeholder. The rows were pre-seeded with the slot labels (e.g.
+  "jar-aye · User flow") so you know which asset goes where.
+- One-time creation: `npm run notion:bootstrap-media` (already run) → add the
+  printed `NOTION_DB_PROJECT_MEDIA` id to `.env.local`.
 
 ---
 

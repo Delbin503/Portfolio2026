@@ -193,6 +193,23 @@ export const SCHEMAS = {
       Published: { checkbox: {} },
     },
   },
+  // One row per image/video slot on a case-study page. Upload into `Image` or
+  // paste a `Video URL`; sync fills the project's media slots in `Order`.
+  // Project relation is added dynamically in bootstrap (needs Projects DB id).
+  projectMedia: {
+    envKey: "NOTION_DB_PROJECT_MEDIA",
+    title: "Project Media",
+    properties: {
+      Name: { title: {} },
+      Order: { number: { format: "number" } },
+      Kind: {
+        select: { options: [{ name: "image" }, { name: "video" }] },
+      },
+      Image: { files: {} },
+      "Video URL": { url: {} },
+      Caption: { rich_text: {} },
+    },
+  },
 };
 
 /** Query every row of a database, following pagination. */
