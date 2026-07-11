@@ -349,11 +349,11 @@
       "code": "AC",
       "category": "VISION AI OPS",
       "kicker": "\u2192 Vision Ai Ops \u00b7 2026",
-      "paletteLabel": "The cameras were watching. Nobody was.",
-      "title": "The cameras were watching.",
-      "metrics": "Vision AI Ops \u00b7 Sigmawave AI \u00b7 2025\u20132026",
-      "blurb": "A full-stack Vision AI Operations platform for defence and security operators \u2014 validate a model against real footage before it ever watches a live camera, then monitor, triage, and turn detections into audit-ready incident reports. I designed the full MVP end-to-end.",
-      "mockLabel": "[ Accel \u2014 Dashboard, the central ops view ]",
+      "paletteLabel": "Prove the model before you trust the camera.",
+      "title": "Prove the model before you trust the camera.",
+      "metrics": "Vision AI Ops \u00b7 Sigmawave AI \u00b7 May\u2013Jul 2026",
+      "blurb": "Accel takes a computer vision model from \u201ctrained\u201d to \u201ctrusted\u201d \u2014 build the model and its rules, validate against real footage, deploy only what passes, then monitor it running live. A full-stack, on-premise Vision AI operations platform I designed end-to-end.",
+      "mockLabel": "[ Accel \u2014 Run Analysis result: score, activity log, VLM reasoning ]",
       "accent": "#8ec5ff",
       "buttonBg": "#527294",
       "cardGradient": "linear-gradient(180deg,#1b222c,#11151b)",
@@ -361,19 +361,19 @@
       "badgeBg": "#1d2631",
       "mockStripe": "repeating-linear-gradient(135deg,#151b23,#151b23 11px,#1d2631 11px,#1d2631 22px)",
       "detail": {
-        "summary": "Computer vision teams lose accuracy, time, and operator trust in the gap between a model that scores well in benchmarks and one that holds up in the field. Accel is Sigmawave AI's Vision AI Operations platform \u2014 it closes that gap with one loop: validate a model against real footage before deployment, watch it live once deployed, and turn every detection into an audit-ready incident. I designed the full MVP platform end-to-end.",
-        "subtitle": "Complete operator autonomy, from validation to live monitoring.",
+        "summary": "Accel is where a computer vision model goes from \u201ctrained\u201d to \u201ctrusted.\u201d Operators build a model and the rules it runs on, validate it against real footage, deploy only what passes to cameras across their sites, then monitor it running live \u2014 all in one on-premise platform they fully own. I designed the whole thing: model and rule creation, the validation pipeline, the deployment layer, the live monitoring wall, and the admin spine that governs it. The promise built into every screen: complete operator autonomy from day one.",
+        "subtitle": "Designing Accel \u2014 a Vision AI operations platform for defence and security operators.",
         "sections": [
           {
             "type": "metaRow",
             "items": [
               {
                 "label": "Role",
-                "value": "Product Designer \u2014 full MVP platform"
+                "value": "Product Designer / Owner"
               },
               {
-                "label": "Team",
-                "value": "Product Manager, Engineering"
+                "label": "Industry",
+                "value": "AI / Computer Vision \u00b7 Physical Security"
               },
               {
                 "label": "Company",
@@ -381,7 +381,7 @@
               },
               {
                 "label": "Timeline",
-                "value": "2025 \u2013 May 2026"
+                "value": "May 2026 \u2013 Jul 2026"
               }
             ]
           },
@@ -389,21 +389,21 @@
             "type": "stats",
             "items": [
               {
-                "value": "5",
-                "label": "Platform sections",
-                "sub": "Monitor, Manage, Deploy, System, and Profile Settings \u2014 the full operator lifecycle",
+                "value": "The Loop",
+                "label": "Build \u2192 Validate \u2192 Deploy \u2192 Monitor",
+                "sub": "Assemble a model and rules, prove it against real footage, deploy only what passes, then watch it work live",
                 "tone": "blue"
               },
               {
-                "value": "17",
-                "label": "Modules designed",
-                "sub": "From Live Monitoring and Detection Feed to Run Analysis, Rules Library, and Model Management",
+                "value": "5",
+                "label": "Platform sections",
+                "sub": "Monitor, Manage, Deploy, System, and Profile \u2014 one operator loop across 17 feature modules",
                 "tone": "violet"
               },
               {
-                "value": "3",
-                "label": "Persistent problems solved",
-                "sub": "The validation gap, tooling fragmentation, and detection logic locked behind engineering",
+                "value": "1",
+                "label": "On-prem platform",
+                "sub": "Full-stack, operator-owned, no dependence on a vendor cloud to run Vision AI",
                 "tone": "green"
               }
             ]
@@ -411,20 +411,21 @@
           {
             "type": "prose",
             "eyebrow": "At a glance \u00b7 60 seconds",
-            "title": "Operators don't fail to respond. They fail to see it in time.",
+            "title": "A model that scores well can still fail on a real camera.",
             "paragraphs": [
-              "Accel exists because most computer vision programs lose their edge after the demo. A model that scores well in benchmark testing fails in the field \u2014 different lighting, different angles, occlusion nobody tested for \u2014 and the failure only shows up after deployment, when it's expensive to fix. Teams also stitch together separate tools for datasets, testing, rules, and live monitoring, and the seams between them hide the root cause. Accel is a single platform that closes that loop: validate a model before it goes live, watch it once it's live, and turn every detection into something an operator can act on."
+              "A computer vision model can pass every benchmark and still miss a person in bad light, misread an unfamiliar angle, or flag a shadow as a threat. In real deployment those failures surface late \u2014 on a live camera, when remediation is expensive. Accel closes that gap. Operators build a model and its rules, validate it against real footage, deploy only validated models to cameras, and monitor them at work \u2014 without stitching together five different tools to do it. My job was to design every surface in that loop and make a genuinely complex operations platform feel like one coherent path."
             ]
           },
           {
             "type": "tags",
             "items": [
-              "Validation Gap",
-              "Live Monitoring",
-              "Detection Feed",
+              "Model Creation",
+              "Rules Library",
               "Run Analysis",
-              "Incident Reports",
-              "Rules & Models"
+              "VLM Reasoning",
+              "Deployment",
+              "Live Monitoring",
+              "On-Premise"
             ]
           },
           {
@@ -432,27 +433,27 @@
             "items": [
               {
                 "label": "Problem",
-                "text": "Models that pass benchmarks fail in the field, tools don't talk to each other, and defining detection logic requires an engineer \u2014 locking out the operators who understand the job best."
+                "text": "Models get deployed on trust, not proof. Validation is fragmented across tools, and defining detection logic usually needs an engineer."
               },
               {
                 "label": "Method",
-                "text": "Mapped the full operator lifecycle from the PRD \u2014 validation, live monitoring, incident response \u2014 then designed each of the platform's 17 modules against real operator workflows."
+                "text": "Designed around one operator loop \u2014 build, validate, deploy, monitor \u2014 organised into five clear platform sections, against a three-role permission matrix."
               },
               {
                 "label": "Decision",
-                "text": "Give Run Analysis \u2014 pre-deployment validation against real footage \u2014 the design investment of a hero feature, not a settings screen."
+                "text": "Make Run Analysis the differentiator: a model must be validated against real footage, with VLM reasoning, before it can be deployed."
               },
               {
                 "label": "Surfaces",
-                "text": "Monitor (dashboard, live monitoring, recordings, incident reports), Manage (sites, cameras, NVRs, models, rules), Deploy (run analysis, deploy models), System (users, device health, config, logs)."
+                "text": "Model management, rules, run analysis, deployment, dashboard, live monitoring, recordings, incident reports, sites, cameras, NVRs, users, billing."
               },
               {
                 "label": "Outcome",
-                "text": "A platform built for defence and security operators \u2014 audit-trail grade for customers like DSTA, MINDEF, and IMDA \u2014 where a model earns trust before it ever watches a live feed."
+                "text": "A platform that takes a model from \u201cbuilt\u201d to \u201cvalidated\u201d to \u201cdeployed and watched\u201d \u2014 fully on-premise, fully operator-owned."
               },
               {
                 "label": "Lesson",
-                "text": "The validation report is the deliverable users actually came for, not the dashboard around it."
+                "text": "In a complex operations tool, the hardest and most valuable design work is making the right path the obvious one."
               }
             ]
           },
@@ -460,157 +461,191 @@
             "type": "prose",
             "num": "01",
             "eyebrow": "The problem",
-            "title": "Three problems, one operator.",
-            "subtitle": "Validation gap, tooling fragmentation, and detection logic locked behind engineering.",
+            "title": "Models get deployed on trust, not proof.",
+            "subtitle": "And trust is the wrong currency for a detection model.",
             "paragraphs": [
-              "Every computer vision team we spoke to described some version of the same three problems."
+              "Computer vision teams working with synthetic and hybrid-synthetic data face the same three problems again and again. There's a validation gap \u2014 models that score well in testing fail in real conditions because of lighting, angle, occlusion, and environmental variation, and those failures only surface after deployment when they're expensive to fix. There's tooling fragmentation \u2014 teams stitch together separate platforms for dataset management, video testing, performance visualisation, rule definition, deployment, and monitoring, and the seams between them hide root cause and slow every iteration. And there's detection-logic accessibility \u2014 defining when a model should trigger an alert usually requires an engineer, locking out the operations and domain experts who understand the use case best.",
+              "Accel had to close all three at once, for operators in defence and security who need to run, manage, and own their Vision AI on their own infrastructure. My job was to design that unified loop \u2014 and make it something operators actually run, not something they skip under pressure."
             ],
             "notes": [
               {
                 "title": "Validation gap",
-                "text": "Models that score well in benchmark testing fail in real deployment conditions because of lighting, angle, occlusion, and environmental variation. These failures typically surface only after deployment, when remediation is expensive."
+                "text": "Models that score well in testing fail in real conditions because of lighting, angle, occlusion, and environmental variation \u2014 and the failures only surface after deployment, when they're expensive to fix."
               },
               {
                 "title": "Tooling fragmentation",
-                "text": "Teams stitch together separate platforms for dataset management, video-based testing, performance visualisation, rule definition, deployment, and live monitoring. The seams between these tools obscure root cause analysis and slow iteration."
+                "text": "Separate platforms for datasets, video testing, performance visualisation, rule definition, deployment, and monitoring. The seams between them hide root cause and slow every iteration."
               },
               {
                 "title": "Detection-logic accessibility",
-                "text": "Defining when a model should trigger an alert typically requires engineering involvement, locking out the operations and domain experts who understand the use case best."
+                "text": "Defining when a model should trigger an alert usually requires an engineer \u2014 locking out the operations and domain experts who understand the use case best."
               }
             ]
           },
           {
             "type": "quote",
-            "text": "A model that scores well in a benchmark and a model an operator trusts in production are not the same thing. Accel's job is to close that gap before it becomes an incident."
+            "text": "A model you haven't validated isn't a capability. It's an unproven assumption sitting on a live camera."
           },
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: Accel \u2014 dashboard, the central ops view ]"
+            "label": "[ IMAGE: The gap \u2014 model trained vs model proven on real footage ]"
           },
           {
             "type": "prose",
             "num": "02",
-            "eyebrow": "Run Analysis",
-            "title": "Pre-deployment validation is the differentiator.",
-            "subtitle": "Test a model against real footage before it ever watches a live camera.",
+            "eyebrow": "The frame",
+            "title": "One operator loop. Five sections.",
+            "subtitle": "Build \u2192 validate \u2192 deploy \u2192 monitor, plus the governance around it.",
             "paragraphs": [
-              "Run Analysis is the MVP's core moment. A user selects a model, picks a preferred SOP VLM for reasoning, and uploads representative footage. The system produces a score, a structured activity log, and a VLM reasoning narrative that describes and reasons about what it saw \u2014 all exportable as a report.",
-              "A Past History view lets users search previous analyses by keyword or date, and open any one to see the full report again. It's the traceable evidence an operator needs before they'll trust a model with a live feed."
-            ]
-          },
-          {
-            "type": "media",
-            "kind": "image",
-            "label": "[ IMAGE: Run Analysis \u2014 score, activity log, VLM reasoning ]"
-          },
-          {
-            "type": "findings",
-            "title": "What makes a validation trustworthy.",
-            "items": [
-              {
-                "title": "The score",
-                "text": "A single number an operator can hold a model to \u2014 the pass/fail bar before it ever reaches a camera.",
-                "tone": "blue"
-              },
-              {
-                "title": "The activity log",
-                "text": "A structured, step-by-step record of what the model flagged during the test run, not just a final verdict.",
-                "tone": "violet"
-              },
-              {
-                "title": "The VLM reasoning narrative",
-                "text": "Plain-language reasoning about the footage \u2014 why the model flagged what it flagged, in words an operator (not an engineer) can evaluate.",
-                "tone": "green"
-              }
+              "Rather than design seventeen modules as seventeen problems, I designed one loop and organised everything into five top-level sections that follow it. Operators Manage their sites, cameras, NVRs, models, and rules \u2014 building the detection logic first. They Deploy \u2014 but only after Run Analysis validates a model against footage. They Monitor the live result on a dashboard, camera wall, and incident feed. And the System and Profile sections hold the governance \u2014 users, device health, configuration, activity logs, and billing \u2014 that keeps the loop safe and accountable.",
+              "That framing settled the priorities early. It's why a model is built and its rules attached before anything else. It's why validation comes before deployment, not beside it. And it's why live monitoring is framed as the payoff of the loop, not a separate product bolted on."
             ]
           },
           {
             "type": "quote",
-            "text": "Run Analysis deserved design investment proportional to its strategic importance \u2014 it's the moment an operator decides whether to trust the model at all."
+            "text": "I stopped counting screens and started counting steps in one operator loop. The sections organised themselves after that."
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Section map \u2014 Monitor / Manage / Deploy / System / Profile ]"
           },
           {
             "type": "prose",
             "num": "03",
-            "eyebrow": "Monitor",
-            "title": "Once it's live, the feed has to earn attention every shift.",
-            "subtitle": "Dashboard, Live Monitoring, Recordings, and the Detection Feed.",
+            "eyebrow": "Manage models",
+            "title": "Build the model. Write the rules.",
+            "subtitle": "The detection logic comes first \u2014 and a non-engineer can define it.",
             "paragraphs": [
-              "The Dashboard is the at-a-glance operations screen \u2014 a persistent time filter (today, 7 days, 30 days, or custom) applies across every panel, with drill-down navigation into the module underneath. Live Monitoring gives operators a configurable multi-camera grid with a real-time health indicator per tile and active/inactive counters.",
-              "The Detection Feed is the structured log underneath it all: filterable by date range, site, area, severity, camera, and model, sorted newest or oldest. Every card surfaces the detection title, severity, case number, model used, precision and confidence scores, with one-glance actions to raise it as an official incident, dismiss it, or attach it to an existing report."
+              "Before a model can be proven or deployed, it has to be built. Model Management is where a detection model is assembled as an SOP-compliant sequence of processing steps \u2014 uploaded as JSON or .onnx files, each with an action or model label \u2014 with rules attached from the library or added inline. The result is a single model artefact: an ordered sequence of steps plus the rules that govern it, ready for validation.",
+              "The Rules Library is the detection-logic layer, and it's the answer to the \u201cyou need an engineer\u201d problem. Operators compose rules from structured conditions, start from pre-built templates (perimeter intrusion, PPE compliance, crowd density), and every rule carries an auto-generated plain-English summary so a non-engineer can read exactly what it does before saving. Rules assign the severity that ranks detections downstream, and they attach directly to models \u2014 so the logic and the model that runs it are never separated."
             ]
           },
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: Detection Feed \u2014 filterable list, severity + confidence ]"
+            "label": "[ IMAGE: Model Management \u2014 SOP sequence builder with attached rules ]"
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Rules Library \u2014 template-based builder with plain-English summary ]"
+          },
+          {
+            "type": "quote",
+            "text": "Rules written in plain English are how a domain expert \u2014 not just an engineer \u2014 gets to define what the system watches for."
           },
           {
             "type": "prose",
             "num": "04",
-            "eyebrow": "Manage & Deploy",
-            "title": "From site to camera to a model that's live.",
-            "subtitle": "Site Management, Cameras, NVRs, Rules Library, Model Management, and Deploy Models.",
+            "eyebrow": "Run Analysis",
+            "title": "The MVP differentiator.",
+            "subtitle": "Upload footage, run the model, read the verdict \u2014 with reasoning.",
             "paragraphs": [
-              "Site Management defines the physical hierarchy \u2014 sites, areas, and lanes \u2014 that drives zone options everywhere else in the platform. Cameras get added with RTSP stream details, recording configuration, and boundary-box zone drawing, then linked to an NVR channel. NVR Devices track storage health and retention, with age-based or channel-based cleanup.",
-              "Rules Library is where detection logic becomes something a non-engineer can own: pre-built templates for common scenarios (perimeter intrusion, PPE compliance, crowd density), and every rule gets an auto-generated plain-English summary. Model Management assembles an SOP-compliant sequence of processing steps and attaches rules from the library \u2014 the artefact that gets tested in Run Analysis and, once validated, pushed live in Deploy Models to a specific site, area, and camera."
+              "Run Analysis is where a built model gets proven, so it earned the most design attention. The flow is deliberately linear: select a model, select a preferred SOP VLM to reason about the footage, upload a representative video clip, and run. What comes back isn't just a number \u2014 it's a score, an activity log, and a VLM reasoning narrative that describes and explains what the model saw and why it behaved the way it did. The whole run is exportable as a report.",
+              "That reasoning narrative is what makes the verdict trustworthy instead of opaque. A score alone tells an operator whether a model passed; the VLM narrative tells them why \u2014 which is what lets a domain expert, not just an ML engineer, decide if the model meets the bar. Past analyses are kept and searchable, so a model's track record \u2014 every run, score, and report \u2014 is never a mystery."
             ]
           },
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: Rules Library \u2014 rule card with plain-English summary ]"
+            "label": "[ IMAGE: Run Analysis \u2014 select model, select SOP VLM, upload footage ]"
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Analysis result \u2014 score, activity log, VLM reasoning narrative, export ]"
           },
           {
             "type": "quote",
-            "text": "The plain-English rule summary is the operator's anchor for confidence. It has to stay prominent and accurate \u2014 that was a non-negotiable design constraint."
+            "text": "The whole platform rests on one moment: a verdict an operator can trust. The VLM reasoning is what turns a score into a decision."
           },
           {
             "type": "prose",
             "num": "05",
-            "eyebrow": "Incident Reports",
-            "title": "A detection is a flag. A report is the record.",
-            "subtitle": "Auto-generated from high-severity rules, or built manually from a recording.",
+            "eyebrow": "Deploy models",
+            "title": "Put the proven model on a camera.",
+            "subtitle": "The hinge between validation and live production.",
             "paragraphs": [
-              "High-severity rule violations auto-generate an Incident Report; operators can also build one manually \u2014 locate the footage by site, area, camera, date, and detection type, populate the metadata (title, severity, assigned personnel, status, description), and save. The system links the report to the exact footage timestamp and produces an audit-ready record.",
-              "Counters (Total, Pending, Acknowledged, Resolved) sit above a filterable list and a detail view with the full audit trail, linked evidence, and an exportable PDF \u2014 distinct from the Activity Log, which is append-only and system-wide rather than case-specific."
+              "Deployment is where a validated model meets real hardware. An operator maps a proven model to a specific site, area, and camera through search and filter, and it begins continuous frame-by-frame rule evaluation on the live stream. Only a model that has passed Run Analysis reaches this point \u2014 validation is what earns a model its place on a camera.",
+              "Designing this meant making \u201cwhat's running where\u201d legible at a glance. Deployment history keeps the full operational context \u2014 which model watches which camera, across which sites, deployed by whom, against which last validation reference \u2014 with direct navigation from the deployment view straight into any linked camera to edit settings or review recordings. An operator always knows exactly which proven models are live, and where."
             ]
           },
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: Incident Reports \u2014 counters, list, and detail view ]"
+            "label": "[ IMAGE: Deploy Models \u2014 mapping a validated model to site / area / camera ]"
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Deployment history \u2014 what's running where, with validation trail ]"
+          },
+          {
+            "type": "quote",
+            "text": "Validation earns the right to deploy. Deployment is where that proof becomes something running on a live feed."
           },
           {
             "type": "prose",
             "num": "06",
-            "eyebrow": "System",
-            "title": "Governance underneath the operator's view.",
-            "subtitle": "User Management, Device Health, System Configuration, Activity Logs.",
+            "eyebrow": "Monitor",
+            "title": "Watching validated models at work.",
+            "subtitle": "The payoff for the whole loop \u2014 readable under pressure.",
             "paragraphs": [
-              "Owners and Admins manage the org's membership and role-scoped permissions in User Management, watch every camera and NVR's online/offline status and disk usage in Device Health, and tune alert thresholds and refresh cadence in System Configuration. Every state-changing action \u2014 unlinking an NVR, deleting a camera, editing a rule \u2014 writes to an append-only, audit-grade Activity Log, the layer that matters most to public-sector buyers who never see a demo screen."
+              "Once models are deployed, the Monitor section is where their work shows up. The Dashboard is the central operations screen: real-time panels for detection performance and operational events, a persistent time filter (today, 7 days, 30 days, custom) applied across every panel, and drill-down into the modules beneath. Live Monitoring is the multi-camera grid with configurable layouts and per-tile feed-health indicators, plus active/inactive camera counts. Recordings lets operators search past footage by site, area, camera, date, or keyword and play it back against a synchronised, severity-filterable event timeline.",
+              "The Detection Feed is the raw stream of what models are catching \u2014 filterable by time, site, area, severity, camera, or model, with counters for total detections, critical/high, pending triage, and escalated cases. Each detection carries its model, severity, precision and confidence scores, and location \u2014 with a clear call to action: raise it as an official Incident Report, dismiss it, or attach it to an existing report. Incident Reports are the accountable layer: auto-generated from high-severity events or created manually, moving through a Pending \u2192 Acknowledged \u2192 Resolved lifecycle, each one audit-ready, linked to exact footage timestamps, and exportable as a PDF."
             ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Dashboard \u2014 real-time panels with persistent time filter ]"
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Live Monitoring \u2014 multi-camera grid with feed-health indicators ]"
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Detection Feed \u2192 Incident Report handoff, model + score trail ]"
+          },
+          {
+            "type": "quote",
+            "text": "A detection is only useful if it becomes accountable work. The path from \u201cthe model flagged this\u201d to \u201csomeone owns this\u201d had to be a couple of clicks."
+          },
+          {
+            "type": "prose",
+            "num": "07",
+            "eyebrow": "The admin spine",
+            "title": "Who can do what, and whether the hardware is healthy.",
+            "subtitle": "Governance one layer back from the hot path.",
+            "paragraphs": [
+              "Around the operator loop sits the System section, designed against a three-role matrix \u2014 Owner, Admin, User \u2014 so what each person can see and do is a deliberate decision, not an accident of routing. User Management handles email-invite onboarding, role assignment, and lifecycle actions."
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: User Management \u2014 three-role matrix, invite and lifecycle actions ]"
           },
           {
             "type": "lessons",
             "title": "What this project taught me.",
             "items": [
               {
-                "title": "Design the validation moment like a hero feature.",
-                "text": "Run Analysis carries the platform's entire value proposition. It earned more design time than any settings screen, because it's the moment trust actually gets built."
+                "title": "Design the loop, not the module count.",
+                "text": "Seventeen modules sounds like seventeen design problems. It was really one operator loop \u2014 build, validate, deploy, monitor \u2014 repeated at different altitudes. Framing it that way kept a dense platform coherent instead of sprawling."
               },
               {
-                "title": "Trust is built before deployment, not during it.",
-                "text": "Closing the validation gap upfront changes how an operator relates to every alert that comes after. Skimping on Run Analysis would have undermined every other module."
+                "title": "Make the right path the only path.",
+                "text": "Validation only protects an operator if it comes before deployment by design. Making Run Analysis the gate, not a suggestion, did more for the product's promise than any amount of persuasive UI."
               },
               {
-                "title": "Plain language is a trust feature, not a nice-to-have.",
-                "text": "Auto-generated rule summaries and consistent severity colour language exist so operators \u2014 not just engineers \u2014 can act on a detection with confidence."
-              },
-              {
-                "title": "Governance has to be invisible until it's needed.",
-                "text": "Device health, activity logs, and audit trails matter most to public-sector buyers who evaluate the platform on paper before they ever click through it."
+                "title": "A score needs a reason.",
+                "text": "The most trustworthy thing in the validation flow is the VLM reasoning narrative. A number tells you whether a model passed; the reasoning tells you why \u2014 and that's what lets a domain expert make the call instead of an engineer."
               }
             ]
           },
@@ -619,8 +654,8 @@
             "eyebrow": "Time machine",
             "title": "If I could go back.",
             "paragraphs": [
-              "I'd get real operators into Run Analysis earlier. The per-rule breakdown and VLM reasoning were designed against the PRD's happy journey, not a live triage shift \u2014 one session watching an operator validate a model under time pressure would have surfaced friction faster than another round of my own iteration.",
-              "And I'd lock the severity colour language across Detection Feed, Incident Reports, and System Configuration before designing any of them individually. Retrofitting one consistent palette across five modules cost more than defining it up front would have."
+              "I'd get the Run Analysis flow in front of real operators sooner. I designed the validation loop \u2014 footage in, score and VLM reasoning out, exportable report \u2014 mostly through my own reasoning and internal review. It holds up, but one session watching an operator validate a model they actually cared about would have surfaced friction faster than another round of my own iteration.",
+              "And I'd pin down the three-role permission matrix before designing the surfaces, not alongside them. Role rules ended up shaping nearly every screen; settling who can do what up front would have saved rework each time a \u201cshould a User see this?\u201d question reopened a layout I'd already called done."
             ]
           }
         ]
