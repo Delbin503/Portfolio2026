@@ -65,6 +65,27 @@ function embedSrc(url: string): string {
   return url;
 }
 
+/** A local uploaded file (e.g. /casestudies/foo.mov) plays natively, not via iframe embed. */
+const isLocalVideoFile = (src: string) => src.startsWith("/") && /\.(mp4|mov|webm|m4v)$/i.test(src);
+
+function VideoPlayer({ src, title }: { src: string; title?: string }) {
+  if (isLocalVideoFile(src)) {
+    return (
+      // eslint-disable-next-line jsx-a11y/media-has-caption
+      <video src={src} controls playsInline className="size-full object-cover" />
+    );
+  }
+  return (
+    <iframe
+      src={embedSrc(src)}
+      className="size-full"
+      allow="autoplay; fullscreen; picture-in-picture"
+      allowFullScreen
+      title={title ?? "Video"}
+    />
+  );
+}
+
 function Browser({
   label,
   stripe,
@@ -525,13 +546,7 @@ function Section({ s, ctx }: { s: CaseStudySection; ctx: Ctx }) {
                 >
                   {it.videoUrl ? (
                     <div className="aspect-video w-full bg-black">
-                      <iframe
-                        src={embedSrc(it.videoUrl)}
-                        className="size-full"
-                        allow="autoplay; fullscreen; picture-in-picture"
-                        allowFullScreen
-                        title={it.title}
-                      />
+                      <VideoPlayer src={it.videoUrl} title={it.title} />
                     </div>
                   ) : (
                     <div className="flex aspect-video w-full items-center justify-center bg-black/40 font-mono text-[11px] text-faint">
@@ -567,13 +582,7 @@ function Section({ s, ctx }: { s: CaseStudySection; ctx: Ctx }) {
           <figure>
             {s.src ? (
               <div className="aspect-video w-full overflow-hidden rounded-[var(--rmock)] border border-line bg-black">
-                <iframe
-                  src={embedSrc(s.src)}
-                  className="size-full"
-                  allow="autoplay; fullscreen; picture-in-picture"
-                  allowFullScreen
-                  title={s.caption ?? "Video"}
-                />
+                <VideoPlayer src={s.src} title={s.caption ?? "Video"} />
               </div>
             ) : (
               <div className="flex aspect-video w-full items-center justify-center rounded-[var(--rmock)] border border-dashed border-line bg-panel font-mono text-[12px] text-faint">

@@ -62,19 +62,24 @@ async function localizeImages(items, subdir) {
   }
 }
 
-/** Download one Notion-hosted image into /public/casestudies, return its path. */
-async function downloadCaseImage(url, slug, order) {
+/** Download a Notion-hosted image or video into /public/casestudies, return its path. */
+async function downloadCaseImage(url, slug, order, kind = "image") {
   const dir = path.join(ROOT, "public", "casestudies");
   fs.mkdirSync(dir, { recursive: true });
   try {
-    const res = await fetch(url, { signal: AbortSignal.timeout(15000) });
+    const res = await fetch(url, {
+      signal: AbortSignal.timeout(kind === "video" ? 180000 : 45000),
+    });
     if (!res.ok) return undefined;
+    const pattern =
+      kind === "video" ? /\.(mp4|mov|webm|m4v)$/i : /\.(png|jpe?g|webp|gif|avif|svg)$/i;
     const ext = (
-      new URL(url).pathname.match(/\.(png|jpe?g|webp|gif|avif|svg)$/i)?.[1] ??
-      (res.headers.get("content-type")?.split("/")[1] || "png")
+      new URL(url).pathname.match(pattern)?.[1] ??
+      (res.headers.get("content-type")?.split("/")[1] || (kind === "video" ? "mp4" : "png"))
     )
       .toLowerCase()
-      .replace("jpeg", "jpg");
+      .replace("jpeg", "jpg")
+      .replace("quicktime", "mov");
     const file = `${slug}-${order}.${ext}`;
     fs.writeFileSync(path.join(dir, file), Buffer.from(await res.arrayBuffer()));
     return `/casestudies/${file}`;
@@ -127,9 +132,23 @@ async function applyProjectMedia(notion, data) {
       const caption = read.text(p.Caption);
       if (kind === "video") {
         const url = read.url(p["Video URL"]);
+        const uploadedFile = read.files(p.Image)[0];
         if (url) {
           slot.set(url);
           filled += 1;
+        } else if (uploadedFile) {
+          // No Video URL — an uploaded video file works too (e.g. a screen
+          // recording dropped into the Image column instead of a hosted link).
+          const local = await downloadCaseImage(
+            uploadedFile,
+            cs.slug,
+            read.number(p.Order) ?? i + 1,
+            "video"
+          );
+          if (local) {
+            slot.set(local);
+            filled += 1;
+          } else slot.set(undefined);
         } else slot.set(undefined);
       } else {
         const fileUrl = read.files(p.Image)[0];
