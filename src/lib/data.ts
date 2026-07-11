@@ -107,7 +107,7 @@ export type CaseStudySection =
       type: "modules";
       title?: string;
       subhead?: string;
-      items: { title: string; text: string; videoUrl?: string; tone?: Tone }[];
+      items: { title: string; text: string; videoUrl?: string; muted?: boolean; tone?: Tone }[];
     }
   | {
       type: "media";
@@ -115,6 +115,7 @@ export type CaseStudySection =
       src?: string;
       caption?: string;
       label?: string;
+      muted?: boolean;
     };
 
 export type CaseStudyDetail = {

@@ -165,6 +165,7 @@ async function applyProjectMedia(notion, data) {
         } else slot.set(undefined);
       }
       if (caption) slot.setCaption(caption);
+      slot.setMuted(kind === "video" && read.checkbox(p.Muted));
     }
   }
   return filled;

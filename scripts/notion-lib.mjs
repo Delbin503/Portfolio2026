@@ -208,6 +208,8 @@ export const SCHEMAS = {
       Image: { files: {} },
       "Video URL": { url: {} },
       Caption: { rich_text: {} },
+      // Video only: when checked, the site plays the clip with audio muted.
+      Muted: { checkbox: {} },
     },
   },
 };
@@ -234,6 +236,7 @@ export function caseStudyMediaSlots(cs) {
         setCaption: (c) => {
           if (c) s.caption = c;
         },
+        setMuted: (m) => (m ? (s.muted = true) : delete s.muted),
       });
     } else if (s.type === "modules") {
       for (const it of s.items) {
@@ -245,6 +248,7 @@ export function caseStudyMediaSlots(cs) {
           get: () => it.videoUrl,
           set: (v) => (v ? (it.videoUrl = v) : delete it.videoUrl),
           setCaption: () => {}, // modules items have no caption field
+          setMuted: (m) => (m ? (it.muted = true) : delete it.muted),
         });
       }
     }

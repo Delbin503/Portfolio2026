@@ -56,28 +56,37 @@ function SectionHeader({
   );
 }
 
-/** Vimeo/YouTube URL → embeddable iframe src. */
-function embedSrc(url: string): string {
+/** Vimeo/YouTube URL → embeddable iframe src. `muted` starts the player silent. */
+function embedSrc(url: string, muted?: boolean): string {
   const vimeo = url.match(/vimeo\.com\/(?:video\/)?(\d+)/);
-  if (vimeo) return `https://player.vimeo.com/video/${vimeo[1]}`;
+  if (vimeo) return `https://player.vimeo.com/video/${vimeo[1]}${muted ? "?muted=1" : ""}`;
   const yt = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([\w-]+)/);
-  if (yt) return `https://www.youtube.com/embed/${yt[1]}`;
+  if (yt) return `https://www.youtube.com/embed/${yt[1]}${muted ? "?mute=1" : ""}`;
   return url;
 }
 
 /** A local uploaded file (e.g. /casestudies/foo.mov) plays natively, not via iframe embed. */
 const isLocalVideoFile = (src: string) => src.startsWith("/") && /\.(mp4|mov|webm|m4v)$/i.test(src);
 
-function VideoPlayer({ src, title }: { src: string; title?: string }) {
+function VideoPlayer({ src, title, muted }: { src: string; title?: string; muted?: boolean }) {
   if (isLocalVideoFile(src)) {
     return (
       // eslint-disable-next-line jsx-a11y/media-has-caption
-      <video src={src} controls playsInline className="size-full object-cover" />
+      <video
+        ref={(el) => {
+          if (el) el.muted = Boolean(muted);
+        }}
+        src={src}
+        muted={muted}
+        controls
+        playsInline
+        className="size-full object-cover"
+      />
     );
   }
   return (
     <iframe
-      src={embedSrc(src)}
+      src={embedSrc(src, muted)}
       className="size-full"
       allow="autoplay; fullscreen; picture-in-picture"
       allowFullScreen
@@ -546,7 +555,7 @@ function Section({ s, ctx }: { s: CaseStudySection; ctx: Ctx }) {
                 >
                   {it.videoUrl ? (
                     <div className="aspect-video w-full bg-black">
-                      <VideoPlayer src={it.videoUrl} title={it.title} />
+                      <VideoPlayer src={it.videoUrl} title={it.title} muted={it.muted} />
                     </div>
                   ) : (
                     <div className="flex aspect-video w-full items-center justify-center bg-black/40 font-mono text-[11px] text-faint">
@@ -582,7 +591,7 @@ function Section({ s, ctx }: { s: CaseStudySection; ctx: Ctx }) {
           <figure>
             {s.src ? (
               <div className="aspect-video w-full overflow-hidden rounded-[var(--rmock)] border border-line bg-black">
-                <VideoPlayer src={s.src} title={s.caption ?? "Video"} />
+                <VideoPlayer src={s.src} title={s.caption ?? "Video"} muted={s.muted} />
               </div>
             ) : (
               <div className="flex aspect-video w-full items-center justify-center rounded-[var(--rmock)] border border-dashed border-line bg-panel font-mono text-[12px] text-faint">
