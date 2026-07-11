@@ -16,6 +16,7 @@ import {
   queryAll,
   themeFromAccent,
   testimonialGradient,
+  caseStudyMediaSlots,
   SCHEMAS,
   ROOT,
 } from "./notion-lib.mjs";
@@ -106,32 +107,31 @@ async function applyProjectMedia(notion, data) {
 
   let filled = 0;
   for (const cs of data.caseStudies) {
-    const media = (cs.detail?.sections ?? []).filter((s) => s.type === "media");
-    if (!media.length) continue;
+    const slots = caseStudyMediaSlots(cs);
+    if (!slots.length) continue;
     const list = (bySlug.get(cs.slug) ?? []).sort(
       (a, b) =>
         (read.number(a.properties.Order) ?? 1e9) -
         (read.number(b.properties.Order) ?? 1e9)
     );
-    for (let i = 0; i < media.length; i++) {
-      const slot = media[i];
+    for (let i = 0; i < slots.length; i++) {
+      const slot = slots[i];
       const row = list[i];
       if (!row) {
-        delete slot.src;
+        slot.set(undefined);
         continue;
       }
       const p = row.properties;
-      const kind = read.select(p.Kind) || slot.kind || "image";
+      const kind = slot.fixedKind ? slot.kind : read.select(p.Kind) || slot.kind || "image";
+      if (!slot.fixedKind) slot.setKind(kind);
       const caption = read.text(p.Caption);
       if (kind === "video") {
         const url = read.url(p["Video URL"]);
-        slot.kind = "video";
         if (url) {
-          slot.src = url;
+          slot.set(url);
           filled += 1;
-        } else delete slot.src;
+        } else slot.set(undefined);
       } else {
-        slot.kind = "image";
         const fileUrl = read.files(p.Image)[0];
         if (fileUrl) {
           const local = await downloadCaseImage(
@@ -140,12 +140,12 @@ async function applyProjectMedia(notion, data) {
             read.number(p.Order) ?? i + 1
           );
           if (local) {
-            slot.src = local;
+            slot.set(local);
             filled += 1;
-          } else delete slot.src;
-        } else delete slot.src;
+          } else slot.set(undefined);
+        } else slot.set(undefined);
       }
-      if (caption) slot.caption = caption;
+      if (caption) slot.setCaption(caption);
     }
   }
   return filled;

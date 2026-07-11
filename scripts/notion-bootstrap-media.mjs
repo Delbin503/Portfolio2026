@@ -12,6 +12,7 @@ import {
   read,
   queryAll,
   SCHEMAS,
+  caseStudyMediaSlots,
 } from "./notion-lib.mjs";
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -54,17 +55,17 @@ async function main() {
   let total = 0;
   for (const cs of data.caseStudies ?? []) {
     const pageId = pageBySlug.get(cs.slug);
-    const media = (cs.detail?.sections ?? []).filter((s) => s.type === "media");
-    if (!media.length) continue;
-    process.stdout.write(`  ${cs.slug}: ${media.length} media slots… `);
-    for (let i = 0; i < media.length; i++) {
-      const m = media[i];
-      const name = cleanLabel(m.label) || `${m.kind} ${i + 1}`;
+    const slots = caseStudyMediaSlots(cs);
+    if (!slots.length) continue;
+    process.stdout.write(`  ${cs.slug}: ${slots.length} media slots… `);
+    for (let i = 0; i < slots.length; i++) {
+      const slot = slots[i];
+      const name = cleanLabel(slot.label) || `${slot.kind} ${i + 1}`;
       const props = {
         Name: write.title(`${cs.slug} · ${name}`),
         Order: write.number(i + 1),
-        Kind: write.select(m.kind ?? "image"),
-        "Video URL": write.url(m.kind === "video" ? m.src ?? "" : ""),
+        Kind: write.select(slot.kind ?? "image"),
+        "Video URL": write.url(slot.kind === "video" ? slot.get() ?? "" : ""),
         Caption: write.text(""),
       };
       if (pageId) props.Project = { relation: [{ id: pageId }] };

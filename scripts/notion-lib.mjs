@@ -212,6 +212,46 @@ export const SCHEMAS = {
   },
 };
 
+/**
+ * Every Notion-editable image/video slot on a case study's detail page, in
+ * document order: one per `media` section, plus one per `modules` item
+ * (module cards embed their own video). This is the single source of truth
+ * for both seeding Project Media rows and filling them back in on sync —
+ * keeping both in the same order is what makes Notion's `Order` column line
+ * up with the right slot.
+ */
+export function caseStudyMediaSlots(cs) {
+  const slots = [];
+  for (const s of cs.detail?.sections ?? []) {
+    if (s.type === "media") {
+      slots.push({
+        label: s.label ?? `${s.kind} slot`,
+        kind: s.kind,
+        fixedKind: false,
+        setKind: (k) => (s.kind = k),
+        get: () => s.src,
+        set: (v) => (v ? (s.src = v) : delete s.src),
+        setCaption: (c) => {
+          if (c) s.caption = c;
+        },
+      });
+    } else if (s.type === "modules") {
+      for (const it of s.items) {
+        slots.push({
+          label: it.title,
+          kind: "video",
+          fixedKind: true, // module cards are always video
+          setKind: () => {},
+          get: () => it.videoUrl,
+          set: (v) => (v ? (it.videoUrl = v) : delete it.videoUrl),
+          setCaption: () => {}, // modules items have no caption field
+        });
+      }
+    }
+  }
+  return slots;
+}
+
 /** Query every row of a database, following pagination. */
 export async function queryAll(notion, database_id) {
   const rows = [];
