@@ -43,7 +43,7 @@ async function localizeImages(items, subdir) {
     delete it._imageUrl;
     if (!url) continue;
     try {
-      const res = await fetch(url);
+      const res = await fetch(url, { signal: AbortSignal.timeout(15000) });
       if (!res.ok) continue;
       const ext =
         (new URL(url).pathname.match(/\.(png|jpe?g|webp|gif|avif|svg)$/i)?.[1] ??
@@ -66,7 +66,7 @@ async function downloadCaseImage(url, slug, order) {
   const dir = path.join(ROOT, "public", "casestudies");
   fs.mkdirSync(dir, { recursive: true });
   try {
-    const res = await fetch(url);
+    const res = await fetch(url, { signal: AbortSignal.timeout(15000) });
     if (!res.ok) return undefined;
     const ext = (
       new URL(url).pathname.match(/\.(png|jpe?g|webp|gif|avif|svg)$/i)?.[1] ??

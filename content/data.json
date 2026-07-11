@@ -346,13 +346,13 @@
       "slug": "accel",
       "cmdKey": "⌘2",
       "code": "AC",
-      "category": "SECURITY OPS",
-      "kicker": "→ Security Ops · 2026",
+      "category": "VISION AI OPS",
+      "kicker": "→ Vision Ai Ops · 2026",
       "paletteLabel": "The cameras were watching. Nobody was.",
       "title": "The cameras were watching.",
-      "metrics": "Security Ops · Blue Silo · 2025–2026",
-      "blurb": "Dozens of CCTV feeds, a handful of operators. Accel TRMS puts AI on the feeds, flags what matters, and gives operators a structured way to act — before something goes wrong.",
-      "mockLabel": "[ Accel TRMS — operations dashboard ]",
+      "metrics": "Vision AI Ops · Sigmawave AI · 2025–2026",
+      "blurb": "A full-stack Vision AI Operations platform for defence and security operators — validate a model against real footage before it ever watches a live camera, then monitor, triage, and turn detections into audit-ready incident reports. I designed the full MVP end-to-end.",
+      "mockLabel": "[ Accel — Dashboard, the central ops view ]",
       "accent": "#8ec5ff",
       "buttonBg": "#527294",
       "cardGradient": "linear-gradient(180deg,#1b222c,#11151b)",
@@ -360,27 +360,27 @@
       "badgeBg": "#1d2631",
       "mockStripe": "repeating-linear-gradient(135deg,#151b23,#151b23 11px,#1d2631 11px,#1d2631 22px)",
       "detail": {
-        "subtitle": "Nobody was.",
-        "summary": "High-risk sites run dozens of CCTV feeds around the clock, and operators can't watch them all. Incidents slip through and footage only gets reviewed after something has gone wrong. Accel TRMS flips that — AI watches the feeds, flags what matters, and gives operators a structured way to act.",
+        "summary": "Computer vision teams lose accuracy, time, and operator trust in the gap between a model that scores well in benchmarks and one that holds up in the field. Accel is Sigmawave AI's Vision AI Operations platform — it closes that gap with one loop: validate a model against real footage before deployment, watch it live once deployed, and turn every detection into an audit-ready incident. I designed the full MVP platform end-to-end.",
+        "subtitle": "Complete operator autonomy, from validation to live monitoring.",
         "sections": [
           {
             "type": "metaRow",
             "items": [
               {
                 "label": "Role",
-                "value": "Product Designer — Full product"
+                "value": "Product Designer — full MVP platform"
               },
               {
                 "label": "Team",
-                "value": "Solo designer, cross-functional with CV & backend"
+                "value": "Product Manager, Engineering"
               },
               {
-                "label": "Client",
-                "value": "Blue Silo Studio · Internal product"
+                "label": "Company",
+                "value": "Sigmawave AI"
               },
               {
                 "label": "Timeline",
-                "value": "2025 – 2026"
+                "value": "2025 – May 2026"
               }
             ]
           },
@@ -388,21 +388,21 @@
             "type": "stats",
             "items": [
               {
-                "value": "3",
-                "label": "Sites in production",
-                "sub": "Sembawang Naval, FedEx Changi, Astra HQ Jakarta",
+                "value": "5",
+                "label": "Platform sections",
+                "sub": "Monitor, Manage, Deploy, System, and Profile Settings — the full operator lifecycle",
                 "tone": "blue"
               },
               {
-                "value": "5+",
-                "label": "Detection models",
-                "sub": "Asset movement, SOP compliance, loitering, restricted zone, unattended object",
-                "tone": "amber"
+                "value": "17",
+                "label": "Modules designed",
+                "sub": "From Live Monitoring and Detection Feed to Run Analysis, Rules Library, and Model Management",
+                "tone": "violet"
               },
               {
-                "value": "6",
-                "label": "Triage actions",
-                "sub": "Escalate, link, dismiss — with six false-positive reasons feeding retraining",
+                "value": "3",
+                "label": "Persistent problems solved",
+                "sub": "The validation gap, tooling fragmentation, and detection logic locked behind engineering",
                 "tone": "green"
               }
             ]
@@ -410,21 +410,20 @@
           {
             "type": "prose",
             "eyebrow": "At a glance · 60 seconds",
-            "title": "Security teams aren't failing to respond. They're failing to see.",
+            "title": "Operators don't fail to respond. They fail to see it in time.",
             "paragraphs": [
-              "The footage exists. The events are recorded. But with 40+ cameras per site and a small ops team, no human can maintain meaningful awareness across every feed. By the time an incident is caught on tape, the window to act has closed. Accel shifts the model: AI reviews footage in real time, flags violations with plain-language reasoning, and puts triage decisions in front of the right operator — before the moment passes."
+              "Accel exists because most computer vision programs lose their edge after the demo. A model that scores well in benchmark testing fails in the field — different lighting, different angles, occlusion nobody tested for — and the failure only shows up after deployment, when it's expensive to fix. Teams also stitch together separate tools for datasets, testing, rules, and live monitoring, and the seams between them hide the root cause. Accel is a single platform that closes that loop: validate a model before it goes live, watch it once it's live, and turn every detection into something an operator can act on."
             ]
           },
           {
             "type": "tags",
             "items": [
-              "Problem",
+              "Validation Gap",
+              "Live Monitoring",
               "Detection Feed",
-              "Event Drawer",
-              "Triage Workflow",
-              "Incident Cases",
-              "Model Feedback",
-              "Reflection"
+              "Run Analysis",
+              "Incident Reports",
+              "Rules & Models"
             ]
           },
           {
@@ -432,27 +431,27 @@
             "items": [
               {
                 "label": "Problem",
-                "text": "Operators monitored feeds reactively — reviewing footage after incidents, not preventing them. Volume made proactive monitoring impossible."
+                "text": "Models that pass benchmarks fail in the field, tools don't talk to each other, and defining detection logic requires an engineer — locking out the operators who understand the job best."
               },
               {
                 "label": "Method",
-                "text": "Mapped the full operator workflow from detection to resolution. Designed around the triage decision, not the camera feed."
+                "text": "Mapped the full operator lifecycle from the PRD — validation, live monitoring, incident response — then designed each of the platform's 17 modules against real operator workflows."
               },
               {
                 "label": "Decision",
-                "text": "Surface AI reasoning in plain language. Give operators structured actions, not just notifications. Make every dismissal teach the model."
+                "text": "Give Run Analysis — pre-deployment validation against real footage — the design investment of a hero feature, not a settings screen."
               },
               {
                 "label": "Surfaces",
-                "text": "Detection Feed, Event Drawer with VLM reasoning, Escalate modal, Incident Cases, Dismissed Events, Model Management."
+                "text": "Monitor (dashboard, live monitoring, recordings, incident reports), Manage (sites, cameras, NVRs, models, rules), Deploy (run analysis, deploy models), System (users, device health, config, logs)."
               },
               {
                 "label": "Outcome",
-                "text": "A full security operations platform — live detection to case investigation to model improvement — as one coherent workflow."
+                "text": "A platform built for defence and security operators — audit-trail grade for customers like DSTA, MINDEF, and IMDA — where a model earns trust before it ever watches a live feed."
               },
               {
                 "label": "Lesson",
-                "text": "The hardest problem wasn't the alerts. It was building trust in AI for operators burned by false positives before."
+                "text": "The validation report is the deliverable users actually came for, not the dashboard around it."
               }
             ]
           },
@@ -460,273 +459,157 @@
             "type": "prose",
             "num": "01",
             "eyebrow": "The problem",
-            "title": "Too many cameras. Too few eyes.",
-            "subtitle": "The brief was clear. The scale wasn't.",
+            "title": "Three problems, one operator.",
+            "subtitle": "Validation gap, tooling fragmentation, and detection logic locked behind engineering.",
             "paragraphs": [
-              "A modern secured site — a naval base, a logistics terminal, an HQ — runs 20 to 60 CCTV cameras simultaneously. The team watching them is rarely more than a handful of people. The math doesn't work, so operators watch selectively, spot-check, and respond after the fact.",
-              "The consequences are predictable. An asset moves without a sign-out log. A badge gets used in a restricted zone. A guard skips two steps of the pat-down SOP. The footage is there. No one was watching when it happened.",
-              "The real gap wasn't detection — the cameras already captured the right footage. The gap was between footage and action. Between \"something happened\" and \"here's what to do about it.\""
-            ]
-          },
-          {
-            "type": "quote",
-            "text": "Existing VMS tools record everything. They flag almost nothing. And when they do, there's no structure for what happens next."
-          },
-          {
-            "type": "prose",
-            "num": "02",
-            "eyebrow": "The user",
-            "title": "One operator. Forty cameras. Eight hours.",
-            "subtitle": "Designing for a person who cannot afford to be wrong.",
-            "paragraphs": [
-              "The primary user is a security operator — experienced, methodical, under pressure. Not unfamiliar with technology, but deeply skeptical of any system that cries wolf. Every false positive costs time and erodes trust. They need to triage quickly, act with confidence, and keep a record of every decision."
+              "Every computer vision team we spoke to described some version of the same three problems."
             ],
             "notes": [
               {
-                "title": "They'll ignore a real one",
-                "text": "They will dismiss a correct alert if they've seen too many wrong ones."
+                "title": "Validation gap",
+                "text": "Models that score well in benchmark testing fail in real deployment conditions because of lighting, angle, occlusion, and environmental variation. These failures typically surface only after deployment, when remediation is expensive."
               },
               {
-                "title": "They must justify it",
-                "text": "\"The AI said so\" is not enough for a supervisor."
+                "title": "Tooling fragmentation",
+                "text": "Teams stitch together separate platforms for dataset management, video-based testing, performance visualisation, rule definition, deployment, and live monitoring. The seams between these tools obscure root cause analysis and slow iteration."
               },
               {
-                "title": "They juggle many",
-                "text": "Often managing multiple events at once — cognitive load is a real constraint."
+                "title": "Detection-logic accessibility",
+                "text": "Defining when a model should trigger an alert typically requires engineering involvement, locking out the operations and domain experts who understand the use case best."
               }
             ]
           },
           {
-            "type": "media",
-            "kind": "image",
-            "label": "[ IMAGE: Detection Feed — full page view ]"
+            "type": "quote",
+            "text": "A model that scores well in a benchmark and a model an operator trusts in production are not the same thing. Accel's job is to close that gap before it becomes an incident."
           },
           {
-            "type": "quote",
-            "text": "The operator's core need isn't more information. It's faster, clearer decisions — with evidence they can stand behind."
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Accel — dashboard, the central ops view ]"
           },
           {
             "type": "prose",
-            "num": "03",
-            "eyebrow": "The detection feed",
-            "title": "Every flag. One place. In order.",
-            "subtitle": "The feed is where triage begins.",
+            "num": "02",
+            "eyebrow": "Run Analysis",
+            "title": "Pre-deployment validation is the differentiator.",
+            "subtitle": "Test a model against real footage before it ever watches a live camera.",
             "paragraphs": [
-              "The Detection Feed is the daily working surface. Every AI-flagged event lands here — sorted by time, grouped by day, coloured by severity. A left-border stripe gives each card an immediate priority signal without reading a label. Status — pending, escalated, dismissed — is visible at a glance.",
-              "Each card shows exactly what's needed to start a decision: what happened, where, which camera, which model flagged it, and a one-line summary. Nothing more until they choose to go deeper."
+              "Run Analysis is the MVP's core moment. A user selects a model, picks a preferred SOP VLM for reasoning, and uploads representative footage. The system produces a score, a structured activity log, and a VLM reasoning narrative that describes and reasons about what it saw — all exportable as a report.",
+              "A Past History view lets users search previous analyses by keyword or date, and open any one to see the full report again. It's the traceable evidence an operator needs before they'll trust a model with a live feed."
             ]
           },
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: Detection Feed — event cards with severity borders ]"
+            "label": "[ IMAGE: Run Analysis — score, activity log, VLM reasoning ]"
           },
           {
             "type": "findings",
-            "title": "Three decisions behind the feed.",
+            "title": "What makes a validation trustworthy.",
             "items": [
               {
-                "title": "Severity is a rule decision, not a score",
-                "text": "Critical/Medium/Low is set when the operator configures the rule, not from AI confidence. A 94% loitering detection can be Low; a 71% weapons movement is Critical. Domain knowledge sets the stakes.",
+                "title": "The score",
+                "text": "A single number an operator can hold a model to — the pass/fail bar before it ever reaches a camera.",
                 "tone": "blue"
               },
               {
-                "title": "Confidence is shown separately",
-                "text": "Entity-level scores (Person 0.92, Asset 0.96) live in the drawer, not as a headline on the card — so operators don't dismiss low-score events that are actually real.",
-                "tone": "amber"
+                "title": "The activity log",
+                "text": "A structured, step-by-step record of what the model flagged during the test run, not just a final verdict.",
+                "tone": "violet"
               },
               {
-                "title": "Bulk triage is first-class",
-                "text": "Selecting events unlocks a batch bar — Escalate, Link, Dismiss — with a same-site constraint so unrelated incidents can't be merged.",
+                "title": "The VLM reasoning narrative",
+                "text": "Plain-language reasoning about the footage — why the model flagged what it flagged, in words an operator (not an engineer) can evaluate.",
                 "tone": "green"
               }
             ]
           },
           {
+            "type": "quote",
+            "text": "Run Analysis deserved design investment proportional to its strategic importance — it's the moment an operator decides whether to trust the model at all."
+          },
+          {
+            "type": "prose",
+            "num": "03",
+            "eyebrow": "Monitor",
+            "title": "Once it's live, the feed has to earn attention every shift.",
+            "subtitle": "Dashboard, Live Monitoring, Recordings, and the Detection Feed.",
+            "paragraphs": [
+              "The Dashboard is the at-a-glance operations screen — a persistent time filter (today, 7 days, 30 days, or custom) applies across every panel, with drill-down navigation into the module underneath. Live Monitoring gives operators a configurable multi-camera grid with a real-time health indicator per tile and active/inactive counters.",
+              "The Detection Feed is the structured log underneath it all: filterable by date range, site, area, severity, camera, and model, sorted newest or oldest. Every card surfaces the detection title, severity, case number, model used, precision and confidence scores, with one-glance actions to raise it as an official incident, dismiss it, or attach it to an existing report."
+            ]
+          },
+          {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: Selection bar — bulk action state ]"
+            "label": "[ IMAGE: Detection Feed — filterable list, severity + confidence ]"
           },
           {
             "type": "prose",
             "num": "04",
-            "eyebrow": "The event drawer",
-            "title": "Not just a flag. An explanation.",
-            "subtitle": "The AI shows its work.",
+            "eyebrow": "Manage & Deploy",
+            "title": "From site to camera to a model that's live.",
+            "subtitle": "Site Management, Cameras, NVRs, Rules Library, Model Management, and Deploy Models.",
             "paragraphs": [
-              "When an operator opens an event they get the full reasoning — what the model saw, what it found unusual, which entities were involved, and why it was confident enough to flag it. This is the most important design decision in the product."
+              "Site Management defines the physical hierarchy — sites, areas, and lanes — that drives zone options everywhere else in the platform. Cameras get added with RTSP stream details, recording configuration, and boundary-box zone drawing, then linked to an NVR channel. NVR Devices track storage health and retention, with age-based or channel-based cleanup.",
+              "Rules Library is where detection logic becomes something a non-engineer can own: pre-built templates for common scenarios (perimeter intrusion, PPE compliance, crowd density), and every rule gets an auto-generated plain-English summary. Model Management assembles an SOP-compliant sequence of processing steps and attaches rules from the library — the artefact that gets tested in Run Analysis and, once validated, pushed live in Deploy Models to a specific site, area, and camera."
             ]
           },
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: Event Drawer — open state with VLM reasoning ]"
-          },
-          {
-            "type": "cards",
-            "title": "The drawer has a deliberate hierarchy.",
-            "items": [
-              {
-                "eyebrow": "1 · What happened",
-                "title": "A plain-language summary",
-                "text": "Not \"Person detected in restricted zone.\" Instead: \"PER-U-7790 entered Server-Room-3 at 11:47 — no clearance on file. Dwell: 4m 12s.\""
-              },
-              {
-                "eyebrow": "2 · Why the AI thinks so",
-                "title": "VLM reasoning, not a score",
-                "text": "A scene-level narrative from an 8-second clip — actual reasoning about the badge swipe, the failed credential lookup, the dwell time."
-              },
-              {
-                "eyebrow": "3 · Who was involved",
-                "title": "Entity cards from CV",
-                "text": "Person re-ID, asset tracking, vehicle data. If the system has seen this person or asset before, that history surfaces here."
-              },
-              {
-                "eyebrow": "4 · Model performance",
-                "title": "Metrics, on demand",
-                "text": "Precision, recall, F1, mAP@0.5, data split — collapsed by default, available for operators who want to calibrate trust."
-              }
-            ]
+            "label": "[ IMAGE: Rules Library — rule card with plain-English summary ]"
           },
           {
             "type": "quote",
-            "text": "An operator who understands why the AI flagged an event can make a better decision — and defend it. An operator staring at a number cannot."
+            "text": "The plain-English rule summary is the operator's anchor for confidence. It has to stay prominent and accurate — that was a non-negotiable design constraint."
           },
           {
             "type": "prose",
             "num": "05",
-            "eyebrow": "Triage decisions",
-            "title": "Three buttons. One outcome each.",
-            "subtitle": "No ambiguity about what each action means.",
+            "eyebrow": "Incident Reports",
+            "title": "A detection is a flag. A report is the record.",
+            "subtitle": "Auto-generated from high-severity rules, or built manually from a recording.",
             "paragraphs": [
-              "Every event resolves one of three ways, and the design makes all three equally easy — because a wrong choice made because it was faster is worse than a slow right one."
+              "High-severity rule violations auto-generate an Incident Report; operators can also build one manually — locate the footage by site, area, camera, date, and detection type, populate the metadata (title, severity, assigned personnel, status, description), and save. The system links the report to the exact footage timestamp and produces an audit-ready record.",
+              "Counters (Total, Pending, Acknowledged, Resolved) sit above a filterable list and a detail view with the full audit trail, linked evidence, and an exportable PDF — distinct from the Activity Log, which is append-only and system-wide rather than case-specific."
             ]
           },
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: Escalate modal — form state ]"
-          },
-          {
-            "type": "findings",
-            "items": [
-              {
-                "title": "Escalate",
-                "text": "Creates a new incident case — title, severity, assignee, and the SLA clock starts. The event moves from feed to case; the case becomes the investigation record.",
-                "tone": "blue"
-              },
-              {
-                "title": "Link case",
-                "text": "Connects the event to an existing open case from the same site. The case list auto-filters to the event's site.",
-                "tone": "violet"
-              },
-              {
-                "title": "Dismiss",
-                "text": "Marks a false positive — but requires a reason (wrong class, wrong person, known exemption, staged event, threshold, other). These aren't audit records. They're training signals.",
-                "tone": "pink"
-              }
-            ]
-          },
-          {
-            "type": "quote",
-            "text": "A dismissed event with a reason is a feedback loop. A dismissed event without one is just noise."
+            "label": "[ IMAGE: Incident Reports — counters, list, and detail view ]"
           },
           {
             "type": "prose",
             "num": "06",
-            "eyebrow": "Incident cases",
-            "title": "The event is a flag. The case is the investigation.",
-            "subtitle": "Two separate concerns. Two separate surfaces.",
+            "eyebrow": "System",
+            "title": "Governance underneath the operator's view.",
+            "subtitle": "User Management, Device Health, System Configuration, Activity Logs.",
             "paragraphs": [
-              "Events are signals; cases are the structured record of what happened after. The Incident Cases module holds everything from the moment an operator escalates — assignee, linked events, status, the full activity timeline.",
-              "Cases flow Open → In Review → Resolved → Closed, each transition explicit and logged. The SLA clock runs from escalation against acknowledge, initial-action, and resolution targets. Escalated events are badged in the feed and link straight to their case — nothing falls through the gap."
+              "Owners and Admins manage the org's membership and role-scoped permissions in User Management, watch every camera and NVR's online/offline status and disk usage in Device Health, and tune alert thresholds and refresh cadence in System Configuration. Every state-changing action — unlinking an NVR, deleting a camera, editing a rule — writes to an append-only, audit-grade Activity Log, the layer that matters most to public-sector buyers who never see a demo screen."
             ]
-          },
-          {
-            "type": "media",
-            "kind": "image",
-            "label": "[ IMAGE: Incident Cases — case list and case drawer ]"
-          },
-          {
-            "type": "prose",
-            "num": "07",
-            "eyebrow": "Dismissed events",
-            "title": "False positives aren't failures. They're feedback.",
-            "subtitle": "The most underdesigned surface in most security products.",
-            "paragraphs": [
-              "Most platforms treat dismissed events as a dead end. Accel treats them as one of the most valuable inputs in the system. The Dismissed Events page is a reviewable record for operators — searchable, filterable by site, area, model, reason — and a structured signal for the model team."
-            ]
-          },
-          {
-            "type": "media",
-            "kind": "image",
-            "label": "[ IMAGE: Dismissed Events — page with FP reason chips ]"
-          },
-          {
-            "type": "cards",
-            "title": "Every reason points somewhere.",
-            "items": [
-              {
-                "eyebrow": "Wrong class",
-                "title": "Retraining signal",
-                "text": "Model confused object types — e.g. medical equipment read as weapons class."
-              },
-              {
-                "eyebrow": "Known exemption",
-                "title": "Suppression candidate",
-                "text": "Authorized activity the system didn't know about — an approved researcher, a scheduled drill."
-              },
-              {
-                "eyebrow": "Threshold",
-                "title": "Rule reconfiguration",
-                "text": "Detection zone is too sensitive for normal activity in certain periods."
-              },
-              {
-                "eyebrow": "Staged event",
-                "title": "Exclude drill windows",
-                "text": "A planned drill triggered the model; rules should exclude known drill times."
-              }
-            ]
-          },
-          {
-            "type": "prose",
-            "num": "08",
-            "eyebrow": "Model management",
-            "title": "The operator configures what the AI looks for.",
-            "subtitle": "The detection rules are not black boxes.",
-            "paragraphs": [
-              "Behind every event is a rule: what to detect, in which zone, during which hours, above which threshold — and what severity to assign. Operators configure these; the AI executes them. Operators who know they set the rules are more likely to trust the flags those rules produce.",
-              "Model Management sits alongside the Rules Library — which models are deployed where, their metrics, training history, status. When a detection is unclear, an operator can trace it: which rule fired, which model ran it, when it was last evaluated."
-            ]
-          },
-          {
-            "type": "media",
-            "kind": "image",
-            "label": "[ IMAGE: Rules Library — rule card with conditions ]"
-          },
-          {
-            "type": "quote",
-            "text": "The AI is a tool. The operator is the authority. The design should always make that relationship clear."
           },
           {
             "type": "lessons",
-            "title": "What this product taught me.",
+            "title": "What this project taught me.",
             "items": [
               {
-                "title": "Trust is the real design problem",
-                "text": "Operators distrust AI because they've been burned by bad alerts. VLM reasoning, eval metrics, and FP reason categories all exist to build warranted trust, not blind trust."
+                "title": "Design the validation moment like a hero feature.",
+                "text": "Run Analysis carries the platform's entire value proposition. It earned more design time than any settings screen, because it's the moment trust actually gets built."
               },
               {
-                "title": "Actions need visible consequences",
-                "text": "Escalate creates a case, Dismiss feeds training, Link connects threads. Operators who can see what their actions produce are more deliberate."
+                "title": "Trust is built before deployment, not during it.",
+                "text": "Closing the validation gap upfront changes how an operator relates to every alert that comes after. Skimping on Run Analysis would have undermined every other module."
               },
               {
-                "title": "Separate detection from response",
-                "text": "The Feed and Cases are two surfaces for two jobs. Mixing them creates overhead for operators managing both at once."
+                "title": "Plain language is a trust feature, not a nice-to-have.",
+                "text": "Auto-generated rule summaries and consistent severity colour language exist so operators — not just engineers — can act on a detection with confidence."
               },
               {
-                "title": "False positives are product data",
-                "text": "Most products treat them as failures to hide. Accel treats them as structured feedback — the model loop is a feature, not a background concern."
+                "title": "Governance has to be invisible until it's needed.",
+                "text": "Device health, activity logs, and audit trails matter most to public-sector buyers who evaluate the platform on paper before they ever click through it."
               }
             ]
           },
@@ -735,7 +618,8 @@
             "eyebrow": "Time machine",
             "title": "If I could go back.",
             "paragraphs": [
-              "I'd design the severity system with operator input earlier. Setting severity at the rule level — not deriving it from confidence — was the right call, but it came late. Early prototypes calculated severity from confidence thresholds, and operators immediately said the wrong thing: \"So if I trust the AI more, everything becomes Critical?\" That feedback reshaped the model; it should have shaped the earliest sketches."
+              "I'd get real operators into Run Analysis earlier. The per-rule breakdown and VLM reasoning were designed against the PRD's happy journey, not a live triage shift — one session watching an operator validate a model under time pressure would have surfaced friction faster than another round of my own iteration.",
+              "And I'd lock the severity colour language across Detection Feed, Incident Reports, and System Configuration before designing any of them individually. Retrofitting one consistent palette across five modules cost more than defining it up front would have."
             ]
           }
         ]
@@ -746,12 +630,12 @@
       "cmdKey": "⌘3",
       "code": "TR",
       "category": "AI PLATFORM",
-      "kicker": "→ Ai Platform · 2024",
-      "paletteLabel": "Two components. One designer.",
-      "title": "Two components. One designer.",
-      "metrics": "Synthetic Data · Sigmawave AI · 2024–Present",
-      "blurb": "Terra lets AI teams build 3D scenes and generate photorealistic, labeled datasets. I designed both halves — Platform and Builder — from zero, then fixed a layout problem I'd built into v1.",
-      "mockLabel": "[ Terra Builder — 3D editor ]",
+      "kicker": "→ Ai Platform · 2025",
+      "paletteLabel": "A working product. A better one to build.",
+      "title": "A working product. A better one to build.",
+      "metrics": "Synthetic Data · Sigmawave AI · 2025–2026",
+      "blurb": "Terra generates synthetic data to train AI vision models — datasets that are dangerous, expensive, or impossible to collect in the real world. A working version already existed. My job was to redesign it end-to-end: better usability, more features, and a real fix for the pain points users hit in the original.",
+      "mockLabel": "[ Terra — redesigned 3D Builder ]",
       "accent": "#a78bfa",
       "buttonBg": "#615191",
       "cardGradient": "linear-gradient(180deg,#1e1a2c,#13111b)",
@@ -759,19 +643,19 @@
       "badgeBg": "#211d30",
       "mockStripe": "repeating-linear-gradient(135deg,#181522,#181522 11px,#211d30 11px,#211d30 22px)",
       "detail": {
-        "subtitle": "Building a synthetic data platform from zero — then fixing how it felt.",
-        "summary": "Terra lets AI teams build 3D scenes and generate photorealistic, labeled datasets for machine learning. I designed both halves — the Platform (projects, billing, org management) and the Builder (3D editor, asset library, timeline, generation) — from scratch. Then Phase 2 exposed a layout problem I'd built into the first version.",
+        "summary": "Terra generates synthetic data to train AI vision models — the datasets that are dangerous, expensive, or impossible to collect in the real world. A working version already existed. My job was to redesign it: better usability, more features, and a real fix for the pain points users hit in the original. I owned it end-to-end, from competitor research to the final 3D builder.",
+        "subtitle": "Redesigning Terra's synthetic data platform — from research to a full 3D builder.",
         "sections": [
           {
             "type": "metaRow",
             "items": [
               {
                 "label": "Role",
-                "value": "Product Owner (Platform) + UI/UX Designer"
+                "value": "Product Owner + Designer"
               },
               {
-                "label": "Team",
-                "value": "Engineering, Unreal Artists, PM"
+                "label": "Industry",
+                "value": "Simulation & Digital Twin"
               },
               {
                 "label": "Company",
@@ -779,7 +663,7 @@
               },
               {
                 "label": "Timeline",
-                "value": "Feb 2024 – Present"
+                "value": "Apr 2025 – Jun 2026"
               }
             ]
           },
@@ -788,20 +672,20 @@
             "items": [
               {
                 "value": "2",
-                "label": "Products in one",
-                "sub": "Terra Platform (dashboard + admin) and Terra Builder (3D editor + generation)",
+                "label": "Workflows supported",
+                "sub": "Visual Synthetic Data (VSD) full 3D, and Hybrid Synthetic Data (HSD) synthetic logic on real video",
                 "tone": "violet"
               },
               {
                 "value": "35+",
                 "label": "Feature modules",
-                "sub": "Onboarding, subscriptions, org management, asset library, scene editor, timeline, generation",
+                "sub": "Dashboard, org management, 3D editor, object and environment settings, timeline, generation",
                 "tone": "blue"
               },
               {
-                "value": "1",
-                "label": "Designer",
-                "sub": "I owned the design end-to-end across both components",
+                "value": "3",
+                "label": "Export formats",
+                "sub": "Datasets auto-annotated in COCO, YOLO, and Pascal VOC — train-ready on export",
                 "tone": "green"
               }
             ]
@@ -809,19 +693,19 @@
           {
             "type": "prose",
             "eyebrow": "At a glance · 60 seconds",
-            "title": "Built it from zero. Then found what was wrong with it.",
+            "title": "The tool worked. It just needed to be better.",
             "paragraphs": [
-              "Terra didn't exist before this project. Phase 1 shipped a working platform and 3D builder — onboarding, subscriptions, org management, the full editor, asset library, timeline, generation. Phase 2 exposed the layout problem: the Builder's panels were always visible, the viewport was cramped, and it didn't feel like the modern editing tools our users knew. The fix wasn't starting over — it was knowing which part to change and which to leave."
+              "Terra wasn't new. A working version already shipped — but it was rigid. Scenes were hard to customise, there was no real camera control, lighting was fixed, and teams couldn't scale their work. I redesigned the whole thing: benchmarked the leading synthetic data tools, learned Blender and Unreal so I actually understood the 3D work our users did, gathered feedback from real users of the old version, and rebuilt Terra around a focused, canvas-first 3D builder."
             ]
           },
           {
             "type": "tags",
             "items": [
-              "Platform",
-              "Builder",
-              "Layout Redesign",
+              "Redesign",
+              "3D Builder",
+              "Scene Control",
               "AI Features",
-              "Credit Economy",
+              "Dataset Generation",
               "Design System"
             ]
           },
@@ -830,27 +714,27 @@
             "items": [
               {
                 "label": "Problem",
-                "text": "Terra didn't exist. The company needed a full synthetic data platform — dashboard and 3D editor — designed and shipped from scratch."
+                "text": "The original Terra worked, but it was rigid: limited scene customisation, no camera control, fixed lighting, poor scalability for teams."
               },
               {
                 "label": "Method",
-                "text": "Designed both components end-to-end: user flows, wireframes, high-fi, prototypes, design system, and PRD."
+                "text": "Benchmarked competitors, took a month of Blender and Unreal training, gathered feedback from existing users, then rebuilt the flow."
               },
               {
                 "label": "Decision",
-                "text": "In Phase 2 the client wanted to revamp everything. After discussion, we changed only the Builder layout — the dashboard didn't need it."
+                "text": "Redesign around a canvas-first 3D builder where users interact with scenes in real time — not a rigid, disconnected editor."
               },
               {
                 "label": "Surfaces",
-                "text": "Platform: onboarding, projects, billing, org admin. Builder: asset library, scene editor, properties, timeline, generation."
+                "text": "Dashboard, org management, 3D scene editor, object and environment settings, timeline, generation and export."
               },
               {
                 "label": "Outcome",
-                "text": "A shipped platform with a working credit economy, plus a Builder redesign that gave users the full viewport back."
+                "text": "A platform that turns scene-building into real, train-ready datasets — auto-annotated and ready to drop straight into a model pipeline."
               },
               {
                 "label": "Lesson",
-                "text": "Knowing what not to redesign is as important as knowing what to fix."
+                "text": "The best design comes from staying close to the real work users are trying to do."
               }
             ]
           },
@@ -858,143 +742,214 @@
             "type": "prose",
             "num": "01",
             "eyebrow": "The problem",
-            "title": "Nothing existed yet.",
-            "subtitle": "No screens, no flows, no design system. Just a vision and a PRD to write.",
+            "title": "It worked. It was just rigid.",
+            "subtitle": "A working product that users couldn't move freely inside.",
             "paragraphs": [
-              "Sigmawave needed a platform for AI engineers, CV researchers, and simulation designers to build 3D scenes and generate labeled synthetic datasets — images and video, auto-annotated in COCO, YOLO, or Pascal VOC. It had two halves: a Platform (manage projects, teams, billing, quotas) and a Builder (the 3D workspace). Both designed from zero. I was the only designer."
+              "Terra already had a working version when I joined the project. The technology was sound — it generated synthetic data. But using it was the problem. Scene customisation was limited. There was no way to move the camera, no precise object placement, no way to preview how a scene would look under different lighting. Editing felt disconnected, and the platform didn't scale for teams.",
+              "My role as Product Owner and Designer was to redesign it — better usability, more features, and a real fix for the pain points users faced in the original."
             ]
           },
           {
             "type": "quote",
-            "text": "Two products. Thirty-five feature modules. One designer. The scope was the first problem to solve."
+            "text": "The product wasn't broken. The experience was. My job was to redesign the experience without breaking what worked."
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Terra old version — the original interface ]"
           },
           {
             "type": "prose",
             "num": "02",
-            "eyebrow": "Terra Platform",
-            "title": "The control hub.",
-            "subtitle": "Projects, teams, subscriptions, credits — everything outside the 3D editor.",
+            "eyebrow": "Explore",
+            "title": "I didn't design first. I learned first.",
+            "subtitle": "Benchmarks, then a month inside Blender and Unreal.",
             "paragraphs": [
-              "The Platform is where users land after logging in. I designed the full onboarding — registration, org creation, a short use-case questionnaire, then plan selection (Free, Starter, Pro). Free users go straight to the dashboard; paid users get guided through inviting members, assigning seats, and checkout.",
-              "Inside: an All Projects page organised by folders with FSD/HSD tabs, Shared Projects for cross-org work, Trash with 30-day restore, and Settings for profile, org management, and billing.",
-              "The credit economy was its own design problem — two balance types (subscription quota that resets, and purchased top-up credits). Making users understand what they had, what they'd spend, and what happens when they run out took more iteration than most screens."
+              "To know what to design, I studied the field. I benchmarked the leading synthetic data platforms — Synthesis AI, Anyverse, Bifrost AI, Parallel Domain — to understand where the industry bar sat and where Terra could go further.",
+              "But Terra runs on 3D workflows, and I couldn't design for something I didn't understand. So I took a month of Blender and Unreal Engine training with top creators — scene design, materials, lighting, animation. That month changed how I designed. I stopped guessing at what a 3D artist needed and started designing from how the work actually gets done."
             ]
           },
           {
-            "type": "media",
-            "kind": "image",
-            "label": "[ IMAGE: All Projects screen ]"
-          },
-          {
-            "type": "media",
-            "kind": "image",
-            "label": "[ IMAGE: Subscription modal — Free / Starter / Pro ]"
-          },
-          {
-            "type": "media",
-            "kind": "image",
-            "label": "[ IMAGE: Terra Balance — subscription + credits ]"
-          },
-          {
             "type": "quote",
-            "text": "The credit economy was harder to design than the 3D editor. Two balance types, three tiers, and a user who just wants to know: can I generate or not?"
+            "text": "You can't design a 3D tool from the outside. I learned the craft first, then designed for it."
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Benchmark board — competitor tools compared ]"
           },
           {
             "type": "prose",
             "num": "03",
-            "eyebrow": "Terra Builder (Phase 1)",
-            "title": "The 3D workspace.",
-            "subtitle": "Where users actually build scenes and generate datasets.",
+            "eyebrow": "Define",
+            "title": "What the new Terra had to solve.",
+            "subtitle": "Straight from the people who used the old one.",
             "paragraphs": [
-              "The Builder is a full 3D editor. I designed every panel: the Main Toolbar (asset library, transform tools), the Scene Collection Panel (hierarchy of everything placed), the Properties Panel (context-sensitive object, environment, lighting, camera, spawner, material settings), and the Timeline (events, keyframes, animation).",
-              "The generation flow ties it together: build a scene, hit Generate, pick image or video, choose subscription balance or credits, and the system processes in the background. A Work Orders panel tracks every job. I also designed the four-tier role system (Owner, Admin, Full Seat, Viewer) and cross-org project sharing."
+              "I reached out to users of the previous version and gathered direct feedback. The same problems kept surfacing: limited scene customisation, unintuitive tools, minimal control over rendering, and poor scalability for teams.",
+              "I spent the following weeks turning that into direction — pulling best practices from the platforms and creative tools I'd studied, and building a new user flow that reflected the expanded feature set and fixed the old limitations. This phase wasn't just about refining the experience. It was about expanding what the product could be."
             ]
           },
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: Phase 1 Builder — full layout with panels visible ]"
-          },
-          {
-            "type": "media",
-            "kind": "image",
-            "label": "[ IMAGE: Properties Panel — range of settings ]"
+            "label": "[ IMAGE: New user flow — the redesigned journey ]"
           },
           {
             "type": "prose",
             "num": "04",
-            "eyebrow": "The layout problem",
-            "title": "Phase 1 worked. It just didn't breathe.",
-            "subtitle": "The viewport was squeezed between panels that were always on.",
+            "eyebrow": "Stakeholder alignment",
+            "title": "Getting everyone to see it before building it.",
+            "subtitle": "Mid-fidelity proposal, early feedback, aligned direction.",
             "paragraphs": [
-              "Phase 1 shipped and functioned, but using it felt cramped. The Scene Collection and Properties panels were pinned to the right permanently. The icon-only left sidebar gave no labels — you had to memorise each icon. The 3D viewport, where users spend most of their time, was the leftover space after everything else took its share.",
-              "The client wanted to revamp everything — dashboard and builder — to match modern editing tools. After discussion, the verdict was: only the Builder layout needed to change. The dashboard worked fine; redesigning it would cost time without solving a real problem."
+              "Before touching high-fidelity design, I brought the research and early concepts to stakeholders. I walked them through the proposed user flows, showed how each feature answered a specific pain point from the old platform, and laid out the key improvements planned for the new version.",
+              "To make the direction tangible, I prepared a mid-fidelity proposal showing how the updated layout would look and work. It let stakeholders see the redesign clearly and give feedback early — before it was expensive to change."
             ]
           },
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: Phase 1 Builder — panels always visible, viewport squeezed ]"
-          },
-          {
-            "type": "quote",
-            "text": "The client wanted to change everything. The right call was changing only the part that was broken."
+            "label": "[ IMAGE: Mid-fidelity proposal shown to stakeholders ]"
           },
           {
             "type": "prose",
             "num": "05",
-            "eyebrow": "The redesign (Phase 2)",
-            "title": "Full viewport. Panels on demand.",
-            "subtitle": "Same product, new frame.",
+            "eyebrow": "Design",
+            "title": "Same product. A frame that finally fits.",
+            "subtitle": "The redesign, told through the moments that define it.",
             "paragraphs": [
-              "The Phase 2 Builder gives the scene the entire screen by default. The left sidebar now has labeled icons — Assets, Edit, Chatbot, Restyle, Animate, Generate — so nothing needs memorising. The right-side panels appear when you need them and hide when you don't. The functionality stayed the same underneath; what changed is how users access it."
+              "With research, layout direction, and the revised flow aligned, I moved into high-fidelity design. Here are the moments that define how the new Terra works."
+            ]
+          },
+          {
+            "type": "prose",
+            "eyebrow": "The dashboard",
+            "title": "Users used to lose track of their own work.",
+            "paragraphs": [
+              "The old dashboard had no visual hierarchy and made resuming or managing multiple projects a chore. I rebuilt it around a visually rich project overview — recently opened projects shown as large, recognisable thumbnails with key metadata like last edit date and owner, so users can pick up where they left off and collaborate fast.",
+              "Navigation was the other pain point. Jumping between projects or finding admin tools felt clunky, so I restructured the sidebar and tab system for seamless workspace switching. Tools like project settings and org management sit contextually — there when you need them, out of the way when you don't."
             ]
           },
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: Phase 2 Builder — clean viewport, labeled sidebar ]"
+            "label": "[ IMAGE: Terra redesigned dashboard — project thumbnails, restructured sidebar ]"
+          },
+          {
+            "type": "prose",
+            "eyebrow": "The builder",
+            "title": "No camera control. No precise placement. No lighting preview.",
+            "paragraphs": [
+              "The old Builder was missing the basics users expected. Editing felt rigid and disconnected — hard to build anything dynamic or realistic. I reimagined the whole thing around a focused, canvas-based interface where users interact with their scenes in real time. Two panels carry most of the weight: Object Settings and Environment Settings."
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "caption": "Object Settings panel",
+            "label": "[ IMAGE: Object Settings panel ]"
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "caption": "Environment Settings panel",
+            "label": "[ IMAGE: Environment Settings panel ]"
+          },
+          {
+            "type": "prose",
+            "eyebrow": "The AI layer",
+            "title": "Two features define where the product is heading.",
+            "paragraphs": [
+              "The redesign also brought in AI features I designed end-to-end. A third, Auto Segment Anything (ASA), handles automatic image segmentation and occlusion between real images and 3D objects — designed, but not covered in depth here."
+            ]
           },
           {
             "type": "findings",
-            "title": "Three new AI features, designed end-to-end.",
+            "title": "Two AI features, designed end-to-end.",
             "items": [
               {
-                "title": "Material Appearance Transfer (MAT)",
-                "text": "Upload a real-world reference image; Terra extracts lighting, colour grading, noise and lens artifacts and applies them to synthetic output. Users control strength and preview before export.",
+                "title": "Restyle (MAT)",
+                "text": "Synthetic data often looks synthetic. MAT lets users upload a real-world reference image, and Terra extracts its visual characteristics — lighting, colour grading, noise, lens artifacts — and applies them to the synthetic output. Users control the strength and preview before exporting. The goal: datasets close enough to real that models actually generalise.",
                 "tone": "violet"
               },
               {
-                "title": "Auto Segment Anything (ASA)",
-                "text": "Automatically segments any uploaded image, generates object masks, and lets them interact with 3D assets for proper occlusion — no manual setup.",
-                "tone": "blue"
-              },
-              {
                 "title": "Sigma Agentic Builder (SAB)",
-                "text": "AI-assisted scene building — describe what you want instead of placing every object. Design groundwork laid; still in development.",
-                "tone": "green"
+                "text": "AI-assisted scene building. Instead of placing every object by hand, users describe what they want and the system helps assemble it.",
+                "tone": "blue"
               }
             ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: MAT interface — upload reference, preview adaptation ]"
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: SAB interface — if available ]"
+          },
+          {
+            "type": "prose",
+            "num": "06",
+            "eyebrow": "Generate & datasets",
+            "title": "From scene to train-ready data.",
+            "subtitle": "The whole point of Terra: usable ML data, not just pretty renders.",
+            "paragraphs": [
+              "The generation flow ties it together. A user builds a scene, hits Generate, picks image or video, and the system processes the job in the background. A Work Orders panel tracks every job — in progress, completed, failed — so users can queue multiple generations and come back when they're ready.",
+              "What comes out is the payoff: datasets auto-annotated in COCO, YOLO, or Pascal VOC — labeled, structured, and ready to train on with no manual annotation step. That's the difference between a 3D render and a training asset."
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Generate modal — image / video, generation settings ]"
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Work Orders panel — job tracking, download states ]"
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Received dataset — generated images with annotations/labels ]"
+          },
+          {
+            "type": "prose",
+            "eyebrow": "The proof",
+            "title": "I took the dataset straight into Roboflow.",
+            "paragraphs": [
+              "To prove the loop closes, I took a batch of Terra-generated images straight into Roboflow and trained a model on them — no real-world photos in the set. The dataset dropped in cleanly, annotations intact, and trained without manual cleanup. That's the whole thesis of the product in one test: build a scene, generate, train."
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Roboflow — Terra dataset uploaded, training run on generated images ]"
+          },
+          {
+            "type": "quote",
+            "text": "A synthetic data platform is only as good as what a model can learn from it. The dataset going straight into Roboflow and training clean was the real proof."
           },
           {
             "type": "lessons",
             "title": "What this project taught me.",
             "items": [
               {
-                "title": "Know what not to redesign",
-                "text": "The client wanted to change everything. The dashboard didn't need it; the Builder did. Saying \"this part is fine\" protected a working product from churn."
+                "title": "Learn the craft before you design for it.",
+                "text": "A month in Blender and Unreal changed every decision that followed. You can't design a 3D tool well from the outside — I had to understand how scenes are actually built, lit, and rendered first."
               },
               {
-                "title": "The viewport is the product",
-                "text": "In a 3D editor the scene view is 90% of attention. Everything else serves it. Giving it the full screen by default was the biggest single improvement."
+                "title": "The best direction comes from the old product's users.",
+                "text": "The people who struggled with the original version told me exactly what to fix. Listening to the real work beat any assumption I could have made in Figma."
               },
               {
-                "title": "Credit systems are UX problems",
-                "text": "Two balance types, three tiers, rollover, top-ups. The logic was simple; making it feel simple to \"can I generate right now?\" was the real challenge."
+                "title": "The dataset is the deliverable, not the scene.",
+                "text": "It's easy to over-invest in how the editor looks and forget users come for train-ready data. Designing generation and export to end in clean, labeled output mattered as much as any editor panel."
               },
               {
-                "title": "Scope is the first thing to design",
-                "text": "35 modules, one designer. Without a clear structure early — what's Platform, what's Builder, what the PRD covers — it would have collapsed under its size."
+                "title": "Ownership means deciding what matters.",
+                "text": "As Product Owner I defined the MVP, prioritised features, and shaped the vision from the ground up. That freedom only works if you stay disciplined about what actually earns its place."
               }
             ]
           },
@@ -1003,7 +958,8 @@
             "eyebrow": "Time machine",
             "title": "If I could go back.",
             "paragraphs": [
-              "I'd challenge the Phase 1 layout earlier. The fixed-panel approach felt safe, but the cramped viewport was visible from the start through the lens of modern editing tools. And I'd test the Builder with real users before shipping Phase 1 — one session watching an engineer navigate a complex scene would have surfaced the viewport problem before it hardened into a layout we had to redo."
+              "I'd get real users into the redesigned Builder sooner. The research and stakeholder alignment were solid, but the canvas-first flow was something I mostly validated internally and in Figma. One session watching an engineer try to build a complex scene would have surfaced friction faster than another round of my own iteration.",
+              "And I'd document the design system earlier. With 35+ modules across a dashboard and a full 3D editor, the patterns I set up front held the redesign together — but I built a lot of it reactively. Formalising it sooner would have saved rework as the feature set expanded."
             ]
           }
         ]
@@ -1178,7 +1134,8 @@
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: User flow — browse, upload, purchase, community ]"
+            "label": "[ IMAGE: User flow — browse, upload, purchase, community ]",
+            "src": "/casestudies/kanote-4.png"
           },
           {
             "type": "prose",
@@ -1230,12 +1187,14 @@
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: Usability testing — 15+ participants ]"
+            "label": "[ IMAGE: Usability testing — 15+ participants ]",
+            "src": "/casestudies/kanote-6.png"
           },
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: Before / after — the simplified version ]"
+            "label": "[ IMAGE: Before / after — the simplified version ]",
+            "src": "/casestudies/kanote-7.png"
           },
           {
             "type": "quote",
