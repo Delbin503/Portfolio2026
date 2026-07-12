@@ -1268,6 +1268,776 @@
           }
         ]
       }
+    },
+    {
+      "slug": "cv-trainer",
+      "cmdKey": "\u23185",
+      "code": "CV",
+      "category": "CV TRAINING PIPELINE",
+      "kicker": "\u2192 CV Training Pipeline \u00b7 2025",
+      "paletteLabel": "From concept to working model, in one pipeline.",
+      "title": "From concept to working model. In one pipeline.",
+      "metrics": "Computer Vision \u00b7 MLOps \u00b7 Claude Agent SDK \u00b7 2025",
+      "blurb": "A six-stage agent harness on the Claude Agent SDK that takes a CV model from raw images to a verified detector \u2014 with a human gate on every irreversible step. Proved it on a gaze-direction model at mAP@50 0.995.",
+      "mockLabel": "[ CV Trainer \u2014 pipeline running end-to-end, human-gate prompts visible ]",
+      "accent": "#f4b740",
+      "buttonBg": "#8e6a25",
+      "cardGradient": "linear-gradient(180deg,#292112,#19140e)",
+      "cardBorder": "#372b15",
+      "badgeBg": "#2e2413",
+      "mockStripe": "repeating-linear-gradient(135deg,#201a0f,#201a0f 11px,#2e2413 11px,#2e2413 22px)",
+      "detail": {
+        "summary": "Training a computer vision model means chaining together a stack of disconnected tools \u2014 data hosting, labeling, dataset versioning, training compute, evaluation, and deployment \u2014 and manually shepherding data through all of them. One wrong move corrupts the dataset. One credit overspend kills a training run mid-way. I built a harness that automates the whole chain while keeping a human in the loop at every step that matters.",
+        "subtitle": "Building a human-in-the-loop CV training harness with the Claude Agent SDK.",
+        "sections": [
+          {
+            "type": "metaRow",
+            "items": [
+              {
+                "label": "Role",
+                "value": "AI Developer + Pipeline Architect"
+              },
+              {
+                "label": "Domain",
+                "value": "Computer Vision / MLOps"
+              },
+              {
+                "label": "Stack",
+                "value": "Claude Agent SDK \u00b7 Roboflow \u00b7 Ultralytics \u00b7 Kaggle"
+              },
+              {
+                "label": "Timeline",
+                "value": "2025"
+              }
+            ]
+          },
+          {
+            "type": "stats",
+            "items": [
+              {
+                "value": "6",
+                "label": "Pipeline stages",
+                "sub": "Intake \u2192 Label \u2192 Version \u2192 Train \u2192 Evaluate \u2192 Deploy",
+                "tone": "blue"
+              },
+              {
+                "value": "3",
+                "label": "Training backends",
+                "sub": "Roboflow cloud, local Apple MPS, and free Kaggle GPU \u2014 the user picks at the gate",
+                "tone": "violet"
+              },
+              {
+                "value": "17",
+                "label": "MCP tools",
+                "sub": "Everything the agent can reach: project ops, auto-label, export, train, evaluate, predict",
+                "tone": "green"
+              }
+            ]
+          },
+          {
+            "type": "prose",
+            "eyebrow": "At a glance \u00b7 60 seconds",
+            "title": "One conversation. One working detector.",
+            "paragraphs": [
+              "Training CV models is repetitive, error-prone, and tool-hopping. Data lives in Roboflow. Training runs in the cloud \u2014 or on your laptop \u2014 or on Kaggle. Evaluation is a CSV file you have to parse yourself. I built a six-stage agent harness on the Claude Agent SDK that automates all of it, pausing for human approval before anything irreversible. The final proof: a gaze-direction detector for paralysis patients, trained end-to-end through the harness, that hit mAP@50 = 0.995."
+            ]
+          },
+          {
+            "type": "tags",
+            "items": [
+              "Agent Pipeline",
+              "Human-in-the-Loop",
+              "COCO Auto-Label",
+              "Multi-Backend Train",
+              "MCP Tools",
+              "Claude SDK"
+            ]
+          },
+          {
+            "type": "microCards",
+            "items": [
+              {
+                "label": "Problem",
+                "text": "Training a CV model chains together data hosting, labeling, versioning, training, and evaluation \u2014 all in separate tools, all manual, all easy to break."
+              },
+              {
+                "label": "Method",
+                "text": "A six-stage agent pipeline on the Claude Agent SDK: one lean agent per stage, a human gate on every consequential action, Roboflow as the managed data layer."
+              },
+              {
+                "label": "Decision",
+                "text": "Separate the stages cleanly. Each agent knows only its own tools. Routing, memory, and approvals live outside the agent \u2014 in the orchestrator and the gate."
+              },
+              {
+                "label": "Surfaces",
+                "text": "CLI entry point, stage-by-stage prompting, COCO auto-labeler, 3-way training backend picker, append-only run ledger."
+              },
+              {
+                "label": "Outcome",
+                "text": "Runs end-to-end on real data. Gaze-direction eye-tracking model: mAP@50 0.995, precision 0.993, recall 0.990 \u2014 trained entirely through the harness."
+              },
+              {
+                "label": "Lesson",
+                "text": "Fine-tuning only earns its keep on custom classes with real labels. If the class is already in COCO, use the off-the-shelf model directly."
+              }
+            ]
+          },
+          {
+            "type": "prose",
+            "num": "01",
+            "eyebrow": "The problem",
+            "title": "Training a model is a stack of manual steps. All of them breakable.",
+            "paragraphs": [
+              "The tools exist. Roboflow hosts datasets. Ultralytics trains detectors. Kaggle gives free GPU. But none of them talk to each other, and every hand-off is a place where something goes wrong.",
+              "You upload images, switch to a labeling tool, come back to generate a dataset version, export it, copy files into a training script, wait for training to finish, parse a CSV for metrics, and then manually decide whether the model is good enough to deploy. Miss one step \u2014 wrong augmentation schema, wrong split, wrong model format \u2014 and the whole run is wasted.",
+              "The other problem: no guardrails. A Roboflow training run burns credits. A bad dataset version gets frozen and used for training. There's no approval step between \u201cI think this is ready\u201d and \u201cI just spent compute on garbage data.\u201d"
+            ]
+          },
+          {
+            "type": "quote",
+            "text": "The tools work individually. The problem is the hand-offs \u2014 and the complete absence of a human checkpoint before anything irreversible happens."
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: The disconnected manual chain \u2014 Roboflow \u2192 label tool \u2192 version \u2192 training script \u2192 CSV \u2192 model ]"
+          },
+          {
+            "type": "prose",
+            "num": "02",
+            "eyebrow": "Explore",
+            "title": "I mapped the full chain before writing a line of agent code.",
+            "paragraphs": [
+              "Before building anything, I scoped every step a CV practitioner actually goes through: image intake, annotation, versioning, augmentation, training, evaluation, deployment. Each step had a tool. Each tool had a different interface and a different failure mode.",
+              "I spent time understanding the Claude Agent SDK \u2014 how tool scoping works with disallowed_tools versus tools=, how can_use_tool gates fit into the agent loop, how setting_sources=[] keeps stray config files from bloating every request. I also dug into the Roboflow SDK \u2014 and found seven bugs in the process, all of which had to be fixed before the pipeline could work on real data."
+            ]
+          },
+          {
+            "type": "quote",
+            "text": "The Roboflow SDK had seven bugs the docs didn't mention. Real-data testing found all of them. You can't build a reliable pipeline on top of untested assumptions about your dependencies."
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: The 7 Roboflow SDK bugs discovered and fixed ]"
+          },
+          {
+            "type": "prose",
+            "num": "03",
+            "eyebrow": "Define",
+            "title": "What the harness had to guarantee.",
+            "paragraphs": [
+              "After mapping the chain and testing the SDK, the requirements became clear."
+            ],
+            "notes": [
+              {
+                "title": "Human approval on side effects",
+                "text": "Every consequential action \u2014 creating a project, uploading images, freezing a dataset version, starting a training run \u2014 had to pause for human approval. No silent side effects."
+              },
+              {
+                "title": "Stage isolation",
+                "text": "The label agent shouldn't be able to accidentally trigger a training run. Tool scope had to be enforced at the framework level, not just by prompting the model to behave."
+              },
+              {
+                "title": "It had to work for free",
+                "text": "Roboflow's free tier allows ~2 training runs. The pipeline needed real alternatives: local training on Apple MPS and a Kaggle free GPU backend, so a user with no credits could still complete the loop."
+              },
+              {
+                "title": "Honest auto-labeling",
+                "text": "A COCO-pretrained model can label the ~80 common classes. For anything else, the pipeline hands off to a manual seed loop \u2014 and says so clearly rather than silently failing."
+              }
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Pipeline diagram \u2014 the six stages with gate markers ]"
+          },
+          {
+            "type": "prose",
+            "num": "04",
+            "eyebrow": "Architecture",
+            "title": "One agent per stage. One gate per consequential action.",
+            "paragraphs": [
+              "The harness splits cleanly into three layers.",
+              "Tools (tools/) are the capability layer \u2014 what can be done. roboflow_client.py wraps the Roboflow SDK with all seven bugs fixed. trainers.py holds the local and Kaggle training backends. autolabel.py runs COCO auto-labeling and writes Pascal VOC annotation files. cv_tools.py wraps all of it into 17 in-process MCP tools and builds the server the agents mount.",
+              "Agents (agents/) are the orchestration layer \u2014 how it's driven. stages.py defines one Stage per pipeline step: its allowed tools, its read-only subset, and its system prompt. orchestrator.py builds lean ClaudeAgentOptions per stage \u2014 scoping tools with disallowed_tools, disabling built-ins, wiring the gate. gate.py is the human checkpoint: a can_use_tool callback that surfaces four tools for approval (create_project, upload_images, generate_version, train) and auto-approves everything else. ledger.py writes every run to an append-only markdown file.",
+              "Reference (reference/) is the knowledge layer \u2014 what good looks like. Domain knowledge on augmentation strategy, dataset auditing, and evaluation thresholds is quoted directly into stage prompts."
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Architecture diagram \u2014 tools / agents / reference layers ]"
+          },
+          {
+            "type": "prose",
+            "num": "05",
+            "eyebrow": "The six stages",
+            "title": "The pipeline, told through each step.",
+            "paragraphs": [
+              "With architecture defined and tools verified on real data, the pipeline runs as six sequential agent sessions."
+            ]
+          },
+          {
+            "type": "features",
+            "title": "Stage by stage.",
+            "items": [
+              {
+                "eyebrow": "Stage 1",
+                "title": "Intake",
+                "text": "Understands the goal, picks the task type (detection / classification / segmentation), and reuses or creates a Roboflow project. Image upload is gated; the agent reports image and class counts before handing off.",
+                "tone": "blue"
+              },
+              {
+                "eyebrow": "Stage 2",
+                "title": "Label",
+                "text": "Two paths. For COCO classes, the auto-labeler drafts boxes on 5 sample images for review before committing to the full set. For custom classes, it routes to a seed loop: hand-label a few \u2192 quick-train \u2192 pre-label the rest. Upload is gated either way.",
+                "tone": "violet"
+              },
+              {
+                "eyebrow": "Stage 3",
+                "title": "Version",
+                "text": "Freezes the dataset with deterministic preprocessing (auto-orient + resize) and task-aware augmentation. It refuses to version an empty or unlabeled dataset. generate_version is gated.",
+                "tone": "green"
+              },
+              {
+                "eyebrow": "Stage 4",
+                "title": "Train",
+                "text": "At the train gate the user picks a backend \u2014 Roboflow cloud, local Apple MPS, or Kaggle free GPU. Each has its own pre-flight checks and status polling.",
+                "tone": "amber"
+              },
+              {
+                "eyebrow": "Stage 5",
+                "title": "Evaluate \u2014 the Stop Gate",
+                "text": "Reads metrics (mAP@IoU, precision, recall, per-class), interprets them against an acceptance threshold, and runs the Stop Gate: PASS \u2192 deploy, FAIL \u2192 pick a fix and route back. The human makes the final call; the agent doesn't rubber-stamp.",
+                "tone": "pink"
+              },
+              {
+                "eyebrow": "Stage 6",
+                "title": "Deploy",
+                "text": "Spot-checks the trained model on real images, confirms predictions match the eval verdict, and marks it verified \u2014 or routes back if predictions look wrong.",
+                "tone": "blue"
+              }
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Auto-label sample check \u2014 five images with boxes, approve / reject prompt ]"
+          },
+          {
+            "type": "findings",
+            "title": "Three training backends, one gate.",
+            "items": [
+              {
+                "title": "Roboflow",
+                "text": "Cloud GPU on Roboflow credits (free tier \u2248 2 runs). A pre-flight credit check runs first. Non-blocking start, then poll train_status.",
+                "tone": "blue"
+              },
+              {
+                "title": "Local",
+                "text": "Ultralytics YOLOv8 on Apple MPS or CPU. Completely free. Exports the frozen version, trains in-process, returns best.pt. Blocking until done.",
+                "tone": "violet"
+              },
+              {
+                "title": "Kaggle",
+                "text": "Free cloud GPU. Pushes a private kernel that pulls the Roboflow version, trains with Ultralytics, writes best.pt. Polls kaggle_status, fetches weights with a 3-retry download.",
+                "tone": "green"
+              }
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Train gate prompt \u2014 backend picker in the terminal ]"
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Evaluate output \u2014 metrics table and Stop Gate verdict ]"
+          },
+          {
+            "type": "prose",
+            "num": "06",
+            "eyebrow": "The real test",
+            "title": "Eye-tracking for paralysis patients. mAP@50 = 0.995.",
+            "paragraphs": [
+              "The harness was tested on a human-detection dataset first \u2014 921 images, COCO auto-labeled. The pipeline ran end-to-end, but the resulting model was useless: the person class is already in COCO, so fine-tuning a tiny auto-labeled set just distilled and degraded the base model. The lesson was important \u2014 auto-labeling a COCO class on a small dataset trains fine, it just can't win.",
+              "The second test changed everything. The dataset: a gaze-direction eye-tracking set for wheelchair-assisted paralysis patients \u2014 six custom classes (Close, Down, Left, Right, Straight, Up), 210 training / 60 validation / 31 test images, all human-made labels. COCO has no concept of gaze direction. This was exactly the case the harness was built for.",
+              "The model passed the Stop Gate and was verified on test images through the deploy stage. A live webcam demo runs on top of the weights \u2014 webcam_eye_demo.py runs the gaze detector in real time and prints the control signal (Left / Right / Up / Down / Straight / Close) to stdout."
+            ]
+          },
+          {
+            "type": "metrics",
+            "items": [
+              {
+                "value": "0.995",
+                "label": "mAP@50"
+              },
+              {
+                "value": "0.811",
+                "label": "mAP@50:95"
+              },
+              {
+                "value": "0.993",
+                "label": "Precision"
+              },
+              {
+                "value": "0.990",
+                "label": "Recall"
+              },
+              {
+                "value": "8 / 8",
+                "label": "Test images correct"
+              },
+              {
+                "value": "0.78\u20130.96",
+                "label": "Confidence range"
+              }
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Terminal \u2014 evaluate output, Stop Gate PASS, per-class metrics ]"
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Webcam demo \u2014 live gaze detection with bounding box and class label ]"
+          },
+          {
+            "type": "quote",
+            "text": "The harness didn't just work. It proved the thesis: fine-tuning earns its keep on custom, non-COCO classes with real human-made labels \u2014 and for those cases it reaches near-perfect accuracy."
+          },
+          {
+            "type": "lessons",
+            "title": "What this project taught me.",
+            "items": [
+              {
+                "title": "Test on real data, not on assumptions.",
+                "text": "Seven SDK bugs stayed hidden until real images and real API calls surfaced them. No amount of reading the docs would have found them. The test run was the only reliable audit."
+              },
+              {
+                "title": "Scope tools at the framework level, not in the prompt.",
+                "text": "Telling an agent \u201conly use these tools\u201d in a system prompt is advisory. Using disallowed_tools in ClaudeAgentOptions is enforced. One is a suggestion; the other is a constraint."
+              },
+              {
+                "title": "The human gate is the product.",
+                "text": "The gate is what makes this a harness rather than a script. Every consequential action pauses for confirmation \u2014 and that pause is where the human's domain knowledge enters the loop."
+              },
+              {
+                "title": "Fine-tuning has a clear decision rule.",
+                "text": "If the class is in COCO, use the base model. If the class is custom and the labels are real, fine-tune. The eye-tracking result (0.995) versus person-detection (unusable) is the clearest illustration."
+              }
+            ]
+          },
+          {
+            "type": "prose",
+            "eyebrow": "Time machine",
+            "title": "If I could go back.",
+            "paragraphs": [
+              "I'd fix the Roboflow SDK bugs earlier \u2014 before designing around assumptions about how the API behaved. Finding seven bugs mid-build meant re-routing the pipeline multiple times. A small upfront script exercising every API call on a throwaway project would have surfaced them in an hour.",
+              "And I'd build the Kaggle backend last, not third. The P100 / torch CUDA incompatibility, the phone-verification requirement, the transient download breaks \u2014 every Kaggle-specific failure mode added surface area before the core pipeline was solid. Local-first, then hosted, then Kaggle as a bonus would have been a cleaner build order."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "slug": "imt-trms",
+      "cmdKey": "\u23186",
+      "code": "TM",
+      "category": "DEFENCE TRAINING OPS",
+      "kicker": "\u2192 Defence Training Ops \u00b7 2025",
+      "paletteLabel": "Institutional memory isn't a workflow.",
+      "title": "Fifteen minutes before the range opens.",
+      "metrics": "Training Resource Mgmt \u00b7 SAF \u00b7 2024\u20132025",
+      "blurb": "A Training Resource Management System for the Singapore Armed Forces \u2014 booking, asset issue, and trainee onboarding designed around the fifteen minutes before a live range opens, for four roles on one shared model.",
+      "mockLabel": "[ TRMS \u2014 the operator's home screen, fifteen minutes before a range opens ]",
+      "accent": "#9db4c0",
+      "buttonBg": "#5b686f",
+      "cardGradient": "linear-gradient(180deg,#1d2023,#121417)",
+      "cardBorder": "#262a2e",
+      "badgeBg": "#202427",
+      "mockStripe": "repeating-linear-gradient(135deg,#17191c,#17191c 11px,#202427 11px,#202427 22px)",
+      "detail": {
+        "summary": "SAF marksmanship and specialised-weapon training runs on a precise schedule, but the operations around it ran on institutional memory \u2014 bookings in spreadsheets, onboarding on clipboards, assets tracked by whoever was on duty. TRMS replaces that with one shared system: booking, asset issue, and trainee onboarding designed around the fifteen minutes before a live range opens, with role-specific surfaces for operators, instructors, admins, and maintainers. I led the design end-to-end, grounded in field research across multiple camps.",
+        "subtitle": "Designing a training-operations platform for the fifteen minutes before a live range opens.",
+        "sections": [
+          {
+            "type": "metaRow",
+            "items": [
+              {
+                "label": "Role",
+                "value": "Lead Product Designer"
+              },
+              {
+                "label": "Industry",
+                "value": "Enterprise Training & Resource Management"
+              },
+              {
+                "label": "Client",
+                "value": "SAF (via Blue Silo)"
+              },
+              {
+                "label": "Timeline",
+                "value": "Mar 2024 \u2013 Apr 2025"
+              }
+            ]
+          },
+          {
+            "type": "stats",
+            "items": [
+              {
+                "value": "4",
+                "label": "User roles",
+                "sub": "System Admin, Operator, Instructor, Maintainer \u2014 one shared model, four surfaces",
+                "tone": "blue"
+              },
+              {
+                "value": "3",
+                "label": "Operational flows",
+                "sub": "Booking \u2192 Assignment \u2192 Onboarding, each carrying state to the next",
+                "tone": "violet"
+              },
+              {
+                "value": "2",
+                "label": "Training systems",
+                "sub": "IMT (Individual Marksmanship) and SWT (Specialised Weapon) on one platform",
+                "tone": "green"
+              }
+            ]
+          },
+          {
+            "type": "prose",
+            "eyebrow": "At a glance \u00b7 60 seconds",
+            "title": "Institutional memory doesn't survive a shift change.",
+            "paragraphs": [
+              "SAF training is precise \u2014 rounds fired, drills timed, scores logged. The operations around it weren't: bookings in spreadsheets, onboarding on clipboards, asset issue tracked by whoever was on duty. When the operator changed mid-rotation, half the state changed with them. TRMS makes the state travel with the session instead of the person \u2014 one shared model, role-specific surfaces, and an interface fast enough to beat paper in the fifteen minutes before a range opens. I designed the whole loop, grounded in field research across multiple camps."
+            ]
+          },
+          {
+            "type": "tags",
+            "items": [
+              "Field Research",
+              "Role-Based Design",
+              "Operational Accessibility",
+              "RFID Chain-of-Custody",
+              "Stateful Handoffs",
+              "SAF / Defence"
+            ]
+          },
+          {
+            "type": "microCards",
+            "items": [
+              {
+                "label": "Problem",
+                "text": "Training operations ran on institutional memory \u2014 bookings, onboarding, and asset issue scattered across paper and disconnected systems, with state dying at every shift change."
+              },
+              {
+                "label": "Method",
+                "text": "Field research across multiple camps \u2014 watching operators run Built-In Tests, handovers, and mid-session maintenance \u2014 instead of writing a spec from HQ."
+              },
+              {
+                "label": "Decision",
+                "text": "One shared data model with role-specific surfaces. Same booking record; four different views. Extending to a new role becomes a view problem, not a data-model one."
+              },
+              {
+                "label": "Surfaces",
+                "text": "Booking creation, assignment (RFID asset issue), trainee onboarding, and role-specific home screens for Admin, Operator, Instructor, and Maintainer."
+              },
+              {
+                "label": "Outcome",
+                "text": "Shipped April 2025 across SAF camps \u2014 IMT and SWT programmes on one platform, integrating IOS, ATMS, and RFID."
+              },
+              {
+                "label": "Lesson",
+                "text": "Accessible design for careful, time-pressured operators is just good design \u2014 larger targets, plainer language, and fewer traps made the system faster for everyone."
+              }
+            ]
+          },
+          {
+            "type": "prose",
+            "num": "01",
+            "eyebrow": "The problem",
+            "title": "Training operations run on institutional memory.",
+            "subtitle": "And memory is the wrong currency when the range opens at 0800.",
+            "paragraphs": [
+              "SAF marksmanship and specialised-weapon training runs on a fixed schedule, across multiple subsystems \u2014 the Instructor Operating Station, the Army Training Management System, RFID asset tracking, booking, onboarding, Built-In Tests. The training itself is precise: rounds fired, drills timed, scores logged, weapons accounted for. The operations around it were not. Bookings sat in spreadsheets. Onboarding happened on clipboards. Asset issue was tracked by whoever was on duty. If the operator on duty changed mid-rotation, half the state changed with them.",
+              "TRMS had to close three gaps at once, for the operators, instructors, admins, and maintainers running these programmes across multiple camps on tight rotation. My job was to design the whole loop \u2014 from booking through session close-out \u2014 and make it something an operator with fifteen minutes to prep a range can actually run, not something they route around under pressure."
+            ],
+            "notes": [
+              {
+                "title": "Coordination gap",
+                "text": "Bookings, onboarding, asset issue, and session state each lived in their own system or on paper. State didn't travel between them, so every handoff was where accountability dropped."
+              },
+              {
+                "title": "Role misalignment",
+                "text": "Admin, Operator, Instructor, and Maintainer each need a different slice of the same reality. The old tools gave everyone the same generic view \u2014 or forced each role into a separate silo."
+              },
+              {
+                "title": "Operator accessibility",
+                "text": "The people running sessions are career military \u2014 fast and competent, but under real time pressure. A system that demands digital fluency or fine motor control is a system that gets skipped."
+              }
+            ]
+          },
+          {
+            "type": "quote",
+            "text": "Institutional memory isn't a workflow. It's a person who might not be there tomorrow."
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: The gap \u2014 training time on the schedule vs training time on the range ]"
+          },
+          {
+            "type": "prose",
+            "num": "02",
+            "eyebrow": "The field",
+            "title": "You don't design a training system from a spec sheet.",
+            "paragraphs": [
+              "We couldn't write a useful requirements document from HQ. The gap between how the work is supposed to happen and how it actually happens only shows up when you're standing next to the operator at 0730 with a range opening in half an hour and one trainee's ID card missing.",
+              "So my team and I went to the camps \u2014 multiple camps, across weeks. I watched Operators run Built-In Tests at 0700, Instructors take handovers, Maintainers walk in mid-session because a base station wouldn't calibrate. I asked questions that would have sounded dumb from a distance \u2014 \u201cwhy do you write it here first and then move it there?\u201d \u2014 and every one uncovered a step the documented process pretended didn't exist."
+            ],
+            "notes": [
+              {
+                "title": "The paper path is the real path",
+                "text": "When the pressure was on, people fell back to paper \u2014 it doesn't crash, doesn't need a login, doesn't hide state behind a modal. Anything digital had to be at least as fast as paper at the point of first use."
+              },
+              {
+                "title": "Handovers are where state dies",
+                "text": "Every shift change was a small crisis. Whatever the system remembered, it had to remember visibly \u2014 so no state lived only in an operator's head."
+              },
+              {
+                "title": "Careful, not slow",
+                "text": "Older operators didn't need pity accessibility. They needed a system that didn't punish carefulness with hidden delete buttons, tiny confirm dialogs, or ambiguous icons."
+              }
+            ]
+          },
+          {
+            "type": "quote",
+            "text": "The spec is what someone in an office wants to be true. The camp is what's actually true."
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Two workflows side by side \u2014 the documented process and the one operators actually run, with the paper-trail bridge between them ]"
+          },
+          {
+            "type": "prose",
+            "num": "03",
+            "eyebrow": "Four roles, one system",
+            "title": "A shared system is not the same as a shared screen.",
+            "paragraphs": [
+              "Four roles worked in the same TRMS at different stakes. The trap is one of two failure modes: build one interface for all four and it serves none \u2014 every role wading through fields they don't need; or build four separate apps and now the underlying state is duplicated four ways and nobody knows which copy is true.",
+              "I designed for a shared model with role-specific surfaces. One booking record; four different views of it. The Operator sees the check-in queue, the Instructor the assessment sheet, the Maintainer the hardware assigned to the session, the Admin the audit trail. Same record, different questions asked of it \u2014 and only the fields relevant to that question on screen. Onboarding a new user type later became a view problem, not a data-model problem."
+            ]
+          },
+          {
+            "type": "features",
+            "title": "The four roles.",
+            "items": [
+              {
+                "eyebrow": "Rare \u00b7 high privilege",
+                "title": "System Admin",
+                "text": "Owns configuration, permissions, and the shape of the system. Low time pressure.",
+                "tone": "violet"
+              },
+              {
+                "eyebrow": "Constant \u00b7 high pressure",
+                "title": "Operator",
+                "text": "Runs the day \u2014 books sessions, onboards trainees, issues weapons, closes out.",
+                "tone": "blue"
+              },
+              {
+                "eyebrow": "Read-mostly",
+                "title": "Instructor",
+                "text": "Watches trainee performance and reviews outcomes. Decisions during and after the session, not before.",
+                "tone": "green"
+              },
+              {
+                "eyebrow": "Low frequency \u00b7 high stakes",
+                "title": "Maintainer",
+                "text": "Keeps the hardware alive. Appears exactly when something is broken and everything has stopped.",
+                "tone": "amber"
+              }
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: A single booking record at the centre, with four cards showing what each role sees ]"
+          },
+          {
+            "type": "prose",
+            "num": "04",
+            "eyebrow": "The fifteen-minute window",
+            "title": "Accessibility isn't a category of user. It's a category of moment.",
+            "paragraphs": [
+              "The research kept surfacing one scenario: an Operator, uniform on, fifteen minutes before a range opens, needs to onboard a group of trainees, run the Built-In Test on the base stations, and confirm assignments. Everything else in the brief was downstream of surviving that moment. So the interface principles weren't clean, intuitive, delightful \u2014 they were operational."
+            ],
+            "notes": [
+              {
+                "title": "Everything visible without scrolling",
+                "text": "If the Operator has to hunt for a core action, the paper form wins."
+              },
+              {
+                "title": "Touch targets for gloved hands",
+                "text": "Some sites are outdoor; gloves are not optional."
+              },
+              {
+                "title": "Contrast that survives midday glare",
+                "text": "The design system had to work at 90% brightness with the sun in the wrong place."
+              },
+              {
+                "title": "Errors in the operator's language",
+                "text": "Not \u201cvalidation failed on field X\u201d but \u201cIMT-03 is inactive. Assign to a different pair?\u201d"
+              },
+              {
+                "title": "Confirm the destructive, not the reversible",
+                "text": "Every unnecessary confirm dialog trains the user to click through the necessary one."
+              }
+            ]
+          },
+          {
+            "type": "quote",
+            "text": "Fast for the operator isn't fast for the animation. It's fast for the hand."
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Anatomy of the Operator's home screen \u2014 hit targets highlighted, primary actions labelled by the seconds they save ]"
+          },
+          {
+            "type": "prose",
+            "num": "05",
+            "eyebrow": "The loop",
+            "title": "Three flows that carry state.",
+            "subtitle": "A workflow is only as good as its worst handoff.",
+            "paragraphs": [
+              "The three flows that made or broke the system were booking creation, assignment creation, and trainee onboarding \u2014 each a stage in one continuous loop, not an independent form. The principle across all three: state travels with the session, not with the person running it. When a shift changed, the incoming Operator opened the same session and saw exactly what the previous one saw."
+            ]
+          },
+          {
+            "type": "findings",
+            "title": "Booking \u2192 Assignment \u2192 Onboarding.",
+            "items": [
+              {
+                "title": "Booking creation",
+                "text": "Individual or group session, date, time, camp, station pair. Base stations are paired (IMT-03 + IMT-04) and both must be active. Committing a booking pre-allocates the stations and marks them unavailable. The system enforces the pairing, so the Operator doesn't have to remember it.",
+                "tone": "blue"
+              },
+              {
+                "title": "Assignment creation",
+                "text": "Allocates the physical assets \u2014 weapons, magazines, RFID-tagged items \u2014 to the session. Scan the tag, the system fills in the metadata, confirm with one tap. Chain-of-custody is the speed, because scan-and-confirm replaced the manual write-down.",
+                "tone": "violet"
+              },
+              {
+                "title": "Trainee onboarding",
+                "text": "Check-in turns the booking into a live session. Trainees matched against the roster, assets confirmed, handoff to the IOS. Every trainee's state is one of five explicit statuses; the session can't close with any ambiguous.",
+                "tone": "green"
+              }
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: The three flows as a linear loop \u2014 Booking \u2192 Assignment \u2192 Onboarding \u2192 Session \u2192 Close-out \u2014 with state labelled on the arrows ]"
+          },
+          {
+            "type": "prose",
+            "num": "06",
+            "eyebrow": "What shipped",
+            "title": "One platform, two training systems, three contracts to honour.",
+            "paragraphs": [
+              "TRMS shipped as a modular platform covering both IMT (Individual Marksmanship Trainer) and SWT (Specialised Weapon Trainer) programmes across SAF camps. Shipping wasn't just delivering an interface \u2014 it was honouring three integrations that each pulled the design in a different direction."
+            ]
+          },
+          {
+            "type": "findings",
+            "title": "Three contracts to honour.",
+            "items": [
+              {
+                "title": "IOS \u2014 Instructor Operating Station",
+                "text": "On onboarding, TRMS hands state to IOS, where the Instructor runs the drill and captures scores; when IOS closes the session, TRMS finalises assets and records. Every field surfaced during onboarding is one IOS needs at that exact moment.",
+                "tone": "blue"
+              },
+              {
+                "title": "ATMS \u2014 Army Training Management System",
+                "text": "Upstream. Course schedules and rosters flow in; completion records flow out. TRMS accepts ATMS as the source of truth for who's supposed to train \u2014 and reconciles it against who actually showed up.",
+                "tone": "violet"
+              },
+              {
+                "title": "RFID \u2014 the hardware layer",
+                "text": "Every weapon, magazine, and tagged asset is scanned through TRMS. Chain-of-custody survives from issue to return with no manual write-down. RFID doesn't wait, and neither can the interface layered on it.",
+                "tone": "green"
+              }
+            ]
+          },
+          {
+            "type": "metrics",
+            "items": [
+              {
+                "value": "4",
+                "label": "Role types with distinct permission scopes"
+              },
+              {
+                "value": "3",
+                "label": "Primary operational flows"
+              },
+              {
+                "value": "2",
+                "label": "Training systems on one platform"
+              },
+              {
+                "value": "1",
+                "label": "Shared model of every range"
+              }
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: The system boundary \u2014 TRMS at the centre, IOS / ATMS / RFID as the three contracts, four roles as the surfaces above ]"
+          },
+          {
+            "type": "lessons",
+            "title": "What I learned.",
+            "items": [
+              {
+                "title": "Field research is a stance, not a phase.",
+                "text": "Every time I thought I understood the workflow well enough to skip a camp visit, I got something wrong. The Operators saved me more times than the spec did."
+              },
+              {
+                "title": "\u201cAccessible design\u201d is often just design.",
+                "text": "Larger targets, plainer language, fewer traps \u2014 the choices for older, less digital-native Operators made the system faster for every user. There's no accessibility tax when the constraint is real."
+              },
+              {
+                "title": "Hardware integration is a design constraint.",
+                "text": "RFID, base-station pairing, and IOS handoff meant the UI had physical latencies to respect. A spinner wasn't a pattern \u2014 it was an honest signal that the base station was still calibrating."
+              },
+              {
+                "title": "Role-specific surfaces on a shared model scale.",
+                "text": "Duplicated systems don't. Made early, this decision kept paying dividends every time a new role or subsystem needed a view onto the same data."
+              },
+              {
+                "title": "Military users are rigorous users.",
+                "text": "They notice inconsistency and ambiguity, and they'll route around one confusing icon forever. Designing for them raised my bar for what \u201cclear\u201d means."
+              }
+            ]
+          },
+          {
+            "type": "prose",
+            "eyebrow": "Shipped",
+            "title": "In active use across SAF camps.",
+            "paragraphs": [
+              "IMT TRMS shipped in April 2025 and is in active use across SAF training camps."
+            ]
+          }
+        ]
+      }
     }
   ],
   "moreProjects": [
