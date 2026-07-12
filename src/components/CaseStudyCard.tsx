@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { CaseStudy } from "@/lib/data";
+import { VideoPlayer } from "@/components/casestudy/Sections";
 
 const sat = { filter: "saturate(var(--sat))" } as const;
 
@@ -21,10 +22,23 @@ export default function CaseStudyCard({ cs }: { cs: CaseStudy }) {
           <span className="size-[9px] rounded-full bg-[#2c2c33]" />
         </div>
         <div
-          className="flex h-[clamp(220px,38vw,360px)] items-center justify-center font-mono text-[11px] text-faint"
-          style={{ background: cs.mockStripe }}
+          className="flex h-[clamp(220px,38vw,360px)] items-center justify-center overflow-hidden font-mono text-[11px] text-faint"
+          style={cs.thumbnail ? undefined : { background: cs.mockStripe }}
         >
-          {cs.mockLabel}
+          {cs.thumbnail ? (
+            cs.thumbnail.kind === "video" ? (
+              <VideoPlayer src={cs.thumbnail.src} muted={cs.thumbnail.muted} />
+            ) : (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={cs.thumbnail.src}
+                alt={cs.title}
+                className="size-full object-cover"
+              />
+            )
+          ) : (
+            cs.mockLabel
+          )}
         </div>
       </div>
 

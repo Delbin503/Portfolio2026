@@ -143,6 +143,8 @@ export type CaseStudy = {
   cardBorder: string;
   badgeBg: string;
   mockStripe: string;
+  /** Uploaded via Notion's Projects "Thumbnail" column; falls back to the striped mock label when absent. */
+  thumbnail?: { kind: "image" | "video"; src: string; muted?: boolean };
   detail?: CaseStudyDetail;
 };
 

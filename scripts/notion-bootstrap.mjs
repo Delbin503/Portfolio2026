@@ -46,6 +46,11 @@ function projectRows(data) {
     Accent: write.text(cs.accent),
     Order: write.number(i + 1),
     Published: write.checkbox(true),
+    "Thumbnail Kind": write.select(cs.thumbnail?.kind ?? "image"),
+    "Thumbnail Video URL": write.url(
+      cs.thumbnail?.kind === "video" ? cs.thumbnail.src : ""
+    ),
+    "Thumbnail Muted": write.checkbox(Boolean(cs.thumbnail?.muted)),
   }));
 }
 

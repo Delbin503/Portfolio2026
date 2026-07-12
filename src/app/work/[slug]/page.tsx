@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getCaseStudies } from "@/lib/data";
 import { defaultSections } from "@/lib/caseStudyDefaults";
-import CaseStudySections from "@/components/casestudy/Sections";
+import CaseStudySections, { VideoPlayer } from "@/components/casestudy/Sections";
 import { RelatedCaseStudies, CtaBand } from "@/components/casestudy/Footer";
 
 export function generateStaticParams() {
@@ -89,10 +89,23 @@ export default async function CaseStudyPage({
           <span className="size-[9px] rounded-full bg-[#2c2c33]" />
         </div>
         <div
-          className="flex h-[380px] items-center justify-center font-mono text-[11px] text-faint"
-          style={{ background: cs.mockStripe }}
+          className="flex h-[380px] items-center justify-center overflow-hidden font-mono text-[11px] text-faint"
+          style={cs.thumbnail ? undefined : { background: cs.mockStripe }}
         >
-          {cs.mockLabel}
+          {cs.thumbnail ? (
+            cs.thumbnail.kind === "video" ? (
+              <VideoPlayer src={cs.thumbnail.src} muted={cs.thumbnail.muted} />
+            ) : (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={cs.thumbnail.src}
+                alt={cs.title}
+                className="size-full object-cover"
+              />
+            )
+          ) : (
+            cs.mockLabel
+          )}
         </div>
       </div>
 

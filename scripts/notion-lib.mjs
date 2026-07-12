@@ -125,6 +125,13 @@ export const SCHEMAS = {
       Accent: { rich_text: {} },
       Order: { number: { format: "number" } },
       Published: { checkbox: {} },
+      // Optional real thumbnail — overrides the striped mock label when set.
+      "Thumbnail Kind": {
+        select: { options: [{ name: "image" }, { name: "video" }] },
+      },
+      Thumbnail: { files: {} },
+      "Thumbnail Video URL": { url: {} },
+      "Thumbnail Muted": { checkbox: {} },
     },
   },
   work: {

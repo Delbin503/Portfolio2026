@@ -68,7 +68,7 @@ function embedSrc(url: string, muted?: boolean): string {
 /** A local uploaded file (e.g. /casestudies/foo.mov) plays natively, not via iframe embed. */
 const isLocalVideoFile = (src: string) => src.startsWith("/") && /\.(mp4|mov|webm|m4v)$/i.test(src);
 
-function VideoPlayer({ src, title, muted }: { src: string; title?: string; muted?: boolean }) {
+export function VideoPlayer({ src, title, muted }: { src: string; title?: string; muted?: boolean }) {
   if (isLocalVideoFile(src)) {
     return (
       // eslint-disable-next-line jsx-a11y/media-has-caption

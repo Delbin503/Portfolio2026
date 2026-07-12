@@ -62,9 +62,9 @@ async function localizeImages(items, subdir) {
   }
 }
 
-/** Download a Notion-hosted image or video into /public/casestudies, return its path. */
-async function downloadCaseImage(url, slug, order, kind = "image") {
-  const dir = path.join(ROOT, "public", "casestudies");
+/** Download a Notion-hosted image or video into /public/{subdir}, return its path. */
+async function downloadCaseImage(url, slug, order, kind = "image", subdir = "casestudies") {
+  const dir = path.join(ROOT, "public", subdir);
   fs.mkdirSync(dir, { recursive: true });
   try {
     const res = await fetch(url, {
@@ -82,7 +82,7 @@ async function downloadCaseImage(url, slug, order, kind = "image") {
       .replace("quicktime", "mov");
     const file = `${slug}-${order}.${ext}`;
     fs.writeFileSync(path.join(dir, file), Buffer.from(await res.arrayBuffer()));
-    return `/casestudies/${file}`;
+    return `/${subdir}/${file}`;
   } catch {
     return undefined;
   }
@@ -187,33 +187,58 @@ async function fetchRows(notion, envKey) {
   return rows.map((r) => ({ p: r.properties, _order: read.number(r.properties.Order) }));
 }
 
-function mapProjects(rows, prevBySlug) {
-  return rows
-    .filter((r) => read.checkbox(r.p.Published))
-    .sort(byOrder)
-    .map((r, i) => {
-      const accent = read.text(r.p.Accent) || "#a78bfa";
-      const category = read.select(r.p.Category);
-      const year = read.text(r.p.Year);
-      const slug = read.text(r.p.Slug);
-      const theme = themeFromAccent(accent);
-      const prev = prevBySlug.get(slug);
-      const cs = {
-        slug,
-        cmdKey: `⌘${i + 1}`,
-        code: read.text(r.p.Code),
-        category,
-        kicker: `→ ${titleCase(category)}${year ? ` · ${year}` : ""}`,
-        paletteLabel: read.text(r.p["Palette label"]) || read.text(r.p.Blurb),
-        title: read.title(r.p.Name),
-        metrics: read.text(r.p.Metrics),
-        blurb: read.text(r.p.Blurb),
-        mockLabel: read.text(r.p["Mock label"]) || "[ preview ]",
-        ...theme,
-      };
-      if (prev?.detail) cs.detail = prev.detail; // case-study detail lives in code
-      return cs;
-    });
+/** Resolve a project's optional real thumbnail from its Thumbnail columns. */
+async function resolveThumbnail(p, slug) {
+  const kind = read.select(p["Thumbnail Kind"]) || "image";
+  const muted = read.checkbox(p["Thumbnail Muted"]);
+  if (kind === "video") {
+    const url = read.url(p["Thumbnail Video URL"]);
+    if (url) return { kind: "video", src: url, ...(muted && { muted }) };
+    const uploadedFile = read.files(p.Thumbnail)[0];
+    if (uploadedFile) {
+      const local = await downloadCaseImage(uploadedFile, slug, "thumb", "video", "thumbnails");
+      if (local) return { kind: "video", src: local, ...(muted && { muted }) };
+    }
+    return undefined;
+  }
+  const fileUrl = read.files(p.Thumbnail)[0];
+  if (fileUrl) {
+    const local = await downloadCaseImage(fileUrl, slug, "thumb", "image", "thumbnails");
+    if (local) return { kind: "image", src: local };
+  }
+  return undefined;
+}
+
+async function mapProjects(rows, prevBySlug) {
+  const published = rows.filter((r) => read.checkbox(r.p.Published)).sort(byOrder);
+  const out = [];
+  for (let i = 0; i < published.length; i++) {
+    const r = published[i];
+    const accent = read.text(r.p.Accent) || "#a78bfa";
+    const category = read.select(r.p.Category);
+    const year = read.text(r.p.Year);
+    const slug = read.text(r.p.Slug);
+    const theme = themeFromAccent(accent);
+    const prev = prevBySlug.get(slug);
+    const cs = {
+      slug,
+      cmdKey: `⌘${i + 1}`,
+      code: read.text(r.p.Code),
+      category,
+      kicker: `→ ${titleCase(category)}${year ? ` · ${year}` : ""}`,
+      paletteLabel: read.text(r.p["Palette label"]) || read.text(r.p.Blurb),
+      title: read.title(r.p.Name),
+      metrics: read.text(r.p.Metrics),
+      blurb: read.text(r.p.Blurb),
+      mockLabel: read.text(r.p["Mock label"]) || "[ preview ]",
+      ...theme,
+    };
+    if (prev?.detail) cs.detail = prev.detail; // case-study detail lives in code
+    const thumbnail = await resolveThumbnail(r.p, slug);
+    if (thumbnail) cs.thumbnail = thumbnail;
+    out.push(cs);
+  }
+  return out;
 }
 
 function mapExperience(rows) {
@@ -276,7 +301,7 @@ async function main() {
 
   const summary = [];
   if (projects) {
-    data.caseStudies = mapProjects(projects, prevBySlug);
+    data.caseStudies = await mapProjects(projects, prevBySlug);
     summary.push(`projects: ${data.caseStudies.length}`);
   }
   if (work) {
