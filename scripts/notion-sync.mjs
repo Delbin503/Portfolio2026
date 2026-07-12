@@ -191,20 +191,21 @@ async function fetchRows(notion, envKey) {
 async function resolveThumbnail(p, slug) {
   const kind = read.select(p["Thumbnail Kind"]) || "image";
   const muted = read.checkbox(p["Thumbnail Muted"]);
+  const device = read.select(p["Thumbnail Type"]) === "Mobile" ? "mobile" : "web";
   if (kind === "video") {
     const url = read.url(p["Thumbnail Video URL"]);
-    if (url) return { kind: "video", src: url, ...(muted && { muted }) };
+    if (url) return { kind: "video", src: url, device, ...(muted && { muted }) };
     const uploadedFile = read.files(p.Thumbnail)[0];
     if (uploadedFile) {
       const local = await downloadCaseImage(uploadedFile, slug, "thumb", "video", "thumbnails");
-      if (local) return { kind: "video", src: local, ...(muted && { muted }) };
+      if (local) return { kind: "video", src: local, device, ...(muted && { muted }) };
     }
     return undefined;
   }
   const fileUrl = read.files(p.Thumbnail)[0];
   if (fileUrl) {
     const local = await downloadCaseImage(fileUrl, slug, "thumb", "image", "thumbnails");
-    if (local) return { kind: "image", src: local };
+    if (local) return { kind: "image", src: local, device };
   }
   return undefined;
 }

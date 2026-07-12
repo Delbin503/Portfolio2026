@@ -51,6 +51,7 @@ function projectRows(data) {
       cs.thumbnail?.kind === "video" ? cs.thumbnail.src : ""
     ),
     "Thumbnail Muted": write.checkbox(Boolean(cs.thumbnail?.muted)),
+    "Thumbnail Type": write.select(cs.thumbnail?.device === "mobile" ? "Mobile" : "Web"),
   }));
 }
 

@@ -132,6 +132,10 @@ export const SCHEMAS = {
       Thumbnail: { files: {} },
       "Thumbnail Video URL": { url: {} },
       "Thumbnail Muted": { checkbox: {} },
+      // Which device frame wraps the thumbnail: Web = laptop mockup, Mobile = phone mockup.
+      "Thumbnail Type": {
+        select: { options: [{ name: "Web" }, { name: "Mobile" }] },
+      },
     },
   },
   work: {

@@ -143,8 +143,17 @@ export type CaseStudy = {
   cardBorder: string;
   badgeBg: string;
   mockStripe: string;
-  /** Uploaded via Notion's Projects "Thumbnail" column; falls back to the striped mock label when absent. */
-  thumbnail?: { kind: "image" | "video"; src: string; muted?: boolean };
+  /**
+   * Uploaded via Notion's Projects "Thumbnail" column; falls back to the
+   * striped mock label when absent. `device` picks which frame wraps it —
+   * "web" renders a laptop mockup, "mobile" a phone mockup.
+   */
+  thumbnail?: {
+    kind: "image" | "video";
+    src: string;
+    muted?: boolean;
+    device?: "web" | "mobile";
+  };
   detail?: CaseStudyDetail;
 };
 

@@ -1,46 +1,53 @@
 import Link from "next/link";
 import type { CaseStudy } from "@/lib/data";
 import { VideoPlayer } from "@/components/casestudy/Sections";
+import { MacMockup, PhoneMockup } from "@/components/DeviceMockup";
 
 const sat = { filter: "saturate(var(--sat))" } as const;
 
 export default function CaseStudyCard({ cs }: { cs: CaseStudy }) {
+  const media = cs.thumbnail && (
+    cs.thumbnail.kind === "video" ? (
+      <VideoPlayer src={cs.thumbnail.src} muted={cs.thumbnail.muted} />
+    ) : (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img src={cs.thumbnail.src} alt={cs.title} className="size-full object-cover" />
+    )
+  );
+
   return (
     <div
       id={`cs-${cs.slug}`}
       className="mt-6 scroll-mt-24 overflow-hidden rounded-[var(--rcard)] p-5 sm:p-7"
       style={{ background: cs.cardGradient, border: `1px solid ${cs.cardBorder}` }}
     >
-      {/* browser mock leads the card */}
-      <div
-        className="overflow-hidden rounded-[12px] bg-[#0c0b0f] shadow-[0_24px_70px_-30px_rgba(0,0,0,0.8)]"
-        style={{ ...sat, border: `1px solid ${cs.cardBorder}` }}
-      >
-        <div className="flex items-center gap-[6px] border-b border-[#18181f] px-[14px] py-[11px]">
-          <span className="size-[9px] rounded-full bg-[#2c2c33]" />
-          <span className="size-[9px] rounded-full bg-[#2c2c33]" />
-          <span className="size-[9px] rounded-full bg-[#2c2c33]" />
-        </div>
-        <div
-          className="flex h-[clamp(220px,38vw,360px)] items-center justify-center overflow-hidden font-mono text-[11px] text-faint"
-          style={cs.thumbnail ? undefined : { background: cs.mockStripe }}
-        >
-          {cs.thumbnail ? (
-            cs.thumbnail.kind === "video" ? (
-              <VideoPlayer src={cs.thumbnail.src} muted={cs.thumbnail.muted} />
-            ) : (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                src={cs.thumbnail.src}
-                alt={cs.title}
-                className="size-full object-cover"
-              />
-            )
+      {/* browser mock / device mockup leads the card */}
+      {cs.thumbnail ? (
+        <div className="py-2">
+          {cs.thumbnail.device === "mobile" ? (
+            <PhoneMockup>{media}</PhoneMockup>
           ) : (
-            cs.mockLabel
+            <MacMockup>{media}</MacMockup>
           )}
         </div>
-      </div>
+      ) : (
+        <div
+          className="overflow-hidden rounded-[12px] bg-[#0c0b0f] shadow-[0_24px_70px_-30px_rgba(0,0,0,0.8)]"
+          style={{ ...sat, border: `1px solid ${cs.cardBorder}` }}
+        >
+          <div className="flex items-center gap-[6px] border-b border-[#18181f] px-[14px] py-[11px]">
+            <span className="size-[9px] rounded-full bg-[#2c2c33]" />
+            <span className="size-[9px] rounded-full bg-[#2c2c33]" />
+            <span className="size-[9px] rounded-full bg-[#2c2c33]" />
+          </div>
+          <div
+            className="flex h-[clamp(220px,38vw,360px)] items-center justify-center overflow-hidden font-mono text-[11px] text-faint"
+            style={{ background: cs.mockStripe }}
+          >
+            {cs.mockLabel}
+          </div>
+        </div>
+      )}
 
       {/* meta row: text left, CTA right */}
       <div className="mt-7 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">

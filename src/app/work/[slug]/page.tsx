@@ -5,6 +5,7 @@ import { getCaseStudies } from "@/lib/data";
 import { defaultSections } from "@/lib/caseStudyDefaults";
 import CaseStudySections, { VideoPlayer } from "@/components/casestudy/Sections";
 import { RelatedCaseStudies, CtaBand } from "@/components/casestudy/Footer";
+import { MacMockup, PhoneMockup } from "@/components/DeviceMockup";
 
 export function generateStaticParams() {
   return getCaseStudies().map((cs) => ({ slug: cs.slug }));
@@ -35,6 +36,14 @@ export default async function CaseStudyPage({
   if (!cs) notFound();
 
   const sections = cs.detail?.sections ?? defaultSections(cs);
+  const media = cs.thumbnail && (
+    cs.thumbnail.kind === "video" ? (
+      <VideoPlayer src={cs.thumbnail.src} muted={cs.thumbnail.muted} />
+    ) : (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img src={cs.thumbnail.src} alt={cs.title} className="size-full object-cover" />
+    )
+  );
   const ctx = {
     accent: cs.accent,
     buttonBg: cs.buttonBg,
@@ -79,35 +88,32 @@ export default async function CaseStudyPage({
       </header>
 
       {/* hero mockup */}
-      <div
-        className="mt-12 overflow-hidden rounded-[var(--rmock)] bg-[#0c0b0f]"
-        style={{ border: `1px solid ${cs.cardBorder}` }}
-      >
-        <div className="flex items-center gap-[6px] border-b border-[#18181f] px-[14px] py-[11px]">
-          <span className="size-[9px] rounded-full bg-[#2c2c33]" />
-          <span className="size-[9px] rounded-full bg-[#2c2c33]" />
-          <span className="size-[9px] rounded-full bg-[#2c2c33]" />
-        </div>
-        <div
-          className="flex h-[380px] items-center justify-center overflow-hidden font-mono text-[11px] text-faint"
-          style={cs.thumbnail ? undefined : { background: cs.mockStripe }}
-        >
-          {cs.thumbnail ? (
-            cs.thumbnail.kind === "video" ? (
-              <VideoPlayer src={cs.thumbnail.src} muted={cs.thumbnail.muted} />
-            ) : (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                src={cs.thumbnail.src}
-                alt={cs.title}
-                className="size-full object-cover"
-              />
-            )
+      {cs.thumbnail ? (
+        <div className="mt-12">
+          {cs.thumbnail.device === "mobile" ? (
+            <PhoneMockup>{media}</PhoneMockup>
           ) : (
-            cs.mockLabel
+            <MacMockup>{media}</MacMockup>
           )}
         </div>
-      </div>
+      ) : (
+        <div
+          className="mt-12 overflow-hidden rounded-[var(--rmock)] bg-[#0c0b0f]"
+          style={{ border: `1px solid ${cs.cardBorder}` }}
+        >
+          <div className="flex items-center gap-[6px] border-b border-[#18181f] px-[14px] py-[11px]">
+            <span className="size-[9px] rounded-full bg-[#2c2c33]" />
+            <span className="size-[9px] rounded-full bg-[#2c2c33]" />
+            <span className="size-[9px] rounded-full bg-[#2c2c33]" />
+          </div>
+          <div
+            className="flex h-[380px] items-center justify-center overflow-hidden font-mono text-[11px] text-faint"
+            style={{ background: cs.mockStripe }}
+          >
+            {cs.mockLabel}
+          </div>
+        </div>
+      )}
 
       {/* body sections */}
       <div className="mt-24">
