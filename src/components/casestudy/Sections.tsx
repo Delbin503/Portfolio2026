@@ -73,9 +73,6 @@ export function VideoPlayer({ src, title, muted }: { src: string; title?: string
     return (
       // eslint-disable-next-line jsx-a11y/media-has-caption
       <video
-        ref={(el) => {
-          if (el) el.muted = Boolean(muted);
-        }}
         src={src}
         muted={muted}
         controls

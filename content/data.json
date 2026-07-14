@@ -5,8 +5,8 @@
     "tagline": "AI Design & Enterprise solutions",
     "location": "Bangkok, Thailand",
     "email": "delbintoehtet@gmail.com",
-    "availability": "Open to work \u2014 full-time, part-time, contract (3\u20136 months) & freelance",
-    "bio": "I'm Delbin (Toe Htet Arkar), a Product Designer with 4 years of experience turning complex product ideas into intuitive user interfaces. I specialize in AI design and enterprise solutions, and I've worked across synthetic data & computer vision, defense training systems, healthcare, and edtech \u2014 usually owning the work from first research through final UI. Bilingual (EN / MM), based in Bangkok with remote experience across Singapore, Indonesia, California, and Myanmar."
+    "availability": "Open to work — full-time, part-time, contract (3–6 months) & freelance",
+    "bio": "I'm Delbin (Toe Htet Arkar), a Product Designer with 4 years of experience turning complex product ideas into intuitive user interfaces. I specialize in AI design and enterprise solutions, and I've worked across synthetic data & computer vision, defense training systems, healthcare, and edtech — usually owning the work from first research through final UI. Bilingual (EN / MM), based in Bangkok with remote experience across Singapore, Indonesia, California, and Myanmar."
   },
   "heroStats": [
     {
@@ -27,333 +27,16 @@
   ],
   "caseStudies": [
     {
-      "slug": "jar-aye",
-      "cmdKey": "\u23181",
-      "code": "JA",
-      "category": "EDTECH",
-      "kicker": "\u2192 Edtech \u00b7 2024",
-      "paletteLabel": "The math wasn't the problem.",
-      "title": "The math wasn't the problem.",
-      "metrics": "EdTech \u00b7 Myanmar \u00b7 Aug 2023 \u2013 Jan 2024",
-      "blurb": "Grade 4 students kept stalling on Olympiad questions they could actually solve. Unscripted observation found three blockers \u2014 language, attention, navigation. None were math.",
-      "mockLabel": "[ Jar Aye \u2014 student app ]",
-      "accent": "#7fd8a8",
-      "buttonBg": "#4a7d61",
-      "cardGradient": "linear-gradient(180deg,#192520,#101715)",
-      "cardBorder": "#20322a",
-      "badgeBg": "#1b2923",
-      "mockStripe": "repeating-linear-gradient(135deg,#141d1a,#141d1a 11px,#1b2923 11px,#1b2923 22px)",
-      "detail": {
-        "subtitle": "Everything around it was.",
-        "summary": "Grade 4 students kept stalling on Olympiad questions they could actually solve. We ran unscripted observations on a live competitor platform and found three blockers \u2014 language, attention, and navigation. None of them were about math. That finding reshaped every design decision that followed \u2014 including killing a visual theme the client already loved.",
-        "sections": [
-          {
-            "type": "metaRow",
-            "items": [
-              {
-                "label": "Role",
-                "value": "Product Designer \u2014 Student App"
-              },
-              {
-                "label": "Team",
-                "value": "Split team \u2014 I owned the student experience"
-              },
-              {
-                "label": "Client",
-                "value": "EdTech client \u00b7 Myanmar"
-              },
-              {
-                "label": "Timeline",
-                "value": "Aug 2023 \u2013 Jan 2024"
-              }
-            ]
-          },
-          {
-            "type": "stats",
-            "items": [
-              {
-                "value": "5+3",
-                "label": "Users observed",
-                "sub": "5 Grade 4 students and 3 guardians, on a live competitor platform",
-                "tone": "pink"
-              },
-              {
-                "value": "3",
-                "label": "Modules tested",
-                "sub": "Challenge, Training, Class \u2014 same problems in all three",
-                "tone": "amber"
-              },
-              {
-                "value": "2 \u2192 1",
-                "label": "Visual directions",
-                "sub": "Built two full themes. Killed the one the client liked.",
-                "tone": "green"
-              }
-            ]
-          },
-          {
-            "type": "prose",
-            "eyebrow": "At a glance \u00b7 60 seconds",
-            "title": "Kids weren't failing the math. They were failing the interface.",
-            "paragraphs": [
-              "We watched five students use a competitor platform. Every module told the same story: language got in the way, long videos lost them, and navigation was built for adults. When we translated the questions, they performed well. The barrier was the wrapper, not the work."
-            ]
-          },
-          {
-            "type": "tags",
-            "items": [
-              "Research",
-              "Define",
-              "IA",
-              "Design",
-              "The Pivot",
-              "Reflection"
-            ]
-          },
-          {
-            "type": "microCards",
-            "items": [
-              {
-                "label": "Problem",
-                "text": "Kids 6\u201313 were disengaging from Olympiad math. Nobody could say why with evidence."
-              },
-              {
-                "label": "Method",
-                "text": "Remote unscripted observation of 5 students + 3 guardians on KooBits. Scored on behaviour, time, and confidence."
-              },
-              {
-                "label": "Decision",
-                "text": "Design for behaviour, not age. Strip language friction, shorten everything, separate learning from play."
-              },
-              {
-                "label": "Surfaces",
-                "text": "Three modules rebuilt around familiar metaphors: a staircase, a book, a noticeboard."
-              },
-              {
-                "label": "Outcome",
-                "text": "A calmer, clearer student app \u2014 and a theme pivot that saved the product from its own polish."
-              },
-              {
-                "label": "Lesson",
-                "text": "A design that wins the room can still lose the child. Test the theme, not just the flow."
-              }
-            ]
-          },
-          {
-            "type": "prose",
-            "num": "01",
-            "eyebrow": "The problem",
-            "title": "Smart kids, stuck.",
-            "subtitle": "The brief was simple. The kids weren't.",
-            "paragraphs": [
-              "An EdTech client wanted to bring Olympiad-level math to Myanmar's 6-to-13s \u2014 a local KooBits, but playful and built for children who'd never used an interface like it. The hard part was never the curriculum. It was that nobody could explain, with evidence, why children stalled. Was it the math? The reading? The screen itself?"
-            ]
-          },
-          {
-            "type": "quote",
-            "text": "I didn't want to design for a six-year-old in theory. I wanted to watch one actually get stuck."
-          },
-          {
-            "type": "prose",
-            "num": "02",
-            "eyebrow": "Research",
-            "title": "Five students. Three modules. One method.",
-            "subtitle": "Before drawing a single screen, we watched real kids fail in real time.",
-            "paragraphs": [
-              "We ran remote, unscripted observations with five Grade 4 students and three guardians, using KooBits as a live stand-in. Unscripted on purpose \u2014 the moment you give a child a script, you stop seeing how they actually behave. We tested three modules: Challenge, Training, and Class, scoring every session through three lenses."
-            ],
-            "notes": [
-              {
-                "title": "Usage behaviour",
-                "text": "Could they use the interface without help? How much cognitive load did it cost?"
-              },
-              {
-                "title": "Time taken",
-                "text": "Challenge 1:27 \u00b7 Training 1:46 \u00b7 Class 0:40"
-              },
-              {
-                "title": "Confidence",
-                "text": "Rated \"Not Much\" across all three modules."
-              }
-            ]
-          },
-          {
-            "type": "media",
-            "kind": "image",
-            "label": "[ IMAGE: Child testing the competitor platform ]",
-            "src": "/casestudies/jar-aye-1.png"
-          },
-          {
-            "type": "quote",
-            "text": "Every module told the same story in a different accent."
-          },
-          {
-            "type": "findings",
-            "title": "Three blockers. None of them were math.",
-            "subhead": "The same problems showed up in Challenge, Training, and Class.",
-            "items": [
-              {
-                "title": "Language barrier",
-                "text": "Students struggled to translate questions. But when we translated for them, they performed well. The math wasn't hard \u2014 the English was.",
-                "tone": "pink"
-              },
-              {
-                "title": "Attention",
-                "text": "Long tutorial videos lost them every time. Most never watched the solution explanations. If it wasn't short, it didn't exist.",
-                "tone": "amber"
-              },
-              {
-                "title": "Navigation + dependence",
-                "text": "Students needed guardian help for basic tasks. Navigation was built for adults \u2014 kids couldn't find their way through alone.",
-                "tone": "blue"
-              }
-            ]
-          },
-          {
-            "type": "prose",
-            "title": "Teachers hit the same walls.",
-            "paragraphs": [
-              "We also got teacher feedback on the existing platform: onboarding screens weren't clear, reports were confusing, and one teacher couldn't find the quiz after finishing a tutorial."
-            ]
-          },
-          {
-            "type": "quote",
-            "text": "When the questions were translated, they could do the math. The interface was the barrier, not the content."
-          },
-          {
-            "type": "prose",
-            "num": "03",
-            "eyebrow": "Define",
-            "title": "Two apps. I owned one.",
-            "subtitle": "With the problem defined, the team split.",
-            "paragraphs": [
-              "A parallel group took the parent app \u2014 progress tracking, subscriptions, oversight. I took the student experience. I mapped how a child actually moves through the platform \u2014 log in, pick a class, watch a short video, take a quiz \u2014 and built a user flow and information architecture simple enough for a six-year-old to hold in their head.",
-              "The research gave us clear rules: strip language friction, keep everything short, and separate learning content from gamified content so neither dilutes the other."
-            ]
-          },
-          {
-            "type": "media",
-            "kind": "image",
-            "label": "[ IMAGE: User flow ]"
-          },
-          {
-            "type": "media",
-            "kind": "image",
-            "label": "[ IMAGE: Information architecture ]"
-          },
-          {
-            "type": "prose",
-            "num": "04",
-            "eyebrow": "Design",
-            "title": "Three modules, three metaphors.",
-            "subtitle": "Low-fi first \u2014 because the cheapest place to be wrong is a wireframe.",
-            "paragraphs": [
-              "Wireframes came before anything polished. They surfaced three rules fast: navigation needed large, tappable targets; learning and play had to be visibly separated; and mobile was its own design problem \u2014 not a shrunk desktop.",
-              "Each module then borrowed a metaphor kids already understood."
-            ]
-          },
-          {
-            "type": "media",
-            "kind": "image",
-            "label": "[ IMAGE: Low-fi wireframes \u2014 desktop ]"
-          },
-          {
-            "type": "media",
-            "kind": "image",
-            "label": "[ IMAGE: Low-fi wireframes \u2014 mobile ]"
-          },
-          {
-            "type": "modules",
-            "items": [
-              {
-                "title": "Challenge \u2014 a staircase.",
-                "text": "Progress you can see. Completed steps, locked steps, and retries laid out as a climb. Practice feels like going up, not in circles.",
-                "videoUrl": "https://vimeo.com/1098943006",
-                "tone": "green"
-              },
-              {
-                "title": "Class \u2014 a book.",
-                "text": "Linear and calm. Short video, then a quiz, then the next. Content broken into pieces small enough to survive a short attention span.",
-                "videoUrl": "https://vimeo.com/1098943821",
-                "tone": "blue"
-              },
-              {
-                "title": "Training \u2014 a noticeboard.",
-                "text": "HOTS and Singapore Math, organised by proficiency and high scores. Chalkboard styling that feels warm, not clinical.",
-                "videoUrl": "https://vimeo.com/1098944101",
-                "tone": "amber"
-              }
-            ]
-          },
-          {
-            "type": "prose",
-            "num": "05",
-            "eyebrow": "The pivot",
-            "title": "The theme everyone loved was the wrong one.",
-            "subtitle": "We built a beautiful direction, then killed it.",
-            "paragraphs": [
-              "The first visual concept was a space-exploration theme \u2014 cosmic visuals, glowing gradients, futuristic UI. The client liked it immediately. Then we built it out, and the truth surfaced: too complex, and it pulled against the core promise of a calm, pressure-free place to learn.",
-              "So we pivoted to a second direction \u2014 cleaner, brighter, friendlier. Less spectacle, more clarity. It was the harder call because the first version was likeable. But \"likeable in a review\" and \"right for the user\" aren't the same thing."
-            ]
-          },
-          {
-            "type": "media",
-            "kind": "image",
-            "label": "[ IMAGE: Space theme \u2014 initial version ]"
-          },
-          {
-            "type": "media",
-            "kind": "image",
-            "label": "[ IMAGE: Final version ]"
-          },
-          {
-            "type": "quote",
-            "text": "The space theme won the room. It would have lost the child."
-          },
-          {
-            "type": "lessons",
-            "title": "What this project taught me.",
-            "items": [
-              {
-                "title": "Design for behaviour, not age.",
-                "text": "\"Six-to-thirteen\" isn't a spec. Short attention, limited reading, and a need for visual clarity are the real constraints \u2014 and they only surface when you watch real children."
-              },
-              {
-                "title": "The barrier is usually the wrapper.",
-                "text": "The kids could do the math. Language, video length, and navigation were doing the failing. Fixing the frame beat simplifying the content."
-              },
-              {
-                "title": "Align stakeholders before high-fi.",
-                "text": "Sharing research, flows, and wireframes before polished screens meant the theme pivot was a course-correction, not a crisis."
-              },
-              {
-                "title": "A loved design can still be wrong.",
-                "text": "The space theme proved client enthusiasm is a signal, not a verdict. The user is the verdict."
-              }
-            ]
-          },
-          {
-            "type": "prose",
-            "eyebrow": "Time machine",
-            "title": "If I could go back.",
-            "paragraphs": [
-              "I'd test the visual theme the same way we tested the flow \u2014 cheaply, with real kids, before building it out fully. We caught the navigation issues through observation but let the space theme run all the way to a finished design before discovering it didn't fit. A rough themed prototype in front of five children would have caught that in an afternoon, not a sprint."
-            ]
-          }
-        ]
-      }
-    },
-    {
       "slug": "accel",
-      "cmdKey": "\u23182",
+      "cmdKey": "⌘1",
       "code": "AC",
-      "category": "VISION AI OPS",
-      "kicker": "\u2192 Vision Ai Ops \u00b7 2026",
+      "category": "MODEL VALIDATOR",
+      "kicker": "→ Model Validator · 2026",
       "paletteLabel": "Prove the model before you trust the camera.",
       "title": "Prove the model before you trust the camera.",
-      "metrics": "Vision AI Ops \u00b7 Sigmawave AI \u00b7 May\u2013Jul 2026",
-      "blurb": "Accel takes a computer vision model from \u201ctrained\u201d to \u201ctrusted\u201d \u2014 build the model and its rules, validate against real footage, deploy only what passes, then monitor it running live. A full-stack, on-premise Vision AI operations platform I designed end-to-end.",
-      "mockLabel": "[ Accel \u2014 Run Analysis result: score, activity log, VLM reasoning ]",
+      "metrics": "Vision AI Ops · Sigmawave AI · May–Jul 2026",
+      "blurb": "Accel takes a computer vision model from “trained” to “trusted” — build the model and its rules, validate against real footage, deploy only what passes, then monitor it running live. A full-stack, on-premise Vision AI operations platform I designed end-to-end.",
+      "mockLabel": "[ Accel — Run Analysis result: score, activity log, VLM reasoning ]",
       "accent": "#8ec5ff",
       "buttonBg": "#527294",
       "cardGradient": "linear-gradient(180deg,#1b222c,#11151b)",
@@ -361,8 +44,8 @@
       "badgeBg": "#1d2631",
       "mockStripe": "repeating-linear-gradient(135deg,#151b23,#151b23 11px,#1d2631 11px,#1d2631 22px)",
       "detail": {
-        "summary": "Accel is where a computer vision model goes from \u201ctrained\u201d to \u201ctrusted.\u201d Operators build a model and the rules it runs on, validate it against real footage, deploy only what passes to cameras across their sites, then monitor it running live \u2014 all in one on-premise platform they fully own. I designed the whole thing: model and rule creation, the validation pipeline, the deployment layer, the live monitoring wall, and the admin spine that governs it. The promise built into every screen: complete operator autonomy from day one.",
-        "subtitle": "Designing Accel \u2014 a Vision AI operations platform for defence and security operators.",
+        "summary": "Accel is where a computer vision model goes from “trained” to “trusted.” Operators build a model and the rules it runs on, validate it against real footage, deploy only what passes to cameras across their sites, then monitor it running live — all in one on-premise platform they fully own. I designed the whole thing: model and rule creation, the validation pipeline, the deployment layer, the live monitoring wall, and the admin spine that governs it. The promise built into every screen: complete operator autonomy from day one.",
+        "subtitle": "Designing Accel — a Vision AI operations platform for defence and security operators.",
         "sections": [
           {
             "type": "metaRow",
@@ -373,7 +56,7 @@
               },
               {
                 "label": "Industry",
-                "value": "AI / Computer Vision \u00b7 Physical Security"
+                "value": "AI / Computer Vision · Physical Security"
               },
               {
                 "label": "Company",
@@ -381,7 +64,7 @@
               },
               {
                 "label": "Timeline",
-                "value": "May 2026 \u2013 Jul 2026"
+                "value": "May 2026 – Jul 2026"
               }
             ]
           },
@@ -390,14 +73,14 @@
             "items": [
               {
                 "value": "The Loop",
-                "label": "Build \u2192 Validate \u2192 Deploy \u2192 Monitor",
+                "label": "Build → Validate → Deploy → Monitor",
                 "sub": "Assemble a model and rules, prove it against real footage, deploy only what passes, then watch it work live",
                 "tone": "blue"
               },
               {
                 "value": "5",
                 "label": "Platform sections",
-                "sub": "Monitor, Manage, Deploy, System, and Profile \u2014 one operator loop across 17 feature modules",
+                "sub": "Monitor, Manage, Deploy, System, and Profile — one operator loop across 17 feature modules",
                 "tone": "violet"
               },
               {
@@ -410,10 +93,10 @@
           },
           {
             "type": "prose",
-            "eyebrow": "At a glance \u00b7 60 seconds",
+            "eyebrow": "At a glance · 60 seconds",
             "title": "A model that scores well can still fail on a real camera.",
             "paragraphs": [
-              "A computer vision model can pass every benchmark and still miss a person in bad light, misread an unfamiliar angle, or flag a shadow as a threat. In real deployment those failures surface late \u2014 on a live camera, when remediation is expensive. Accel closes that gap. Operators build a model and its rules, validate it against real footage, deploy only validated models to cameras, and monitor them at work \u2014 without stitching together five different tools to do it. My job was to design every surface in that loop and make a genuinely complex operations platform feel like one coherent path."
+              "A computer vision model can pass every benchmark and still miss a person in bad light, misread an unfamiliar angle, or flag a shadow as a threat. In real deployment those failures surface late — on a live camera, when remediation is expensive. Accel closes that gap. Operators build a model and its rules, validate it against real footage, deploy only validated models to cameras, and monitor them at work — without stitching together five different tools to do it. My job was to design every surface in that loop and make a genuinely complex operations platform feel like one coherent path."
             ]
           },
           {
@@ -437,7 +120,7 @@
               },
               {
                 "label": "Method",
-                "text": "Designed around one operator loop \u2014 build, validate, deploy, monitor \u2014 organised into five clear platform sections, against a three-role permission matrix."
+                "text": "Designed around one operator loop — build, validate, deploy, monitor — organised into five clear platform sections, against a three-role permission matrix."
               },
               {
                 "label": "Decision",
@@ -449,7 +132,7 @@
               },
               {
                 "label": "Outcome",
-                "text": "A platform that takes a model from \u201cbuilt\u201d to \u201cvalidated\u201d to \u201cdeployed and watched\u201d \u2014 fully on-premise, fully operator-owned."
+                "text": "A platform that takes a model from “built” to “validated” to “deployed and watched” — fully on-premise, fully operator-owned."
               },
               {
                 "label": "Lesson",
@@ -464,13 +147,13 @@
             "title": "Models get deployed on trust, not proof.",
             "subtitle": "And trust is the wrong currency for a detection model.",
             "paragraphs": [
-              "Computer vision teams working with synthetic and hybrid-synthetic data face the same three problems again and again. There's a validation gap \u2014 models that score well in testing fail in real conditions because of lighting, angle, occlusion, and environmental variation, and those failures only surface after deployment when they're expensive to fix. There's tooling fragmentation \u2014 teams stitch together separate platforms for dataset management, video testing, performance visualisation, rule definition, deployment, and monitoring, and the seams between them hide root cause and slow every iteration. And there's detection-logic accessibility \u2014 defining when a model should trigger an alert usually requires an engineer, locking out the operations and domain experts who understand the use case best.",
-              "Accel had to close all three at once, for operators in defence and security who need to run, manage, and own their Vision AI on their own infrastructure. My job was to design that unified loop \u2014 and make it something operators actually run, not something they skip under pressure."
+              "Computer vision teams working with synthetic and hybrid-synthetic data face the same three problems again and again. There's a validation gap — models that score well in testing fail in real conditions because of lighting, angle, occlusion, and environmental variation, and those failures only surface after deployment when they're expensive to fix. There's tooling fragmentation — teams stitch together separate platforms for dataset management, video testing, performance visualisation, rule definition, deployment, and monitoring, and the seams between them hide root cause and slow every iteration. And there's detection-logic accessibility — defining when a model should trigger an alert usually requires an engineer, locking out the operations and domain experts who understand the use case best.",
+              "Accel had to close all three at once, for operators in defence and security who need to run, manage, and own their Vision AI on their own infrastructure. My job was to design that unified loop — and make it something operators actually run, not something they skip under pressure."
             ],
             "notes": [
               {
                 "title": "Validation gap",
-                "text": "Models that score well in testing fail in real conditions because of lighting, angle, occlusion, and environmental variation \u2014 and the failures only surface after deployment, when they're expensive to fix."
+                "text": "Models that score well in testing fail in real conditions because of lighting, angle, occlusion, and environmental variation — and the failures only surface after deployment, when they're expensive to fix."
               },
               {
                 "title": "Tooling fragmentation",
@@ -478,7 +161,7 @@
               },
               {
                 "title": "Detection-logic accessibility",
-                "text": "Defining when a model should trigger an alert usually requires an engineer \u2014 locking out the operations and domain experts who understand the use case best."
+                "text": "Defining when a model should trigger an alert usually requires an engineer — locking out the operations and domain experts who understand the use case best."
               }
             ]
           },
@@ -489,16 +172,17 @@
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: The gap \u2014 model trained vs model proven on real footage ]"
+            "label": "[ IMAGE: The gap — model trained vs model proven on real footage ]",
+            "src": "/casestudies/accel-1.png"
           },
           {
             "type": "prose",
             "num": "02",
             "eyebrow": "The frame",
             "title": "One operator loop. Five sections.",
-            "subtitle": "Build \u2192 validate \u2192 deploy \u2192 monitor, plus the governance around it.",
+            "subtitle": "Build → validate → deploy → monitor, plus the governance around it.",
             "paragraphs": [
-              "Rather than design seventeen modules as seventeen problems, I designed one loop and organised everything into five top-level sections that follow it. Operators Manage their sites, cameras, NVRs, models, and rules \u2014 building the detection logic first. They Deploy \u2014 but only after Run Analysis validates a model against footage. They Monitor the live result on a dashboard, camera wall, and incident feed. And the System and Profile sections hold the governance \u2014 users, device health, configuration, activity logs, and billing \u2014 that keeps the loop safe and accountable.",
+              "Rather than design seventeen modules as seventeen problems, I designed one loop and organised everything into five top-level sections that follow it. Operators Manage their sites, cameras, NVRs, models, and rules — building the detection logic first. They Deploy — but only after Run Analysis validates a model against footage. They Monitor the live result on a dashboard, camera wall, and incident feed. And the System and Profile sections hold the governance — users, device health, configuration, activity logs, and billing — that keeps the loop safe and accountable.",
               "That framing settled the priorities early. It's why a model is built and its rules attached before anything else. It's why validation comes before deployment, not beside it. And it's why live monitoring is framed as the payoff of the loop, not a separate product bolted on."
             ]
           },
@@ -508,54 +192,64 @@
           },
           {
             "type": "media",
-            "kind": "image",
-            "label": "[ IMAGE: Section map \u2014 Monitor / Manage / Deploy / System / Profile ]"
+            "kind": "video",
+            "label": "[ IMAGE: Section map — Monitor / Manage / Deploy / System / Profile ]",
+            "src": "/casestudies/accel-2.mov",
+            "muted": true
           },
           {
             "type": "prose",
             "num": "03",
             "eyebrow": "Manage models",
             "title": "Build the model. Write the rules.",
-            "subtitle": "The detection logic comes first \u2014 and a non-engineer can define it.",
+            "subtitle": "The detection logic comes first — and a non-engineer can define it.",
             "paragraphs": [
-              "Before a model can be proven or deployed, it has to be built. Model Management is where a detection model is assembled as an SOP-compliant sequence of processing steps \u2014 uploaded as JSON or .onnx files, each with an action or model label \u2014 with rules attached from the library or added inline. The result is a single model artefact: an ordered sequence of steps plus the rules that govern it, ready for validation.",
-              "The Rules Library is the detection-logic layer, and it's the answer to the \u201cyou need an engineer\u201d problem. Operators compose rules from structured conditions, start from pre-built templates (perimeter intrusion, PPE compliance, crowd density), and every rule carries an auto-generated plain-English summary so a non-engineer can read exactly what it does before saving. Rules assign the severity that ranks detections downstream, and they attach directly to models \u2014 so the logic and the model that runs it are never separated."
+              "Before a model can be proven or deployed, it has to be built. Model Management is where a detection model is assembled as an SOP-compliant sequence of processing steps — uploaded as JSON or .onnx files, each with an action or model label — with rules attached from the library or added inline. The result is a single model artefact: an ordered sequence of steps plus the rules that govern it, ready for validation.",
+              "The Rules Library is the detection-logic layer, and it's the answer to the “you need an engineer” problem. Operators compose rules from structured conditions, start from pre-built templates (perimeter intrusion, PPE compliance, crowd density), and every rule carries an auto-generated plain-English summary so a non-engineer can read exactly what it does before saving. Rules assign the severity that ranks detections downstream, and they attach directly to models — so the logic and the model that runs it are never separated."
             ]
           },
           {
             "type": "media",
-            "kind": "image",
-            "label": "[ IMAGE: Model Management \u2014 SOP sequence builder with attached rules ]"
+            "kind": "video",
+            "label": "[ IMAGE: Model Management — SOP sequence builder with attached rules ]",
+            "src": "/casestudies/accel-3.mov",
+            "muted": true
           },
           {
             "type": "media",
-            "kind": "image",
-            "label": "[ IMAGE: Rules Library \u2014 template-based builder with plain-English summary ]"
+            "kind": "video",
+            "label": "[ IMAGE: Rules Library — template-based builder with plain-English summary ]",
+            "src": "/casestudies/accel-4.mov",
+            "muted": true
           },
           {
             "type": "quote",
-            "text": "Rules written in plain English are how a domain expert \u2014 not just an engineer \u2014 gets to define what the system watches for."
+            "text": "Rules written in plain English are how a domain expert — not just an engineer — gets to define what the system watches for."
           },
           {
             "type": "prose",
             "num": "04",
             "eyebrow": "Run Analysis",
             "title": "The MVP differentiator.",
-            "subtitle": "Upload footage, run the model, read the verdict \u2014 with reasoning.",
+            "subtitle": "Upload footage, run the model, read the verdict — with reasoning.",
             "paragraphs": [
-              "Run Analysis is where a built model gets proven, so it earned the most design attention. The flow is deliberately linear: select a model, select a preferred SOP VLM to reason about the footage, upload a representative video clip, and run. What comes back isn't just a number \u2014 it's a score, an activity log, and a VLM reasoning narrative that describes and explains what the model saw and why it behaved the way it did. The whole run is exportable as a report.",
-              "That reasoning narrative is what makes the verdict trustworthy instead of opaque. A score alone tells an operator whether a model passed; the VLM narrative tells them why \u2014 which is what lets a domain expert, not just an ML engineer, decide if the model meets the bar. Past analyses are kept and searchable, so a model's track record \u2014 every run, score, and report \u2014 is never a mystery."
+              "Run Analysis is where a built model gets proven, so it earned the most design attention. The flow is deliberately linear: select a model, select a preferred SOP VLM to reason about the footage, upload a representative video clip, and run. What comes back isn't just a number — it's a score, an activity log, and a VLM reasoning narrative that describes and explains what the model saw and why it behaved the way it did. The whole run is exportable as a report.",
+              "That reasoning narrative is what makes the verdict trustworthy instead of opaque. A score alone tells an operator whether a model passed; the VLM narrative tells them why — which is what lets a domain expert, not just an ML engineer, decide if the model meets the bar. Past analyses are kept and searchable, so a model's track record — every run, score, and report — is never a mystery."
             ]
           },
           {
             "type": "media",
-            "kind": "image",
-            "label": "[ IMAGE: Run Analysis \u2014 select model, select SOP VLM, upload footage ]"
+            "kind": "video",
+            "label": "[ IMAGE: Run Analysis — select model, select SOP VLM, upload footage ]",
+            "src": "/casestudies/accel-5.mov",
+            "muted": true
           },
           {
             "type": "media",
-            "kind": "image",
-            "label": "[ IMAGE: Analysis result \u2014 score, activity log, VLM reasoning narrative, export ]"
+            "kind": "video",
+            "label": "[ IMAGE: Analysis result — score, activity log, VLM reasoning narrative, export ]",
+            "src": "/casestudies/accel-6.mov",
+            "muted": true
           },
           {
             "type": "quote",
@@ -568,19 +262,23 @@
             "title": "Put the proven model on a camera.",
             "subtitle": "The hinge between validation and live production.",
             "paragraphs": [
-              "Deployment is where a validated model meets real hardware. An operator maps a proven model to a specific site, area, and camera through search and filter, and it begins continuous frame-by-frame rule evaluation on the live stream. Only a model that has passed Run Analysis reaches this point \u2014 validation is what earns a model its place on a camera.",
-              "Designing this meant making \u201cwhat's running where\u201d legible at a glance. Deployment history keeps the full operational context \u2014 which model watches which camera, across which sites, deployed by whom, against which last validation reference \u2014 with direct navigation from the deployment view straight into any linked camera to edit settings or review recordings. An operator always knows exactly which proven models are live, and where."
+              "Deployment is where a validated model meets real hardware. An operator maps a proven model to a specific site, area, and camera through search and filter, and it begins continuous frame-by-frame rule evaluation on the live stream. Only a model that has passed Run Analysis reaches this point — validation is what earns a model its place on a camera.",
+              "Designing this meant making “what's running where” legible at a glance. Deployment history keeps the full operational context — which model watches which camera, across which sites, deployed by whom, against which last validation reference — with direct navigation from the deployment view straight into any linked camera to edit settings or review recordings. An operator always knows exactly which proven models are live, and where."
             ]
           },
           {
             "type": "media",
-            "kind": "image",
-            "label": "[ IMAGE: Deploy Models \u2014 mapping a validated model to site / area / camera ]"
+            "kind": "video",
+            "label": "[ IMAGE: Deploy Models — mapping a validated model to site / area / camera ]",
+            "src": "/casestudies/accel-7.mov",
+            "muted": true
           },
           {
             "type": "media",
-            "kind": "image",
-            "label": "[ IMAGE: Deployment history \u2014 what's running where, with validation trail ]"
+            "kind": "video",
+            "label": "[ IMAGE: Deployment history — what's running where, with validation trail ]",
+            "src": "/casestudies/accel-8.mov",
+            "muted": true
           },
           {
             "type": "quote",
@@ -591,30 +289,36 @@
             "num": "06",
             "eyebrow": "Monitor",
             "title": "Watching validated models at work.",
-            "subtitle": "The payoff for the whole loop \u2014 readable under pressure.",
+            "subtitle": "The payoff for the whole loop — readable under pressure.",
             "paragraphs": [
               "Once models are deployed, the Monitor section is where their work shows up. The Dashboard is the central operations screen: real-time panels for detection performance and operational events, a persistent time filter (today, 7 days, 30 days, custom) applied across every panel, and drill-down into the modules beneath. Live Monitoring is the multi-camera grid with configurable layouts and per-tile feed-health indicators, plus active/inactive camera counts. Recordings lets operators search past footage by site, area, camera, date, or keyword and play it back against a synchronised, severity-filterable event timeline.",
-              "The Detection Feed is the raw stream of what models are catching \u2014 filterable by time, site, area, severity, camera, or model, with counters for total detections, critical/high, pending triage, and escalated cases. Each detection carries its model, severity, precision and confidence scores, and location \u2014 with a clear call to action: raise it as an official Incident Report, dismiss it, or attach it to an existing report. Incident Reports are the accountable layer: auto-generated from high-severity events or created manually, moving through a Pending \u2192 Acknowledged \u2192 Resolved lifecycle, each one audit-ready, linked to exact footage timestamps, and exportable as a PDF."
+              "The Detection Feed is the raw stream of what models are catching — filterable by time, site, area, severity, camera, or model, with counters for total detections, critical/high, pending triage, and escalated cases. Each detection carries its model, severity, precision and confidence scores, and location — with a clear call to action: raise it as an official Incident Report, dismiss it, or attach it to an existing report. Incident Reports are the accountable layer: auto-generated from high-severity events or created manually, moving through a Pending → Acknowledged → Resolved lifecycle, each one audit-ready, linked to exact footage timestamps, and exportable as a PDF."
             ]
           },
           {
             "type": "media",
-            "kind": "image",
-            "label": "[ IMAGE: Dashboard \u2014 real-time panels with persistent time filter ]"
+            "kind": "video",
+            "label": "[ IMAGE: Dashboard — real-time panels with persistent time filter ]",
+            "src": "/casestudies/accel-9.mov",
+            "muted": true
           },
           {
             "type": "media",
-            "kind": "image",
-            "label": "[ IMAGE: Live Monitoring \u2014 multi-camera grid with feed-health indicators ]"
+            "kind": "video",
+            "label": "[ IMAGE: Live Monitoring — multi-camera grid with feed-health indicators ]",
+            "src": "/casestudies/accel-10.mov",
+            "muted": true
           },
           {
             "type": "media",
-            "kind": "image",
-            "label": "[ IMAGE: Detection Feed \u2192 Incident Report handoff, model + score trail ]"
+            "kind": "video",
+            "label": "[ IMAGE: Detection Feed → Incident Report handoff, model + score trail ]",
+            "src": "/casestudies/accel-11.mov",
+            "muted": true
           },
           {
             "type": "quote",
-            "text": "A detection is only useful if it becomes accountable work. The path from \u201cthe model flagged this\u201d to \u201csomeone owns this\u201d had to be a couple of clicks."
+            "text": "A detection is only useful if it becomes accountable work. The path from “the model flagged this” to “someone owns this” had to be a couple of clicks."
           },
           {
             "type": "prose",
@@ -623,13 +327,15 @@
             "title": "Who can do what, and whether the hardware is healthy.",
             "subtitle": "Governance one layer back from the hot path.",
             "paragraphs": [
-              "Around the operator loop sits the System section, designed against a three-role matrix \u2014 Owner, Admin, User \u2014 so what each person can see and do is a deliberate decision, not an accident of routing. User Management handles email-invite onboarding, role assignment, and lifecycle actions."
+              "Around the operator loop sits the System section, designed against a three-role matrix — Owner, Admin, User — so what each person can see and do is a deliberate decision, not an accident of routing. User Management handles email-invite onboarding, role assignment, and lifecycle actions."
             ]
           },
           {
             "type": "media",
-            "kind": "image",
-            "label": "[ IMAGE: User Management \u2014 three-role matrix, invite and lifecycle actions ]"
+            "kind": "video",
+            "label": "[ IMAGE: User Management — three-role matrix, invite and lifecycle actions ]",
+            "src": "/casestudies/accel-12.mov",
+            "muted": true
           },
           {
             "type": "lessons",
@@ -637,7 +343,7 @@
             "items": [
               {
                 "title": "Design the loop, not the module count.",
-                "text": "Seventeen modules sounds like seventeen design problems. It was really one operator loop \u2014 build, validate, deploy, monitor \u2014 repeated at different altitudes. Framing it that way kept a dense platform coherent instead of sprawling."
+                "text": "Seventeen modules sounds like seventeen design problems. It was really one operator loop — build, validate, deploy, monitor — repeated at different altitudes. Framing it that way kept a dense platform coherent instead of sprawling."
               },
               {
                 "title": "Make the right path the only path.",
@@ -645,7 +351,7 @@
               },
               {
                 "title": "A score needs a reason.",
-                "text": "The most trustworthy thing in the validation flow is the VLM reasoning narrative. A number tells you whether a model passed; the reasoning tells you why \u2014 and that's what lets a domain expert make the call instead of an engineer."
+                "text": "The most trustworthy thing in the validation flow is the VLM reasoning narrative. A number tells you whether a model passed; the reasoning tells you why — and that's what lets a domain expert make the call instead of an engineer."
               }
             ]
           },
@@ -654,8 +360,8 @@
             "eyebrow": "Time machine",
             "title": "If I could go back.",
             "paragraphs": [
-              "I'd get the Run Analysis flow in front of real operators sooner. I designed the validation loop \u2014 footage in, score and VLM reasoning out, exportable report \u2014 mostly through my own reasoning and internal review. It holds up, but one session watching an operator validate a model they actually cared about would have surfaced friction faster than another round of my own iteration.",
-              "And I'd pin down the three-role permission matrix before designing the surfaces, not alongside them. Role rules ended up shaping nearly every screen; settling who can do what up front would have saved rework each time a \u201cshould a User see this?\u201d question reopened a layout I'd already called done."
+              "I'd get the Run Analysis flow in front of real operators sooner. I designed the validation loop — footage in, score and VLM reasoning out, exportable report — mostly through my own reasoning and internal review. It holds up, but one session watching an operator validate a model they actually cared about would have surfaced friction faster than another round of my own iteration.",
+              "And I'd pin down the three-role permission matrix before designing the surfaces, not alongside them. Role rules ended up shaping nearly every screen; settling who can do what up front would have saved rework each time a “should a User see this?” question reopened a layout I'd already called done."
             ]
           }
         ]
@@ -663,15 +369,15 @@
     },
     {
       "slug": "terra",
-      "cmdKey": "\u23183",
+      "cmdKey": "⌘2",
       "code": "TR",
-      "category": "AI PLATFORM",
-      "kicker": "\u2192 Ai Platform \u00b7 2025",
+      "category": "SYNTHETIC WORLD BUILDER",
+      "kicker": "→ Synthetic World Builder · 2025",
       "paletteLabel": "A working product. A better one to build.",
       "title": "A working product. A better one to build.",
-      "metrics": "Synthetic Data \u00b7 Sigmawave AI \u00b7 2025\u20132026",
-      "blurb": "Terra generates synthetic data to train AI vision models \u2014 datasets that are dangerous, expensive, or impossible to collect in the real world. A working version already existed. My job was to redesign it end-to-end: better usability, more features, and a real fix for the pain points users hit in the original.",
-      "mockLabel": "[ Terra \u2014 redesigned 3D Builder ]",
+      "metrics": "Synthetic Data · Sigmawave AI · 2025–2026",
+      "blurb": "Terra generates synthetic data to train AI vision models — datasets that are dangerous, expensive, or impossible to collect in the real world. A working version already existed. My job was to redesign it end-to-end: better usability, more features, and a real fix for the pain points users hit in the original.",
+      "mockLabel": "[ Terra — redesigned 3D Builder ]",
       "accent": "#a78bfa",
       "buttonBg": "#615191",
       "cardGradient": "linear-gradient(180deg,#1e1a2c,#13111b)",
@@ -679,8 +385,8 @@
       "badgeBg": "#211d30",
       "mockStripe": "repeating-linear-gradient(135deg,#181522,#181522 11px,#211d30 11px,#211d30 22px)",
       "detail": {
-        "summary": "Terra generates synthetic data to train AI vision models \u2014 the datasets that are dangerous, expensive, or impossible to collect in the real world. A working version already existed. My job was to redesign it: better usability, more features, and a real fix for the pain points users hit in the original. I owned it end-to-end, from competitor research to the final 3D builder.",
-        "subtitle": "Redesigning Terra's synthetic data platform \u2014 from research to a full 3D builder.",
+        "summary": "Terra generates synthetic data to train AI vision models — the datasets that are dangerous, expensive, or impossible to collect in the real world. A working version already existed. My job was to redesign it: better usability, more features, and a real fix for the pain points users hit in the original. I owned it end-to-end, from competitor research to the final 3D builder.",
+        "subtitle": "Redesigning Terra's synthetic data platform — from research to a full 3D builder.",
         "sections": [
           {
             "type": "metaRow",
@@ -699,7 +405,7 @@
               },
               {
                 "label": "Timeline",
-                "value": "Apr 2025 \u2013 Jun 2026"
+                "value": "Apr 2025 – Jun 2026"
               }
             ]
           },
@@ -721,17 +427,17 @@
               {
                 "value": "3",
                 "label": "Export formats",
-                "sub": "Datasets auto-annotated in COCO, YOLO, and Pascal VOC \u2014 train-ready on export",
+                "sub": "Datasets auto-annotated in COCO, YOLO, and Pascal VOC — train-ready on export",
                 "tone": "green"
               }
             ]
           },
           {
             "type": "prose",
-            "eyebrow": "At a glance \u00b7 60 seconds",
+            "eyebrow": "At a glance · 60 seconds",
             "title": "The tool worked. It just needed to be better.",
             "paragraphs": [
-              "Terra wasn't new. A working version already shipped \u2014 but it was rigid. Scenes were hard to customise, there was no real camera control, lighting was fixed, and teams couldn't scale their work. I redesigned the whole thing: benchmarked the leading synthetic data tools, learned Blender and Unreal so I actually understood the 3D work our users did, gathered feedback from real users of the old version, and rebuilt Terra around a focused, canvas-first 3D builder."
+              "Terra wasn't new. A working version already shipped — but it was rigid. Scenes were hard to customise, there was no real camera control, lighting was fixed, and teams couldn't scale their work. I redesigned the whole thing: benchmarked the leading synthetic data tools, learned Blender and Unreal so I actually understood the 3D work our users did, gathered feedback from real users of the old version, and rebuilt Terra around a focused, canvas-first 3D builder."
             ]
           },
           {
@@ -758,7 +464,7 @@
               },
               {
                 "label": "Decision",
-                "text": "Redesign around a canvas-first 3D builder where users interact with scenes in real time \u2014 not a rigid, disconnected editor."
+                "text": "Redesign around a canvas-first 3D builder where users interact with scenes in real time — not a rigid, disconnected editor."
               },
               {
                 "label": "Surfaces",
@@ -766,7 +472,7 @@
               },
               {
                 "label": "Outcome",
-                "text": "A platform that turns scene-building into real, train-ready datasets \u2014 auto-annotated and ready to drop straight into a model pipeline."
+                "text": "A platform that turns scene-building into real, train-ready datasets — auto-annotated and ready to drop straight into a model pipeline."
               },
               {
                 "label": "Lesson",
@@ -781,8 +487,8 @@
             "title": "It worked. It was just rigid.",
             "subtitle": "A working product that users couldn't move freely inside.",
             "paragraphs": [
-              "Terra already had a working version when I joined the project. The technology was sound \u2014 it generated synthetic data. But using it was the problem. Scene customisation was limited. There was no way to move the camera, no precise object placement, no way to preview how a scene would look under different lighting. Editing felt disconnected, and the platform didn't scale for teams.",
-              "My role as Product Owner and Designer was to redesign it \u2014 better usability, more features, and a real fix for the pain points users faced in the original."
+              "Terra already had a working version when I joined the project. The technology was sound — it generated synthetic data. But using it was the problem. Scene customisation was limited. There was no way to move the camera, no precise object placement, no way to preview how a scene would look under different lighting. Editing felt disconnected, and the platform didn't scale for teams.",
+              "My role as Product Owner and Designer was to redesign it — better usability, more features, and a real fix for the pain points users faced in the original."
             ]
           },
           {
@@ -792,7 +498,8 @@
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: Terra old version \u2014 the original interface ]"
+            "label": "[ IMAGE: Terra old version — the original interface ]",
+            "src": "/casestudies/terra-1.png"
           },
           {
             "type": "prose",
@@ -801,8 +508,8 @@
             "title": "I didn't design first. I learned first.",
             "subtitle": "Benchmarks, then a month inside Blender and Unreal.",
             "paragraphs": [
-              "To know what to design, I studied the field. I benchmarked the leading synthetic data platforms \u2014 Synthesis AI, Anyverse, Bifrost AI, Parallel Domain \u2014 to understand where the industry bar sat and where Terra could go further.",
-              "But Terra runs on 3D workflows, and I couldn't design for something I didn't understand. So I took a month of Blender and Unreal Engine training with top creators \u2014 scene design, materials, lighting, animation. That month changed how I designed. I stopped guessing at what a 3D artist needed and started designing from how the work actually gets done."
+              "To know what to design, I studied the field. I benchmarked the leading synthetic data platforms — Synthesis AI, Anyverse, Bifrost AI, Parallel Domain — to understand where the industry bar sat and where Terra could go further.",
+              "But Terra runs on 3D workflows, and I couldn't design for something I didn't understand. So I took a month of Blender and Unreal Engine training with top creators — scene design, materials, lighting, animation. That month changed how I designed. I stopped guessing at what a 3D artist needed and started designing from how the work actually gets done."
             ]
           },
           {
@@ -812,7 +519,8 @@
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: Benchmark board \u2014 competitor tools compared ]"
+            "label": "[ IMAGE: Benchmark board — competitor tools compared ]",
+            "src": "/casestudies/terra-2.png"
           },
           {
             "type": "prose",
@@ -822,13 +530,14 @@
             "subtitle": "Straight from the people who used the old one.",
             "paragraphs": [
               "I reached out to users of the previous version and gathered direct feedback. The same problems kept surfacing: limited scene customisation, unintuitive tools, minimal control over rendering, and poor scalability for teams.",
-              "I spent the following weeks turning that into direction \u2014 pulling best practices from the platforms and creative tools I'd studied, and building a new user flow that reflected the expanded feature set and fixed the old limitations. This phase wasn't just about refining the experience. It was about expanding what the product could be."
+              "I spent the following weeks turning that into direction — pulling best practices from the platforms and creative tools I'd studied, and building a new user flow that reflected the expanded feature set and fixed the old limitations. This phase wasn't just about refining the experience. It was about expanding what the product could be."
             ]
           },
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: New user flow \u2014 the redesigned journey ]"
+            "label": "[ IMAGE: New user flow — the redesigned journey ]",
+            "src": "/casestudies/terra-3.png"
           },
           {
             "type": "prose",
@@ -838,13 +547,14 @@
             "subtitle": "Mid-fidelity proposal, early feedback, aligned direction.",
             "paragraphs": [
               "Before touching high-fidelity design, I brought the research and early concepts to stakeholders. I walked them through the proposed user flows, showed how each feature answered a specific pain point from the old platform, and laid out the key improvements planned for the new version.",
-              "To make the direction tangible, I prepared a mid-fidelity proposal showing how the updated layout would look and work. It let stakeholders see the redesign clearly and give feedback early \u2014 before it was expensive to change."
+              "To make the direction tangible, I prepared a mid-fidelity proposal showing how the updated layout would look and work. It let stakeholders see the redesign clearly and give feedback early — before it was expensive to change."
             ]
           },
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: Mid-fidelity proposal shown to stakeholders ]"
+            "label": "[ IMAGE: Mid-fidelity proposal shown to stakeholders ]",
+            "src": "/casestudies/terra-4.png"
           },
           {
             "type": "prose",
@@ -861,41 +571,47 @@
             "eyebrow": "The dashboard",
             "title": "Users used to lose track of their own work.",
             "paragraphs": [
-              "The old dashboard had no visual hierarchy and made resuming or managing multiple projects a chore. I rebuilt it around a visually rich project overview \u2014 recently opened projects shown as large, recognisable thumbnails with key metadata like last edit date and owner, so users can pick up where they left off and collaborate fast.",
-              "Navigation was the other pain point. Jumping between projects or finding admin tools felt clunky, so I restructured the sidebar and tab system for seamless workspace switching. Tools like project settings and org management sit contextually \u2014 there when you need them, out of the way when you don't."
+              "The old dashboard had no visual hierarchy and made resuming or managing multiple projects a chore. I rebuilt it around a visually rich project overview — recently opened projects shown as large, recognisable thumbnails with key metadata like last edit date and owner, so users can pick up where they left off and collaborate fast.",
+              "Navigation was the other pain point. Jumping between projects or finding admin tools felt clunky, so I restructured the sidebar and tab system for seamless workspace switching. Tools like project settings and org management sit contextually — there when you need them, out of the way when you don't."
             ]
           },
           {
             "type": "media",
-            "kind": "image",
-            "label": "[ IMAGE: Terra redesigned dashboard \u2014 project thumbnails, restructured sidebar ]"
+            "kind": "video",
+            "label": "[ IMAGE: Terra redesigned dashboard — project thumbnails, restructured sidebar ]",
+            "src": "/casestudies/terra-5.mov",
+            "muted": true
           },
           {
             "type": "prose",
             "eyebrow": "The builder",
             "title": "No camera control. No precise placement. No lighting preview.",
             "paragraphs": [
-              "The old Builder was missing the basics users expected. Editing felt rigid and disconnected \u2014 hard to build anything dynamic or realistic. I reimagined the whole thing around a focused, canvas-based interface where users interact with their scenes in real time. Two panels carry most of the weight: Object Settings and Environment Settings."
+              "The old Builder was missing the basics users expected. Editing felt rigid and disconnected — hard to build anything dynamic or realistic. I reimagined the whole thing around a focused, canvas-based interface where users interact with their scenes in real time. Two panels carry most of the weight: Object Settings and Environment Settings."
             ]
           },
           {
             "type": "media",
-            "kind": "image",
+            "kind": "video",
             "caption": "Object Settings panel",
-            "label": "[ IMAGE: Object Settings panel ]"
+            "label": "[ IMAGE: Object Settings panel ]",
+            "src": "/casestudies/terra-6.mov",
+            "muted": true
           },
           {
             "type": "media",
-            "kind": "image",
+            "kind": "video",
             "caption": "Environment Settings panel",
-            "label": "[ IMAGE: Environment Settings panel ]"
+            "label": "[ IMAGE: Environment Settings panel ]",
+            "src": "/casestudies/terra-7.mov",
+            "muted": true
           },
           {
             "type": "prose",
             "eyebrow": "The AI layer",
             "title": "Two features define where the product is heading.",
             "paragraphs": [
-              "The redesign also brought in AI features I designed end-to-end. A third, Auto Segment Anything (ASA), handles automatic image segmentation and occlusion between real images and 3D objects \u2014 designed, but not covered in depth here."
+              "The redesign also brought in AI features I designed end-to-end. A third, Auto Segment Anything (ASA), handles automatic image segmentation and occlusion between real images and 3D objects — designed, but not covered in depth here."
             ]
           },
           {
@@ -904,7 +620,7 @@
             "items": [
               {
                 "title": "Restyle (MAT)",
-                "text": "Synthetic data often looks synthetic. MAT lets users upload a real-world reference image, and Terra extracts its visual characteristics \u2014 lighting, colour grading, noise, lens artifacts \u2014 and applies them to the synthetic output. Users control the strength and preview before exporting. The goal: datasets close enough to real that models actually generalise.",
+                "text": "Synthetic data often looks synthetic. MAT lets users upload a real-world reference image, and Terra extracts its visual characteristics — lighting, colour grading, noise, lens artifacts — and applies them to the synthetic output. Users control the strength and preview before exporting. The goal: datasets close enough to real that models actually generalise.",
                 "tone": "violet"
               },
               {
@@ -916,13 +632,17 @@
           },
           {
             "type": "media",
-            "kind": "image",
-            "label": "[ IMAGE: MAT interface \u2014 upload reference, preview adaptation ]"
+            "kind": "video",
+            "label": "[ IMAGE: MAT interface — upload reference, preview adaptation ]",
+            "src": "/casestudies/terra-8.mov",
+            "muted": true
           },
           {
             "type": "media",
-            "kind": "image",
-            "label": "[ IMAGE: SAB interface \u2014 if available ]"
+            "kind": "video",
+            "label": "[ IMAGE: SAB interface — if available ]",
+            "src": "/casestudies/terra-9.mov",
+            "muted": true
           },
           {
             "type": "prose",
@@ -931,37 +651,40 @@
             "title": "From scene to train-ready data.",
             "subtitle": "The whole point of Terra: usable ML data, not just pretty renders.",
             "paragraphs": [
-              "The generation flow ties it together. A user builds a scene, hits Generate, picks image or video, and the system processes the job in the background. A Work Orders panel tracks every job \u2014 in progress, completed, failed \u2014 so users can queue multiple generations and come back when they're ready.",
-              "What comes out is the payoff: datasets auto-annotated in COCO, YOLO, or Pascal VOC \u2014 labeled, structured, and ready to train on with no manual annotation step. That's the difference between a 3D render and a training asset."
+              "The generation flow ties it together. A user builds a scene, hits Generate, picks image or video, and the system processes the job in the background. A Work Orders panel tracks every job — in progress, completed, failed — so users can queue multiple generations and come back when they're ready.",
+              "What comes out is the payoff: datasets auto-annotated in COCO, YOLO, or Pascal VOC — labeled, structured, and ready to train on with no manual annotation step. That's the difference between a 3D render and a training asset."
             ]
           },
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: Generate modal \u2014 image / video, generation settings ]"
+            "label": "[ IMAGE: Generate modal — image / video, generation settings ]",
+            "src": "/casestudies/terra-10.png"
           },
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: Work Orders panel \u2014 job tracking, download states ]"
+            "label": "[ IMAGE: Work Orders panel — job tracking, download states ]",
+            "src": "/casestudies/terra-11.png"
           },
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: Received dataset \u2014 generated images with annotations/labels ]"
+            "label": "[ IMAGE: Received dataset — generated images with annotations/labels ]"
           },
           {
             "type": "prose",
             "eyebrow": "The proof",
             "title": "I took the dataset straight into Roboflow.",
             "paragraphs": [
-              "To prove the loop closes, I took a batch of Terra-generated images straight into Roboflow and trained a model on them \u2014 no real-world photos in the set. The dataset dropped in cleanly, annotations intact, and trained without manual cleanup. That's the whole thesis of the product in one test: build a scene, generate, train."
+              "To prove the loop closes, I took a batch of Terra-generated images straight into Roboflow and trained a model on them — no real-world photos in the set. The dataset dropped in cleanly, annotations intact, and trained without manual cleanup. That's the whole thesis of the product in one test: build a scene, generate, train."
             ]
           },
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: Roboflow \u2014 Terra dataset uploaded, training run on generated images ]"
+            "label": "[ IMAGE: Roboflow — Terra dataset uploaded, training run on generated images ]",
+            "src": "/casestudies/terra-13.png"
           },
           {
             "type": "quote",
@@ -973,7 +696,7 @@
             "items": [
               {
                 "title": "Learn the craft before you design for it.",
-                "text": "A month in Blender and Unreal changed every decision that followed. You can't design a 3D tool well from the outside \u2014 I had to understand how scenes are actually built, lit, and rendered first."
+                "text": "A month in Blender and Unreal changed every decision that followed. You can't design a 3D tool well from the outside — I had to understand how scenes are actually built, lit, and rendered first."
               },
               {
                 "title": "The best direction comes from the old product's users.",
@@ -995,23 +718,355 @@
             "title": "If I could go back.",
             "paragraphs": [
               "I'd get real users into the redesigned Builder sooner. The research and stakeholder alignment were solid, but the canvas-first flow was something I mostly validated internally and in Figma. One session watching an engineer try to build a complex scene would have surfaced friction faster than another round of my own iteration.",
-              "And I'd document the design system earlier. With 35+ modules across a dashboard and a full 3D editor, the patterns I set up front held the redesign together \u2014 but I built a lot of it reactively. Formalising it sooner would have saved rework as the feature set expanded."
+              "And I'd document the design system earlier. With 35+ modules across a dashboard and a full 3D editor, the patterns I set up front held the redesign together — but I built a lot of it reactively. Formalising it sooner would have saved rework as the feature set expanded."
             ]
           }
         ]
       }
     },
     {
+      "slug": "jar-aye",
+      "cmdKey": "⌘3",
+      "code": "JA",
+      "category": "EDTECH",
+      "kicker": "→ Edtech · 2024",
+      "paletteLabel": "The math wasn't the problem.",
+      "title": "The math wasn't the problem.",
+      "metrics": "EdTech · Myanmar · Aug 2023 – Jan 2024",
+      "blurb": "Grade 4 students kept stalling on Olympiad questions they could actually solve. Unscripted observation found three blockers — language, attention, navigation. None were math.",
+      "mockLabel": "[ Jar Aye — student app ]",
+      "accent": "#7fd8a8",
+      "buttonBg": "#4a7d61",
+      "cardGradient": "linear-gradient(180deg,#192520,#101715)",
+      "cardBorder": "#20322a",
+      "badgeBg": "#1b2923",
+      "mockStripe": "repeating-linear-gradient(135deg,#141d1a,#141d1a 11px,#1b2923 11px,#1b2923 22px)",
+      "detail": {
+        "subtitle": "Everything around it was.",
+        "summary": "Grade 4 students kept stalling on Olympiad questions they could actually solve. We ran unscripted observations on a live competitor platform and found three blockers — language, attention, and navigation. None of them were about math. That finding reshaped every design decision that followed — including killing a visual theme the client already loved.",
+        "sections": [
+          {
+            "type": "metaRow",
+            "items": [
+              {
+                "label": "Role",
+                "value": "Product Designer — Student App"
+              },
+              {
+                "label": "Team",
+                "value": "Split team — I owned the student experience"
+              },
+              {
+                "label": "Client",
+                "value": "EdTech client · Myanmar"
+              },
+              {
+                "label": "Timeline",
+                "value": "Aug 2023 – Jan 2024"
+              }
+            ]
+          },
+          {
+            "type": "stats",
+            "items": [
+              {
+                "value": "5+3",
+                "label": "Users observed",
+                "sub": "5 Grade 4 students and 3 guardians, on a live competitor platform",
+                "tone": "pink"
+              },
+              {
+                "value": "3",
+                "label": "Modules tested",
+                "sub": "Challenge, Training, Class — same problems in all three",
+                "tone": "amber"
+              },
+              {
+                "value": "2 → 1",
+                "label": "Visual directions",
+                "sub": "Built two full themes. Killed the one the client liked.",
+                "tone": "green"
+              }
+            ]
+          },
+          {
+            "type": "prose",
+            "eyebrow": "At a glance · 60 seconds",
+            "title": "Kids weren't failing the math. They were failing the interface.",
+            "paragraphs": [
+              "We watched five students use a competitor platform. Every module told the same story: language got in the way, long videos lost them, and navigation was built for adults. When we translated the questions, they performed well. The barrier was the wrapper, not the work."
+            ]
+          },
+          {
+            "type": "tags",
+            "items": [
+              "Research",
+              "Define",
+              "IA",
+              "Design",
+              "The Pivot",
+              "Reflection"
+            ]
+          },
+          {
+            "type": "microCards",
+            "items": [
+              {
+                "label": "Problem",
+                "text": "Kids 6–13 were disengaging from Olympiad math. Nobody could say why with evidence."
+              },
+              {
+                "label": "Method",
+                "text": "Remote unscripted observation of 5 students + 3 guardians on KooBits. Scored on behaviour, time, and confidence."
+              },
+              {
+                "label": "Decision",
+                "text": "Design for behaviour, not age. Strip language friction, shorten everything, separate learning from play."
+              },
+              {
+                "label": "Surfaces",
+                "text": "Three modules rebuilt around familiar metaphors: a staircase, a book, a noticeboard."
+              },
+              {
+                "label": "Outcome",
+                "text": "A calmer, clearer student app — and a theme pivot that saved the product from its own polish."
+              },
+              {
+                "label": "Lesson",
+                "text": "A design that wins the room can still lose the child. Test the theme, not just the flow."
+              }
+            ]
+          },
+          {
+            "type": "prose",
+            "num": "01",
+            "eyebrow": "The problem",
+            "title": "Smart kids, stuck.",
+            "subtitle": "The brief was simple. The kids weren't.",
+            "paragraphs": [
+              "An EdTech client wanted to bring Olympiad-level math to Myanmar's 6-to-13s — a local KooBits, but playful and built for children who'd never used an interface like it. The hard part was never the curriculum. It was that nobody could explain, with evidence, why children stalled. Was it the math? The reading? The screen itself?"
+            ]
+          },
+          {
+            "type": "quote",
+            "text": "I didn't want to design for a six-year-old in theory. I wanted to watch one actually get stuck."
+          },
+          {
+            "type": "prose",
+            "num": "02",
+            "eyebrow": "Research",
+            "title": "Five students. Three modules. One method.",
+            "subtitle": "Before drawing a single screen, we watched real kids fail in real time.",
+            "paragraphs": [
+              "We ran remote, unscripted observations with five Grade 4 students and three guardians, using KooBits as a live stand-in. Unscripted on purpose — the moment you give a child a script, you stop seeing how they actually behave. We tested three modules: Challenge, Training, and Class, scoring every session through three lenses."
+            ],
+            "notes": [
+              {
+                "title": "Usage behaviour",
+                "text": "Could they use the interface without help? How much cognitive load did it cost?"
+              },
+              {
+                "title": "Time taken",
+                "text": "Challenge 1:27 · Training 1:46 · Class 0:40"
+              },
+              {
+                "title": "Confidence",
+                "text": "Rated \"Not Much\" across all three modules."
+              }
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Child testing the competitor platform ]",
+            "src": "/casestudies/jar-aye-1.png"
+          },
+          {
+            "type": "quote",
+            "text": "Every module told the same story in a different accent."
+          },
+          {
+            "type": "findings",
+            "title": "Three blockers. None of them were math.",
+            "subhead": "The same problems showed up in Challenge, Training, and Class.",
+            "items": [
+              {
+                "title": "Language barrier",
+                "text": "Students struggled to translate questions. But when we translated for them, they performed well. The math wasn't hard — the English was.",
+                "tone": "pink"
+              },
+              {
+                "title": "Attention",
+                "text": "Long tutorial videos lost them every time. Most never watched the solution explanations. If it wasn't short, it didn't exist.",
+                "tone": "amber"
+              },
+              {
+                "title": "Navigation + dependence",
+                "text": "Students needed guardian help for basic tasks. Navigation was built for adults — kids couldn't find their way through alone.",
+                "tone": "blue"
+              }
+            ]
+          },
+          {
+            "type": "prose",
+            "title": "Teachers hit the same walls.",
+            "paragraphs": [
+              "We also got teacher feedback on the existing platform: onboarding screens weren't clear, reports were confusing, and one teacher couldn't find the quiz after finishing a tutorial."
+            ]
+          },
+          {
+            "type": "quote",
+            "text": "When the questions were translated, they could do the math. The interface was the barrier, not the content."
+          },
+          {
+            "type": "prose",
+            "num": "03",
+            "eyebrow": "Define",
+            "title": "Two apps. I owned one.",
+            "subtitle": "With the problem defined, the team split.",
+            "paragraphs": [
+              "A parallel group took the parent app — progress tracking, subscriptions, oversight. I took the student experience. I mapped how a child actually moves through the platform — log in, pick a class, watch a short video, take a quiz — and built a user flow and information architecture simple enough for a six-year-old to hold in their head.",
+              "The research gave us clear rules: strip language friction, keep everything short, and separate learning content from gamified content so neither dilutes the other."
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "video",
+            "label": "[ IMAGE: User flow ]",
+            "muted": true
+          },
+          {
+            "type": "media",
+            "kind": "video",
+            "label": "[ IMAGE: Information architecture ]",
+            "muted": true
+          },
+          {
+            "type": "prose",
+            "num": "04",
+            "eyebrow": "Design",
+            "title": "Three modules, three metaphors.",
+            "subtitle": "Low-fi first — because the cheapest place to be wrong is a wireframe.",
+            "paragraphs": [
+              "Wireframes came before anything polished. They surfaced three rules fast: navigation needed large, tappable targets; learning and play had to be visibly separated; and mobile was its own design problem — not a shrunk desktop.",
+              "Each module then borrowed a metaphor kids already understood."
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "video",
+            "label": "[ IMAGE: Low-fi wireframes — desktop ]",
+            "muted": true
+          },
+          {
+            "type": "media",
+            "kind": "video",
+            "label": "[ IMAGE: Low-fi wireframes — mobile ]",
+            "muted": true
+          },
+          {
+            "type": "modules",
+            "items": [
+              {
+                "title": "Challenge — a staircase.",
+                "text": "Progress you can see. Completed steps, locked steps, and retries laid out as a climb. Practice feels like going up, not in circles.",
+                "videoUrl": "https://vimeo.com/1098943006",
+                "tone": "green",
+                "muted": true
+              },
+              {
+                "title": "Class — a book.",
+                "text": "Linear and calm. Short video, then a quiz, then the next. Content broken into pieces small enough to survive a short attention span.",
+                "videoUrl": "https://vimeo.com/1098943821",
+                "tone": "blue",
+                "muted": true
+              },
+              {
+                "title": "Training — a noticeboard.",
+                "text": "HOTS and Singapore Math, organised by proficiency and high scores. Chalkboard styling that feels warm, not clinical.",
+                "videoUrl": "https://vimeo.com/1098944101",
+                "tone": "amber",
+                "muted": true
+              }
+            ]
+          },
+          {
+            "type": "prose",
+            "num": "05",
+            "eyebrow": "The pivot",
+            "title": "The theme everyone loved was the wrong one.",
+            "subtitle": "We built a beautiful direction, then killed it.",
+            "paragraphs": [
+              "The first visual concept was a space-exploration theme — cosmic visuals, glowing gradients, futuristic UI. The client liked it immediately. Then we built it out, and the truth surfaced: too complex, and it pulled against the core promise of a calm, pressure-free place to learn.",
+              "So we pivoted to a second direction — cleaner, brighter, friendlier. Less spectacle, more clarity. It was the harder call because the first version was likeable. But \"likeable in a review\" and \"right for the user\" aren't the same thing."
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Space theme — initial version ]",
+            "src": "/casestudies/jar-aye-9.png"
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Final version ]",
+            "src": "/casestudies/jar-aye-10.png"
+          },
+          {
+            "type": "quote",
+            "text": "The space theme won the room. It would have lost the child."
+          },
+          {
+            "type": "lessons",
+            "title": "What this project taught me.",
+            "items": [
+              {
+                "title": "Design for behaviour, not age.",
+                "text": "\"Six-to-thirteen\" isn't a spec. Short attention, limited reading, and a need for visual clarity are the real constraints — and they only surface when you watch real children."
+              },
+              {
+                "title": "The barrier is usually the wrapper.",
+                "text": "The kids could do the math. Language, video length, and navigation were doing the failing. Fixing the frame beat simplifying the content."
+              },
+              {
+                "title": "Align stakeholders before high-fi.",
+                "text": "Sharing research, flows, and wireframes before polished screens meant the theme pivot was a course-correction, not a crisis."
+              },
+              {
+                "title": "A loved design can still be wrong.",
+                "text": "The space theme proved client enthusiasm is a signal, not a verdict. The user is the verdict."
+              }
+            ]
+          },
+          {
+            "type": "prose",
+            "eyebrow": "Time machine",
+            "title": "If I could go back.",
+            "paragraphs": [
+              "I'd test the visual theme the same way we tested the flow — cheaply, with real kids, before building it out fully. We caught the navigation issues through observation but let the space theme run all the way to a finished design before discovering it didn't fit. A rough themed prototype in front of five children would have caught that in an afternoon, not a sprint."
+            ]
+          }
+        ]
+      },
+      "thumbnail": {
+        "kind": "video",
+        "src": "/thumbnails/jar-aye-thumb.mov",
+        "device": "web",
+        "muted": true
+      }
+    },
+    {
       "slug": "kanote",
-      "cmdKey": "\u23184",
+      "cmdKey": "⌘4",
       "code": "KN",
-      "category": "ARTTECH",
-      "kicker": "\u2192 Arttech \u00b7 2024",
+      "category": "ART E-COMMERCE",
+      "kicker": "→ Art E-commerce · 2024",
       "paletteLabel": "Selling the art was never the hard part.",
       "title": "Selling the art was never the hard part.",
-      "metrics": "ArtTech Marketplace \u00b7 2023\u20132024",
-      "blurb": "Myanmar had artists with nowhere to sell and buyers with no reason to feel safe. 50+ interviews reframed the brief: Kanote wasn't an art shop \u2014 it was the first trust layer for a market that never had one.",
-      "mockLabel": "[ Kanote \u2014 art marketplace ]",
+      "metrics": "ArtTech Marketplace · 2023–2024",
+      "blurb": "Myanmar had artists with nowhere to sell and buyers with no reason to feel safe. 50+ interviews reframed the brief: Kanote wasn't an art shop — it was the first trust layer for a market that never had one.",
+      "mockLabel": "[ Kanote — art marketplace ]",
       "accent": "#f4a6b8",
       "buttonBg": "#8e606b",
       "cardGradient": "linear-gradient(180deg,#291e22,#191316)",
@@ -1020,7 +1075,7 @@
       "mockStripe": "repeating-linear-gradient(135deg,#20181b,#20181b 11px,#2e2126 11px,#2e2126 22px)",
       "detail": {
         "subtitle": "Earning the trust was.",
-        "summary": "Myanmar had artists with nowhere to sell and buyers with no reason to feel safe. Fifty-plus interviews and gallery visits reframed the brief: Kanote wasn't an art shop \u2014 it was the first trust layer for a market that had never had one.",
+        "summary": "Myanmar had artists with nowhere to sell and buyers with no reason to feel safe. Fifty-plus interviews and gallery visits reframed the brief: Kanote wasn't an art shop — it was the first trust layer for a market that had never had one.",
         "sections": [
           {
             "type": "metaRow",
@@ -1039,7 +1094,7 @@
               },
               {
                 "label": "Timeline",
-                "value": "Jan 2023 \u2013 Feb 2024"
+                "value": "Jan 2023 – Feb 2024"
               }
             ]
           },
@@ -1068,10 +1123,10 @@
           },
           {
             "type": "prose",
-            "eyebrow": "At a glance \u00b7 60 seconds",
+            "eyebrow": "At a glance · 60 seconds",
             "title": "We set out to build a store. The research said build trust.",
             "paragraphs": [
-              "In a market unfamiliar with digital art platforms, the blocker was never listing artwork \u2014 it was confidence. Artists feared being unseen and underpaid; buyers feared paying for something they couldn't hold. Every core decision became an answer to one question: why should I trust this?"
+              "In a market unfamiliar with digital art platforms, the blocker was never listing artwork — it was confidence. Artists feared being unseen and underpaid; buyers feared paying for something they couldn't hold. Every core decision became an answer to one question: why should I trust this?"
             ]
           },
           {
@@ -1106,7 +1161,7 @@
               },
               {
                 "label": "Outcome",
-                "text": "A simpler, calmer platform \u2014 after usability testing made us cut the features we were proudest of."
+                "text": "A simpler, calmer platform — after usability testing made us cut the features we were proudest of."
               },
               {
                 "label": "Lesson",
@@ -1121,7 +1176,7 @@
             "title": "A market with no front door.",
             "subtitle": "Plenty of art. Plenty of buyers. No trusted place for them to meet.",
             "paragraphs": [
-              "Myanmar's emerging artists had work to sell and no real platform for it \u2014 and buyers had no transparent, safe way to pay for something they couldn't physically inspect. The market had barely encountered a digital art platform, so we couldn't lean on habits that didn't exist. Building a storefront would have been easy. Building one people trusted enough to use was the real problem."
+              "Myanmar's emerging artists had work to sell and no real platform for it — and buyers had no transparent, safe way to pay for something they couldn't physically inspect. The market had barely encountered a digital art platform, so we couldn't lean on habits that didn't exist. Building a storefront would have been easy. Building one people trusted enough to use was the real problem."
             ]
           },
           {
@@ -1133,20 +1188,22 @@
             "num": "02",
             "eyebrow": "Research",
             "title": "Fifty conversations and a gallery tour.",
-            "subtitle": "We went to where the art already lived \u2014 online and off.",
+            "subtitle": "We went to where the art already lived — online and off.",
             "paragraphs": [
-              "We spoke with more than fifty artists and art lovers one-on-one, through social media, community networks, and in-person meetups. Then we left the screen \u2014 the team visited local galleries and sat with owners and curators who showed us how emerging artists really navigate the scene. Interviews gave depth; a structured survey across Myanmar verified the patterns at scale."
+              "We spoke with more than fifty artists and art lovers one-on-one, through social media, community networks, and in-person meetups. Then we left the screen — the team visited local galleries and sat with owners and curators who showed us how emerging artists really navigate the scene. Interviews gave depth; a structured survey across Myanmar verified the patterns at scale."
             ]
           },
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: Research team visiting galleries & exhibitions ]"
+            "label": "[ IMAGE: Research team visiting galleries & exhibitions ]",
+            "src": "/casestudies/kanote-1.png"
           },
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: Survey responses ]"
+            "label": "[ IMAGE: Survey responses ]",
+            "src": "/casestudies/kanote-2.png"
           },
           {
             "type": "quote",
@@ -1157,7 +1214,7 @@
             "num": "03",
             "eyebrow": "Define",
             "title": "Two users. One shared need.",
-            "subtitle": "Different goals, same blocker \u2014 trust.",
+            "subtitle": "Different goals, same blocker — trust.",
             "paragraphs": [
               "The research resolved into two personas. The emerging artist needed visibility and fair, protected opportunities to sell. The passionate art lover needed a safe, transparent way to buy. Their goals diverged, but both pointed at the same missing ingredient: trust. From there we wrote sharp problem statements and translated them into user flows for browsing, uploading, buying on installments, and community."
             ]
@@ -1165,12 +1222,13 @@
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: User personas ]"
+            "label": "[ IMAGE: User personas ]",
+            "src": "/casestudies/kanote-3.png"
           },
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: User flow \u2014 browse, upload, purchase, community ]",
+            "label": "[ IMAGE: User flow — browse, upload, purchase, community ]",
             "src": "/casestudies/kanote-4.png"
           },
           {
@@ -1180,33 +1238,38 @@
             "title": "Three answers to one question.",
             "subtitle": "Every core feature was a reason to trust the platform.",
             "paragraphs": [
-              "We wireframed the four jobs that mattered \u2014 browse, buy, upload, connect \u2014 and iterated fast, killing anything unclear before it hardened. Then the visual language: bright and inviting, clean layouts, large touch targets, vibrant accents matching the creativity of the people using it. Three solutions did the heavy lifting, each answering the same question \u2014 why should I trust this?"
+              "We wireframed the four jobs that mattered — browse, buy, upload, connect — and iterated fast, killing anything unclear before it hardened. Then the visual language: bright and inviting, clean layouts, large touch targets, vibrant accents matching the creativity of the people using it. Three solutions did the heavy lifting, each answering the same question — why should I trust this?"
             ]
           },
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: Low-fidelity wireframes ]"
+            "label": "[ IMAGE: Low-fidelity wireframes ]",
+            "src": "/casestudies/kanote-5.png"
           },
           {
             "type": "modules",
             "items": [
               {
-                "title": "Two ways to pay \u2014 both protected.",
+                "title": "Two ways to pay — both protected.",
                 "text": "Buyers choose Pay in Full or an installment plan, each governed by terms that protect artist and buyer alike. Flexibility for buyers; security for the artists selling.",
                 "videoUrl": "https://vimeo.com/1100799020",
-                "tone": "green"
+                "tone": "green",
+                "muted": true
               },
               {
                 "title": "A community, not a catalogue.",
-                "text": "A feed where artists post work, share updates, and talk directly with collectors \u2014 turning a marketplace into a place where rising talent actually gets discovered.",
+                "text": "A feed where artists post work, share updates, and talk directly with collectors — turning a marketplace into a place where rising talent actually gets discovered.",
                 "videoUrl": "https://vimeo.com/1100803834",
-                "tone": "blue"
+                "tone": "blue",
+                "muted": true
               },
               {
                 "title": "Every artwork tells its story.",
-                "text": "An About panel on each piece pairs the artist's story \u2014 background, inspiration, process \u2014 with hard specs like medium, materials, dimensions, and edition. Context plus facts, so buyers connect and commit.",
-                "tone": "pink"
+                "text": "An About panel on each piece pairs the artist's story — background, inspiration, process — with hard specs like medium, materials, dimensions, and edition. Context plus facts, so buyers connect and commit.",
+                "tone": "pink",
+                "videoUrl": "/casestudies/kanote-8.mov",
+                "muted": true
               }
             ]
           },
@@ -1217,19 +1280,19 @@
             "title": "We built too much. Then we cut it.",
             "subtitle": "Our proudest version was also our most overwhelming.",
             "paragraphs": [
-              "The first full build answered every request \u2014 too many features, too many paths, navigation that made first-time users freeze. We put the prototype in front of 15+ participants and watched the overwhelm in real time. Artists loved that Kanote handled delivery; buyers wanted clearer order tracking and richer profiles. So we did the harder thing than adding \u2014 we subtracted. Prioritisation simplified the layout, refined onboarding, and stripped friction from the core flows. The finished screens are calmer, and that calm is the result."
+              "The first full build answered every request — too many features, too many paths, navigation that made first-time users freeze. We put the prototype in front of 15+ participants and watched the overwhelm in real time. Artists loved that Kanote handled delivery; buyers wanted clearer order tracking and richer profiles. So we did the harder thing than adding — we subtracted. Prioritisation simplified the layout, refined onboarding, and stripped friction from the core flows. The finished screens are calmer, and that calm is the result."
             ]
           },
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: Usability testing \u2014 15+ participants ]",
+            "label": "[ IMAGE: Usability testing — 15+ participants ]",
             "src": "/casestudies/kanote-9.png"
           },
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: Before / after \u2014 the simplified version ]",
+            "label": "[ IMAGE: Before / after — the simplified version ]",
             "src": "/casestudies/kanote-10.png"
           },
           {
@@ -1242,7 +1305,7 @@
             "items": [
               {
                 "title": "Commerce plus community is the product",
-                "text": "Myanmar's artists didn't need a shop. They needed somewhere to be seen, heard, and supported \u2014 and the community turned out to be as load-bearing as the checkout."
+                "text": "Myanmar's artists didn't need a shop. They needed somewhere to be seen, heard, and supported — and the community turned out to be as load-bearing as the checkout."
               },
               {
                 "title": "Design for the local context",
@@ -1263,7 +1326,7 @@
             "eyebrow": "Time machine",
             "title": "If I could go back.",
             "paragraphs": [
-              "I'd test for overwhelm earlier. We caught the feature bloat in usability testing \u2014 the right place, but late. A stricter prioritisation pass before the first full build would have spared a version we had to dismantle. And I'd close the loop with numbers: task success on the simplified flows, drop-off before and after the onboarding refinement, and completed purchases by payment type."
+              "I'd test for overwhelm earlier. We caught the feature bloat in usability testing — the right place, but late. A stricter prioritisation pass before the first full build would have spared a version we had to dismantle. And I'd close the loop with numbers: task success on the simplified flows, drop-off before and after the onboarding refinement, and completed purchases by payment type."
             ]
           }
         ]
@@ -1271,15 +1334,15 @@
     },
     {
       "slug": "cv-trainer",
-      "cmdKey": "\u23185",
+      "cmdKey": "⌘5",
       "code": "CV",
       "category": "CV TRAINING PIPELINE",
-      "kicker": "\u2192 CV Training Pipeline \u00b7 2025",
+      "kicker": "→ Cv Training Pipeline · 2025",
       "paletteLabel": "From concept to working model, in one pipeline.",
       "title": "From concept to working model. In one pipeline.",
-      "metrics": "Computer Vision \u00b7 MLOps \u00b7 Claude Agent SDK \u00b7 2025",
-      "blurb": "A six-stage agent harness on the Claude Agent SDK that takes a CV model from raw images to a verified detector \u2014 with a human gate on every irreversible step. Proved it on a gaze-direction model at mAP@50 0.995.",
-      "mockLabel": "[ CV Trainer \u2014 pipeline running end-to-end, human-gate prompts visible ]",
+      "metrics": "Computer Vision · MLOps · Claude Agent SDK · 2025",
+      "blurb": "A six-stage agent harness on the Claude Agent SDK that takes a CV model from raw images to a verified detector — with a human gate on every irreversible step. Proved it on a gaze-direction model at mAP@50 0.995.",
+      "mockLabel": "[ CV Trainer — pipeline running end-to-end, human-gate prompts visible ]",
       "accent": "#f4b740",
       "buttonBg": "#8e6a25",
       "cardGradient": "linear-gradient(180deg,#292112,#19140e)",
@@ -1287,7 +1350,7 @@
       "badgeBg": "#2e2413",
       "mockStripe": "repeating-linear-gradient(135deg,#201a0f,#201a0f 11px,#2e2413 11px,#2e2413 22px)",
       "detail": {
-        "summary": "Training a computer vision model means chaining together a stack of disconnected tools \u2014 data hosting, labeling, dataset versioning, training compute, evaluation, and deployment \u2014 and manually shepherding data through all of them. One wrong move corrupts the dataset. One credit overspend kills a training run mid-way. I built a harness that automates the whole chain while keeping a human in the loop at every step that matters.",
+        "summary": "Training a computer vision model means chaining together a stack of disconnected tools — data hosting, labeling, dataset versioning, training compute, evaluation, and deployment — and manually shepherding data through all of them. One wrong move corrupts the dataset. One credit overspend kills a training run mid-way. I built a harness that automates the whole chain while keeping a human in the loop at every step that matters.",
         "subtitle": "Building a human-in-the-loop CV training harness with the Claude Agent SDK.",
         "sections": [
           {
@@ -1303,7 +1366,7 @@
               },
               {
                 "label": "Stack",
-                "value": "Claude Agent SDK \u00b7 Roboflow \u00b7 Ultralytics \u00b7 Kaggle"
+                "value": "Claude Agent SDK · Roboflow · Ultralytics · Kaggle"
               },
               {
                 "label": "Timeline",
@@ -1317,13 +1380,13 @@
               {
                 "value": "6",
                 "label": "Pipeline stages",
-                "sub": "Intake \u2192 Label \u2192 Version \u2192 Train \u2192 Evaluate \u2192 Deploy",
+                "sub": "Intake → Label → Version → Train → Evaluate → Deploy",
                 "tone": "blue"
               },
               {
                 "value": "3",
                 "label": "Training backends",
-                "sub": "Roboflow cloud, local Apple MPS, and free Kaggle GPU \u2014 the user picks at the gate",
+                "sub": "Roboflow cloud, local Apple MPS, and free Kaggle GPU — the user picks at the gate",
                 "tone": "violet"
               },
               {
@@ -1336,10 +1399,10 @@
           },
           {
             "type": "prose",
-            "eyebrow": "At a glance \u00b7 60 seconds",
+            "eyebrow": "At a glance · 60 seconds",
             "title": "One conversation. One working detector.",
             "paragraphs": [
-              "Training CV models is repetitive, error-prone, and tool-hopping. Data lives in Roboflow. Training runs in the cloud \u2014 or on your laptop \u2014 or on Kaggle. Evaluation is a CSV file you have to parse yourself. I built a six-stage agent harness on the Claude Agent SDK that automates all of it, pausing for human approval before anything irreversible. The final proof: a gaze-direction detector for paralysis patients, trained end-to-end through the harness, that hit mAP@50 = 0.995."
+              "Training CV models is repetitive, error-prone, and tool-hopping. Data lives in Roboflow. Training runs in the cloud — or on your laptop — or on Kaggle. Evaluation is a CSV file you have to parse yourself. I built a six-stage agent harness on the Claude Agent SDK that automates all of it, pausing for human approval before anything irreversible. The final proof: a gaze-direction detector for paralysis patients, trained end-to-end through the harness, that hit mAP@50 = 0.995."
             ]
           },
           {
@@ -1358,7 +1421,7 @@
             "items": [
               {
                 "label": "Problem",
-                "text": "Training a CV model chains together data hosting, labeling, versioning, training, and evaluation \u2014 all in separate tools, all manual, all easy to break."
+                "text": "Training a CV model chains together data hosting, labeling, versioning, training, and evaluation — all in separate tools, all manual, all easy to break."
               },
               {
                 "label": "Method",
@@ -1366,7 +1429,7 @@
               },
               {
                 "label": "Decision",
-                "text": "Separate the stages cleanly. Each agent knows only its own tools. Routing, memory, and approvals live outside the agent \u2014 in the orchestrator and the gate."
+                "text": "Separate the stages cleanly. Each agent knows only its own tools. Routing, memory, and approvals live outside the agent — in the orchestrator and the gate."
               },
               {
                 "label": "Surfaces",
@@ -1374,7 +1437,7 @@
               },
               {
                 "label": "Outcome",
-                "text": "Runs end-to-end on real data. Gaze-direction eye-tracking model: mAP@50 0.995, precision 0.993, recall 0.990 \u2014 trained entirely through the harness."
+                "text": "Runs end-to-end on real data. Gaze-direction eye-tracking model: mAP@50 0.995, precision 0.993, recall 0.990 — trained entirely through the harness."
               },
               {
                 "label": "Lesson",
@@ -1389,18 +1452,18 @@
             "title": "Training a model is a stack of manual steps. All of them breakable.",
             "paragraphs": [
               "The tools exist. Roboflow hosts datasets. Ultralytics trains detectors. Kaggle gives free GPU. But none of them talk to each other, and every hand-off is a place where something goes wrong.",
-              "You upload images, switch to a labeling tool, come back to generate a dataset version, export it, copy files into a training script, wait for training to finish, parse a CSV for metrics, and then manually decide whether the model is good enough to deploy. Miss one step \u2014 wrong augmentation schema, wrong split, wrong model format \u2014 and the whole run is wasted.",
-              "The other problem: no guardrails. A Roboflow training run burns credits. A bad dataset version gets frozen and used for training. There's no approval step between \u201cI think this is ready\u201d and \u201cI just spent compute on garbage data.\u201d"
+              "You upload images, switch to a labeling tool, come back to generate a dataset version, export it, copy files into a training script, wait for training to finish, parse a CSV for metrics, and then manually decide whether the model is good enough to deploy. Miss one step — wrong augmentation schema, wrong split, wrong model format — and the whole run is wasted.",
+              "The other problem: no guardrails. A Roboflow training run burns credits. A bad dataset version gets frozen and used for training. There's no approval step between “I think this is ready” and “I just spent compute on garbage data.”"
             ]
           },
           {
             "type": "quote",
-            "text": "The tools work individually. The problem is the hand-offs \u2014 and the complete absence of a human checkpoint before anything irreversible happens."
+            "text": "The tools work individually. The problem is the hand-offs — and the complete absence of a human checkpoint before anything irreversible happens."
           },
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: The disconnected manual chain \u2014 Roboflow \u2192 label tool \u2192 version \u2192 training script \u2192 CSV \u2192 model ]"
+            "label": "[ IMAGE: The disconnected manual chain — Roboflow → label tool → version → training script → CSV → model ]"
           },
           {
             "type": "prose",
@@ -1409,7 +1472,7 @@
             "title": "I mapped the full chain before writing a line of agent code.",
             "paragraphs": [
               "Before building anything, I scoped every step a CV practitioner actually goes through: image intake, annotation, versioning, augmentation, training, evaluation, deployment. Each step had a tool. Each tool had a different interface and a different failure mode.",
-              "I spent time understanding the Claude Agent SDK \u2014 how tool scoping works with disallowed_tools versus tools=, how can_use_tool gates fit into the agent loop, how setting_sources=[] keeps stray config files from bloating every request. I also dug into the Roboflow SDK \u2014 and found seven bugs in the process, all of which had to be fixed before the pipeline could work on real data."
+              "I spent time understanding the Claude Agent SDK — how tool scoping works with disallowed_tools versus tools=, how can_use_tool gates fit into the agent loop, how setting_sources=[] keeps stray config files from bloating every request. I also dug into the Roboflow SDK — and found seven bugs in the process, all of which had to be fixed before the pipeline could work on real data."
             ]
           },
           {
@@ -1432,7 +1495,7 @@
             "notes": [
               {
                 "title": "Human approval on side effects",
-                "text": "Every consequential action \u2014 creating a project, uploading images, freezing a dataset version, starting a training run \u2014 had to pause for human approval. No silent side effects."
+                "text": "Every consequential action — creating a project, uploading images, freezing a dataset version, starting a training run — had to pause for human approval. No silent side effects."
               },
               {
                 "title": "Stage isolation",
@@ -1444,14 +1507,14 @@
               },
               {
                 "title": "Honest auto-labeling",
-                "text": "A COCO-pretrained model can label the ~80 common classes. For anything else, the pipeline hands off to a manual seed loop \u2014 and says so clearly rather than silently failing."
+                "text": "A COCO-pretrained model can label the ~80 common classes. For anything else, the pipeline hands off to a manual seed loop — and says so clearly rather than silently failing."
               }
             ]
           },
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: Pipeline diagram \u2014 the six stages with gate markers ]"
+            "label": "[ IMAGE: Pipeline diagram — the six stages with gate markers ]"
           },
           {
             "type": "prose",
@@ -1460,15 +1523,15 @@
             "title": "One agent per stage. One gate per consequential action.",
             "paragraphs": [
               "The harness splits cleanly into three layers.",
-              "Tools (tools/) are the capability layer \u2014 what can be done. roboflow_client.py wraps the Roboflow SDK with all seven bugs fixed. trainers.py holds the local and Kaggle training backends. autolabel.py runs COCO auto-labeling and writes Pascal VOC annotation files. cv_tools.py wraps all of it into 17 in-process MCP tools and builds the server the agents mount.",
-              "Agents (agents/) are the orchestration layer \u2014 how it's driven. stages.py defines one Stage per pipeline step: its allowed tools, its read-only subset, and its system prompt. orchestrator.py builds lean ClaudeAgentOptions per stage \u2014 scoping tools with disallowed_tools, disabling built-ins, wiring the gate. gate.py is the human checkpoint: a can_use_tool callback that surfaces four tools for approval (create_project, upload_images, generate_version, train) and auto-approves everything else. ledger.py writes every run to an append-only markdown file.",
-              "Reference (reference/) is the knowledge layer \u2014 what good looks like. Domain knowledge on augmentation strategy, dataset auditing, and evaluation thresholds is quoted directly into stage prompts."
+              "Tools (tools/) are the capability layer — what can be done. roboflow_client.py wraps the Roboflow SDK with all seven bugs fixed. trainers.py holds the local and Kaggle training backends. autolabel.py runs COCO auto-labeling and writes Pascal VOC annotation files. cv_tools.py wraps all of it into 17 in-process MCP tools and builds the server the agents mount.",
+              "Agents (agents/) are the orchestration layer — how it's driven. stages.py defines one Stage per pipeline step: its allowed tools, its read-only subset, and its system prompt. orchestrator.py builds lean ClaudeAgentOptions per stage — scoping tools with disallowed_tools, disabling built-ins, wiring the gate. gate.py is the human checkpoint: a can_use_tool callback that surfaces four tools for approval (create_project, upload_images, generate_version, train) and auto-approves everything else. ledger.py writes every run to an append-only markdown file.",
+              "Reference (reference/) is the knowledge layer — what good looks like. Domain knowledge on augmentation strategy, dataset auditing, and evaluation thresholds is quoted directly into stage prompts."
             ]
           },
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: Architecture diagram \u2014 tools / agents / reference layers ]"
+            "label": "[ IMAGE: Architecture diagram — tools / agents / reference layers ]"
           },
           {
             "type": "prose",
@@ -1492,7 +1555,7 @@
               {
                 "eyebrow": "Stage 2",
                 "title": "Label",
-                "text": "Two paths. For COCO classes, the auto-labeler drafts boxes on 5 sample images for review before committing to the full set. For custom classes, it routes to a seed loop: hand-label a few \u2192 quick-train \u2192 pre-label the rest. Upload is gated either way.",
+                "text": "Two paths. For COCO classes, the auto-labeler drafts boxes on 5 sample images for review before committing to the full set. For custom classes, it routes to a seed loop: hand-label a few → quick-train → pre-label the rest. Upload is gated either way.",
                 "tone": "violet"
               },
               {
@@ -1504,19 +1567,19 @@
               {
                 "eyebrow": "Stage 4",
                 "title": "Train",
-                "text": "At the train gate the user picks a backend \u2014 Roboflow cloud, local Apple MPS, or Kaggle free GPU. Each has its own pre-flight checks and status polling.",
+                "text": "At the train gate the user picks a backend — Roboflow cloud, local Apple MPS, or Kaggle free GPU. Each has its own pre-flight checks and status polling.",
                 "tone": "amber"
               },
               {
                 "eyebrow": "Stage 5",
-                "title": "Evaluate \u2014 the Stop Gate",
-                "text": "Reads metrics (mAP@IoU, precision, recall, per-class), interprets them against an acceptance threshold, and runs the Stop Gate: PASS \u2192 deploy, FAIL \u2192 pick a fix and route back. The human makes the final call; the agent doesn't rubber-stamp.",
+                "title": "Evaluate — the Stop Gate",
+                "text": "Reads metrics (mAP@IoU, precision, recall, per-class), interprets them against an acceptance threshold, and runs the Stop Gate: PASS → deploy, FAIL → pick a fix and route back. The human makes the final call; the agent doesn't rubber-stamp.",
                 "tone": "pink"
               },
               {
                 "eyebrow": "Stage 6",
                 "title": "Deploy",
-                "text": "Spot-checks the trained model on real images, confirms predictions match the eval verdict, and marks it verified \u2014 or routes back if predictions look wrong.",
+                "text": "Spot-checks the trained model on real images, confirms predictions match the eval verdict, and marks it verified — or routes back if predictions look wrong.",
                 "tone": "blue"
               }
             ]
@@ -1524,7 +1587,7 @@
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: Auto-label sample check \u2014 five images with boxes, approve / reject prompt ]"
+            "label": "[ IMAGE: Auto-label sample check — five images with boxes, approve / reject prompt ]"
           },
           {
             "type": "findings",
@@ -1532,7 +1595,7 @@
             "items": [
               {
                 "title": "Roboflow",
-                "text": "Cloud GPU on Roboflow credits (free tier \u2248 2 runs). A pre-flight credit check runs first. Non-blocking start, then poll train_status.",
+                "text": "Cloud GPU on Roboflow credits (free tier ≈ 2 runs). A pre-flight credit check runs first. Non-blocking start, then poll train_status.",
                 "tone": "blue"
               },
               {
@@ -1550,12 +1613,12 @@
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: Train gate prompt \u2014 backend picker in the terminal ]"
+            "label": "[ IMAGE: Train gate prompt — backend picker in the terminal ]"
           },
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: Evaluate output \u2014 metrics table and Stop Gate verdict ]"
+            "label": "[ IMAGE: Evaluate output — metrics table and Stop Gate verdict ]"
           },
           {
             "type": "prose",
@@ -1563,9 +1626,9 @@
             "eyebrow": "The real test",
             "title": "Eye-tracking for paralysis patients. mAP@50 = 0.995.",
             "paragraphs": [
-              "The harness was tested on a human-detection dataset first \u2014 921 images, COCO auto-labeled. The pipeline ran end-to-end, but the resulting model was useless: the person class is already in COCO, so fine-tuning a tiny auto-labeled set just distilled and degraded the base model. The lesson was important \u2014 auto-labeling a COCO class on a small dataset trains fine, it just can't win.",
-              "The second test changed everything. The dataset: a gaze-direction eye-tracking set for wheelchair-assisted paralysis patients \u2014 six custom classes (Close, Down, Left, Right, Straight, Up), 210 training / 60 validation / 31 test images, all human-made labels. COCO has no concept of gaze direction. This was exactly the case the harness was built for.",
-              "The model passed the Stop Gate and was verified on test images through the deploy stage. A live webcam demo runs on top of the weights \u2014 webcam_eye_demo.py runs the gaze detector in real time and prints the control signal (Left / Right / Up / Down / Straight / Close) to stdout."
+              "The harness was tested on a human-detection dataset first — 921 images, COCO auto-labeled. The pipeline ran end-to-end, but the resulting model was useless: the person class is already in COCO, so fine-tuning a tiny auto-labeled set just distilled and degraded the base model. The lesson was important — auto-labeling a COCO class on a small dataset trains fine, it just can't win.",
+              "The second test changed everything. The dataset: a gaze-direction eye-tracking set for wheelchair-assisted paralysis patients — six custom classes (Close, Down, Left, Right, Straight, Up), 210 training / 60 validation / 31 test images, all human-made labels. COCO has no concept of gaze direction. This was exactly the case the harness was built for.",
+              "The model passed the Stop Gate and was verified on test images through the deploy stage. A live webcam demo runs on top of the weights — webcam_eye_demo.py runs the gaze detector in real time and prints the control signal (Left / Right / Up / Down / Straight / Close) to stdout."
             ]
           },
           {
@@ -1592,7 +1655,7 @@
                 "label": "Test images correct"
               },
               {
-                "value": "0.78\u20130.96",
+                "value": "0.78–0.96",
                 "label": "Confidence range"
               }
             ]
@@ -1600,16 +1663,16 @@
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: Terminal \u2014 evaluate output, Stop Gate PASS, per-class metrics ]"
+            "label": "[ IMAGE: Terminal — evaluate output, Stop Gate PASS, per-class metrics ]"
           },
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: Webcam demo \u2014 live gaze detection with bounding box and class label ]"
+            "label": "[ IMAGE: Webcam demo — live gaze detection with bounding box and class label ]"
           },
           {
             "type": "quote",
-            "text": "The harness didn't just work. It proved the thesis: fine-tuning earns its keep on custom, non-COCO classes with real human-made labels \u2014 and for those cases it reaches near-perfect accuracy."
+            "text": "The harness didn't just work. It proved the thesis: fine-tuning earns its keep on custom, non-COCO classes with real human-made labels — and for those cases it reaches near-perfect accuracy."
           },
           {
             "type": "lessons",
@@ -1621,11 +1684,11 @@
               },
               {
                 "title": "Scope tools at the framework level, not in the prompt.",
-                "text": "Telling an agent \u201conly use these tools\u201d in a system prompt is advisory. Using disallowed_tools in ClaudeAgentOptions is enforced. One is a suggestion; the other is a constraint."
+                "text": "Telling an agent “only use these tools” in a system prompt is advisory. Using disallowed_tools in ClaudeAgentOptions is enforced. One is a suggestion; the other is a constraint."
               },
               {
                 "title": "The human gate is the product.",
-                "text": "The gate is what makes this a harness rather than a script. Every consequential action pauses for confirmation \u2014 and that pause is where the human's domain knowledge enters the loop."
+                "text": "The gate is what makes this a harness rather than a script. Every consequential action pauses for confirmation — and that pause is where the human's domain knowledge enters the loop."
               },
               {
                 "title": "Fine-tuning has a clear decision rule.",
@@ -1638,8 +1701,8 @@
             "eyebrow": "Time machine",
             "title": "If I could go back.",
             "paragraphs": [
-              "I'd fix the Roboflow SDK bugs earlier \u2014 before designing around assumptions about how the API behaved. Finding seven bugs mid-build meant re-routing the pipeline multiple times. A small upfront script exercising every API call on a throwaway project would have surfaced them in an hour.",
-              "And I'd build the Kaggle backend last, not third. The P100 / torch CUDA incompatibility, the phone-verification requirement, the transient download breaks \u2014 every Kaggle-specific failure mode added surface area before the core pipeline was solid. Local-first, then hosted, then Kaggle as a bonus would have been a cleaner build order."
+              "I'd fix the Roboflow SDK bugs earlier — before designing around assumptions about how the API behaved. Finding seven bugs mid-build meant re-routing the pipeline multiple times. A small upfront script exercising every API call on a throwaway project would have surfaced them in an hour.",
+              "And I'd build the Kaggle backend last, not third. The P100 / torch CUDA incompatibility, the phone-verification requirement, the transient download breaks — every Kaggle-specific failure mode added surface area before the core pipeline was solid. Local-first, then hosted, then Kaggle as a bonus would have been a cleaner build order."
             ]
           }
         ]
@@ -1647,15 +1710,15 @@
     },
     {
       "slug": "imt-trms",
-      "cmdKey": "\u23186",
+      "cmdKey": "⌘6",
       "code": "TM",
       "category": "DEFENCE TRAINING OPS",
-      "kicker": "\u2192 Defence Training Ops \u00b7 2025",
+      "kicker": "→ Defence Training Ops · 2025",
       "paletteLabel": "Institutional memory isn't a workflow.",
       "title": "Fifteen minutes before the range opens.",
-      "metrics": "Training Resource Mgmt \u00b7 SAF \u00b7 2024\u20132025",
-      "blurb": "A Training Resource Management System for the Singapore Armed Forces \u2014 booking, asset issue, and trainee onboarding designed around the fifteen minutes before a live range opens, for four roles on one shared model.",
-      "mockLabel": "[ TRMS \u2014 the operator's home screen, fifteen minutes before a range opens ]",
+      "metrics": "Training Resource Mgmt · SAF · 2024–2025",
+      "blurb": "A Training Resource Management System for the Singapore Armed Forces — booking, asset issue, and trainee onboarding designed around the fifteen minutes before a live range opens, for four roles on one shared model.",
+      "mockLabel": "[ TRMS — the operator's home screen, fifteen minutes before a range opens ]",
       "accent": "#9db4c0",
       "buttonBg": "#5b686f",
       "cardGradient": "linear-gradient(180deg,#1d2023,#121417)",
@@ -1663,7 +1726,7 @@
       "badgeBg": "#202427",
       "mockStripe": "repeating-linear-gradient(135deg,#17191c,#17191c 11px,#202427 11px,#202427 22px)",
       "detail": {
-        "summary": "SAF marksmanship and specialised-weapon training runs on a precise schedule, but the operations around it ran on institutional memory \u2014 bookings in spreadsheets, onboarding on clipboards, assets tracked by whoever was on duty. TRMS replaces that with one shared system: booking, asset issue, and trainee onboarding designed around the fifteen minutes before a live range opens, with role-specific surfaces for operators, instructors, admins, and maintainers. I led the design end-to-end, grounded in field research across multiple camps.",
+        "summary": "SAF marksmanship and specialised-weapon training runs on a precise schedule, but the operations around it ran on institutional memory — bookings in spreadsheets, onboarding on clipboards, assets tracked by whoever was on duty. TRMS replaces that with one shared system: booking, asset issue, and trainee onboarding designed around the fifteen minutes before a live range opens, with role-specific surfaces for operators, instructors, admins, and maintainers. I led the design end-to-end, grounded in field research across multiple camps.",
         "subtitle": "Designing a training-operations platform for the fifteen minutes before a live range opens.",
         "sections": [
           {
@@ -1683,7 +1746,7 @@
               },
               {
                 "label": "Timeline",
-                "value": "Mar 2024 \u2013 Apr 2025"
+                "value": "Mar 2024 – Apr 2025"
               }
             ]
           },
@@ -1693,13 +1756,13 @@
               {
                 "value": "4",
                 "label": "User roles",
-                "sub": "System Admin, Operator, Instructor, Maintainer \u2014 one shared model, four surfaces",
+                "sub": "System Admin, Operator, Instructor, Maintainer — one shared model, four surfaces",
                 "tone": "blue"
               },
               {
                 "value": "3",
                 "label": "Operational flows",
-                "sub": "Booking \u2192 Assignment \u2192 Onboarding, each carrying state to the next",
+                "sub": "Booking → Assignment → Onboarding, each carrying state to the next",
                 "tone": "violet"
               },
               {
@@ -1712,10 +1775,10 @@
           },
           {
             "type": "prose",
-            "eyebrow": "At a glance \u00b7 60 seconds",
+            "eyebrow": "At a glance · 60 seconds",
             "title": "Institutional memory doesn't survive a shift change.",
             "paragraphs": [
-              "SAF training is precise \u2014 rounds fired, drills timed, scores logged. The operations around it weren't: bookings in spreadsheets, onboarding on clipboards, asset issue tracked by whoever was on duty. When the operator changed mid-rotation, half the state changed with them. TRMS makes the state travel with the session instead of the person \u2014 one shared model, role-specific surfaces, and an interface fast enough to beat paper in the fifteen minutes before a range opens. I designed the whole loop, grounded in field research across multiple camps."
+              "SAF training is precise — rounds fired, drills timed, scores logged. The operations around it weren't: bookings in spreadsheets, onboarding on clipboards, asset issue tracked by whoever was on duty. When the operator changed mid-rotation, half the state changed with them. TRMS makes the state travel with the session instead of the person — one shared model, role-specific surfaces, and an interface fast enough to beat paper in the fifteen minutes before a range opens. I designed the whole loop, grounded in field research across multiple camps."
             ]
           },
           {
@@ -1734,11 +1797,11 @@
             "items": [
               {
                 "label": "Problem",
-                "text": "Training operations ran on institutional memory \u2014 bookings, onboarding, and asset issue scattered across paper and disconnected systems, with state dying at every shift change."
+                "text": "Training operations ran on institutional memory — bookings, onboarding, and asset issue scattered across paper and disconnected systems, with state dying at every shift change."
               },
               {
                 "label": "Method",
-                "text": "Field research across multiple camps \u2014 watching operators run Built-In Tests, handovers, and mid-session maintenance \u2014 instead of writing a spec from HQ."
+                "text": "Field research across multiple camps — watching operators run Built-In Tests, handovers, and mid-session maintenance — instead of writing a spec from HQ."
               },
               {
                 "label": "Decision",
@@ -1750,11 +1813,11 @@
               },
               {
                 "label": "Outcome",
-                "text": "Shipped April 2025 across SAF camps \u2014 IMT and SWT programmes on one platform, integrating IOS, ATMS, and RFID."
+                "text": "Shipped April 2025 across SAF camps — IMT and SWT programmes on one platform, integrating IOS, ATMS, and RFID."
               },
               {
                 "label": "Lesson",
-                "text": "Accessible design for careful, time-pressured operators is just good design \u2014 larger targets, plainer language, and fewer traps made the system faster for everyone."
+                "text": "Accessible design for careful, time-pressured operators is just good design — larger targets, plainer language, and fewer traps made the system faster for everyone."
               }
             ]
           },
@@ -1765,8 +1828,8 @@
             "title": "Training operations run on institutional memory.",
             "subtitle": "And memory is the wrong currency when the range opens at 0800.",
             "paragraphs": [
-              "SAF marksmanship and specialised-weapon training runs on a fixed schedule, across multiple subsystems \u2014 the Instructor Operating Station, the Army Training Management System, RFID asset tracking, booking, onboarding, Built-In Tests. The training itself is precise: rounds fired, drills timed, scores logged, weapons accounted for. The operations around it were not. Bookings sat in spreadsheets. Onboarding happened on clipboards. Asset issue was tracked by whoever was on duty. If the operator on duty changed mid-rotation, half the state changed with them.",
-              "TRMS had to close three gaps at once, for the operators, instructors, admins, and maintainers running these programmes across multiple camps on tight rotation. My job was to design the whole loop \u2014 from booking through session close-out \u2014 and make it something an operator with fifteen minutes to prep a range can actually run, not something they route around under pressure."
+              "SAF marksmanship and specialised-weapon training runs on a fixed schedule, across multiple subsystems — the Instructor Operating Station, the Army Training Management System, RFID asset tracking, booking, onboarding, Built-In Tests. The training itself is precise: rounds fired, drills timed, scores logged, weapons accounted for. The operations around it were not. Bookings sat in spreadsheets. Onboarding happened on clipboards. Asset issue was tracked by whoever was on duty. If the operator on duty changed mid-rotation, half the state changed with them.",
+              "TRMS had to close three gaps at once, for the operators, instructors, admins, and maintainers running these programmes across multiple camps on tight rotation. My job was to design the whole loop — from booking through session close-out — and make it something an operator with fifteen minutes to prep a range can actually run, not something they route around under pressure."
             ],
             "notes": [
               {
@@ -1775,11 +1838,11 @@
               },
               {
                 "title": "Role misalignment",
-                "text": "Admin, Operator, Instructor, and Maintainer each need a different slice of the same reality. The old tools gave everyone the same generic view \u2014 or forced each role into a separate silo."
+                "text": "Admin, Operator, Instructor, and Maintainer each need a different slice of the same reality. The old tools gave everyone the same generic view — or forced each role into a separate silo."
               },
               {
                 "title": "Operator accessibility",
-                "text": "The people running sessions are career military \u2014 fast and competent, but under real time pressure. A system that demands digital fluency or fine motor control is a system that gets skipped."
+                "text": "The people running sessions are career military — fast and competent, but under real time pressure. A system that demands digital fluency or fine motor control is a system that gets skipped."
               }
             ]
           },
@@ -1790,7 +1853,7 @@
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: The gap \u2014 training time on the schedule vs training time on the range ]"
+            "label": "[ IMAGE: The gap — training time on the schedule vs training time on the range ]"
           },
           {
             "type": "prose",
@@ -1799,16 +1862,16 @@
             "title": "You don't design a training system from a spec sheet.",
             "paragraphs": [
               "We couldn't write a useful requirements document from HQ. The gap between how the work is supposed to happen and how it actually happens only shows up when you're standing next to the operator at 0730 with a range opening in half an hour and one trainee's ID card missing.",
-              "So my team and I went to the camps \u2014 multiple camps, across weeks. I watched Operators run Built-In Tests at 0700, Instructors take handovers, Maintainers walk in mid-session because a base station wouldn't calibrate. I asked questions that would have sounded dumb from a distance \u2014 \u201cwhy do you write it here first and then move it there?\u201d \u2014 and every one uncovered a step the documented process pretended didn't exist."
+              "So my team and I went to the camps — multiple camps, across weeks. I watched Operators run Built-In Tests at 0700, Instructors take handovers, Maintainers walk in mid-session because a base station wouldn't calibrate. I asked questions that would have sounded dumb from a distance — “why do you write it here first and then move it there?” — and every one uncovered a step the documented process pretended didn't exist."
             ],
             "notes": [
               {
                 "title": "The paper path is the real path",
-                "text": "When the pressure was on, people fell back to paper \u2014 it doesn't crash, doesn't need a login, doesn't hide state behind a modal. Anything digital had to be at least as fast as paper at the point of first use."
+                "text": "When the pressure was on, people fell back to paper — it doesn't crash, doesn't need a login, doesn't hide state behind a modal. Anything digital had to be at least as fast as paper at the point of first use."
               },
               {
                 "title": "Handovers are where state dies",
-                "text": "Every shift change was a small crisis. Whatever the system remembered, it had to remember visibly \u2014 so no state lived only in an operator's head."
+                "text": "Every shift change was a small crisis. Whatever the system remembered, it had to remember visibly — so no state lived only in an operator's head."
               },
               {
                 "title": "Careful, not slow",
@@ -1823,7 +1886,7 @@
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: Two workflows side by side \u2014 the documented process and the one operators actually run, with the paper-trail bridge between them ]"
+            "label": "[ IMAGE: Two workflows side by side — the documented process and the one operators actually run, with the paper-trail bridge between them ]"
           },
           {
             "type": "prose",
@@ -1831,8 +1894,8 @@
             "eyebrow": "Four roles, one system",
             "title": "A shared system is not the same as a shared screen.",
             "paragraphs": [
-              "Four roles worked in the same TRMS at different stakes. The trap is one of two failure modes: build one interface for all four and it serves none \u2014 every role wading through fields they don't need; or build four separate apps and now the underlying state is duplicated four ways and nobody knows which copy is true.",
-              "I designed for a shared model with role-specific surfaces. One booking record; four different views of it. The Operator sees the check-in queue, the Instructor the assessment sheet, the Maintainer the hardware assigned to the session, the Admin the audit trail. Same record, different questions asked of it \u2014 and only the fields relevant to that question on screen. Onboarding a new user type later became a view problem, not a data-model problem."
+              "Four roles worked in the same TRMS at different stakes. The trap is one of two failure modes: build one interface for all four and it serves none — every role wading through fields they don't need; or build four separate apps and now the underlying state is duplicated four ways and nobody knows which copy is true.",
+              "I designed for a shared model with role-specific surfaces. One booking record; four different views of it. The Operator sees the check-in queue, the Instructor the assessment sheet, the Maintainer the hardware assigned to the session, the Admin the audit trail. Same record, different questions asked of it — and only the fields relevant to that question on screen. Onboarding a new user type later became a view problem, not a data-model problem."
             ]
           },
           {
@@ -1840,15 +1903,15 @@
             "title": "The four roles.",
             "items": [
               {
-                "eyebrow": "Rare \u00b7 high privilege",
+                "eyebrow": "Rare · high privilege",
                 "title": "System Admin",
                 "text": "Owns configuration, permissions, and the shape of the system. Low time pressure.",
                 "tone": "violet"
               },
               {
-                "eyebrow": "Constant \u00b7 high pressure",
+                "eyebrow": "Constant · high pressure",
                 "title": "Operator",
-                "text": "Runs the day \u2014 books sessions, onboards trainees, issues weapons, closes out.",
+                "text": "Runs the day — books sessions, onboards trainees, issues weapons, closes out.",
                 "tone": "blue"
               },
               {
@@ -1858,7 +1921,7 @@
                 "tone": "green"
               },
               {
-                "eyebrow": "Low frequency \u00b7 high stakes",
+                "eyebrow": "Low frequency · high stakes",
                 "title": "Maintainer",
                 "text": "Keeps the hardware alive. Appears exactly when something is broken and everything has stopped.",
                 "tone": "amber"
@@ -1876,7 +1939,7 @@
             "eyebrow": "The fifteen-minute window",
             "title": "Accessibility isn't a category of user. It's a category of moment.",
             "paragraphs": [
-              "The research kept surfacing one scenario: an Operator, uniform on, fifteen minutes before a range opens, needs to onboard a group of trainees, run the Built-In Test on the base stations, and confirm assignments. Everything else in the brief was downstream of surviving that moment. So the interface principles weren't clean, intuitive, delightful \u2014 they were operational."
+              "The research kept surfacing one scenario: an Operator, uniform on, fifteen minutes before a range opens, needs to onboard a group of trainees, run the Built-In Test on the base stations, and confirm assignments. Everything else in the brief was downstream of surviving that moment. So the interface principles weren't clean, intuitive, delightful — they were operational."
             ],
             "notes": [
               {
@@ -1893,7 +1956,7 @@
               },
               {
                 "title": "Errors in the operator's language",
-                "text": "Not \u201cvalidation failed on field X\u201d but \u201cIMT-03 is inactive. Assign to a different pair?\u201d"
+                "text": "Not “validation failed on field X” but “IMT-03 is inactive. Assign to a different pair?”"
               },
               {
                 "title": "Confirm the destructive, not the reversible",
@@ -1908,7 +1971,7 @@
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: Anatomy of the Operator's home screen \u2014 hit targets highlighted, primary actions labelled by the seconds they save ]"
+            "label": "[ IMAGE: Anatomy of the Operator's home screen — hit targets highlighted, primary actions labelled by the seconds they save ]"
           },
           {
             "type": "prose",
@@ -1917,12 +1980,12 @@
             "title": "Three flows that carry state.",
             "subtitle": "A workflow is only as good as its worst handoff.",
             "paragraphs": [
-              "The three flows that made or broke the system were booking creation, assignment creation, and trainee onboarding \u2014 each a stage in one continuous loop, not an independent form. The principle across all three: state travels with the session, not with the person running it. When a shift changed, the incoming Operator opened the same session and saw exactly what the previous one saw."
+              "The three flows that made or broke the system were booking creation, assignment creation, and trainee onboarding — each a stage in one continuous loop, not an independent form. The principle across all three: state travels with the session, not with the person running it. When a shift changed, the incoming Operator opened the same session and saw exactly what the previous one saw."
             ]
           },
           {
             "type": "findings",
-            "title": "Booking \u2192 Assignment \u2192 Onboarding.",
+            "title": "Booking → Assignment → Onboarding.",
             "items": [
               {
                 "title": "Booking creation",
@@ -1931,7 +1994,7 @@
               },
               {
                 "title": "Assignment creation",
-                "text": "Allocates the physical assets \u2014 weapons, magazines, RFID-tagged items \u2014 to the session. Scan the tag, the system fills in the metadata, confirm with one tap. Chain-of-custody is the speed, because scan-and-confirm replaced the manual write-down.",
+                "text": "Allocates the physical assets — weapons, magazines, RFID-tagged items — to the session. Scan the tag, the system fills in the metadata, confirm with one tap. Chain-of-custody is the speed, because scan-and-confirm replaced the manual write-down.",
                 "tone": "violet"
               },
               {
@@ -1944,7 +2007,7 @@
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: The three flows as a linear loop \u2014 Booking \u2192 Assignment \u2192 Onboarding \u2192 Session \u2192 Close-out \u2014 with state labelled on the arrows ]"
+            "label": "[ IMAGE: The three flows as a linear loop — Booking → Assignment → Onboarding → Session → Close-out — with state labelled on the arrows ]"
           },
           {
             "type": "prose",
@@ -1952,7 +2015,7 @@
             "eyebrow": "What shipped",
             "title": "One platform, two training systems, three contracts to honour.",
             "paragraphs": [
-              "TRMS shipped as a modular platform covering both IMT (Individual Marksmanship Trainer) and SWT (Specialised Weapon Trainer) programmes across SAF camps. Shipping wasn't just delivering an interface \u2014 it was honouring three integrations that each pulled the design in a different direction."
+              "TRMS shipped as a modular platform covering both IMT (Individual Marksmanship Trainer) and SWT (Specialised Weapon Trainer) programmes across SAF camps. Shipping wasn't just delivering an interface — it was honouring three integrations that each pulled the design in a different direction."
             ]
           },
           {
@@ -1960,17 +2023,17 @@
             "title": "Three contracts to honour.",
             "items": [
               {
-                "title": "IOS \u2014 Instructor Operating Station",
+                "title": "IOS — Instructor Operating Station",
                 "text": "On onboarding, TRMS hands state to IOS, where the Instructor runs the drill and captures scores; when IOS closes the session, TRMS finalises assets and records. Every field surfaced during onboarding is one IOS needs at that exact moment.",
                 "tone": "blue"
               },
               {
-                "title": "ATMS \u2014 Army Training Management System",
-                "text": "Upstream. Course schedules and rosters flow in; completion records flow out. TRMS accepts ATMS as the source of truth for who's supposed to train \u2014 and reconciles it against who actually showed up.",
+                "title": "ATMS — Army Training Management System",
+                "text": "Upstream. Course schedules and rosters flow in; completion records flow out. TRMS accepts ATMS as the source of truth for who's supposed to train — and reconciles it against who actually showed up.",
                 "tone": "violet"
               },
               {
-                "title": "RFID \u2014 the hardware layer",
+                "title": "RFID — the hardware layer",
                 "text": "Every weapon, magazine, and tagged asset is scanned through TRMS. Chain-of-custody survives from issue to return with no manual write-down. RFID doesn't wait, and neither can the interface layered on it.",
                 "tone": "green"
               }
@@ -2000,7 +2063,7 @@
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: The system boundary \u2014 TRMS at the centre, IOS / ATMS / RFID as the three contracts, four roles as the surfaces above ]"
+            "label": "[ IMAGE: The system boundary — TRMS at the centre, IOS / ATMS / RFID as the three contracts, four roles as the surfaces above ]"
           },
           {
             "type": "lessons",
@@ -2011,12 +2074,12 @@
                 "text": "Every time I thought I understood the workflow well enough to skip a camp visit, I got something wrong. The Operators saved me more times than the spec did."
               },
               {
-                "title": "\u201cAccessible design\u201d is often just design.",
-                "text": "Larger targets, plainer language, fewer traps \u2014 the choices for older, less digital-native Operators made the system faster for every user. There's no accessibility tax when the constraint is real."
+                "title": "“Accessible design” is often just design.",
+                "text": "Larger targets, plainer language, fewer traps — the choices for older, less digital-native Operators made the system faster for every user. There's no accessibility tax when the constraint is real."
               },
               {
                 "title": "Hardware integration is a design constraint.",
-                "text": "RFID, base-station pairing, and IOS handoff meant the UI had physical latencies to respect. A spinner wasn't a pattern \u2014 it was an honest signal that the base station was still calibrating."
+                "text": "RFID, base-station pairing, and IOS handoff meant the UI had physical latencies to respect. A spinner wasn't a pattern — it was an honest signal that the base station was still calibrating."
               },
               {
                 "title": "Role-specific surfaces on a shared model scale.",
@@ -2024,7 +2087,7 @@
               },
               {
                 "title": "Military users are rigorous users.",
-                "text": "They notice inconsistency and ambiguity, and they'll route around one confusing icon forever. Designing for them raised my bar for what \u201cclear\u201d means."
+                "text": "They notice inconsistency and ambiguity, and they'll route around one confusing icon forever. Designing for them raised my bar for what “clear” means."
               }
             ]
           },
@@ -2046,14 +2109,14 @@
       "category": "Internal tools",
       "categoryColor": "#7fd8a8",
       "title": "The ops table that runs itself",
-      "blurb": "A spreadsheet-grade table for non-technical teams \u2014 sorting, bulk edits, and audit trails baked in."
+      "blurb": "A spreadsheet-grade table for non-technical teams — sorting, bulk edits, and audit trails baked in."
     },
     {
       "num": "08",
       "category": "Design systems",
       "categoryColor": "#b79be8",
       "title": "Unified design tokens",
-      "blurb": "One token pipeline feeding Figma, web, and native \u2014 themes flip without a single hand-edit."
+      "blurb": "One token pipeline feeding Figma, web, and native — themes flip without a single hand-edit."
     }
   ],
   "writing": [
@@ -2078,9 +2141,9 @@
   ],
   "experience": [
     {
-      "period": "2024.02 \u2014 Now",
+      "period": "2024.02 — Now",
       "company": "SIgmawave AI",
-      "location": "Singapore \u00b7 Remote (Full-Time)",
+      "location": "Singapore · Remote (Full-Time)",
       "role": "Product Owner/Designer",
       "tags": [
         "Agent platform",
@@ -2088,74 +2151,74 @@
       ],
       "bullets": [
         "Spent 1.5 year designing the end-to-end flow of IMT TRMS, a training resource management system for MINDEF Singapore",
-        "Shipped across defence, education, computer vision tooling, and physical security \u2014 four domains in one company",
-        "Promoted to Product Owner/Designer \u2014 redesigned both Terra (World Builder) and Accel (Model Validator) from scratch",
+        "Shipped across defence, education, computer vision tooling, and physical security — four domains in one company",
+        "Promoted to Product Owner/Designer — redesigned both Terra (World Builder) and Accel (Model Validator) from scratch",
         "Built and delivered the design system used across all products",
         "Picked up computer vision along the way and started contributing to CV-related tasks across products"
       ]
     },
     {
-      "period": "2024.01 \u2014 2026.01",
+      "period": "2024.01 — 2026.01",
       "company": "Singtechnologies",
-      "location": "Singapore \u00b7 Remote (Contract)",
+      "location": "Singapore · Remote (Contract)",
       "role": "Product Designer",
       "tags": [
         "Commerce",
         "Migration"
       ],
       "bullets": [
-        "Designed the entire Pistil healthcare platform \u2014 user, admin, and doctor dashboards plus the mobile app",
+        "Designed the entire Pistil healthcare platform — user, admin, and doctor dashboards plus the mobile app",
         "Started every feature in Low-Fi wireframes before touching Hi-Fi",
-        "Let prototypes do the talking in dev handoffs \u2014 less confusion, fewer surprises"
+        "Let prototypes do the talking in dev handoffs — less confusion, fewer surprises"
       ]
     },
     {
-      "period": "2023.03 \u2014 2025.04",
+      "period": "2023.03 — 2025.04",
       "company": "404 Collective Agency",
-      "location": "Bangkok \u00b7 Remote (Part-Time)",
+      "location": "Bangkok · Remote (Part-Time)",
       "role": "Product Designer",
       "tags": [
         "Internal tools",
-        "0\u21921"
+        "0→1"
       ],
       "bullets": [
-        "Designed two products from the ground up \u2014 Global Caring, a nursing platform, and Sofinise, a crypto payment gateway",
+        "Designed two products from the ground up — Global Caring, a nursing platform, and Sofinise, a crypto payment gateway",
         "Worked directly with developers and stakeholders on both projects"
       ]
     },
     {
-      "period": "2023.09 \u2014 2024.03",
+      "period": "2023.09 — 2024.03",
       "company": "Redes Design Agency",
-      "location": "Bangkok \u00b7 Remote (Part-Time)",
+      "location": "Bangkok · Remote (Part-Time)",
       "role": "Product Designer",
       "tags": [
         "Internal tools",
-        "0\u21921"
+        "0→1"
       ],
       "bullets": [
         "Worked alongside senior UX designers from Myanmar on client projects",
         "Main project was Jar Aye, an Olympiad math platform for young learners",
-        "Followed the full design workflow \u2014 research, wireframes, prototyping, testing, and handoff"
+        "Followed the full design workflow — research, wireframes, prototyping, testing, and handoff"
       ]
     },
     {
-      "period": "2023.07 \u2014 2023.12",
+      "period": "2023.07 — 2023.12",
       "company": "Lastoenjoy",
-      "location": "Myanmar \u00b7 Remote (Full-Time)",
+      "location": "Myanmar · Remote (Full-Time)",
       "role": "UI/UX Designer(Mid)",
       "tags": [
         "Observability",
         "Data viz"
       ],
       "bullets": [
-        "First full-time design role. Mostly consumer products \u2014 blogging apps, ride-hailing, and other mini-apps",
+        "First full-time design role. Mostly consumer products — blogging apps, ride-hailing, and other mini-apps",
         "Tried to ship a product every month, which meant learning to move fast without cutting corners"
       ]
     }
   ],
   "volunteering": [
     {
-      "period": "2025.12 \u2014 Now",
+      "period": "2025.12 — Now",
       "company": "UXMM",
       "location": "Myanmar . Remote",
       "role": "Multimedia Specialist",
@@ -2169,7 +2232,7 @@
       ]
     },
     {
-      "period": "2022.22 \u2014 2024.03",
+      "period": "2022.22 — 2024.03",
       "company": "Tee Htwin",
       "location": "California . Remote",
       "role": "UX Designer",
@@ -2184,7 +2247,7 @@
       ]
     },
     {
-      "period": "2023.01 \u2014 2023.12",
+      "period": "2023.01 — 2023.12",
       "company": "The Forward Society",
       "location": "Myanmar . Remote",
       "role": "UI/UX Designer",
@@ -2198,7 +2261,7 @@
       ]
     },
     {
-      "period": "2023.02 \u2014 2023.05",
+      "period": "2023.02 — 2023.05",
       "company": "Pathway Plus",
       "location": "Myanmar . Remote",
       "role": "UI/UX Designer",
@@ -2208,7 +2271,7 @@
       ],
       "bullets": [
         "Worked with other UI designers on interface designs",
-        "Got to see how different designers approach the same problem \u2014 picked up habits I still use"
+        "Got to see how different designers approach the same problem — picked up habits I still use"
       ]
     }
   ],
@@ -2216,12 +2279,12 @@
     {
       "degree": "Digital Innovation Technology (DIT)",
       "school": "Rangsit International College",
-      "period": "2026.01 \u2014 Now"
+      "period": "2026.01 — Now"
     },
     {
       "degree": "Civil Engineering",
       "school": "Sagaing Technological University",
-      "period": "2018.12 \u2014 2020.04"
+      "period": "2018.12 — 2020.04"
     }
   ],
   "contributions": [
@@ -2239,7 +2302,7 @@
       "org": "Falling Walls Lab",
       "date": "August 2023",
       "tone": "pink",
-      "description": "3-day programme on pitching research-backed ideas. My topic was\u00a0Breaking the Wall of Art Community Barriers\u00a0\u2014 an early version of what later became Kanote. Didn't make the finals, but it was where I first had to frame a design idea as a business case.",
+      "description": "3-day programme on pitching research-backed ideas. My topic was Breaking the Wall of Art Community Barriers — an early version of what later became Kanote. Didn't make the finals, but it was where I first had to frame a design idea as a business case.",
       "certificateUrl": "#",
       "image": "/contributions/falling-walls-lab-2023.png"
     },
