@@ -66,25 +66,29 @@ function embedSrc(url: string, muted?: boolean): string {
 }
 
 /** A local uploaded file (e.g. /casestudies/foo.mov) plays natively, not via iframe embed. */
-const isLocalVideoFile = (src: string) => src.startsWith("/") && /\.(mp4|mov|webm|m4v)$/i.test(src);
+export const isLocalVideoFile = (src: string) => src.startsWith("/") && /\.(mp4|mov|webm|m4v)$/i.test(src);
 
-export function VideoPlayer({ src, title, muted }: { src: string; title?: string; muted?: boolean }) {
+export function VideoPlayer({
+  src,
+  title,
+  muted,
+  className = "size-full object-contain",
+}: {
+  src: string;
+  title?: string;
+  muted?: boolean;
+  className?: string;
+}) {
   if (isLocalVideoFile(src)) {
     return (
       // eslint-disable-next-line jsx-a11y/media-has-caption
-      <video
-        src={src}
-        muted={muted}
-        controls
-        playsInline
-        className="size-full object-cover"
-      />
+      <video src={src} muted={muted} controls playsInline className={className} />
     );
   }
   return (
     <iframe
       src={embedSrc(src, muted)}
-      className="size-full"
+      className={className}
       allow="autoplay; fullscreen; picture-in-picture"
       allowFullScreen
       title={title ?? "Video"}
@@ -587,8 +591,19 @@ function Section({ s, ctx }: { s: CaseStudySection; ctx: Ctx }) {
         return (
           <figure>
             {s.src ? (
-              <div className="aspect-video w-full overflow-hidden rounded-[var(--rmock)] border border-line bg-black">
-                <VideoPlayer src={s.src} title={s.caption ?? "Video"} muted={s.muted} />
+              <div
+                className={
+                  isLocalVideoFile(s.src)
+                    ? "w-full overflow-hidden rounded-[var(--rmock)] border border-line bg-black"
+                    : "aspect-video w-full overflow-hidden rounded-[var(--rmock)] border border-line bg-black"
+                }
+              >
+                <VideoPlayer
+                  src={s.src}
+                  title={s.caption ?? "Video"}
+                  muted={s.muted}
+                  className={isLocalVideoFile(s.src) ? "block w-full h-auto" : "size-full"}
+                />
               </div>
             ) : (
               <div className="flex aspect-video w-full items-center justify-center rounded-[var(--rmock)] border border-dashed border-line bg-panel font-mono text-[12px] text-faint">

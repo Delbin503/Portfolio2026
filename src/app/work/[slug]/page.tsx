@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getCaseStudies } from "@/lib/data";
 import { defaultSections } from "@/lib/caseStudyDefaults";
-import CaseStudySections, { VideoPlayer } from "@/components/casestudy/Sections";
+import CaseStudySections, { VideoPlayer, isLocalVideoFile } from "@/components/casestudy/Sections";
 import { RelatedCaseStudies, CtaBand } from "@/components/casestudy/Footer";
 import { MacMockup, PhoneMockup } from "@/components/DeviceMockup";
 
@@ -38,10 +38,14 @@ export default async function CaseStudyPage({
   const sections = cs.detail?.sections ?? defaultSections(cs);
   const media = cs.thumbnail && (
     cs.thumbnail.kind === "video" ? (
-      <VideoPlayer src={cs.thumbnail.src} muted={cs.thumbnail.muted} />
+      <VideoPlayer
+        src={cs.thumbnail.src}
+        muted={cs.thumbnail.muted}
+        className={isLocalVideoFile(cs.thumbnail.src) ? "block w-full h-auto" : "aspect-video size-full"}
+      />
     ) : (
       // eslint-disable-next-line @next/next/no-img-element
-      <img src={cs.thumbnail.src} alt={cs.title} className="size-full object-cover" />
+      <img src={cs.thumbnail.src} alt={cs.title} className="block w-full h-auto" />
     )
   );
   const ctx = {

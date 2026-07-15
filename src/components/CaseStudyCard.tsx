@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { CaseStudy } from "@/lib/data";
-import { VideoPlayer } from "@/components/casestudy/Sections";
+import { VideoPlayer, isLocalVideoFile } from "@/components/casestudy/Sections";
 import { MacMockup, PhoneMockup } from "@/components/DeviceMockup";
 
 const sat = { filter: "saturate(var(--sat))" } as const;
@@ -8,10 +8,14 @@ const sat = { filter: "saturate(var(--sat))" } as const;
 export default function CaseStudyCard({ cs }: { cs: CaseStudy }) {
   const media = cs.thumbnail && (
     cs.thumbnail.kind === "video" ? (
-      <VideoPlayer src={cs.thumbnail.src} muted={cs.thumbnail.muted} />
+      <VideoPlayer
+        src={cs.thumbnail.src}
+        muted={cs.thumbnail.muted}
+        className={isLocalVideoFile(cs.thumbnail.src) ? "block w-full h-auto" : "aspect-video size-full"}
+      />
     ) : (
       // eslint-disable-next-line @next/next/no-img-element
-      <img src={cs.thumbnail.src} alt={cs.title} className="size-full object-cover" />
+      <img src={cs.thumbnail.src} alt={cs.title} className="block w-full h-auto" />
     )
   );
 
