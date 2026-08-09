@@ -931,15 +931,15 @@
           },
           {
             "type": "media",
-            "kind": "video",
+            "kind": "image",
             "label": "[ IMAGE: User flow ]",
-            "muted": true
+            "src": "/casestudies/jar-aye-2.png"
           },
           {
             "type": "media",
-            "kind": "video",
+            "kind": "image",
             "label": "[ IMAGE: Information architecture ]",
-            "muted": true
+            "src": "/casestudies/jar-aye-3.png"
           },
           {
             "type": "prose",
@@ -956,13 +956,15 @@
             "type": "media",
             "kind": "video",
             "label": "[ IMAGE: Low-fi wireframes — desktop ]",
-            "muted": true
+            "muted": true,
+            "src": "/casestudies/jar-aye-4.mov"
           },
           {
             "type": "media",
             "kind": "video",
             "label": "[ IMAGE: Low-fi wireframes — mobile ]",
-            "muted": true
+            "muted": true,
+            "src": "/casestudies/jar-aye-5.mov"
           },
           {
             "type": "modules",
@@ -2206,7 +2208,8 @@
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: Field visit — observing operators, instructors, and maintainers at an SAF training camp ]"
+            "label": "[ IMAGE: Field visit — observing operators, instructors, and maintainers at an SAF training camp ]",
+            "src": "/casestudies/imt-trms-1.png"
           },
           {
             "type": "prose",
@@ -2249,7 +2252,8 @@
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: Role-based user flows and information architecture — one map per role ]"
+            "label": "[ IMAGE: Role-based user flows and information architecture — one map per role ]",
+            "src": "/casestudies/imt-trms-2.png"
           },
           {
             "type": "prose",
@@ -2265,7 +2269,8 @@
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: The module-by-module user flow and functionality document shared with stakeholders ]"
+            "label": "[ IMAGE: The module-by-module user flow and functionality document shared with stakeholders ]",
+            "src": "/casestudies/imt-trms-3.png"
           },
           {
             "type": "prose",
@@ -2281,7 +2286,8 @@
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: Low-fidelity wireframes — booking, onboarding, performance tracking, RFID asset management ]"
+            "label": "[ IMAGE: Low-fidelity wireframes — booking, onboarding, performance tracking, RFID asset management ]",
+            "src": "/casestudies/imt-trms-4.png"
           },
           {
             "type": "prose",
@@ -2294,7 +2300,8 @@
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: High-fidelity UI — high-contrast palette, large touch targets, clear iconography ]"
+            "label": "[ IMAGE: High-fidelity UI — high-contrast palette, large touch targets, clear iconography ]",
+            "src": "/casestudies/imt-trms-5.png"
           },
           {
             "type": "cards",
@@ -2320,18 +2327,21 @@
           },
           {
             "type": "media",
-            "kind": "image",
-            "label": "[ IMAGE: IMT Create Booking Flow ]"
+            "kind": "video",
+            "label": "[ IMAGE: IMT Create Booking Flow ]",
+            "src": "/casestudies/imt-trms-6.mp4"
           },
           {
             "type": "media",
-            "kind": "image",
-            "label": "[ IMAGE: IMT Assignment Creation Flow ]"
+            "kind": "video",
+            "label": "[ IMAGE: IMT Assignment Creation Flow ]",
+            "src": "/casestudies/imt-trms-7.mp4"
           },
           {
             "type": "media",
-            "kind": "image",
-            "label": "[ IMAGE: IMT Trainee Onboarding Flow ]"
+            "kind": "video",
+            "label": "[ IMAGE: IMT Trainee Onboarding Flow ]",
+            "src": "/casestudies/imt-trms-8.mp4"
           },
           {
             "type": "prose",
@@ -2346,7 +2356,8 @@
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: System boundary — TRMS at the centre with IOS, ATMS, and RFID ]"
+            "label": "[ IMAGE: System boundary — TRMS at the centre with IOS, ATMS, and RFID ]",
+            "src": "/casestudies/imt-trms-9.png"
           },
           {
             "type": "lessons",

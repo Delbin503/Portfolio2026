@@ -95,3 +95,71 @@ body {
     animation: none !important;
   }
 }
+
+/* ── Scroll reveal ─────────────────────────────────────────────
+   Markup opts in with `data-reveal="<variant>"`. The ScrollReveal
+   client component sets `html[data-reveal-mode="on"]` before paint,
+   so without JS (or with reduced motion) everything renders visible.
+
+   Lifecycle per element:
+     [data-reveal]                  → hidden, waiting for the viewport
+     [data-reveal][data-revealed]   → animating to its resting state
+     [data-reveal-done]             → all reveal styling dropped, so the
+                                      element's own hover transforms work
+------------------------------------------------------------------ */
+
+/* Per-variant knobs. Inert until the transition rule below applies. */
+[data-reveal="fade"] {
+  --reveal-y: 0px;
+}
+[data-reveal="up"] {
+  --reveal-y: 22px;
+}
+[data-reveal="down"] {
+  --reveal-y: -16px;
+}
+[data-reveal="left"] {
+  --reveal-x: -30px;
+  --reveal-y: 0px;
+}
+[data-reveal="right"] {
+  --reveal-x: 30px;
+  --reveal-y: 0px;
+}
+[data-reveal="scale"] {
+  --reveal-y: 16px;
+  --reveal-s: 0.965;
+}
+[data-reveal="blur"] {
+  --reveal-y: 12px;
+  --reveal-blur: 12px;
+  --reveal-dur: 900ms;
+}
+/* Headline wipe: text slides up out of its own clipped box. */
+[data-reveal="mask"] {
+  --reveal-y: 18px;
+  --reveal-dur: 980ms;
+  --reveal-clip: inset(0 0 108% 0);
+  --reveal-clip-end: inset(-35% -15% -35% -15%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html[data-reveal-mode="on"] [data-reveal]:not([data-reveal-done]) {
+    opacity: 0;
+    transform: translate3d(var(--reveal-x, 0px), var(--reveal-y, 20px), 0)
+      scale(var(--reveal-s, 1));
+    filter: blur(var(--reveal-blur, 0px));
+    clip-path: var(--reveal-clip, none);
+    transition-property: opacity, transform, filter, clip-path;
+    transition-duration: var(--reveal-dur, 760ms);
+    transition-delay: var(--reveal-delay, 0ms);
+    transition-timing-function: cubic-bezier(0.22, 0.68, 0.32, 1);
+  }
+
+  html[data-reveal-mode="on"] [data-reveal][data-revealed]:not([data-reveal-done]) {
+    opacity: 1;
+    transform: none;
+    filter: blur(0px);
+    clip-path: var(--reveal-clip-end, none);
+  }
+}

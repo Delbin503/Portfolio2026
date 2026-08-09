@@ -28,7 +28,7 @@ export default async function WritingPage({
   if (!post) notFound();
 
   return (
-    <article className="mx-auto max-w-[680px] px-6 py-[72px] sm:px-10">
+    <article className="mx-auto max-w-[720px] px-4 py-[72px] sm:px-6">
       <Link
         href="/#writing"
         className="font-mono text-xs uppercase tracking-[0.1em] text-dim transition-colors hover:text-text"

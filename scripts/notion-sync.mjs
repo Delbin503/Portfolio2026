@@ -21,11 +21,16 @@ import {
   ROOT,
 } from "./notion-lib.mjs";
 
+const targetProjectSlug = process.env.NOTION_SYNC_PROJECT_SLUG?.trim();
+
 const slugify = (s) =>
   s
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "") || "image";
+
+const isVideoUpload = (url) =>
+  /\.(mp4|mov|webm|m4v)(?:$|[?#])/i.test(new URL(url).pathname);
 
 /**
  * Notion-hosted file URLs expire (~1h), so download each into /public at sync
@@ -112,6 +117,7 @@ async function applyProjectMedia(notion, data) {
 
   let filled = 0;
   for (const cs of data.caseStudies) {
+    if (targetProjectSlug && cs.slug !== targetProjectSlug) continue;
     const slots = caseStudyMediaSlots(cs);
     if (!slots.length) continue;
     const list = (bySlug.get(cs.slug) ?? []).sort(
@@ -127,12 +133,24 @@ async function applyProjectMedia(notion, data) {
         continue;
       }
       const p = row.properties;
-      const kind = slot.fixedKind ? slot.kind : read.select(p.Kind) || slot.kind || "image";
+      const uploadedFile = read.files(p.Image)[0];
+      const videoUrl = read.url(p["Video URL"]);
+      const selectedKind = read.select(p.Kind) || slot.kind || "image";
+      // An upload's own type outranks the `Kind` select — a .png is never a
+      // video, and trusting the select puts a still image in a <video>. `Kind =
+      // video` only stands over an upload when there's a Video URL to embed.
+      const uploadKind = !uploadedFile
+        ? slot.kind
+        : isVideoUpload(uploadedFile)
+          ? "video"
+          : selectedKind === "video" && videoUrl
+            ? "video"
+            : "image";
+      const kind = slot.fixedKind ? slot.kind : uploadKind;
       if (!slot.fixedKind) slot.setKind(kind);
       const caption = read.text(p.Caption);
       if (kind === "video") {
-        const url = read.url(p["Video URL"]);
-        const uploadedFile = read.files(p.Image)[0];
+        const url = videoUrl;
         if (url) {
           slot.set(url);
           filled += 1;
@@ -148,7 +166,7 @@ async function applyProjectMedia(notion, data) {
           if (local) {
             slot.set(local);
             filled += 1;
-          } else slot.set(undefined);
+          }
         } else slot.set(undefined);
       } else {
         const fileUrl = read.files(p.Image)[0];
@@ -161,7 +179,7 @@ async function applyProjectMedia(notion, data) {
           if (local) {
             slot.set(local);
             filled += 1;
-          } else slot.set(undefined);
+          }
         } else slot.set(undefined);
       }
       if (caption) slot.setCaption(caption);
@@ -195,19 +213,18 @@ async function resolveThumbnail(p, slug) {
   if (kind === "video") {
     const url = read.url(p["Thumbnail Video URL"]);
     if (url) return { kind: "video", src: url, device, ...(muted && { muted }) };
-    const uploadedFile = read.files(p.Thumbnail)[0];
-    if (uploadedFile) {
-      const local = await downloadCaseImage(uploadedFile, slug, "thumb", "video", "thumbnails");
-      if (local) return { kind: "video", src: local, device, ...(muted && { muted }) };
-    }
-    return undefined;
   }
-  const fileUrl = read.files(p.Thumbnail)[0];
-  if (fileUrl) {
-    const local = await downloadCaseImage(fileUrl, slug, "thumb", "image", "thumbnails");
-    if (local) return { kind: "image", src: local, device };
-  }
-  return undefined;
+  const uploadedFile = read.files(p.Thumbnail)[0];
+  if (!uploadedFile) return undefined;
+  // As with media slots, the uploaded file decides: swapping a still thumbnail
+  // for a screen recording without flipping `Thumbnail Kind` would otherwise
+  // put a .mov in an <img> and render the card as a broken image.
+  const fileKind = isVideoUpload(uploadedFile) ? "video" : "image";
+  const local = await downloadCaseImage(uploadedFile, slug, "thumb", fileKind, "thumbnails");
+  if (!local) return undefined;
+  return fileKind === "video"
+    ? { kind: "video", src: local, device, ...(muted && { muted }) }
+    : { kind: "image", src: local, device };
 }
 
 async function mapProjects(rows, prevBySlug) {
@@ -235,8 +252,12 @@ async function mapProjects(rows, prevBySlug) {
       ...theme,
     };
     if (prev?.detail) cs.detail = prev.detail; // case-study detail lives in code
-    const thumbnail = await resolveThumbnail(r.p, slug);
-    if (thumbnail) cs.thumbnail = thumbnail;
+    if (!targetProjectSlug || slug === targetProjectSlug) {
+      const thumbnail = await resolveThumbnail(r.p, slug);
+      if (thumbnail) cs.thumbnail = thumbnail;
+    } else if (prev?.thumbnail) {
+      cs.thumbnail = prev.thumbnail;
+    }
     out.push(cs);
   }
   return out;

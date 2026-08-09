@@ -15,11 +15,11 @@ export type Profile = {
 };
 
 const DEFAULT_PROFILE: Profile = {
-  name: "Maya Chen",
+  name: "Delbin",
   role: "Product Designer & Front-end Engineer",
   tagline: "Complex systems, simple surfaces.",
   location: "Remote",
-  email: "hello@mayachen.studio",
+  email: "delbintoehtet@gmail.com",
   availability: "Available Q3 2026",
   bio: "Product designer and front-end engineer.",
 };
@@ -123,6 +123,10 @@ export type CaseStudyDetail = {
   summary?: string;
   /** Optional italic subtitle shown under the hero title. */
   subtitle?: string;
+  /** Optional external product link shown below the hero summary. */
+  websiteUrl?: string;
+  /** Optional labelled external links shown below the hero summary. */
+  links?: { label: string; url: string }[];
   sections: CaseStudySection[];
 };
 

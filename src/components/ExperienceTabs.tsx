@@ -5,10 +5,11 @@ import type { ExperienceEntry } from "@/lib/data";
 
 function Timeline({ entries }: { entries: ExperienceEntry[] }) {
   return (
-    <div className="border-t border-[#1c1c22]">
+    <div className="border-t border-[#1c1c22]" data-reveal-group data-reveal-step="80">
       {entries.map((e) => (
         <div
           key={`${e.company}-${e.period}`}
+          data-reveal="up"
           className="grid gap-x-10 gap-y-5 border-b border-line-soft py-[34px] md:grid-cols-[170px_1fr]"
         >
           <div className="font-mono text-xs leading-none text-[#7a7a85]">
@@ -74,6 +75,7 @@ export default function ExperienceTabs({
         role="tablist"
         aria-label="Experience categories"
         className="mb-9 flex flex-wrap gap-2"
+        data-reveal="fade"
       >
         {tabs.map((t) => {
           const on = active === t.key;

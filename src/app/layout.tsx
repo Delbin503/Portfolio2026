@@ -4,6 +4,8 @@ import "./globals.css";
 import AskAI from "@/components/AskAI";
 import MusicProvider from "@/components/MusicProvider";
 import MusicToggle from "@/components/MusicToggle";
+import ScrollReveal from "@/components/ScrollReveal";
+import ScrollProgress from "@/components/ScrollProgress";
 import { getProfile, getCaseStudies } from "@/lib/data";
 
 const familjen = Familjen_Grotesk({
@@ -50,8 +52,20 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${familjen.variable} ${hanken.variable} ${jetbrains.variable}`}
+      // the pre-paint script below stamps data-reveal-mode on <html>
+      suppressHydrationWarning
     >
       <body>
+        {/* Arms the reveal styles before first paint, so nothing flashes in
+            visible and then hides. Skipped for reduced motion. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              'try{if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.dataset.revealMode="on"}catch(e){}',
+          }}
+        />
+        <ScrollProgress />
+        <ScrollReveal />
         <MusicProvider>
           {children}
           <MusicToggle />

@@ -13,17 +13,26 @@ export function RelatedCaseStudies({
 
   return (
     <section className="mt-24 border-t border-line-soft pt-16">
-      <div className="mb-8 flex items-baseline gap-4">
-        <span className="font-mono text-xs tracking-[0.06em] text-accent">↗</span>
-        <h2 className="font-display text-[28px] font-semibold tracking-[-0.01em]">
+      <div className="mb-8 flex items-baseline gap-4" data-reveal-group data-reveal-step="90">
+        <span
+          className="font-mono text-xs tracking-[0.06em] text-accent"
+          data-reveal="fade"
+        >
+          ↗
+        </span>
+        <h2
+          className="font-display text-[28px] font-semibold tracking-[-0.01em]"
+          data-reveal="mask"
+        >
           Related case studies
         </h2>
       </div>
-      <div className="grid gap-4 md:grid-cols-3">
+      <div className="grid gap-4 md:grid-cols-3" data-reveal-group data-reveal-step="90">
         {others.map((cs) => (
           <Link
             key={cs.slug}
             href={`/work/${cs.slug}`}
+            data-reveal="up"
             className="group flex flex-col gap-4 rounded-[var(--rcard)] p-7 transition-transform hover:-translate-y-1"
             style={{
               background: cs.cardGradient,
@@ -62,21 +71,28 @@ export function RelatedCaseStudies({
 
 export function CtaBand({ buttonBg }: { buttonBg: string }) {
   return (
-    <section className="mt-20 rounded-[var(--rcard)] border border-line bg-[#0a0a0d] px-8 py-16 text-center sm:px-12">
-      <div className="font-mono text-xs uppercase tracking-[0.16em] text-dim">
+    <section
+      className="mt-20 rounded-[var(--rcard)] border border-line bg-[#0a0a0d] px-8 py-16 text-center sm:px-12"
+      data-reveal-group
+      data-reveal-step="110"
+    >
+      <div className="font-mono text-xs uppercase tracking-[0.16em] text-dim" data-reveal="fade">
         Available Q3 2026
       </div>
-      <h2 className="mx-auto mt-6 max-w-[640px] font-display text-[clamp(32px,6vw,52px)] font-semibold leading-[1.05] tracking-[-0.02em]">
+      <h2
+        className="mx-auto mt-6 max-w-[640px] font-display text-[clamp(32px,6vw,52px)] font-semibold leading-[1.05] tracking-[-0.02em]"
+        data-reveal="mask"
+      >
         Let&apos;s build something{" "}
         <span className="italic text-accent">great.</span>
       </h2>
-      <div className="mt-8 flex flex-wrap justify-center gap-3">
+      <div className="mt-8 flex flex-wrap justify-center gap-3" data-reveal="up">
         <a
-          href="mailto:hello@mayachen.studio"
+          href="mailto:delbintoehtet@gmail.com"
           className="rounded-full px-6 py-[13px] text-[14.5px] font-semibold text-white"
           style={{ background: buttonBg }}
         >
-          hello@mayachen.studio
+          delbintoehtet@gmail.com
         </a>
         <Link
           href="/#work"

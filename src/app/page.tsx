@@ -18,7 +18,7 @@ export default function Home() {
     <>
       <span id="top" />
       <Nav name={profile.name} />
-      <div className="mx-auto max-w-[1080px]">
+      <div className="mx-auto max-w-[1280px]">
         <main className="px-4 sm:px-6">
           <Hero />
           <About />

@@ -30,7 +30,10 @@ export default function Nav({ name }: { name: string }) {
 
   return (
     <div className="pointer-events-none sticky top-0 z-[60] flex justify-center px-6 py-[22px]">
-      <nav className="pointer-events-auto flex items-center gap-1 rounded-full border border-[#20202a] bg-panel-2 p-2 shadow-[0_20px_55px_-22px_rgba(0,0,0,0.75)]">
+      <nav
+        className="pointer-events-auto flex items-center gap-1 rounded-full border border-[#20202a] bg-panel-2 p-2 shadow-[0_20px_55px_-22px_rgba(0,0,0,0.75)]"
+        data-reveal="down"
+      >
         <a
           href="#top"
           className="flex items-center gap-[11px] py-[2px] pl-1 pr-3"

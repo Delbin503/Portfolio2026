@@ -11,6 +11,7 @@ import {
   getVolunteering,
 } from "@/lib/data";
 import ExperienceTabs from "./ExperienceTabs";
+import MoreWorkGrid, { type CompactStudy } from "./MoreWorkGrid";
 
 const profile = getProfile();
 const caseStudies = getCaseStudies();
@@ -21,11 +22,31 @@ const contributions = getContributions();
 const moreProjects = getMoreProjects();
 const praise = getPraise();
 
+/** How many studies get the full-width card treatment before "See more". */
+const FEATURED_COUNT = 4;
+const featured = caseStudies.slice(0, FEATURED_COUNT);
+const rest: CompactStudy[] = caseStudies.slice(FEATURED_COUNT).map((cs) => ({
+  slug: cs.slug,
+  code: cs.code,
+  category: cs.category,
+  title: cs.title,
+  blurb: cs.blurb,
+  metrics: cs.metrics,
+  accent: cs.accent,
+  cardGradient: cs.cardGradient,
+  cardBorder: cs.cardBorder,
+  badgeBg: cs.badgeBg,
+}));
+
 export function About() {
   return (
     <SectionShell id="about" num="01" title="From code to canvas to agents">
-      <div className="grid max-w-[840px] gap-x-12 gap-y-4 text-base leading-[1.7] text-[#a6a6af] md:grid-cols-2">
-        <div className="flex flex-col gap-4">
+      <div
+        className="grid max-w-[1000px] gap-x-12 gap-y-4 text-base leading-[1.7] text-[#a6a6af] md:grid-cols-2"
+        data-reveal-group
+        data-reveal-step="120"
+      >
+        <div className="flex flex-col gap-4" data-reveal="up">
           <p>
             Most of my work lives in the gap between what a tool can do and what
             a person needs from it. I obsess over the first ten seconds and the
@@ -36,7 +57,7 @@ export function About() {
             your behalf and you stay firmly in control.
           </p>
         </div>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4" data-reveal="up">
           <p>
             Trust is a design problem before it&apos;s a model problem — and
             it&apos;s solved in the seams, not the slogans.
@@ -64,14 +85,15 @@ export function SelectedWork() {
       num="02"
       title="Selected work"
       meta={
-        <div className="font-mono text-[11px] text-dim">
+        <div className="font-mono text-[11px] text-dim" data-reveal="fade">
           {caseStudies.length} {caseStudies.length === 1 ? "project" : "projects"}
         </div>
       }
     >
-      {caseStudies.map((cs) => (
+      {featured.map((cs) => (
         <CaseStudyCard key={cs.slug} cs={cs} />
       ))}
+      <MoreWorkGrid items={rest} />
     </SectionShell>
   );
 }
@@ -79,11 +101,12 @@ export function SelectedWork() {
 export function MoreProjects() {
   return (
     <SectionShell id="more" num="03" title="More projects">
-      <div className="grid gap-5 md:grid-cols-2">
+      <div className="grid gap-5 md:grid-cols-2" data-reveal-group data-reveal-step="80">
         {moreProjects.map((p) => (
           <div
             key={p.num}
             tabIndex={0}
+            data-reveal="up"
             className="group relative flex h-[232px] flex-col overflow-hidden rounded-[var(--rcard)] border border-line bg-panel p-[30px] outline-none transition-colors hover:border-[#2e2e36] focus-visible:border-[#2e2e36]"
           >
             {/* accent wash on hover/focus */}
@@ -139,10 +162,11 @@ export function Experience() {
 export function Education() {
   return (
     <SectionShell id="education" num="05" title="Education">
-      <div className="border-t border-[#1c1c22]">
+      <div className="border-t border-[#1c1c22]" data-reveal-group data-reveal-step="80">
         {education.map((e) => (
           <div
             key={`${e.degree}-${e.period}`}
+            data-reveal="up"
             className="grid gap-x-10 gap-y-2 border-b border-line-soft py-[28px] md:grid-cols-[170px_1fr]"
           >
             <div className="font-mono text-xs leading-none text-[#7a7a85]">
@@ -179,18 +203,22 @@ export function Contributions() {
       num="06"
       title="Beyond the day job"
       meta={
-        <div className="font-mono text-[11px] uppercase tracking-[0.12em] text-dim">
+        <div
+          className="font-mono text-[11px] uppercase tracking-[0.12em] text-dim"
+          data-reveal="fade"
+        >
           {contributions.length} entries
         </div>
       }
     >
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid gap-5 sm:grid-cols-2" data-reveal-group data-reveal-step="90">
         {contributions.map((c) => {
           const t = CONTRIBUTION_TONES[c.tone ?? "plain"];
           return (
             <div
               key={c.title}
               tabIndex={0}
+              data-reveal="scale"
               className="group relative h-[340px] cursor-default overflow-hidden rounded-[var(--rcard)] border border-line outline-none transition-colors focus-visible:border-[#3a3a44]"
             >
               {/* media: real photo when provided, else a tinted org tile */}
@@ -260,10 +288,15 @@ export function PraiseSection() {
   if (!praise.length) return null;
   return (
     <SectionShell id="praise" num="07" title="What collaborators say">
-      <div className="-mx-6 flex snap-x snap-mandatory gap-5 overflow-x-auto px-6 pb-4 [scrollbar-width:thin] sm:-mx-10 sm:px-10">
+      <div
+        className="-mx-6 flex snap-x snap-mandatory gap-5 overflow-x-auto px-6 pb-4 [scrollbar-width:thin] sm:-mx-10 sm:px-10"
+        data-reveal-group
+        data-reveal-step="90"
+      >
         {praise.map((p) => (
           <div
             key={p.name}
+            data-reveal="up"
             className="flex min-h-[228px] w-[300px] shrink-0 snap-start flex-col rounded-[var(--rcard)] border border-line bg-panel p-[30px] sm:w-[360px]"
           >
             <p className="font-display text-[20px] italic leading-[1.4] text-[#dcdce2]">
@@ -291,15 +324,23 @@ export function Contact() {
     <section
       id="contact"
       className="scroll-mt-24 border-t border-line-soft pb-20 pt-24 text-center"
+      data-reveal-group
+      data-reveal-step="110"
     >
-      <div className="mb-[26px] font-mono text-xs uppercase tracking-[0.16em] text-[#7a7a85]">
+      <div
+        className="mb-[26px] font-mono text-xs uppercase tracking-[0.16em] text-[#7a7a85]"
+        data-reveal="fade"
+      >
         Open to work
       </div>
-      <h2 className="mx-auto max-w-[760px] font-display text-[clamp(40px,8vw,64px)] font-semibold leading-[1.04] tracking-[-0.02em]">
+      <h2
+        className="mx-auto max-w-[760px] font-display text-[clamp(40px,8vw,64px)] font-semibold leading-[1.04] tracking-[-0.02em]"
+        data-reveal="mask"
+      >
         Complex products, intuitive interfaces —{" "}
         <span className="italic text-accent">let&apos;s build the next one.</span>
       </h2>
-      <div className="mt-9 flex flex-wrap justify-center gap-3">
+      <div className="mt-9 flex flex-wrap justify-center gap-3" data-reveal="up">
         <a
           href={`mailto:${profile.email}`}
           className="rounded-full bg-[#e9e9ee] px-6 py-[13px] text-[14.5px] font-semibold text-[#0a0a0c]"
@@ -315,7 +356,7 @@ export function Contact() {
           View résumé ↗
         </a>
       </div>
-      <div className="mt-16 font-mono text-[11.5px] text-faint">
+      <div className="mt-16 font-mono text-[11.5px] text-faint" data-reveal="fade">
         © 2026 {profile.name}
       </div>
     </section>

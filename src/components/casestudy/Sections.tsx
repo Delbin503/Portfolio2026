@@ -32,25 +32,34 @@ function SectionHeader({
 }) {
   const kicker = [num, eyebrow].filter(Boolean).join("  ·  ");
   return (
-    <header className="mb-9 max-w-[680px]">
+    <header className="mb-9 max-w-[780px]" data-reveal-group data-reveal-step="90">
       {kicker && (
         <div
           className="mb-4 font-mono text-[11px] uppercase tracking-[0.14em]"
           style={{ color: accent }}
+          data-reveal="fade"
         >
           {kicker}
         </div>
       )}
-      <h2 className="font-display text-[clamp(28px,5vw,40px)] font-semibold leading-[1.05] tracking-[-0.01em] text-text-strong">
+      <h2
+        className="font-display text-[clamp(28px,5vw,40px)] font-semibold leading-[1.05] tracking-[-0.01em] text-text-strong"
+        data-reveal="mask"
+      >
         {title}
       </h2>
       {subhead && (
-        <p className="mt-3 text-[18px] font-medium leading-[1.4] text-[#c9c9d0]">
+        <p
+          className="mt-3 text-[18px] font-medium leading-[1.4] text-[#c9c9d0]"
+          data-reveal="up"
+        >
           {subhead}
         </p>
       )}
       {intro && (
-        <p className="mt-4 text-[17px] leading-[1.65] text-muted">{intro}</p>
+        <p className="mt-4 text-[17px] leading-[1.65] text-muted" data-reveal="up">
+          {intro}
+        </p>
       )}
     </header>
   );
@@ -133,12 +142,13 @@ function Section({ s, ctx }: { s: CaseStudySection; ctx: Ctx }) {
   switch (s.type) {
     case "stats":
       return (
-        <div className="grid gap-4 sm:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-3" data-reveal-group data-reveal-step="90">
           {s.items.map((it) => {
             const t = it.tone ? toneOf(it.tone) : null;
             return (
               <div
                 key={it.label}
+                data-reveal="up"
                 className={`rounded-[var(--rcard)] p-7 ${
                   t ? "" : "border border-line bg-panel"
                 }`}
@@ -164,9 +174,17 @@ function Section({ s, ctx }: { s: CaseStudySection; ctx: Ctx }) {
         </div>
       );
 
-    case "prose":
+    case "prose": {
+      // Only split into two columns when there are notes to fill the second
+      // one — otherwise the copy gets squeezed into 55% of the page width
+      // with dead space beside it.
+      const hasNotes = Boolean(s.notes?.length);
       return (
-        <div className="grid gap-x-12 gap-y-8 md:grid-cols-[1.4fr_1fr]">
+        <div
+          className={
+            hasNotes ? "grid gap-x-12 gap-y-8 md:grid-cols-[1.4fr_1fr]" : undefined
+          }
+        >
           <div>
             <SectionHeader
               num={s.num}
@@ -175,17 +193,27 @@ function Section({ s, ctx }: { s: CaseStudySection; ctx: Ctx }) {
               subhead={s.subtitle}
               accent={ctx.accent}
             />
-            <div className="flex max-w-[560px] flex-col gap-4 text-[17px] leading-[1.7] text-[#a6a6af]">
+            <div
+              className={`flex flex-col gap-4 text-[17px] leading-[1.7] text-[#a6a6af] ${
+                hasNotes ? "max-w-[620px]" : "max-w-[780px]"
+              }`}
+              data-reveal="up"
+            >
               {s.paragraphs.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
             </div>
           </div>
           {s.notes && (
-            <div className="flex flex-col gap-3 md:pt-2">
+            <div
+              className="flex flex-col gap-3 md:pt-2"
+              data-reveal-group
+              data-reveal-step="90"
+            >
               {s.notes.map((n) => (
                 <div
                   key={n.title}
+                  data-reveal="right"
                   className="rounded-[14px] border border-line bg-panel p-5"
                 >
                   <div className="font-mono text-[10.5px] uppercase tracking-[0.1em] text-dim">
@@ -200,12 +228,14 @@ function Section({ s, ctx }: { s: CaseStudySection; ctx: Ctx }) {
           )}
         </div>
       );
+    }
 
     case "quote":
       return (
         <figure
           className="rounded-[var(--rcard)] border-l-2 bg-panel px-8 py-9 sm:px-12 sm:py-12"
           style={{ borderLeftColor: ctx.accent }}
+          data-reveal="scale"
         >
           <blockquote className="font-display text-[clamp(22px,4vw,32px)] font-medium leading-[1.32] text-[#dcdce2]">
             “{s.text}”
@@ -223,7 +253,7 @@ function Section({ s, ctx }: { s: CaseStudySection; ctx: Ctx }) {
         <div>
           <SectionHeader title={s.title} intro={s.intro} accent={ctx.accent} />
           {s.mockLabel && (
-            <div className="mb-6">
+            <div className="mb-6" data-reveal="scale">
               <Browser
                 label={s.mockLabel}
                 stripe={ctx.stripe}
@@ -231,12 +261,13 @@ function Section({ s, ctx }: { s: CaseStudySection; ctx: Ctx }) {
               />
             </div>
           )}
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-4 sm:grid-cols-2" data-reveal-group data-reveal-step="80">
             {s.items.map((it) => {
               const t = toneOf(it.tone);
               return (
                 <div
                   key={it.title}
+                  data-reveal="up"
                   className="rounded-[var(--rcard)] p-6"
                   style={{ background: t.bg, border: `1px solid ${t.border}` }}
                 >
@@ -263,12 +294,13 @@ function Section({ s, ctx }: { s: CaseStudySection; ctx: Ctx }) {
       return (
         <div>
           <SectionHeader title={s.title} intro={s.intro} accent={ctx.accent} />
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="grid gap-4 md:grid-cols-2" data-reveal-group data-reveal-step="110">
             {s.columns.map((col) => {
               const t = toneOf(col.tone);
               return (
                 <div
                   key={col.title}
+                  data-reveal="up"
                   className="rounded-[var(--rcard)] p-7"
                   style={{ background: t.bg, border: `1px solid ${t.border}` }}
                 >
@@ -306,9 +338,14 @@ function Section({ s, ctx }: { s: CaseStudySection; ctx: Ctx }) {
               accent={ctx.accent}
             />
           )}
-          <div className="grid grid-cols-2 gap-px overflow-hidden rounded-[var(--rcard)] border border-line bg-line sm:grid-cols-4">
+          <div
+            className="grid grid-cols-2 gap-px overflow-hidden rounded-[var(--rcard)] border border-line bg-line sm:grid-cols-4"
+            data-reveal-group
+            data-reveal-step="80"
+          >
             {s.items.map((it) => (
-              <div key={it.label} className="bg-panel p-6">
+              /* fade only — a transform here would break the hairline grid */
+              <div key={it.label} className="bg-panel p-6" data-reveal="fade">
                 <div
                   className="font-display text-[34px] font-semibold leading-none"
                   style={{ color: ctx.accent }}
@@ -329,12 +366,15 @@ function Section({ s, ctx }: { s: CaseStudySection; ctx: Ctx }) {
         <div>
           <SectionHeader title={s.title} accent={ctx.accent} />
           <div className="grid gap-8 md:grid-cols-[1fr_1.2fr] md:items-center">
-            <div className="flex max-w-[440px] flex-col gap-4 text-[16px] leading-[1.7] text-[#a6a6af]">
+            <div
+              className="flex max-w-[520px] flex-col gap-4 text-[16px] leading-[1.7] text-[#a6a6af]"
+              data-reveal="left"
+            >
               {s.paragraphs.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
             </div>
-            <div>
+            <div data-reveal="right" data-reveal-delay="120">
               <Browser
                 label={s.mockLabel}
                 stripe={ctx.stripe}
@@ -354,7 +394,10 @@ function Section({ s, ctx }: { s: CaseStudySection; ctx: Ctx }) {
       return (
         <div>
           <SectionHeader title={s.title} intro={s.intro} accent={ctx.accent} />
-          <div className="overflow-x-auto rounded-[var(--rcard)] border border-line">
+          <div
+            className="overflow-x-auto rounded-[var(--rcard)] border border-line"
+            data-reveal="up"
+          >
             <table className="w-full min-w-[480px] border-collapse text-left">
               <thead>
                 <tr className="border-b border-line bg-panel">
@@ -400,10 +443,11 @@ function Section({ s, ctx }: { s: CaseStudySection; ctx: Ctx }) {
       return (
         <div>
           <SectionHeader title={s.title} accent={ctx.accent} />
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="grid gap-4 md:grid-cols-2" data-reveal-group data-reveal-step="90">
             {s.items.map((it) => (
               <div
                 key={it.title}
+                data-reveal="up"
                 className="rounded-[var(--rcard)] border border-line bg-panel p-7"
               >
                 <h3 className="font-display text-[22px] font-semibold leading-[1.15]">
@@ -422,10 +466,15 @@ function Section({ s, ctx }: { s: CaseStudySection; ctx: Ctx }) {
       return (
         <div>
           <SectionHeader title={s.title} intro={s.intro} accent={ctx.accent} />
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div
+            className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
+            data-reveal-group
+            data-reveal-step="70"
+          >
             {s.items.map((it) => (
               <div
                 key={it.title}
+                data-reveal="up"
                 className="rounded-[16px] border border-line bg-panel p-6"
               >
                 {it.eyebrow && (
@@ -450,9 +499,14 @@ function Section({ s, ctx }: { s: CaseStudySection; ctx: Ctx }) {
 
     case "metaRow":
       return (
-        <div className="grid grid-cols-2 gap-px overflow-hidden rounded-[var(--rcard)] border border-line bg-line md:grid-cols-4">
+        <div
+          className="grid grid-cols-2 gap-px overflow-hidden rounded-[var(--rcard)] border border-line bg-line md:grid-cols-4"
+          data-reveal-group
+          data-reveal-step="70"
+        >
           {s.items.map((it) => (
-            <div key={it.label} className="bg-panel p-6">
+            /* fade only — a transform here would break the hairline grid */
+            <div key={it.label} className="bg-panel p-6" data-reveal="fade">
               <div className="font-mono text-[10.5px] uppercase tracking-[0.12em] text-dim">
                 {it.label}
               </div>
@@ -466,10 +520,11 @@ function Section({ s, ctx }: { s: CaseStudySection; ctx: Ctx }) {
 
     case "tags":
       return (
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2" data-reveal-group data-reveal-step="45">
           {s.items.map((t) => (
             <span
               key={t}
+              data-reveal="scale"
               className="rounded-full border border-[#2a2a30] px-[13px] py-[7px] font-mono text-[11px] uppercase tracking-[0.08em] text-muted-2"
             >
               {t}
@@ -480,10 +535,15 @@ function Section({ s, ctx }: { s: CaseStudySection; ctx: Ctx }) {
 
     case "microCards":
       return (
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div
+          className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
+          data-reveal-group
+          data-reveal-step="70"
+        >
           {s.items.map((it) => (
             <div
               key={it.label}
+              data-reveal="up"
               className="rounded-[16px] border border-line bg-panel p-6"
             >
               <div
@@ -510,12 +570,13 @@ function Section({ s, ctx }: { s: CaseStudySection; ctx: Ctx }) {
               accent={ctx.accent}
             />
           )}
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-4 md:grid-cols-3" data-reveal-group data-reveal-step="90">
             {s.items.map((it) => {
               const t = toneOf(it.tone);
               return (
                 <div
                   key={it.title}
+                  data-reveal="up"
                   className="rounded-[var(--rcard)] p-7"
                   style={{ background: t.bg, border: `1px solid ${t.border}` }}
                 >
@@ -545,12 +606,13 @@ function Section({ s, ctx }: { s: CaseStudySection; ctx: Ctx }) {
               accent={ctx.accent}
             />
           )}
-          <div className="grid gap-5 md:grid-cols-3">
+          <div className="grid gap-5 md:grid-cols-3" data-reveal-group data-reveal-step="100">
             {s.items.map((it) => {
               const t = toneOf(it.tone);
               return (
                 <div
                   key={it.title}
+                  data-reveal="up"
                   className="flex flex-col overflow-hidden rounded-[var(--rcard)]"
                   style={{ background: t.bg, border: `1px solid ${t.border}` }}
                 >
@@ -589,7 +651,7 @@ function Section({ s, ctx }: { s: CaseStudySection; ctx: Ctx }) {
       );
       if (s.kind === "video") {
         return (
-          <figure>
+          <figure data-reveal="scale">
             {s.src ? (
               <div
                 className={
@@ -615,7 +677,7 @@ function Section({ s, ctx }: { s: CaseStudySection; ctx: Ctx }) {
         );
       }
       return (
-        <figure>
+        <figure data-reveal="scale">
           {s.src ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img

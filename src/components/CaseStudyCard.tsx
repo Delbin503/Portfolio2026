@@ -22,6 +22,7 @@ export default function CaseStudyCard({ cs }: { cs: CaseStudy }) {
   return (
     <div
       id={`cs-${cs.slug}`}
+      data-reveal="up"
       className="mt-6 scroll-mt-24 overflow-hidden rounded-[var(--rcard)] p-5 sm:p-7"
       style={{ background: cs.cardGradient, border: `1px solid ${cs.cardBorder}` }}
     >
@@ -42,7 +43,7 @@ export default function CaseStudyCard({ cs }: { cs: CaseStudy }) {
       </h3>
 
       {/* browser mock / device mockup */}
-      <div className="mt-6">
+      <div className="mt-6" data-reveal="scale" data-reveal-delay="220">
         {cs.thumbnail ? (
           cs.thumbnail.device === "mobile" ? (
             <PhoneMockup>{media}</PhoneMockup>

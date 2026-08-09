@@ -36,6 +36,11 @@ export default async function CaseStudyPage({
   if (!cs) notFound();
 
   const sections = cs.detail?.sections ?? defaultSections(cs);
+  const heroLinks =
+    cs.detail?.links ??
+    (cs.detail?.websiteUrl
+      ? [{ label: "Test the website", url: cs.detail.websiteUrl }]
+      : []);
   const media = cs.thumbnail && (
     cs.thumbnail.kind === "video" ? (
       <VideoPlayer
@@ -56,44 +61,79 @@ export default async function CaseStudyPage({
   };
 
   return (
-    <article className="mx-auto max-w-[900px] px-6 pb-28 pt-[72px] sm:px-10">
+    /* gutters match the landing page (main px-4 sm:px-6) */
+    <article className="mx-auto max-w-[1120px] px-4 pb-28 pt-[72px] sm:px-6">
       <Link
         href="/#work"
         className="font-mono text-xs uppercase tracking-[0.1em] text-dim transition-colors hover:text-text"
+        data-reveal="left"
       >
         ← Back to work
       </Link>
 
       {/* hero */}
-      <header className="mt-10">
+      <header className="mt-10" data-reveal-group data-reveal-step="110">
         <div
           className="font-mono text-xs uppercase tracking-[0.14em]"
           style={{ color: cs.accent }}
+          data-reveal="fade"
         >
           {cs.kicker}
         </div>
-        <h1 className="mt-4 max-w-[760px] font-display text-[clamp(40px,8vw,68px)] font-semibold leading-[1.0] tracking-[-0.02em] text-text-strong">
+        <h1
+          className="mt-4 max-w-[900px] font-display text-[clamp(40px,8vw,68px)] font-semibold leading-[1.0] tracking-[-0.02em] text-text-strong"
+          data-reveal="mask"
+        >
           {cs.title}
         </h1>
         {cs.detail?.subtitle && (
           <div
-            className="mt-2 max-w-[760px] font-display text-[clamp(24px,5vw,40px)] font-medium italic leading-[1.05]"
+            className="mt-2 max-w-[900px] font-display text-[clamp(24px,5vw,40px)] font-medium italic leading-[1.05]"
             style={{ color: cs.accent }}
+            data-reveal="mask"
           >
             {cs.detail.subtitle}
           </div>
         )}
-        <div className="mt-5 font-mono text-[13px]" style={{ color: cs.accent }}>
+        <div
+          className="mt-5 font-mono text-[13px]"
+          style={{ color: cs.accent }}
+          data-reveal="fade"
+        >
           {cs.metrics}
         </div>
-        <p className="mt-6 max-w-[600px] text-[18px] leading-[1.6] text-muted">
+        <p
+          className="mt-6 max-w-[720px] text-[18px] leading-[1.6] text-muted"
+          data-reveal="up"
+        >
           {cs.detail?.summary ?? cs.blurb}
         </p>
+        {heroLinks.length > 0 && (
+          <div className="mt-7 flex flex-wrap gap-3" data-reveal="up">
+            {heroLinks.map((link, index) => (
+              <a
+                key={link.url}
+                href={link.url}
+                target="_blank"
+                rel="noreferrer"
+                className={
+                  index === 0
+                    ? "inline-flex items-center gap-2 rounded-[7px] px-5 py-3 text-[14px] font-semibold text-white transition-[filter,transform] hover:brightness-110 active:translate-y-px"
+                    : "inline-flex items-center gap-2 rounded-[7px] border border-[#2a2a32] bg-[#111116] px-5 py-3 text-[14px] font-semibold text-[#d6d6dc] transition-[border-color,color,transform] hover:border-[#464650] hover:text-white active:translate-y-px"
+                }
+                style={index === 0 ? { background: cs.buttonBg } : undefined}
+              >
+                {link.label}
+                <span aria-hidden="true">↗</span>
+              </a>
+            ))}
+          </div>
+        )}
       </header>
 
       {/* hero mockup */}
       {cs.thumbnail ? (
-        <div className="mt-12">
+        <div className="mt-12" data-reveal="scale">
           {cs.thumbnail.device === "mobile" ? (
             <PhoneMockup>{media}</PhoneMockup>
           ) : (
@@ -104,6 +144,7 @@ export default async function CaseStudyPage({
         <div
           className="mt-12 overflow-hidden rounded-[var(--rmock)] bg-[#0c0b0f]"
           style={{ border: `1px solid ${cs.cardBorder}` }}
+          data-reveal="scale"
         >
           <div className="flex items-center gap-[6px] border-b border-[#18181f] px-[14px] py-[11px]">
             <span className="size-[9px] rounded-full bg-[#2c2c33]" />

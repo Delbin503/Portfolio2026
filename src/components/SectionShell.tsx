@@ -28,11 +28,17 @@ export default function SectionShell({
           meta ? "justify-between" : ""
         }`}
       >
-        <div className="flex items-baseline gap-4">
-          <span className="font-mono text-xs tracking-[0.06em] text-accent">
+        <div className="flex items-baseline gap-4" data-reveal-group data-reveal-step="90">
+          <span
+            className="font-mono text-xs tracking-[0.06em] text-accent"
+            data-reveal="fade"
+          >
             {num}
           </span>
-          <h2 className="font-display text-[34px] font-semibold tracking-[-0.01em]">
+          <h2
+            className="font-display text-[34px] font-semibold tracking-[-0.01em]"
+            data-reveal="mask"
+          >
             {title}
           </h2>
         </div>

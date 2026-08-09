@@ -102,6 +102,9 @@ touching code. It has one row per image/video slot on a project's page:
   "jar-aye · User flow") so you know which asset goes where.
 - One-time creation: `npm run notion:bootstrap-media` (already run) → add the
   printed `NOTION_DB_PROJECT_MEDIA` id to `.env.local`.
+- To add a newly authored local project to the existing Notion databases, run
+  `npm run notion:upsert-project -- <slug>`. This upserts its Projects row and
+  creates any missing ordered Project Media slots without rebuilding databases.
 
 ---
 

@@ -39,7 +39,11 @@ export default function ChatTeaser({
   const played = Math.round(progress * BARS.length);
 
   return (
-    <div className="flex flex-col overflow-hidden rounded-[var(--rcard)] border border-line bg-panel">
+    <div
+      className="flex flex-col overflow-hidden rounded-[var(--rcard)] border border-line bg-panel"
+      data-reveal="scale"
+      data-reveal-delay="220"
+    >
       <div className="flex flex-col gap-4 p-5">
         {/* voice note */}
         <div className="flex items-center justify-between gap-3">
