@@ -1333,8 +1333,343 @@
       }
     },
     {
-      "slug": "cv-trainer",
+      "slug": "greenskill-rsu",
       "cmdKey": "⌘5",
+      "code": "GS",
+      "category": "EDTECH",
+      "kicker": "→ Edtech · 2026",
+      "paletteLabel": "From a class idea to a Top 5 finalist.",
+      "title": "From a class idea to a Top 5 finalist.",
+      "metrics": "Peer Learning · Rangsit University · 2026",
+      "blurb": "GreenSkill RSU turned a shared student idea into a working peer-learning platform — and earned Second Runner-Up among 96 university projects.",
+      "mockLabel": "[ GreenSkill RSU — peer learning platform ]",
+      "accent": "#65d6a6",
+      "buttonBg": "#3b7c60",
+      "cardGradient": "linear-gradient(180deg,#152520,#0f1615)",
+      "cardBorder": "#1b3129",
+      "badgeBg": "#172923",
+      "mockStripe": "repeating-linear-gradient(135deg,#111d1a,#111d1a 11px,#172923 11px,#172923 22px)",
+      "detail": {
+        "subtitle": "A peer-learning platform built by eight students.",
+        "summary": "Created for IRS111 Social Dharmacracy, GreenSkill RSU helps students find peers who can teach a subject, explain a tool, practise a language, or share a practical skill. I led the product direction, UI/UX, development, and Vercel deployment.",
+        "websiteUrl": "https://greenskill-rsu.vercel.app",
+        "sections": [
+          {
+            "type": "metaRow",
+            "items": [
+              {
+                "label": "Role",
+                "value": "Project Lead, UI/UX Designer & Developer"
+              },
+              {
+                "label": "Team",
+                "value": "8 students"
+              },
+              {
+                "label": "Course",
+                "value": "IRS111 Social Dharmacracy"
+              },
+              {
+                "label": "Platform",
+                "value": "Responsive web prototype · Vercel"
+              }
+            ]
+          },
+          {
+            "type": "stats",
+            "items": [
+              {
+                "value": "96",
+                "label": "Projects",
+                "sub": "Entered in the university competition",
+                "tone": "pink"
+              },
+              {
+                "value": "Top 5",
+                "label": "Finalist",
+                "sub": "Only International College finalist",
+                "tone": "amber"
+              },
+              {
+                "value": "29",
+                "label": "Survey participants",
+                "sub": "Evidence for organised peer support",
+                "tone": "green"
+              }
+            ]
+          },
+          {
+            "type": "prose",
+            "eyebrow": "At a glance · 60 seconds",
+            "title": "Students were willing to help each other. Finding the right person was the problem.",
+            "paragraphs": [
+              "Peer-help requests were scattered across personal chats and busy LINE groups. Our survey showed demand for organised peer support, so we designed one place to post skills, find a match, chat, book a session, and earn recognition.",
+              "My contribution covered product direction, team coordination, UI/UX, development, and deployment — turning a collaborative class idea into something people could actually use and judge."
+            ]
+          },
+          {
+            "type": "tags",
+            "items": [
+              "Leadership",
+              "Research",
+              "UI/UX",
+              "Web Development",
+              "Pitching",
+              "Outcome"
+            ]
+          },
+          {
+            "type": "microCards",
+            "items": [
+              {
+                "label": "Problem",
+                "text": "Peer-help requests were scattered across private chats and busy group conversations."
+              },
+              {
+                "label": "Evidence",
+                "text": "89.6% had needed peer help; 79.3% struggled to find the right person."
+              },
+              {
+                "label": "Response",
+                "text": "Post, match, chat, book, learn, confirm, and earn recognition in one flow."
+              },
+              {
+                "label": "My contribution",
+                "text": "Product direction, team coordination, UI/UX, development, and Vercel deployment."
+              }
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "video",
+            "label": "[ VIDEO: GreenSkill RSU project presentation ]",
+            "src": "/casestudies/greenskill-rsu-1.mp4"
+          },
+          {
+            "type": "media",
+            "kind": "video",
+            "label": "[ VIDEO: GreenSkill overview showing login, home, and Discover screens ]",
+            "muted": true,
+            "src": "/casestudies/greenskill-rsu-2.mov"
+          },
+          {
+            "type": "prose",
+            "num": "01",
+            "eyebrow": "The problem",
+            "title": "Peer support existed, but it was difficult to find.",
+            "subtitle": "The right person may already be on campus. Students just did not know who to ask.",
+            "paragraphs": [
+              "RSU students regularly need help with subjects, software, languages, presentations, and practical skills. Informal help already happened, but requests disappeared inside personal chats and crowded LINE groups.",
+              "We wanted to turn that fragmented behaviour into an organised peer-learning community — making asking for help feel as clear and normal as offering it."
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Scattered peer-support requests in busy chats ]",
+            "src": "/casestudies/greenskill-rsu-3.webp"
+          },
+          {
+            "type": "quote",
+            "text": "We wanted to turn informal student help into an organised peer-learning community."
+          },
+          {
+            "type": "prose",
+            "num": "02",
+            "eyebrow": "Research",
+            "title": "The survey confirmed a real student need.",
+            "subtitle": "The demand was already there. The missing piece was structure.",
+            "paragraphs": [
+              "We surveyed 29 students about peer support and their willingness to use GreenSkill RSU. 89.6% had needed help from another student, 79.3% found it difficult to locate someone with the right knowledge or skill, and 64.3% said they would definitely use the platform; everyone else selected “maybe.”",
+              "That evidence gave us a simple product principle: make asking for help as clear and normal as offering it."
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Selected GreenSkill RSU survey charts ]",
+            "src": "/casestudies/greenskill-rsu-4.png"
+          },
+          {
+            "type": "findings",
+            "title": "Three signals shaped the product.",
+            "items": [
+              {
+                "title": "Help was common",
+                "text": "89.6% had already needed help from another student.",
+                "tone": "pink"
+              },
+              {
+                "title": "Discovery was difficult",
+                "text": "79.3% struggled to find someone with the right knowledge or skill.",
+                "tone": "amber"
+              },
+              {
+                "title": "Intent was strong",
+                "text": "64.3% would definitely use GreenSkill RSU; the rest said maybe.",
+                "tone": "green"
+              }
+            ]
+          },
+          {
+            "type": "prose",
+            "num": "03",
+            "eyebrow": "My role",
+            "title": "I helped turn the group’s idea into a working product.",
+            "subtitle": "Leadership meant creating direction without erasing collaboration.",
+            "paragraphs": [
+              "GreenSkill RSU was collaborative: the ideas came from discussions across the eight-person team. As project lead, I expanded those ideas into a product direction, divided responsibilities, designed the UI/UX, developed the responsive website, and deployed it with Vercel.",
+              "For the final presentation and pitching, I selected Vivian and Beige to represent the team while the rest of us supported the product, slides, poster, and story."
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Design-to-development process ]",
+            "src": "/casestudies/greenskill-rsu-5.png"
+          },
+          {
+            "type": "prose",
+            "num": "04",
+            "eyebrow": "The product",
+            "title": "One journey for teaching, learning, and recognition.",
+            "subtitle": "Sign in → Post → Match → Chat → Book → Learn → Confirm → Earn recognition",
+            "paragraphs": [
+              "Students can create either an “I Can Teach” or “I Need Help” post, add availability and spoken languages, then connect with suitable peers.",
+              "The working prototype includes skill posts and matching, direct and group chat, session booking, completion tracking, points, badges, certificates, portfolios, multilingual options, responsive layouts, and concepts for reporting, verification, and moderation."
+            ]
+          },
+          {
+            "type": "features",
+            "title": "The loop that made the idea tangible.",
+            "intro": "Each feature supports one step in a complete peer-learning exchange.",
+            "items": [
+              {
+                "eyebrow": "Offer or ask",
+                "title": "Two clear post types",
+                "text": "Students can teach a skill or request help without forcing both needs into one form.",
+                "tone": "green"
+              },
+              {
+                "eyebrow": "Find",
+                "title": "Match by context",
+                "text": "Subject, language, and schedule make the result more useful than a generic directory.",
+                "tone": "blue"
+              },
+              {
+                "eyebrow": "Coordinate",
+                "title": "Chat and book",
+                "text": "Direct messages, study groups, and session booking move a match into action.",
+                "tone": "amber"
+              },
+              {
+                "eyebrow": "Recognise",
+                "title": "Make contribution visible",
+                "text": "Points, rewards, badges, certificates, and portfolios reward students who help.",
+                "tone": "pink"
+              }
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "video",
+            "label": "[ VIDEO: Create a post, find a match, chat, book, and complete a session ]",
+            "muted": true,
+            "src": "/casestudies/greenskill-rsu-6.mov"
+          },
+          {
+            "type": "prose",
+            "num": "05",
+            "eyebrow": "Outcome",
+            "title": "Top 5 among 96 projects — and Second Runner-Up.",
+            "paragraphs": [
+              "GreenSkill RSU was selected for the RSU GEN ED Online Show & Share 2569 Pitching Competition as one of five finalists from 96 projects.",
+              "It was the only finalist from Rangsit University International College; the other four represented the university’s Thai-side programmes. The team placed Second Runner-Up in the final competition."
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Second Runner-Up announcement or team award moment ]",
+            "src": "/casestudies/greenskill-rsu-7.jpg"
+          },
+          {
+            "type": "cards",
+            "title": "Team credits.",
+            "intro": "All eight members contributed ideas and effort to GreenSkill RSU.",
+            "items": [
+              {
+                "eyebrow": "Lead",
+                "title": "Delbin",
+                "text": "Project lead, UI/UX design, development, and Vercel deployment."
+              },
+              {
+                "eyebrow": "Pitch",
+                "title": "Vivian & Beige",
+                "text": "Team members, presentation, and pitching."
+              },
+              {
+                "eyebrow": "Story",
+                "title": "Bready, Chimmy & Nang Khin",
+                "text": "Presentation slide and poster contributors."
+              },
+              {
+                "eyebrow": "Collaboration",
+                "title": "Freddie & Ribbon",
+                "text": "Collaborative project contributors."
+              }
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Full GreenSkill RSU team photo ]",
+            "src": "/casestudies/greenskill-rsu-8.jpg"
+          },
+          {
+            "type": "lessons",
+            "title": "What this project taught me.",
+            "items": [
+              {
+                "title": "Leadership is not doing everything.",
+                "text": "It is giving the team direction and turning separate contributions into one result."
+              },
+              {
+                "title": "A prototype changes the conversation.",
+                "text": "The website made the idea tangible and easier to understand, demonstrate, and judge."
+              },
+              {
+                "title": "Research gave the concept credibility.",
+                "text": "Survey evidence helped us design around a genuine student need instead of assumptions."
+              }
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ VIDEO: Behind-the-scenes collaboration, design, development, or pitching ]",
+            "src": "/casestudies/greenskill-rsu-9.png"
+          },
+          {
+            "type": "prose",
+            "eyebrow": "Next iteration",
+            "title": "If I continued the project.",
+            "paragraphs": [
+              "I would test the complete workflow with more RSU students, improve matching using real behaviour, and connect the platform to university verification and official volunteer-hour systems."
+            ]
+          }
+        ]
+      },
+      "thumbnail": {
+        "kind": "video",
+        "src": "/thumbnails/greenskill-rsu-thumb.mov",
+        "device": "web",
+        "muted": true
+      }
+    },
+    {
+      "slug": "cv-trainer",
+      "cmdKey": "⌘6",
       "code": "CV",
       "category": "CV TRAINING PIPELINE",
       "kicker": "→ Cv Training Pipeline · 2025",
@@ -1710,7 +2045,7 @@
     },
     {
       "slug": "imt-trms",
-      "cmdKey": "⌘6",
+      "cmdKey": "⌘7",
       "code": "TM",
       "category": "DEFENCE TRAINING OPS",
       "kicker": "→ Defence Training Ops · 2025",
@@ -1726,8 +2061,8 @@
       "badgeBg": "#202427",
       "mockStripe": "repeating-linear-gradient(135deg,#17191c,#17191c 11px,#202427 11px,#202427 22px)",
       "detail": {
-        "summary": "SAF marksmanship and specialised-weapon training runs on a precise schedule, but the operations around it ran on institutional memory — bookings in spreadsheets, onboarding on clipboards, assets tracked by whoever was on duty. TRMS replaces that with one shared system: booking, asset issue, and trainee onboarding designed around the fifteen minutes before a live range opens, with role-specific surfaces for operators, instructors, admins, and maintainers. I led the design end-to-end, grounded in field research across multiple camps.",
-        "subtitle": "Designing a training-operations platform for the fifteen minutes before a live range opens.",
+        "summary": "The Training Resource Management System (TRMS) manages the full lifecycle of SAF marksmanship and tactical training — from booking and resource allocation through to real-time monitoring and post-session analysis. It spans two training systems, the Individual Marksmanship Trainer (IMT) and the Specialised Weapon Trainer (SWT), and coordinates with the Instructor Operating Station (IOS), the Army Training Management System (ATMS), and RFID-based asset tracking. I led product design end to end: field research across camps, role-based user flows and IA, stakeholder alignment, and the low- to high-fidelity design of every module.",
+        "subtitle": "Designing a secure, modular training-operations platform for the Singapore Armed Forces.",
         "sections": [
           {
             "type": "metaRow",
@@ -1754,21 +2089,21 @@
             "type": "stats",
             "items": [
               {
-                "value": "4",
-                "label": "User roles",
-                "sub": "System Admin, Operator, Instructor, Maintainer — one shared model, four surfaces",
+                "value": "2",
+                "label": "Training systems",
+                "sub": "Individual Marksmanship Trainer (IMT) and Specialised Weapon Trainer (SWT), on one platform",
                 "tone": "blue"
               },
               {
-                "value": "3",
-                "label": "Operational flows",
-                "sub": "Booking → Assignment → Onboarding, each carrying state to the next",
+                "value": "4",
+                "label": "User roles",
+                "sub": "System Admin, Operator, Instructor, Maintainer — each with its own flow and permissions",
                 "tone": "violet"
               },
               {
-                "value": "2",
-                "label": "Training systems",
-                "sub": "IMT (Individual Marksmanship) and SWT (Specialised Weapon) on one platform",
+                "value": "3",
+                "label": "Integrated subsystems",
+                "sub": "IOS, ATMS, and RFID asset tracking, coordinated through TRMS",
                 "tone": "green"
               }
             ]
@@ -1776,20 +2111,19 @@
           {
             "type": "prose",
             "eyebrow": "At a glance · 60 seconds",
-            "title": "Institutional memory doesn't survive a shift change.",
+            "title": "Training ran fine. The operations around it ran on paper.",
             "paragraphs": [
-              "SAF training is precise — rounds fired, drills timed, scores logged. The operations around it weren't: bookings in spreadsheets, onboarding on clipboards, asset issue tracked by whoever was on duty. When the operator changed mid-rotation, half the state changed with them. TRMS makes the state travel with the session instead of the person — one shared model, role-specific surfaces, and an interface fast enough to beat paper in the fifteen minutes before a range opens. I designed the whole loop, grounded in field research across multiple camps."
+              "Booking, onboarding, and equipment tracking were still largely manual — slow, easy to lose, and dependent on whoever was on duty. We visited SAF training camps to watch operators, instructors, and maintainers actually work, and designed TRMS around what we saw: four distinct roles, three operational flows, and a system that had to stay legible under time pressure."
             ]
           },
           {
             "type": "tags",
             "items": [
-              "Field Research",
-              "Role-Based Design",
-              "Operational Accessibility",
-              "RFID Chain-of-Custody",
-              "Stateful Handoffs",
-              "SAF / Defence"
+              "Explore",
+              "Define",
+              "Align",
+              "Design",
+              "Takeaways"
             ]
           },
           {
@@ -1797,133 +2131,117 @@
             "items": [
               {
                 "label": "Problem",
-                "text": "Training operations ran on institutional memory — bookings, onboarding, and asset issue scattered across paper and disconnected systems, with state dying at every shift change."
+                "text": "Manual bookings, onboarding, and asset tracking caused delays — and no single source of truth across sessions."
               },
               {
                 "label": "Method",
-                "text": "Field research across multiple camps — watching operators run Built-In Tests, handovers, and mid-session maintenance — instead of writing a spec from HQ."
+                "text": "Field visits to multiple SAF camps. Observed operators, instructors, and maintainers doing real tasks; interviewed them on the spot."
               },
               {
                 "label": "Decision",
-                "text": "One shared data model with role-specific surfaces. Same booking record; four different views. Extending to a new role becomes a view problem, not a data-model one."
+                "text": "Design per role, not per screen. Four roles, four permission sets, four sets of user flows and IA."
+              },
+              {
+                "label": "Constraint",
+                "text": "Many users were older and less familiar with digital systems, working under time pressure. Clarity beat density every time."
               },
               {
                 "label": "Surfaces",
-                "text": "Booking creation, assignment (RFID asset issue), trainee onboarding, and role-specific home screens for Admin, Operator, Instructor, and Maintainer."
+                "text": "Three core flows — Create Booking, Assignment Creation, Trainee Onboarding — plus performance tracking and RFID asset management."
               },
               {
                 "label": "Outcome",
-                "text": "Shipped April 2025 across SAF camps — IMT and SWT programmes on one platform, integrating IOS, ATMS, and RFID."
-              },
-              {
-                "label": "Lesson",
-                "text": "Accessible design for careful, time-pressured operators is just good design — larger targets, plainer language, and fewer traps made the system faster for everyone."
+                "text": "One centralised, modular platform coordinating IMT and SWT training with IOS, ATMS, and RFID."
               }
             ]
           },
           {
             "type": "prose",
             "num": "01",
-            "eyebrow": "The problem",
-            "title": "Training operations run on institutional memory.",
-            "subtitle": "And memory is the wrong currency when the range opens at 0800.",
+            "eyebrow": "The system",
+            "title": "One platform, two training systems.",
+            "subtitle": "TRMS is the operational layer around live weapons training.",
             "paragraphs": [
-              "SAF marksmanship and specialised-weapon training runs on a fixed schedule, across multiple subsystems — the Instructor Operating Station, the Army Training Management System, RFID asset tracking, booking, onboarding, Built-In Tests. The training itself is precise: rounds fired, drills timed, scores logged, weapons accounted for. The operations around it were not. Bookings sat in spreadsheets. Onboarding happened on clipboards. Asset issue was tracked by whoever was on duty. If the operator on duty changed mid-rotation, half the state changed with them.",
-              "TRMS had to close three gaps at once, for the operators, instructors, admins, and maintainers running these programmes across multiple camps on tight rotation. My job was to design the whole loop — from booking through session close-out — and make it something an operator with fifteen minutes to prep a range can actually run, not something they route around under pressure."
-            ],
-            "notes": [
-              {
-                "title": "Coordination gap",
-                "text": "Bookings, onboarding, asset issue, and session state each lived in their own system or on paper. State didn't travel between them, so every handoff was where accountability dropped."
-              },
-              {
-                "title": "Role misalignment",
-                "text": "Admin, Operator, Instructor, and Maintainer each need a different slice of the same reality. The old tools gave everyone the same generic view — or forced each role into a separate silo."
-              },
-              {
-                "title": "Operator accessibility",
-                "text": "The people running sessions are career military — fast and competent, but under real time pressure. A system that demands digital fluency or fine motor control is a system that gets skipped."
-              }
+              "TRMS was built to streamline military training sessions across two core systems: the Individual Marksmanship Trainer (IMT) and the Specialised Weapon Trainer (SWT). It acts as a centralised, secure, and modular platform — managing bookings, tracking resources, handling onboarding, monitoring performance, and coordinating between subsystems.",
+              "Those subsystems matter, because TRMS is not a closed product. It has to speak to the Instructor Operating Station (IOS) that runs the live session, the Army Training Management System (ATMS) that owns scheduling upstream, and an RFID layer that tracks physical assets as they move."
             ]
           },
           {
-            "type": "quote",
-            "text": "Institutional memory isn't a workflow. It's a person who might not be there tomorrow."
-          },
-          {
-            "type": "media",
-            "kind": "image",
-            "label": "[ IMAGE: The gap — training time on the schedule vs training time on the range ]"
+            "type": "findings",
+            "title": "Three goals, set before anything was drawn.",
+            "subhead": "The brief was to automate the lifecycle of marksmanship and tactical training — booking through post-session analysis.",
+            "items": [
+              {
+                "title": "Manage bookings and training sessions",
+                "text": "Replace manual scheduling with a system that handles different session types without confusion, and holds state from booking through to session launch.",
+                "tone": "blue"
+              },
+              {
+                "title": "Real-time RFID asset management",
+                "text": "Track weapons and equipment as they are issued, used, and returned — so accountability is automatic rather than reconstructed after the fact.",
+                "tone": "amber"
+              },
+              {
+                "title": "Onboarding and role-specific access",
+                "text": "Get trainees checked in quickly, and give every role exactly the access it needs — no more, no less.",
+                "tone": "green"
+              }
+            ]
           },
           {
             "type": "prose",
             "num": "02",
-            "eyebrow": "The field",
-            "title": "You don't design a training system from a spec sheet.",
+            "eyebrow": "Explore",
+            "title": "How do we know what we have to design?",
+            "subtitle": "We went to the camps and watched.",
             "paragraphs": [
-              "We couldn't write a useful requirements document from HQ. The gap between how the work is supposed to happen and how it actually happens only shows up when you're standing next to the operator at 0730 with a range opening in half an hour and one trainee's ID card missing.",
-              "So my team and I went to the camps — multiple camps, across weeks. I watched Operators run Built-In Tests at 0700, Instructors take handovers, Maintainers walk in mid-session because a base station wouldn't calibrate. I asked questions that would have sounded dumb from a distance — “why do you write it here first and then move it there?” — and every one uncovered a step the documented process pretended didn't exist."
-            ],
-            "notes": [
-              {
-                "title": "The paper path is the real path",
-                "text": "When the pressure was on, people fell back to paper — it doesn't crash, doesn't need a login, doesn't hide state behind a modal. Anything digital had to be at least as fast as paper at the point of first use."
-              },
-              {
-                "title": "Handovers are where state dies",
-                "text": "Every shift change was a small crisis. Whatever the system remembered, it had to remember visibly — so no state lived only in an operator's head."
-              },
-              {
-                "title": "Careful, not slow",
-                "text": "Older operators didn't need pity accessibility. They needed a system that didn't punish carefulness with hidden delete buttons, tiny confirm dialogs, or ambiguous icons."
-              }
+              "We assembled a dedicated team and visited multiple SAF training camps to observe how operators, instructors, and maintainers carried out their daily tasks. Rather than working from a spec, we studied real workflows, engaged directly with personnel, and asked targeted questions about where things slowed down.",
+              "That surfaced the parts of the process that were slow, manual, or simply unclear. Throughout the phase I worked closely with the team to agree on what we were actually solving, and stayed in regular contact with stakeholders so what we designed matched how the work really ran."
             ]
           },
           {
             "type": "quote",
-            "text": "The spec is what someone in an office wants to be true. The camp is what's actually true."
+            "text": "You can read a process document and still have no idea where the fifteen minutes go. You have to stand there."
           },
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: Two workflows side by side — the documented process and the one operators actually run, with the paper-trail bridge between them ]"
+            "label": "[ IMAGE: Field visit — observing operators, instructors, and maintainers at an SAF training camp ]"
           },
           {
             "type": "prose",
             "num": "03",
-            "eyebrow": "Four roles, one system",
-            "title": "A shared system is not the same as a shared screen.",
+            "eyebrow": "Define",
+            "title": "Same system, four different jobs.",
+            "subtitle": "The research turned into two things: a list of friction points, and a map of who needs what.",
             "paragraphs": [
-              "Four roles worked in the same TRMS at different stakes. The trap is one of two failure modes: build one interface for all four and it serves none — every role wading through fields they don't need; or build four separate apps and now the underlying state is duplicated four ways and nobody knows which copy is true.",
-              "I designed for a shared model with role-specific surfaces. One booking record; four different views of it. The Operator sees the check-in queue, the Instructor the assessment sheet, the Maintainer the hardware assigned to the session, the Admin the audit trail. Same record, different questions asked of it — and only the fields relevant to that question on screen. Onboarding a new user type later became a view problem, not a data-model problem."
+              "Field visits and conversations made the problems concrete. Many tasks were still manual, which caused delays during booking, onboarding, and equipment tracking. It also became clear the system had to support several different types of training session smoothly, without forcing users to reinterpret the interface each time.",
+              "The bigger finding was that different users had genuinely different needs — not just different permissions. Designing one screen and hiding buttons per role would not have worked. So I created detailed user flows and information architecture for each role separately."
             ]
           },
           {
-            "type": "features",
-            "title": "The four roles.",
+            "type": "findings",
+            "title": "Four roles, four sets of flows.",
+            "subhead": "Each role got its own user flow and information architecture, not a filtered version of someone else's.",
             "items": [
               {
-                "eyebrow": "Rare · high privilege",
                 "title": "System Admin",
-                "text": "Owns configuration, permissions, and the shape of the system. Low time pressure.",
+                "text": "Full access — configures system settings and manages user permissions across the platform.",
                 "tone": "violet"
               },
               {
-                "eyebrow": "Constant · high pressure",
                 "title": "Operator",
-                "text": "Runs the day — books sessions, onboards trainees, issues weapons, closes out.",
+                "text": "The busiest role. Manages bookings, onboards trainees, and assigns equipment — so the workflow had to be straightforward and reliable under time pressure.",
                 "tone": "blue"
               },
               {
-                "eyebrow": "Read-mostly",
                 "title": "Instructor",
-                "text": "Watches trainee performance and reviews outcomes. Decisions during and after the session, not before.",
+                "text": "Views trainee performance and session outcomes. Read-only by design — no editing, so nothing gets changed mid-session by accident.",
                 "tone": "green"
               },
               {
-                "eyebrow": "Low frequency · high stakes",
                 "title": "Maintainer",
-                "text": "Keeps the hardware alive. Appears exactly when something is broken and everything has stopped.",
+                "text": "Monitors system health and resolves technical issues — a diagnostic view rather than an operational one.",
                 "tone": "amber"
               }
             ]
@@ -1931,175 +2249,533 @@
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: A single booking record at the centre, with four cards showing what each role sees ]"
+            "label": "[ IMAGE: Role-based user flows and information architecture — one map per role ]"
           },
           {
             "type": "prose",
             "num": "04",
-            "eyebrow": "The fifteen-minute window",
-            "title": "Accessibility isn't a category of user. It's a category of moment.",
+            "eyebrow": "Stakeholder alignment",
+            "title": "Agreement before pixels.",
+            "subtitle": "Research is only useful if everyone reads it the same way.",
             "paragraphs": [
-              "The research kept surfacing one scenario: an Operator, uniform on, fifteen minutes before a range opens, needs to onboard a group of trainees, run the Built-In Test on the base stations, and confirm assignments. Everything else in the brief was downstream of surviving that moment. So the interface principles weren't clean, intuitive, delightful — they were operational."
-            ],
-            "notes": [
-              {
-                "title": "Everything visible without scrolling",
-                "text": "If the Operator has to hunt for a core action, the paper form wins."
-              },
-              {
-                "title": "Touch targets for gloved hands",
-                "text": "Some sites are outdoor; gloves are not optional."
-              },
-              {
-                "title": "Contrast that survives midday glare",
-                "text": "The design system had to work at 90% brightness with the sun in the wrong place."
-              },
-              {
-                "title": "Errors in the operator's language",
-                "text": "Not “validation failed on field X” but “IMT-03 is inactive. Assign to a different pair?”"
-              },
-              {
-                "title": "Confirm the destructive, not the reversible",
-                "text": "Every unnecessary confirm dialog trains the user to click through the necessary one."
-              }
+              "After consolidating the research findings, I shared them with key stakeholders to get everyone on the same page. We walked through the proposed user flows together and discussed which features users needed most.",
+              "To support that, I prepared a detailed document explaining each module's user flow and functionality, and handed it to stakeholders so they could review it in their own time and come back with feedback. Doing it asynchronously as well as live made the alignment more collaborative — and meant later design decisions had a written record behind them."
             ]
-          },
-          {
-            "type": "quote",
-            "text": "Fast for the operator isn't fast for the animation. It's fast for the hand."
           },
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: Anatomy of the Operator's home screen — hit targets highlighted, primary actions labelled by the seconds they save ]"
+            "label": "[ IMAGE: The module-by-module user flow and functionality document shared with stakeholders ]"
           },
           {
             "type": "prose",
             "num": "05",
-            "eyebrow": "The loop",
-            "title": "Three flows that carry state.",
-            "subtitle": "A workflow is only as good as its worst handoff.",
+            "eyebrow": "Design",
+            "title": "Low-fidelity first, because the constraint was clarity.",
+            "subtitle": "Wireframes covered the essential IMT tasks before anything was styled.",
             "paragraphs": [
-              "The three flows that made or broke the system were booking creation, assignment creation, and trainee onboarding — each a stage in one continuous loop, not an independent form. The principle across all three: state travels with the session, not with the person running it. When a shift changed, the incoming Operator opened the same session and saw exactly what the previous one saw."
+              "I created low-fidelity wireframes focused on the core work: session booking, trainee onboarding, performance tracking, and RFID-based asset management.",
+              "This phase surfaced the constraint that shaped everything after it. Many of the system's users were older and less familiar with digital systems, and operators often work under real time pressure — during onboarding, or while running Built-In Tests before a session. The layout had to be easy to follow, with clear actions and minimal steps, so users could move quickly and confidently without getting lost."
             ]
           },
           {
-            "type": "findings",
-            "title": "Booking → Assignment → Onboarding.",
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Low-fidelity wireframes — booking, onboarding, performance tracking, RFID asset management ]"
+          },
+          {
+            "type": "prose",
+            "title": "Then high-fidelity, tuned for the room it runs in.",
+            "paragraphs": [
+              "With the flows aligned, I moved to high-fidelity design and prototyping, building for the operational environment rather than a browser. Visual clarity, minimal cognitive load, and ease of navigation were the priorities.",
+              "That meant high-contrast colour schemes, large touch-friendly buttons, and clear icons — so users could interact with the system confidently in high-pressure or time-constrained situations."
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: High-fidelity UI — high-contrast palette, large touch targets, clear iconography ]"
+          },
+          {
+            "type": "cards",
+            "title": "Three flows that carry the session.",
+            "intro": "Each one hands off to the next — booking sets up the session, assignment makes it ready, onboarding starts it.",
             "items": [
               {
-                "title": "Booking creation",
-                "text": "Individual or group session, date, time, camp, station pair. Base stations are paired (IMT-03 + IMT-04) and both must be active. Committing a booking pre-allocates the stations and marks them unavailable. The system enforces the pairing, so the Operator doesn't have to remember it.",
-                "tone": "blue"
+                "eyebrow": "Flow 01",
+                "title": "IMT Create Booking",
+                "text": "Designed for Operators and Instructors moving from booking setup to session launch in fast-paced training environments. The goal was to streamline check-in, reduce friction, and make sure every trainee is accounted for."
               },
               {
-                "title": "Assignment creation",
-                "text": "Allocates the physical assets — weapons, magazines, RFID-tagged items — to the session. Scan the tag, the system fills in the metadata, confirm with one tap. Chain-of-custody is the speed, because scan-and-confirm replaced the manual write-down.",
-                "tone": "violet"
+                "eyebrow": "Flow 02",
+                "title": "IMT Assignment Creation",
+                "text": "Supports Operators and System Admins managing asset distribution during sessions. This flow is critical to session readiness, where speed, accuracy, and traceability all matter at once."
               },
               {
-                "title": "Trainee onboarding",
-                "text": "Check-in turns the booking into a live session. Trainees matched against the roster, assets confirmed, handoff to the IOS. Every trainee's state is one of five explicit statuses; the session can't close with any ambiguous.",
-                "tone": "green"
+                "eyebrow": "Flow 03",
+                "title": "IMT Trainee Onboarding",
+                "text": "Takes Operators and Instructors from booking setup through to session execution, where timing and accuracy are critical. Simplifies trainee check-in, reduces confusion, and establishes accountability from the start."
               }
             ]
           },
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: The three flows as a linear loop — Booking → Assignment → Onboarding → Session → Close-out — with state labelled on the arrows ]"
+            "label": "[ IMAGE: IMT Create Booking Flow ]"
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: IMT Assignment Creation Flow ]"
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: IMT Trainee Onboarding Flow ]"
           },
           {
             "type": "prose",
             "num": "06",
-            "eyebrow": "What shipped",
-            "title": "One platform, two training systems, three contracts to honour.",
+            "eyebrow": "Integration",
+            "title": "TRMS only works if the other systems agree.",
             "paragraphs": [
-              "TRMS shipped as a modular platform covering both IMT (Individual Marksmanship Trainer) and SWT (Specialised Weapon Trainer) programmes across SAF camps. Shipping wasn't just delivering an interface — it was honouring three integrations that each pulled the design in a different direction."
+              "TRMS sits between systems that already existed. The Instructor Operating Station runs the live session. The Army Training Management System owns scheduling upstream. RFID tracks the physical assets. TRMS had to coordinate all three without becoming a second place where the truth lives.",
+              "That shaped the modular structure: each subsystem talks to TRMS through a defined boundary, so a change on one side does not silently break the workflow on the other."
             ]
           },
           {
-            "type": "findings",
-            "title": "Three contracts to honour.",
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: System boundary — TRMS at the centre with IOS, ATMS, and RFID ]"
+          },
+          {
+            "type": "lessons",
+            "title": "Key takeaways.",
             "items": [
               {
-                "title": "IOS — Instructor Operating Station",
-                "text": "On onboarding, TRMS hands state to IOS, where the Instructor runs the drill and captures scores; when IOS closes the session, TRMS finalises assets and records. Every field surfaced during onboarding is one IOS needs at that exact moment.",
-                "tone": "blue"
+                "title": "Scale was the teacher.",
+                "text": "This was my first time working on a system of this scale, and my first time designing for a military context or around hardware integrations like RFID. Adapting to both taught me more than any single design decision in the project."
               },
               {
-                "title": "ATMS — Army Training Management System",
-                "text": "Upstream. Course schedules and rosters flow in; completion records flow out. TRMS accepts ATMS as the source of truth for who's supposed to train — and reconciles it against who actually showed up.",
-                "tone": "violet"
+                "title": "Accessibility is not a category of user.",
+                "text": "I learned to prioritise accessibility specifically for older users who are less comfortable with digital tools — not as an add-on, but as the thing that determined the layout, the contrast, and the number of steps."
               },
               {
-                "title": "RFID — the hardware layer",
-                "text": "Every weapon, magazine, and tagged asset is scanned through TRMS. Chain-of-custody survives from issue to return with no manual write-down. RFID doesn't wait, and neither can the interface layered on it.",
+                "title": "Role-specific beats feature-complete.",
+                "text": "Keeping the design simple, clear, and role-specific — and avoiding unnecessary complexity — is what kept users focused and confident."
+              },
+              {
+                "title": "Alignment is a design activity.",
+                "text": "Staying closely aligned with stakeholders made sure we built something practical and grounded in real needs, and continuous feedback and iteration is what shaped it into something that actually worked in the field."
+              }
+            ]
+          },
+          {
+            "type": "prose",
+            "eyebrow": "Where it stands",
+            "title": "Beyond the comfort zone.",
+            "paragraphs": [
+              "TRMS took a training operation that ran on manual process and institutional memory and gave it one centralised, modular, role-aware system. The project pushed me well past what I had done before, and gave me the confidence to take on more complex systems."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "slug": "detect-aiic-2026",
+      "cmdKey": "⌘8",
+      "code": "DT",
+      "category": "COMPUTER VISION",
+      "kicker": "→ Computer Vision · 2026",
+      "paletteLabel": "From a first computer-vision model to Second Runner-Up.",
+      "title": "From a first computer-vision model to Second Runner-Up.",
+      "metrics": "Computer Vision · RIC AIIC · Mar 2026",
+      "blurb": "DETECT turned two weeks of model training, manual annotation, and team development into a working accident-detection prototype — and earned Second Runner-Up.",
+      "mockLabel": "[ DETECT — accident detection and operator response ]",
+      "accent": "#ff8a5b",
+      "buttonBg": "#945035",
+      "cardGradient": "linear-gradient(180deg,#2b1a15,#191110)",
+      "cardBorder": "#39221a",
+      "badgeBg": "#301d17",
+      "mockStripe": "repeating-linear-gradient(135deg,#211512,#211512 11px,#301d17 11px,#301d17 22px)",
+      "detail": {
+        "subtitle": "Two weeks. 1,186 annotations. One working accident-detection system.",
+        "summary": "Created for the RIC Applied AI Innovation Challenge 2026, DETECT combines a custom YOLOv11 accident-detection model with multilingual witness reports and an operator dashboard. I led the three-person team, personally annotated 1,186 images, trained my first computer-vision model, shaped the product, and pitched the result.",
+        "links": [
+          {
+            "label": "View AIIC 2026 competition",
+            "url": "https://rsuip.org/rsuicthackathon/"
+          }
+        ],
+        "sections": [
+          {
+            "type": "metaRow",
+            "items": [
+              {
+                "label": "Role",
+                "value": "Team Lead, CV Model Developer, Product Lead & Pitcher"
+              },
+              {
+                "label": "Team",
+                "value": "3 students"
+              },
+              {
+                "label": "Build time",
+                "value": "2 weeks"
+              },
+              {
+                "label": "Stack",
+                "value": "YOLOv11 · React · Express · MongoDB"
+              }
+            ]
+          },
+          {
+            "type": "stats",
+            "items": [
+              {
+                "value": "1,186",
+                "label": "Images annotated",
+                "sub": "Every real-accident image personally labelled",
+                "tone": "pink"
+              },
+              {
+                "value": "77.4%",
+                "label": "mAP@50",
+                "sub": "Measured result from the custom YOLOv11 model",
+                "tone": "amber"
+              },
+              {
+                "value": "2 weeks",
+                "label": "Idea to prototype",
+                "sub": "Model, dashboard, integration, presentation, and pitch",
                 "tone": "green"
               }
             ]
           },
           {
-            "type": "metrics",
+            "type": "prose",
+            "eyebrow": "At a glance · 60 seconds",
+            "title": "Accident footage already existed. Automatic understanding was the missing layer.",
+            "paragraphs": [
+              "CCTV can record an accident without understanding its severity or helping an operator decide what to do next. DETECT adds that missing layer: a custom accident-detection model, an operator workflow, and multilingual witness reports used as corroborating evidence.",
+              "The technical differentiator was not the dashboard alone. It was a YOLOv11 model trained on 1,186 real accident images that I personally annotated across four classes."
+            ]
+          },
+          {
+            "type": "tags",
+            "items": [
+              "Team Leadership",
+              "Computer Vision",
+              "Dataset Annotation",
+              "Model Training",
+              "Product Development",
+              "Pitching"
+            ]
+          },
+          {
+            "type": "microCards",
             "items": [
               {
-                "value": "4",
-                "label": "Role types with distinct permission scopes"
+                "label": "Problem",
+                "text": "CCTV captures incidents, but operators still have to notice, interpret, and act on them manually."
               },
               {
-                "value": "3",
-                "label": "Primary operational flows"
+                "label": "Technical response",
+                "text": "A custom YOLOv11 model trained to recognise people, vehicles, major accidents, and minor accidents."
               },
               {
-                "value": "2",
-                "label": "Training systems on one platform"
+                "label": "System response",
+                "text": "One dashboard connecting detections, witness SMS, incident review, and dispatch."
               },
               {
-                "value": "1",
-                "label": "Shared model of every range"
+                "label": "Outcome",
+                "text": "A working end-to-end prototype and Second Runner-Up at AIIC 2026."
               }
             ]
           },
           {
             "type": "media",
             "kind": "image",
-            "label": "[ IMAGE: The system boundary — TRMS at the centre, IOS / ATMS / RFID as the three contracts, four roles as the surfaces above ]"
+            "label": "[ VIDEO: Accident video analysis followed by the DETECT operator dashboard ]",
+            "src": "/casestudies/detect-aiic-2026-2.png"
           },
           {
-            "type": "lessons",
-            "title": "What I learned.",
+            "type": "prose",
+            "num": "01",
+            "eyebrow": "The problem",
+            "title": "CCTV can capture an accident without turning it into an actionable alert.",
+            "subtitle": "Recording an event and understanding it are two different capabilities.",
+            "paragraphs": [
+              "Traffic cameras continuously record road conditions, but video alone does not guarantee a fast emergency response. An operator may still need to notice the incident manually, interpret what happened, judge its severity, and coordinate the next action.",
+              "The problem becomes harder when camera ownership and emergency-response responsibilities are distributed across organisations, while witness information arrives separately, in different languages and with different levels of reliability."
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: CCTV, delayed manual review, and separate witness messages before reaching an operator ]",
+            "src": "/casestudies/detect-aiic-2026-3.png"
+          },
+          {
+            "type": "quote",
+            "text": "We wanted to turn passive CCTV footage into an incident signal that an operator could inspect, verify, and act on."
+          },
+          {
+            "type": "prose",
+            "num": "02",
+            "eyebrow": "Research & training",
+            "title": "The model needed accident-specific evidence.",
+            "subtitle": "A public pretrained model was a starting point, not the finished capability.",
+            "paragraphs": [
+              "This was my first computer-vision training project. I created a custom dataset from 1,186 real accident images and personally annotated every one. The work required defining each class, drawing consistent bounding boxes, reviewing label quality, training the model, inspecting its errors, and iterating until it could generalise beyond individual examples.",
+              "The dataset covered four classes: Human, Vehicle, Major Accident, and Minor Accident."
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Annotated Roboflow images with bounding boxes for the four classes ]",
+            "src": "/casestudies/detect-aiic-2026-4.png"
+          },
+          {
+            "type": "findings",
+            "title": "The measured model result.",
+            "subhead": "Trained for 177 epochs on an accident-specific dataset.",
             "items": [
               {
-                "title": "Field research is a stance, not a phase.",
-                "text": "Every time I thought I understood the workflow well enough to skip a camp visit, I got something wrong. The Operators saved me more times than the spec did."
+                "title": "77.4% mAP@50",
+                "text": "The primary measured detection result from the custom YOLOv11 model.",
+                "tone": "pink"
               },
               {
-                "title": "“Accessible design” is often just design.",
-                "text": "Larger targets, plainer language, fewer traps — the choices for older, less digital-native Operators made the system faster for every user. There's no accessibility tax when the constraint is real."
+                "title": "76.6% precision",
+                "text": "How often a predicted detection was correct.",
+                "tone": "amber"
               },
               {
-                "title": "Hardware integration is a design constraint.",
-                "text": "RFID, base-station pairing, and IOS handoff meant the UI had physical latencies to respect. A spinner wasn't a pattern — it was an honest signal that the base station was still calibrating."
+                "title": "75.6% recall",
+                "text": "How much of the labelled target set the model found.",
+                "tone": "green"
+              }
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Roboflow charts for mAP, precision, recall, and loss across 177 epochs ]",
+            "src": "/casestudies/detect-aiic-2026-5.png"
+          },
+          {
+            "type": "prose",
+            "num": "03",
+            "eyebrow": "My role",
+            "title": "I led the team and built the technical differentiator.",
+            "subtitle": "Learning computer vision while shipping under competition pressure.",
+            "paragraphs": [
+              "The original idea came from group discussions. My responsibility was to turn those shared ideas into a focused product and make the technical pieces work together within two weeks.",
+              "I defined and prioritised the functions, collected and annotated the dataset, trained and evaluated the model, connected detections to dashboard incidents, coordinated frontend and backend integration, prepared the final presentation, and led the live pitch and technical questions."
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Annotation, model training, team collaboration, and presentation preparation ]",
+            "src": "/casestudies/detect-aiic-2026-6.png"
+          },
+          {
+            "type": "prose",
+            "num": "04",
+            "eyebrow": "The product",
+            "title": "One workflow from live CCTV to a verified incident report.",
+            "subtitle": "Connect CCTV via RTSP → Monitor → Detect → Alert → Match witness SMS → Create incident report → Review → Dispatch",
+            "paragraphs": [
+              "Operators connect existing CCTV cameras to DETECT by configuring their RTSP streams. The custom YOLOv11 model is already built into the system and continuously analyses each live feed. When it detects a possible accident, DETECT classifies the scene, records the model confidence and severity, and alerts the operator.",
+              "Witnesses can report the same accident by sending an SMS to DETECT. The system translates the message when necessary and matches its time and location with the CCTV detection. When the camera evidence and witness information align, DETECT creates a combined incident report for the operator to verify.",
+              "The dashboard brings live camera detections, alerts, confidence, severity, camera location, translated witness messages, matched evidence, incident reports, suggested responses, responder status, and analytics into one operating surface. The operator remains responsible for reviewing the report and deciding whether to dispatch a response."
+            ]
+          },
+          {
+            "type": "features",
+            "title": "The end-to-end response loop.",
+            "items": [
+              {
+                "eyebrow": "Connect & monitor",
+                "title": "Live CCTV through RTSP",
+                "text": "Operators connect existing cameras while the built-in model continuously monitors each live stream.",
+                "tone": "pink"
               },
               {
-                "title": "Role-specific surfaces on a shared model scale.",
-                "text": "Duplicated systems don't. Made early, this decision kept paying dividends every time a new role or subsystem needed a view onto the same data."
+                "eyebrow": "Detect & alert",
+                "title": "Accident-specific vision",
+                "text": "The YOLOv11 model detects a possible accident, classifies its severity, and alerts the operator.",
+                "tone": "blue"
               },
               {
-                "title": "Military users are rigorous users.",
-                "text": "They notice inconsistency and ambiguity, and they'll route around one confusing icon forever. Designing for them raised my bar for what “clear” means."
+                "eyebrow": "Match evidence",
+                "title": "CCTV plus witness SMS",
+                "text": "Translated witness messages are matched with CCTV detections by time and location to create one incident report.",
+                "tone": "amber"
+              },
+              {
+                "eyebrow": "Review & respond",
+                "title": "Operator-controlled dispatch",
+                "text": "The operator verifies the combined report, chooses the response, and tracks the incident through resolution.",
+                "tone": "green"
+              }
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "video",
+            "label": "[ IMAGE: DETECT command dashboard with incident feed, severity, and AI analysis ]",
+            "src": "/casestudies/detect-aiic-2026-7.mov"
+          },
+          {
+            "type": "prose",
+            "title": "The model was the core innovation.",
+            "paragraphs": [
+              "The dashboard made the workflow understandable, but monitoring interfaces are a familiar product pattern. Our competitive advantage came from creating an accident-specific dataset and model instead of presenting only a generic interface or connecting an unchanged public model."
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "video",
+            "label": "[ VIDEO: Accident video, detections, severity classification, and operator alert ]",
+            "muted": true,
+            "src": "/casestudies/detect-aiic-2026-8.mov"
+          },
+          {
+            "type": "prose",
+            "title": "Multilingual witness reports added a second signal.",
+            "paragraphs": [
+              "A witness could report an accident in Thai, Burmese, Malay, Chinese, Dzongkha, or English. The system translated the message and associated it with a nearby incident.",
+              "The presentation used a 94.2% fusion score to illustrate how signals could be combined. This was a mocked-up prototype calculation, not an independently validated accuracy result. The measured model result remained 77.4% mAP@50."
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "video",
+            "label": "[ IMAGE: Witness sends SMS, translation, and matching to a detected incident ]",
+            "src": "/casestudies/detect-aiic-2026-9.mov"
+          },
+          {
+            "type": "prose",
+            "title": "Human judgement remained part of the system.",
+            "paragraphs": [
+              "The model could make mistakes, especially when accident scenes were visually ambiguous. DETECT therefore kept an operator in control of verification and dispatch."
+            ]
+          },
+          {
+            "type": "findings",
+            "title": "Responsible-AI boundaries.",
+            "items": [
+              {
+                "title": "No face recognition",
+                "text": "Detection stays at the object and accident-class level.",
+                "tone": "blue"
+              },
+              {
+                "title": "Human verification",
+                "text": "An operator reviews evidence before dispatching emergency services.",
+                "tone": "green"
+              },
+              {
+                "title": "Corroboration, not authority",
+                "text": "Witness SMS supports a decision; it does not make the decision alone.",
+                "tone": "amber"
+              },
+              {
+                "title": "Pilot before scale",
+                "text": "False positives and dataset limits require controlled real-world testing.",
+                "tone": "pink"
               }
             ]
           },
           {
             "type": "prose",
-            "eyebrow": "Shipped",
-            "title": "In active use across SAF camps.",
+            "num": "05",
+            "eyebrow": "Outcome",
+            "title": "Second Runner-Up after a model-focused presentation.",
             "paragraphs": [
-              "IMT TRMS shipped in April 2025 and is in active use across SAF training camps."
+              "On 31 March 2026, our team presented DETECT at the RIC Applied AI Innovation Challenge. The judges focused on how the model was trained, which classes it included, what it could detect, and how the custom dataset supported the result.",
+              "Because I had annotated and trained the model myself, I could explain the complete process rather than only demonstrate the interface. DETECT earned Second Runner-Up."
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Second Runner-Up award, certificate, team photo, or announcement ]",
+            "src": "/casestudies/detect-aiic-2026-11.jpg"
+          },
+          {
+            "type": "cards",
+            "title": "Team credits.",
+            "intro": "Three specialised contributions, connected into one competition-ready prototype.",
+            "items": [
+              {
+                "eyebrow": "Lead & model",
+                "title": "Delbin",
+                "text": "Team leadership, CV model training, dataset annotation, product functionality, presentation, and pitching."
+              },
+              {
+                "eyebrow": "Frontend",
+                "title": "Pyi Thein Kyaw",
+                "text": "Frontend development."
+              },
+              {
+                "eyebrow": "Backend",
+                "title": "Sai Lin Htet",
+                "text": "Backend development."
+              }
+            ]
+          },
+          {
+            "type": "lessons",
+            "title": "What this project taught me.",
+            "items": [
+              {
+                "title": "A custom dataset can be the real product advantage.",
+                "text": "The dashboard made DETECT visible; the personally annotated dataset and trained model made it technically distinctive."
+              },
+              {
+                "title": "Learning under pressure requires focus.",
+                "text": "I trained my first computer-vision model while leading a team and preparing a working prototype in two weeks."
+              },
+              {
+                "title": "Metrics need honest labels.",
+                "text": "The measured model result and mocked-up fusion score serve different purposes and must not be presented as the same evidence."
+              },
+              {
+                "title": "Technical understanding improves pitching.",
+                "text": "Building the model meant I could answer judges' questions about training, classes, detection capability, and limitations directly."
+              },
+              {
+                "title": "Leadership connects specialised work.",
+                "text": "Frontend, backend, model training, integration, and pitching had to support one coherent story."
+              }
+            ]
+          },
+          {
+            "type": "media",
+            "kind": "image",
+            "label": "[ IMAGE: Annotation, training results, presentation, and award moment sequence ]",
+            "src": "/casestudies/detect-aiic-2026-13.jpg"
+          },
+          {
+            "type": "prose",
+            "eyebrow": "Next iteration",
+            "title": "If I continued the project.",
+            "paragraphs": [
+              "I would expand and rebalance the dataset, test against a larger unseen validation set, measure false positives by road condition and camera angle, and run a controlled pilot on real RTSP streams.",
+              "I would also replace the mocked-up fusion calculation with a validated scoring method and test the full operator workflow with traffic-control and emergency-response professionals."
             ]
           }
         ]
+      },
+      "thumbnail": {
+        "kind": "image",
+        "src": "/thumbnails/detect-aiic-2026-thumb.png",
+        "device": "web"
       }
     }
   ],
@@ -2288,6 +2964,15 @@
     }
   ],
   "contributions": [
+    {
+      "title": "RSU GenED Online Show & Share 2569",
+      "org": "Rangsit International College",
+      "date": "July 2026",
+      "tone": "amber",
+      "description": "Social innovation competition at Rangsit University. Led a team of eight to design and build a peer-learning platform, selected among 96 projects, and won Second Runner-Up.",
+      "certificateUrl": "#",
+      "image": "/contributions/rsu-gened-online-show-share-2569.png"
+    },
     {
       "title": "RIC Applied AI Innovation Challenge (AIIC 2026)",
       "org": "Rangsit International College",
