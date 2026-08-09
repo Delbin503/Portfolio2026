@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Familjen_Grotesk, Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import AskAI from "@/components/AskAI";
+import MusicProvider from "@/components/MusicProvider";
+import MusicToggle from "@/components/MusicToggle";
 import { getProfile, getCaseStudies } from "@/lib/data";
 
 const familjen = Familjen_Grotesk({
@@ -50,8 +52,11 @@ export default function RootLayout({
       className={`${familjen.variable} ${hanken.variable} ${jetbrains.variable}`}
     >
       <body>
-        {children}
-        <AskAI name={profile.name} caseStudies={caseStudies} />
+        <MusicProvider>
+          {children}
+          <MusicToggle />
+          <AskAI name={profile.name} caseStudies={caseStudies} />
+        </MusicProvider>
       </body>
     </html>
   );

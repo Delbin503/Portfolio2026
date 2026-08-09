@@ -67,3 +67,31 @@ body {
     color: #e9e9ee;
   }
 }
+
+/* Background-track waveform + equaliser animations (see MusicProvider) */
+@keyframes wave {
+  0%,
+  100% {
+    transform: scaleY(0.32);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes eq {
+  0%,
+  100% {
+    transform: scaleY(0.3);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [style*="animation: wave"],
+  [style*="animation: eq"] {
+    animation: none !important;
+  }
+}

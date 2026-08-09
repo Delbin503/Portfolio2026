@@ -1,6 +1,7 @@
 "use client";
 
 import { OPEN_ASK_AI_EVENT } from "./AskAI";
+import { useMusic } from "./MusicProvider";
 
 type Project = {
   slug: string;
@@ -33,6 +34,8 @@ export default function ChatTeaser({
   projects: Project[];
 }) {
   const first = profile.name.split(" ")[0];
+  const { playing, progress, loading, failed, toggle } = useMusic();
+  const played = Math.round(progress * BARS.length);
 
   return (
     <div className="flex flex-col overflow-hidden rounded-[var(--rcard)] border border-line bg-panel">
@@ -52,24 +55,42 @@ export default function ChatTeaser({
         </div>
         <button
           type="button"
-          onClick={openChat}
-          aria-label={`Open ${first}'s assistant`}
+          onClick={toggle}
+          aria-label={playing ? "Pause track" : "Play track"}
           className="flex items-center gap-4 rounded-[14px] border border-line bg-panel-2 p-3 text-left transition-colors hover:border-[#2e2e36]"
         >
           <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-[var(--accent)] text-[10px] text-[#0a0a0c]">
-            ▶
+            {loading ? "…" : playing ? "❚❚" : "▶"}
           </span>
           <span className="flex h-8 flex-1 items-center gap-[3px] overflow-hidden">
             {BARS.map((h, i) => (
               <span
                 key={i}
-                className="w-[2px] shrink-0 rounded-full bg-[#4a4566]"
-                style={{ height: `${h}%` }}
+                className="w-[2px] shrink-0 rounded-full transition-colors"
+                style={{
+                  height: `${h}%`,
+                  background: i < played ? "var(--accent)" : "#4a4566",
+                  ...(playing
+                    ? {
+                        animation: `wave ${820 + (i % 5) * 90}ms ease-in-out ${
+                          (i % 7) * 70
+                        }ms infinite`,
+                        transformOrigin: "center",
+                      }
+                    : null),
+                }}
               />
             ))}
           </span>
-          <span className="shrink-0 font-mono text-[11px] text-dim">0:43</span>
+          <span className="shrink-0 font-mono text-[11px] text-dim">
+            {failed ? "—" : "0:43"}
+          </span>
         </button>
+        {failed && (
+          <p className="-mt-2 font-mono text-[10.5px] text-dim">
+            Couldn&apos;t load the track — an ad blocker may be blocking it.
+          </p>
+        )}
 
         {/* projects */}
         <div className="font-mono text-[10.5px] uppercase tracking-[0.16em] text-faint">
