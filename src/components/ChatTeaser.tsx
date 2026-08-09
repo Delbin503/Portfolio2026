@@ -1,7 +1,7 @@
 "use client";
 
 import { OPEN_ASK_AI_EVENT } from "./AskAI";
-import { useMusic } from "./MusicProvider";
+import { useMusic, fmtTime } from "./MusicProvider";
 
 type Project = {
   slug: string;
@@ -34,7 +34,8 @@ export default function ChatTeaser({
   projects: Project[];
 }) {
   const first = profile.name.split(" ")[0];
-  const { playing, progress, loading, failed, toggle } = useMusic();
+  const { playing, progress, current, duration, active, loading, failed, toggle } =
+    useMusic();
   const played = Math.round(progress * BARS.length);
 
   return (
@@ -82,8 +83,16 @@ export default function ChatTeaser({
               />
             ))}
           </span>
-          <span className="shrink-0 font-mono text-[11px] text-dim">
-            {failed ? "—" : "0:43"}
+          <span className="shrink-0 font-mono text-[11px] tabular-nums text-dim">
+            {failed
+              ? "—"
+              : loading
+                ? "…"
+                : active && duration > 0
+                  ? `${fmtTime(current)} / ${fmtTime(duration)}`
+                  : duration > 0
+                    ? fmtTime(duration)
+                    : "0:00"}
           </span>
         </button>
         {failed && (

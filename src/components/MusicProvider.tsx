@@ -15,7 +15,7 @@ import {
  *
  * Source is a hidden YouTube IFrame player. To swap to a self-hosted file
  * instead, replace the player plumbing below with an <audio> element — the
- * context surface (playing / progress / toggle / stop) stays the same.
+ * context surface (playing / current / duration / toggle / stop) stays the same.
  *
  * Seeking is deliberately not exposed: callers can only play, pause, or stop
  * back to the start.
@@ -54,6 +54,14 @@ declare global {
   }
 }
 
+/** Seconds → m:ss. Negative/NaN collapses to 0:00. */
+export function fmtTime(s: number): string {
+  if (!Number.isFinite(s) || s < 0) s = 0;
+  const m = Math.floor(s / 60);
+  const sec = Math.floor(s % 60);
+  return `${m}:${sec.toString().padStart(2, "0")}`;
+}
+
 /** Load the IFrame API once, lazily — nothing is fetched until first play. */
 let apiPromise: Promise<YTNamespace> | null = null;
 function loadApi(): Promise<YTNamespace> {
@@ -83,9 +91,13 @@ function loadApi(): Promise<YTNamespace> {
 }
 
 type MusicCtx = {
-  /** true once the visitor has started the track at least once */
+  /** true once the visitor has started the track — drives the floating control */
   active: boolean;
   playing: boolean;
+  /** elapsed seconds */
+  current: number;
+  /** total seconds, 0 until the player reports it */
+  duration: number;
   /** 0–1, for the waveform only — not seekable */
   progress: number;
   loading: boolean;
@@ -107,31 +119,52 @@ export default function MusicProvider({
 }: {
   children: React.ReactNode;
 }) {
+  // React owns this wrapper and never renders children into it; the YouTube
+  // target is appended imperatively below. YT.Player REPLACES the node it is
+  // given with its iframe, so handing it a React-rendered node desyncs the
+  // tree and makes consumers unmount at random on the next re-render.
   const hostRef = useRef<HTMLDivElement>(null);
   const playerRef = useRef<YTPlayer | null>(null);
+  // YT.Player returns an object whose methods only exist once onReady fires.
+  // Calling playVideo() before then throws, so gate every call on this.
+  const readyRef = useRef(false);
   const [active, setActive] = useState(false);
   const [playing, setPlaying] = useState(false);
-  const [progress, setProgress] = useState(0);
+  const [current, setCurrent] = useState(0);
+  const [duration, setDuration] = useState(0);
   const [loading, setLoading] = useState(false);
   const [failed, setFailed] = useState(false);
 
-  // Poll position while playing — the waveform reads this.
+  // Poll position while playing — the waveform and time readout use this.
   useEffect(() => {
     if (!playing) return;
-    const id = window.setInterval(() => {
+    const tick = () => {
       const p = playerRef.current;
       if (!p) return;
       const d = p.getDuration();
-      if (d > 0) setProgress(Math.min(1, p.getCurrentTime() / d));
-    }, 250);
+      const c = p.getCurrentTime();
+      if (d > 0) setDuration(d);
+      if (Number.isFinite(c)) setCurrent(c);
+    };
+    tick();
+    const id = window.setInterval(tick, 250);
     return () => window.clearInterval(id);
   }, [playing]);
 
-  useEffect(() => () => playerRef.current?.destroy(), []);
+  useEffect(
+    () => () => {
+      if (readyRef.current) playerRef.current?.destroy();
+      playerRef.current = null;
+      readyRef.current = false;
+    },
+    []
+  );
 
   const toggle = useCallback(() => {
     const p = playerRef.current;
     if (p) {
+      // Still initialising — swallow the click rather than throwing.
+      if (!readyRef.current) return;
       if (playing) p.pauseVideo();
       else p.playVideo();
       return;
@@ -141,8 +174,12 @@ export default function MusicProvider({
     setFailed(false);
     loadApi()
       .then((YT) => {
-        if (!hostRef.current) return;
-        playerRef.current = new YT.Player(hostRef.current, {
+        const host = hostRef.current;
+        if (!host || playerRef.current) return;
+        // Detached-from-React target: YT replaces this node, not one React owns.
+        const target = document.createElement("div");
+        host.appendChild(target);
+        playerRef.current = new YT.Player(target, {
           videoId: VIDEO_ID,
           playerVars: {
             autoplay: 1,
@@ -154,16 +191,23 @@ export default function MusicProvider({
           },
           events: {
             onReady: (e) => {
+              readyRef.current = true;
               setLoading(false);
               setActive(true);
+              setDuration(e.target.getDuration() || 0);
               e.target.playVideo();
             },
             onStateChange: (e) => {
-              if (e.data === 1) setPlaying(true);
-              else if (e.data === 2) setPlaying(false);
-              else if (e.data === 0) {
+              if (e.data === 1) {
+                setActive(true);
+                setPlaying(true);
+                setDuration((d) => e.target.getDuration() || d);
+              } else if (e.data === 2) {
                 setPlaying(false);
-                setProgress(0);
+              } else if (e.data === 0) {
+                // Ended: stay active so the control offers a replay.
+                setPlaying(false);
+                setCurrent(0);
               }
             },
             onError: () => {
@@ -180,15 +224,27 @@ export default function MusicProvider({
   }, [playing, loading]);
 
   const stop = useCallback(() => {
-    playerRef.current?.stopVideo();
+    if (readyRef.current) playerRef.current?.stopVideo();
     setPlaying(false);
-    setProgress(0);
+    setCurrent(0);
     setActive(false);
   }, []);
 
+  const progress = duration > 0 ? Math.min(1, current / duration) : 0;
+
   return (
     <Ctx.Provider
-      value={{ active, playing, progress, loading, failed, toggle, stop }}
+      value={{
+        active,
+        playing,
+        current,
+        duration,
+        progress,
+        loading,
+        failed,
+        toggle,
+        stop,
+      }}
     >
       {children}
       {/* Audio-only: the player is present but visually collapsed. */}
