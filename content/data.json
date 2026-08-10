@@ -365,6 +365,11 @@
             ]
           }
         ]
+      },
+      "thumbnail": {
+        "kind": "image",
+        "src": "/thumbnails/accel-thumb.png",
+        "device": "web"
       }
     },
     {
@@ -722,6 +727,11 @@
             ]
           }
         ]
+      },
+      "thumbnail": {
+        "kind": "image",
+        "src": "/thumbnails/terra-thumb.png",
+        "device": "web"
       }
     },
     {
@@ -1052,10 +1062,9 @@
         ]
       },
       "thumbnail": {
-        "kind": "video",
-        "src": "/thumbnails/jar-aye-thumb.mov",
-        "device": "web",
-        "muted": true
+        "kind": "image",
+        "src": "/thumbnails/jar-aye-thumb.png",
+        "device": "web"
       }
     },
     {
@@ -1332,6 +1341,11 @@
             ]
           }
         ]
+      },
+      "thumbnail": {
+        "kind": "image",
+        "src": "/thumbnails/kanote-thumb.png",
+        "device": "mobile"
       }
     },
     {
@@ -1663,10 +1677,9 @@
         ]
       },
       "thumbnail": {
-        "kind": "video",
-        "src": "/thumbnails/greenskill-rsu-thumb.mov",
-        "device": "web",
-        "muted": true
+        "kind": "image",
+        "src": "/thumbnails/greenskill-rsu-thumb.png",
+        "device": "web"
       }
     },
     {
@@ -2043,6 +2056,11 @@
             ]
           }
         ]
+      },
+      "thumbnail": {
+        "kind": "image",
+        "src": "/thumbnails/cv-trainer-thumb.png",
+        "device": "web"
       }
     },
     {
@@ -2390,6 +2408,11 @@
             ]
           }
         ]
+      },
+      "thumbnail": {
+        "kind": "image",
+        "src": "/thumbnails/imt-trms-thumb.png",
+        "device": "web"
       }
     },
     {
