@@ -29,13 +29,27 @@ const jetbrains = JetBrains_Mono({
   display: "swap",
 });
 
+/** Production origin — makes the generated OG image URL absolute. */
+const SITE_URL = "https://delbintoehtet-portfolio.vercel.app";
+
 export function generateMetadata(): Metadata {
   const p = getProfile();
   const title = `${p.name} — ${p.role}`;
   return {
+    // Without this, the opengraph-image URL cannot be resolved to an absolute
+    // one and social scrapers get nothing to fetch.
+    metadataBase: new URL(SITE_URL),
     title: { default: title, template: `%s · ${p.name}` },
     description: p.bio,
-    openGraph: { title, description: p.bio, type: "website" },
+    openGraph: {
+      title,
+      description: p.bio,
+      type: "website",
+      url: SITE_URL,
+      siteName: p.name,
+    },
+    // The image itself comes from app/opengraph-image.tsx and app/twitter-image.tsx.
+    twitter: { card: "summary_large_image", title, description: p.bio },
   };
 }
 
