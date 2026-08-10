@@ -1,6 +1,7 @@
 "use client";
 
 import { OPEN_ASK_AI_EVENT } from "./AskAI";
+import { EXPAND_WORK_EVENT } from "./WorkGrid";
 import { useMusic, fmtTime } from "./MusicProvider";
 
 type Project = {
@@ -22,8 +23,13 @@ function openChat() {
 }
 
 function jump(slug: string) {
-  const el = document.getElementById(`cs-${slug}`);
-  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  // The target may be behind "See more"; ask the grid to expand, then scroll
+  // on the next frame once it has mounted.
+  window.dispatchEvent(new Event(EXPAND_WORK_EVENT));
+  requestAnimationFrame(() => {
+    const el = document.getElementById(`cs-${slug}`);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
 }
 
 export default function ChatTeaser({

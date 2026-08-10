@@ -1,17 +1,16 @@
 import SectionShell from "./SectionShell";
-import CaseStudyCard from "./CaseStudyCard";
+import type { CaseStudy } from "@/lib/data";
 import {
   getCaseStudies,
   getContributions,
   getEducation,
   getExperience,
-  getMoreProjects,
   getPraise,
   getProfile,
   getVolunteering,
 } from "@/lib/data";
 import ExperienceTabs from "./ExperienceTabs";
-import MoreWorkGrid, { type CompactStudy } from "./MoreWorkGrid";
+import WorkGrid, { type WorkCard } from "./WorkGrid";
 
 const profile = getProfile();
 const caseStudies = getCaseStudies();
@@ -19,13 +18,32 @@ const experience = getExperience();
 const volunteering = getVolunteering();
 const education = getEducation();
 const contributions = getContributions();
-const moreProjects = getMoreProjects();
 const praise = getPraise();
 
-/** How many studies get the full-width card treatment before "See more". */
-const FEATURED_COUNT = 4;
-const featured = caseStudies.slice(0, FEATURED_COUNT);
-const rest: CompactStudy[] = caseStudies.slice(FEATURED_COUNT).map((cs) => ({
+/** How many cards show before the "See more" button. */
+const VISIBLE_COUNT = 4;
+
+/**
+ * Card art, best available first: the project's own thumbnail, else the first
+ * media slot from its case study, else null so the card falls back to the
+ * striped mock. Most projects have no Notion thumbnail set, so without the
+ * middle step the grid would be mostly grey placeholders.
+ */
+function cardMedia(cs: CaseStudy): WorkCard["media"] {
+  if (cs.thumbnail?.src) {
+    return { kind: cs.thumbnail.kind, src: cs.thumbnail.src };
+  }
+  for (const s of cs.detail?.sections ?? []) {
+    if (s.type === "media" && s.src) return { kind: s.kind, src: s.src };
+    if (s.type === "modules") {
+      const withVideo = s.items.find((i) => i.videoUrl);
+      if (withVideo?.videoUrl) return { kind: "video", src: withVideo.videoUrl };
+    }
+  }
+  return null;
+}
+
+const workCards: WorkCard[] = caseStudies.map((cs) => ({
   slug: cs.slug,
   code: cs.code,
   category: cs.category,
@@ -36,6 +54,9 @@ const rest: CompactStudy[] = caseStudies.slice(FEATURED_COUNT).map((cs) => ({
   cardGradient: cs.cardGradient,
   cardBorder: cs.cardBorder,
   badgeBg: cs.badgeBg,
+  mockStripe: cs.mockStripe,
+  mockLabel: cs.mockLabel,
+  media: cardMedia(cs),
 }));
 
 export function About() {
@@ -90,70 +111,14 @@ export function SelectedWork() {
         </div>
       }
     >
-      {featured.map((cs) => (
-        <CaseStudyCard key={cs.slug} cs={cs} />
-      ))}
-      <MoreWorkGrid items={rest} />
-    </SectionShell>
-  );
-}
-
-export function MoreProjects() {
-  return (
-    <SectionShell id="more" num="03" title="More projects">
-      <div className="grid gap-5 md:grid-cols-2" data-reveal-group data-reveal-step="80">
-        {moreProjects.map((p) => (
-          <div
-            key={p.num}
-            tabIndex={0}
-            data-reveal="up"
-            className="group relative flex h-[232px] flex-col overflow-hidden rounded-[var(--rcard)] border border-line bg-panel p-[30px] outline-none transition-colors hover:border-[#2e2e36] focus-visible:border-[#2e2e36]"
-          >
-            {/* accent wash on hover/focus */}
-            <div
-              className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus:opacity-100"
-              style={{
-                background: `radial-gradient(120% 80% at 0% 0%, ${p.categoryColor}1f, transparent 62%)`,
-              }}
-            />
-
-            <div className="relative flex items-start justify-between">
-              <span className="font-display text-[30px] leading-none text-[#5a5a63]">
-                {p.num}
-              </span>
-              <span
-                className="translate-x-1 text-lg opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 group-focus:translate-x-0 group-focus:opacity-100"
-                style={{ color: p.categoryColor }}
-                aria-hidden
-              >
-                ↗
-              </span>
-            </div>
-
-            <div
-              className="relative mt-5 font-mono text-[10.5px] uppercase tracking-[0.1em]"
-              style={{ color: p.categoryColor }}
-            >
-              {p.category}
-            </div>
-            <h4 className="relative mt-2 font-display text-2xl font-semibold leading-[1.1]">
-              {p.title}
-            </h4>
-
-            {/* blurb reveals on hover/focus (space reserved, so no layout shift) */}
-            <p className="relative mt-auto translate-y-2 text-sm leading-[1.6] text-muted-2 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 group-focus:translate-y-0 group-focus:opacity-100">
-              {p.blurb}
-            </p>
-          </div>
-        ))}
-      </div>
+      <WorkGrid items={workCards} initial={VISIBLE_COUNT} />
     </SectionShell>
   );
 }
 
 export function Experience() {
   return (
-    <SectionShell id="experience" num="04" title="Shipped at every stop">
+    <SectionShell id="experience" num="03" title="Shipped at every stop">
       <ExperienceTabs work={experience} volunteering={volunteering} />
     </SectionShell>
   );
@@ -161,7 +126,7 @@ export function Experience() {
 
 export function Education() {
   return (
-    <SectionShell id="education" num="05" title="Education">
+    <SectionShell id="education" num="04" title="Education">
       <div className="border-t border-[#1c1c22]" data-reveal-group data-reveal-step="80">
         {education.map((e) => (
           <div
@@ -200,7 +165,7 @@ export function Contributions() {
   return (
     <SectionShell
       id="contributions"
-      num="06"
+      num="05"
       title="Beyond the day job"
       meta={
         <div
@@ -287,7 +252,7 @@ export function Contributions() {
 export function PraiseSection() {
   if (!praise.length) return null;
   return (
-    <SectionShell id="praise" num="07" title="What collaborators say">
+    <SectionShell id="praise" num="06" title="What collaborators say">
       <div
         className="-mx-6 flex snap-x snap-mandatory gap-5 overflow-x-auto px-6 pb-4 [scrollbar-width:thin] sm:-mx-10 sm:px-10"
         data-reveal-group

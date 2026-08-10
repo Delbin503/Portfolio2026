@@ -4,7 +4,6 @@ import { getProfile } from "@/lib/data";
 import {
   About,
   SelectedWork,
-  MoreProjects,
   Experience,
   Education,
   Contributions,
@@ -23,7 +22,6 @@ export default function Home() {
           <Hero />
           <About />
           <SelectedWork />
-          <MoreProjects />
           <Experience />
           <Education />
           <Contributions />

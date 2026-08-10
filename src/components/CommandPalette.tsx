@@ -2,16 +2,24 @@
 
 import { useEffect } from "react";
 import type { CaseStudy } from "@/lib/data";
+import { EXPAND_WORK_EVENT } from "./WorkGrid";
 
 function jumpTo(slug: string) {
-  const el = document.getElementById(`cs-${slug}`);
-  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  // ⌘5+ target projects that sit behind "See more" — expand first, then scroll
+  // once the card has mounted.
+  window.dispatchEvent(new Event(EXPAND_WORK_EVENT));
+  requestAnimationFrame(() => {
+    const el = document.getElementById(`cs-${slug}`);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
 }
 
 export default function CommandPalette({ caseStudies }: { caseStudies: CaseStudy[] }) {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if ((e.metaKey || e.ctrlKey) && /^[1-6]$/.test(e.key)) {
+      // Range follows the actual list length — it was hard-coded to 6 while
+      // eight studies exist, leaving ⌘7/⌘8 dead.
+      if ((e.metaKey || e.ctrlKey) && /^[1-9]$/.test(e.key)) {
         const cs = caseStudies[Number(e.key) - 1];
         if (cs) {
           e.preventDefault();
