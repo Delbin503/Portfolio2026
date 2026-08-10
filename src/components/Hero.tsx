@@ -32,9 +32,9 @@ export default function Hero() {
             className="font-display text-[clamp(40px,6.5vw,72px)] font-semibold leading-[1.0] tracking-[-0.02em]"
             data-reveal="mask"
           >
-            Complex products,
+            Crafting interfaces
             <br />
-            intuitive <span className="italic text-accent">interfaces.</span>
+            for <span className="italic text-accent">complex products.</span>
           </h1>
           <p
             className="mt-7 max-w-[560px] text-[17px] leading-[1.55] text-muted"
