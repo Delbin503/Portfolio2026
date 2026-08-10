@@ -56,6 +56,13 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body>
+        {/* DNS + TLS to the background-track origins is negotiated up front, so
+            the first play click doesn't pay for it. No content is fetched. */}
+        <link rel="preconnect" href="https://www.youtube.com" />
+        <link rel="preconnect" href="https://www.google.com" />
+        <link rel="preconnect" href="https://i.ytimg.com" />
+        <link rel="dns-prefetch" href="https://googlevideo.com" />
+
         {/* Arms the reveal styles before first paint, so nothing flashes in
             visible and then hides. Skipped for reduced motion. */}
         <script

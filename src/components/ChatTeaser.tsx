@@ -34,8 +34,17 @@ export default function ChatTeaser({
   projects: Project[];
 }) {
   const first = profile.name.split(" ")[0];
-  const { playing, progress, current, duration, active, loading, failed, toggle } =
-    useMusic();
+  const {
+    playing,
+    progress,
+    current,
+    duration,
+    active,
+    loading,
+    failed,
+    toggle,
+    prewarm,
+  } = useMusic();
   const played = Math.round(progress * BARS.length);
 
   return (
@@ -61,6 +70,9 @@ export default function ChatTeaser({
         <button
           type="button"
           onClick={toggle}
+          onPointerEnter={prewarm}
+          onPointerDown={prewarm}
+          onFocus={prewarm}
           aria-label={playing ? "Pause track" : "Play track"}
           className="flex items-center gap-4 rounded-[14px] border border-line bg-panel-2 p-3 text-left transition-colors hover:border-[#2e2e36]"
         >

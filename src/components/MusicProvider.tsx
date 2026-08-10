@@ -104,6 +104,13 @@ type MusicCtx = {
   failed: boolean;
   toggle: () => void;
   stop: () => void;
+  /**
+   * Build the player ahead of the click. Wire to hover/focus/pointerdown on
+   * any play control: by the time the click lands the iframe is already ready,
+   * so playback starts immediately instead of after a cold YouTube load.
+   * Idempotent and safe to call repeatedly.
+   */
+  prewarm: () => void;
 };
 
 const Ctx = createContext<MusicCtx | null>(null);
@@ -151,6 +158,23 @@ export default function MusicProvider({
     return () => window.clearInterval(id);
   }, [playing]);
 
+  // Fetch the IFrame API script on the visitor's first interaction with the
+  // page — well before they reach a play control. Nothing is requested for
+  // bots or instant bounces, and no player/iframe is created here.
+  useEffect(() => {
+    const events = ["pointerdown", "keydown", "scroll", "touchstart"] as const;
+    const warm = () => {
+      events.forEach((e) => window.removeEventListener(e, warm));
+      loadApi().catch(() => {
+        /* blocked or offline — the click path retries and surfaces the error */
+      });
+    };
+    events.forEach((e) =>
+      window.addEventListener(e, warm, { once: true, passive: true })
+    );
+    return () => events.forEach((e) => window.removeEventListener(e, warm));
+  }, []);
+
   useEffect(
     () => () => {
       if (readyRef.current) playerRef.current?.destroy();
@@ -160,17 +184,19 @@ export default function MusicProvider({
     []
   );
 
-  const toggle = useCallback(() => {
-    const p = playerRef.current;
-    if (p) {
-      // Still initialising — swallow the click rather than throwing.
-      if (!readyRef.current) return;
-      if (playing) p.pauseVideo();
-      else p.playVideo();
-      return;
-    }
-    if (loading || !hostRef.current) return;
-    setLoading(true);
+  /** Set when a click landed before the player finished initialising. */
+  const wantPlayRef = useRef(false);
+  const buildingRef = useRef(false);
+
+  /**
+   * Create the hidden player if it does not exist yet. `autoplay` is baked in
+   * at construction, so a prewarm build (no user gesture yet) uses 0 and waits
+   * for an explicit playVideo() — which then runs inside the click gesture and
+   * is never blocked by autoplay policy.
+   */
+  const ensurePlayer = useCallback((autoplay: 0 | 1) => {
+    if (playerRef.current || buildingRef.current || !hostRef.current) return;
+    buildingRef.current = true;
     setFailed(false);
     loadApi()
       .then((YT) => {
@@ -182,7 +208,7 @@ export default function MusicProvider({
         playerRef.current = new YT.Player(target, {
           videoId: VIDEO_ID,
           playerVars: {
-            autoplay: 1,
+            autoplay,
             controls: 0,
             disablekb: 1,
             modestbranding: 1,
@@ -192,10 +218,16 @@ export default function MusicProvider({
           events: {
             onReady: (e) => {
               readyRef.current = true;
+              buildingRef.current = false;
               setLoading(false);
-              setActive(true);
               setDuration(e.target.getDuration() || 0);
-              e.target.playVideo();
+              // Only reveal the control and start audio if a click asked for
+              // it — a prewarmed player must stay silent and invisible.
+              if (wantPlayRef.current) {
+                wantPlayRef.current = false;
+                setActive(true);
+                e.target.playVideo();
+              }
             },
             onStateChange: (e) => {
               if (e.data === 1) {
@@ -211,6 +243,7 @@ export default function MusicProvider({
               }
             },
             onError: () => {
+              buildingRef.current = false;
               setLoading(false);
               setFailed(true);
             },
@@ -218,10 +251,37 @@ export default function MusicProvider({
         });
       })
       .catch(() => {
+        buildingRef.current = false;
+        wantPlayRef.current = false;
         setLoading(false);
         setFailed(true);
       });
-  }, [playing, loading]);
+  }, []);
+
+  /** Hover/focus/pointerdown on a play control — build ahead of the click. */
+  const prewarm = useCallback(() => {
+    if (playerRef.current || buildingRef.current) return;
+    ensurePlayer(0);
+  }, [ensurePlayer]);
+
+  const toggle = useCallback(() => {
+    const p = playerRef.current;
+    if (p && readyRef.current) {
+      // Prewarmed and ready: this runs inside the click gesture, so playback
+      // is instant.
+      if (playing) p.pauseVideo();
+      else {
+        setActive(true);
+        p.playVideo();
+      }
+      return;
+    }
+    // Mid-build (prewarm in flight, or a fast second click) — remember the
+    // intent so onReady starts playback the moment it can.
+    wantPlayRef.current = true;
+    setLoading(true);
+    ensurePlayer(1);
+  }, [playing, ensurePlayer]);
 
   const stop = useCallback(() => {
     if (readyRef.current) playerRef.current?.stopVideo();
@@ -244,6 +304,7 @@ export default function MusicProvider({
         failed,
         toggle,
         stop,
+        prewarm,
       }}
     >
       {children}
