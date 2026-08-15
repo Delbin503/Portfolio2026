@@ -3,6 +3,8 @@
 // falls back to Gemini. Answers are in Delbin's first-person voice; chip labels
 // are the recruiter's question. Links use markdown — the chat UI renders them.
 
+import { CONTACT_EMAIL, workMailto } from "./contact";
+
 export type FaqId =
   | "about"
   | "experience"
@@ -57,7 +59,7 @@ export const FAQ: Record<FaqId, FaqEntry> = {
   },
   contact: {
     q: "How can I contact him?",
-    a: "You can reach me by email at [delbinhtet@gmail.com](mailto:delbinhtet@gmail.com), on [LinkedIn](https://www.linkedin.com/in/toe-htet-arkar-1b0605239/), or via [WhatsApp](https://wa.link/7wkflj).",
+    a: `You can reach me by email at [${CONTACT_EMAIL}](${workMailto("assistant")}), on [LinkedIn](https://www.linkedin.com/in/toe-htet-arkar-1b0605239/), or via [WhatsApp](https://wa.link/7wkflj).`,
     followups: ["resume", "open", "cases"],
   },
   skills: {
