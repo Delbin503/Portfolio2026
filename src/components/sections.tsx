@@ -313,7 +313,7 @@ export function Contact() {
           {profile.email}
         </a>
         <a
-          href="https://drive.google.com/file/d/1opS1NsXP-Boy0AMMkkaHGyx6ayuOJ9iD/view"
+          href="/cv-toe-htet-arkar-delbin.pdf"
           target="_blank"
           rel="noreferrer"
           className="rounded-full border border-[#2a2a30] px-6 py-[13px] text-[14.5px] font-semibold text-text"

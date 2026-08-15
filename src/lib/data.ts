@@ -19,7 +19,7 @@ const DEFAULT_PROFILE: Profile = {
   role: "Product Designer & Front-end Engineer",
   tagline: "Complex systems, simple surfaces.",
   location: "Remote",
-  email: "delbintoehtet@gmail.com",
+  email: "delbinhtet@gmail.com",
   availability: "Available Q3 2026",
   bio: "Product designer and front-end engineer.",
 };

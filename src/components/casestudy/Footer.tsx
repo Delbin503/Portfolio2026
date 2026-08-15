@@ -88,11 +88,11 @@ export function CtaBand({ buttonBg }: { buttonBg: string }) {
       </h2>
       <div className="mt-8 flex flex-wrap justify-center gap-3" data-reveal="up">
         <a
-          href="mailto:delbintoehtet@gmail.com"
+          href="mailto:delbinhtet@gmail.com"
           className="rounded-full px-6 py-[13px] text-[14.5px] font-semibold text-white"
           style={{ background: buttonBg }}
         >
-          delbintoehtet@gmail.com
+          delbinhtet@gmail.com
         </a>
         <Link
           href="/#work"

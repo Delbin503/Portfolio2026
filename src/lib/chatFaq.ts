@@ -57,7 +57,7 @@ export const FAQ: Record<FaqId, FaqEntry> = {
   },
   contact: {
     q: "How can I contact him?",
-    a: "You can reach me by email at [delbintoehtet@gmail.com](mailto:delbintoehtet@gmail.com), on [LinkedIn](https://www.linkedin.com/in/toe-htet-arkar-1b0605239/), or via [WhatsApp](https://wa.link/7wkflj).",
+    a: "You can reach me by email at [delbinhtet@gmail.com](mailto:delbinhtet@gmail.com), on [LinkedIn](https://www.linkedin.com/in/toe-htet-arkar-1b0605239/), or via [WhatsApp](https://wa.link/7wkflj).",
     followups: ["resume", "open", "cases"],
   },
   skills: {
@@ -94,7 +94,7 @@ export const FAQ: Record<FaqId, FaqEntry> = {
   },
   resume: {
     q: "Can I see his resume?",
-    a: 'Yes — you can view and download my resume [here](https://drive.google.com/file/d/1opS1NsXP-Boy0AMMkkaHGyx6ayuOJ9iD/view).',
+    a: 'Yes — you can view and download my resume [here](/cv-toe-htet-arkar-delbin.pdf).',
     followups: ["contact", "open", "cases", "skills"],
   },
 };
