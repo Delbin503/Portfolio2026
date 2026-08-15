@@ -10,19 +10,14 @@
   },
   "heroStats": [
     {
-      "value": "12",
-      "plus": false,
-      "label": "years, design + build"
-    },
-    {
-      "value": "40",
+      "value": "4",
       "plus": true,
-      "label": "surfaces shipped"
+      "label": "years of Experience"
     },
     {
-      "value": "9",
-      "plus": false,
-      "label": "design systems"
+      "value": "50",
+      "plus": true,
+      "label": "Product Designs"
     }
   ],
   "caseStudies": [

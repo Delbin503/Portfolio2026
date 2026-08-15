@@ -1,8 +1,9 @@
-import { getProfile, getCaseStudies } from "@/lib/data";
+import { getProfile, getCaseStudies, getHeroStats } from "@/lib/data";
 import ChatTeaser from "./ChatTeaser";
 
 export default function Hero() {
   const profile = getProfile();
+  const stats = getHeroStats();
   const projects = getCaseStudies()
     .slice(0, 3)
     .map((c) => ({
@@ -42,6 +43,24 @@ export default function Hero() {
           >
             {intro}
           </p>
+          {stats.length > 0 && (
+            <dl
+              className="mt-9 flex flex-wrap items-start gap-x-12 gap-y-6"
+              data-reveal="up"
+            >
+              {stats.map((stat) => (
+                <div key={stat.label}>
+                  <dt className="font-display text-[clamp(34px,5vw,46px)] font-semibold leading-none tracking-[-0.02em] text-accent">
+                    {stat.value}
+                    {stat.plus && "+"}
+                  </dt>
+                  <dd className="mt-[10px] font-mono text-[11.5px] uppercase tracking-[0.14em] text-muted-2">
+                    {stat.label}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          )}
         </div>
 
         {/* right: chatbot teaser */}

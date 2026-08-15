@@ -13,9 +13,8 @@ I'm Delbin (Toe Htet Arkar), a Product Designer with 4 years of experience turni
 
 ### At a glance
 
-- **12** — years, design + build
-- **40+** — surfaces shipped
-- **9** — design systems
+- **4+** — years of Experience
+- **50+** — Product Designs
 
 ## Experience
 
