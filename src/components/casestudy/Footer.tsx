@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { CaseStudy } from "@/lib/data";
+import { CONTACT_EMAIL, workMailto } from "@/lib/contact";
 
 export function RelatedCaseStudies({
   current,
@@ -88,11 +89,11 @@ export function CtaBand({ buttonBg }: { buttonBg: string }) {
       </h2>
       <div className="mt-8 flex flex-wrap justify-center gap-3" data-reveal="up">
         <a
-          href="mailto:delbinhtet@gmail.com"
+          href={workMailto("case-study")}
           className="rounded-full px-6 py-[13px] text-[14.5px] font-semibold text-white"
           style={{ background: buttonBg }}
         >
-          delbinhtet@gmail.com
+          {CONTACT_EMAIL}
         </a>
         <Link
           href="/#work"

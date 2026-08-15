@@ -9,6 +9,7 @@ import {
   getProfile,
   getVolunteering,
 } from "@/lib/data";
+import ContactForm from "./ContactForm";
 import ExperienceTabs from "./ExperienceTabs";
 import WorkGrid, { type WorkCard } from "./WorkGrid";
 
@@ -307,12 +308,6 @@ export function Contact() {
       </h2>
       <div className="mt-9 flex flex-wrap justify-center gap-3" data-reveal="up">
         <a
-          href={`mailto:${profile.email}`}
-          className="rounded-full bg-[#e9e9ee] px-6 py-[13px] text-[14.5px] font-semibold text-[#0a0a0c]"
-        >
-          {profile.email}
-        </a>
-        <a
           href="/cv-toe-htet-arkar-delbin.pdf"
           target="_blank"
           rel="noreferrer"
@@ -320,6 +315,9 @@ export function Contact() {
         >
           View résumé ↗
         </a>
+      </div>
+      <div data-reveal="up">
+        <ContactForm />
       </div>
       <div className="mt-16 font-mono text-[11.5px] text-faint" data-reveal="fade">
         © 2026 {profile.name}
